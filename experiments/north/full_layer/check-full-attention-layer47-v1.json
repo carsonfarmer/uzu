@@ -1,0 +1,124 @@
+{
+  "device": {
+    "device_name": "Apple M4 Pro",
+    "max_recommended_working_set_size": 40200896512,
+    "memory_size": 51539607552,
+    "architecture": "applegpu_g16s",
+    "max_buffer_length": 30150672384,
+    "resource_limit": 499000
+  },
+  "args": {
+    "layer": 47,
+    "steps": 2,
+    "workers": [
+      1,
+      20,
+      64
+    ],
+    "output": "experiments/north/full_layer/check-full-attention-layer47-v1.json"
+  },
+  "checks": [
+    {
+      "step": 0,
+      "layer": 47,
+      "context": 128,
+      "workers": 1,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "errors": 0,
+      "task_visits_min": 1,
+      "task_visits_max": 1
+    },
+    {
+      "step": 0,
+      "layer": 47,
+      "context": 128,
+      "workers": 20,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "errors": 0,
+      "task_visits_min": 1,
+      "task_visits_max": 1
+    },
+    {
+      "step": 0,
+      "layer": 47,
+      "context": 128,
+      "workers": 64,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "errors": 0,
+      "task_visits_min": 1,
+      "task_visits_max": 1
+    },
+    {
+      "step": 1,
+      "layer": 47,
+      "context": 129,
+      "workers": 1,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "errors": 0,
+      "task_visits_min": 1,
+      "task_visits_max": 1
+    },
+    {
+      "step": 1,
+      "layer": 47,
+      "context": 129,
+      "workers": 20,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "errors": 0,
+      "task_visits_min": 1,
+      "task_visits_max": 1
+    },
+    {
+      "step": 1,
+      "layer": 47,
+      "context": 129,
+      "workers": 64,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "errors": 0,
+      "task_visits_min": 1,
+      "task_visits_max": 1
+    }
+  ]
+}
