@@ -1,0 +1,8 @@
+2026-09-10 21:39:50.988 python[57241:22958120] Metal API Validation Enabled
+2026-09-10 21:39:50.988 python[57241:22958120] Metal GPU Validation Enabled
+native_eager 2074.917 {'max_abs': 0.0, 'relative_l2': 0.0, 'finite': True}
+native_compiled 1594.0 {'max_abs': 0.0, 'relative_l2': 0.0, 'finite': True}
+c64_phased_compiled 1640.709 {'max_abs': 0.0001220703125, 'relative_l2': 9.002595106721856e-06, 'finite': True}
+c64_static20_compiled 2944.209 {'max_abs': 0.0001220703125, 'relative_l2': 9.002595106721856e-06, 'finite': True}
+c64_static128_compiled 1719.5 {'max_abs': 0.0001220703125, 'relative_l2': 9.002595106721856e-06, 'finite': True}
+c64_interleaved128_compiled 1446.167 {'max_abs': 0.0001220703125, 'relative_l2': 9.002595106721856e-06, 'finite': True}

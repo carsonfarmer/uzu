@@ -1,0 +1,21 @@
+{
+  "wall_seconds": [
+    0.00048162502935156226,
+    0.00036858400562778115,
+    0.00035370897967368364,
+    0.00035979202948510647,
+    0.0003560000332072377,
+    0.0003636669716797769,
+    0.001116667001042515,
+    0.00035970803583040833,
+    0.00039129203651100397,
+    0.0003684999537654221,
+    0.00035683298483490944,
+    0.0003534170100465417,
+    0.00035562500124797225,
+    0.0008540829876437783,
+    0.0012507500359788537
+  ],
+  "max_abs_vs_captured": 0.0,
+  "note": "MLX quantized selected experts plus BF16 attention output projection and residual. Fixed routing/scores; lazy graph construction and evaluation included. Different weight representation/reduction from standalone Metal; not an isolated scheduler comparison."
+}

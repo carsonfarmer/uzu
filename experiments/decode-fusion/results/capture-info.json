@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "uuid": "BA8DFC70-DB1F-4E3C-922D-435123492979",
+    "captured_frames": 1,
+    "graphics_api": "Metal"
+  },
+  "resources": [
+    {
+      "filename": "MTLBuffer-10-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-10-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-11-0",
+      "size_bytes": 2949120,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-11-1",
+      "size_bytes": 2949120,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-12-0",
+      "size_bytes": 737280,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-12-1",
+      "size_bytes": 737280,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-14-0",
+      "size_bytes": 49152,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-15-0",
+      "size_bytes": 32768,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-16-0",
+      "size_bytes": 32768,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-17-0",
+      "size_bytes": 81920,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-17-1",
+      "size_bytes": 81920,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-18-0",
+      "size_bytes": 49152,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-18-1",
+      "size_bytes": 49152,
+      "label": "",
+      "kind": "buffer"
+    }
+  ],
+  "shader_functions": [
+    "baseline_projection",
+    "baseline_gate",
+    "paired_projection_gate"
+  ],
+  "shader_libraries": [
+    {
+      "path": "/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/paired.metallib"
+    }
+  ]
+}

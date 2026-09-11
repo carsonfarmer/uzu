@@ -1,0 +1,46 @@
+🚀 OpenAI-compatible server for model: Qwen3.5-4B-M-toolchain015
+🌐 Available at: http://127.0.0.1:18000
+🗄️  Prefix cache: disabled
+📝 Endpoints:
+   POST /v1/chat/completions (or /chat/completions)
+   GET  /v1/models           (or /models)
+[req 1ff88057] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req 1ff88057] completed in 4.73s, finish=stop, prompt 26 tok (0 cached, 26 prefilled @ 65.8 tok/s), ttft 0.39s, decode 345 tok @ 80.6 tok/s, spec 1.00 tok/pass (346 passes)
+[req 195908a4] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req 195908a4] completed in 4.40s, finish=stop, prompt 26 tok (0 cached, 26 prefilled @ 367.8 tok/s), ttft 0.07s, decode 345 tok @ 80.6 tok/s, spec 1.00 tok/pass (346 passes)
+[req ae09db06] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req ae09db06] completed in 4.40s, finish=stop, prompt 26 tok (0 cached, 26 prefilled @ 370.3 tok/s), ttft 0.07s, decode 345 tok @ 80.7 tok/s, spec 1.00 tok/pass (346 passes)
+[req 332dc4af] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req 332dc4af] completed in 4.42s, finish=stop, prompt 26 tok (0 cached, 26 prefilled @ 368.0 tok/s), ttft 0.07s, decode 345 tok @ 80.2 tok/s, spec 1.00 tok/pass (346 passes)
+[req cb72d754] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req cb72d754] completed in 4.45s, finish=stop, prompt 26 tok (0 cached, 26 prefilled @ 367.0 tok/s), ttft 0.07s, decode 345 tok @ 80.1 tok/s, spec 1.00 tok/pass (346 passes)
+[req b5944d2a] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req b5944d2a] completed in 4.45s, finish=stop, prompt 26 tok (0 cached, 26 prefilled @ 366.8 tok/s), ttft 0.07s, decode 345 tok @ 80.0 tok/s, spec 1.00 tok/pass (346 passes)
+[req c7fd3dce] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req c7fd3dce] completed in 7.70s, finish=stop, prompt 1854 tok (0 cached, 1854 prefilled @ 613.2 tok/s), ttft 3.02s, decode 354 tok @ 76.8 tok/s, spec 1.00 tok/pass (355 passes)
+[req 2c935b0a] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req 2c935b0a] completed in 7.09s, finish=stop, prompt 1854 tok (0 cached, 1854 prefilled @ 775.6 tok/s), ttft 2.39s, decode 354 tok @ 76.5 tok/s, spec 1.00 tok/pass (355 passes)
+[req 8659c01c] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req 8659c01c] completed in 7.24s, finish=stop, prompt 1854 tok (0 cached, 1854 prefilled @ 755.9 tok/s), ttft 2.45s, decode 354 tok @ 75.1 tok/s, spec 1.00 tok/pass (355 passes)
+[req 0d7f25cb] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req 0d7f25cb] completed in 7.30s, finish=stop, prompt 1854 tok (0 cached, 1854 prefilled @ 757.9 tok/s), ttft 2.45s, decode 354 tok @ 74.1 tok/s, spec 1.00 tok/pass (355 passes)
+[req d87c7653] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req d87c7653] completed in 7.54s, finish=stop, prompt 1854 tok (0 cached, 1854 prefilled @ 685.9 tok/s), ttft 2.70s, decode 354 tok @ 74.3 tok/s, spec 1.00 tok/pass (355 passes)
+[req 6be75d16] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req 6be75d16] completed in 7.33s, finish=stop, prompt 1854 tok (0 cached, 1854 prefilled @ 760.0 tok/s), ttft 2.44s, decode 354 tok @ 73.4 tok/s, spec 1.00 tok/pass (355 passes)
+[req 9a6d0720] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req 9a6d0720] completed in 7.13s, finish=length, prompt 39 tok (0 cached, 39 prefilled @ 172.3 tok/s), ttft 0.23s, decode 512 tok @ 74.9 tok/s, spec 1.00 tok/pass (513 passes)
+[req 27623b0c] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req 27623b0c] completed in 6.82s, finish=length, prompt 39 tok (0 cached, 39 prefilled @ 411.6 tok/s), ttft 0.09s, decode 512 tok @ 76.9 tok/s, spec 1.00 tok/pass (513 passes)
+[req 730ff809] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req 730ff809] completed in 6.59s, finish=length, prompt 39 tok (0 cached, 39 prefilled @ 458.8 tok/s), ttft 0.09s, decode 512 tok @ 79.5 tok/s, spec 1.00 tok/pass (513 passes)
+[req b133be3f] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req b133be3f] completed in 6.51s, finish=length, prompt 39 tok (0 cached, 39 prefilled @ 443.0 tok/s), ttft 0.09s, decode 512 tok @ 80.6 tok/s, spec 1.00 tok/pass (513 passes)
+[req c89b7479] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req c89b7479] completed in 6.47s, finish=length, prompt 39 tok (0 cached, 39 prefilled @ 453.7 tok/s), ttft 0.09s, decode 512 tok @ 81.0 tok/s, spec 1.00 tok/pass (513 passes)
+[req 4eea812f] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req 4eea812f] completed in 6.49s, finish=length, prompt 39 tok (0 cached, 39 prefilled @ 453.8 tok/s), ttft 0.09s, decode 512 tok @ 80.9 tok/s, spec 1.00 tok/pass (513 passes)
+[req c20cf87d] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req c20cf87d] completed in 9.65s, finish=stop, prompt 39 tok (0 cached, 39 prefilled @ 331.0 tok/s), ttft 0.12s, decode 762 tok @ 80.4 tok/s, spec 1.00 tok/pass (763 passes)
+[req a2e19966] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+[req a2e19966] completed in 4.50s, finish=stop, prompt 26 tok (0 cached, 26 prefilled @ 256.1 tok/s), ttft 0.10s, decode 345 tok @ 79.4 tok/s, spec 1.00 tok/pass (346 passes)

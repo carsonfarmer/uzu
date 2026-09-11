@@ -1,0 +1,272 @@
+{
+  "decode": [
+    {
+      "prompt": "short",
+      "variant": "original",
+      "median_tps": 54.739830235187014,
+      "min_tps": 54.47015568407972,
+      "max_tps": 54.79147803258764,
+      "paired_ratio_vs_original": 1.0,
+      "paired_ratio_vs_compiled": 0.9912602012365653
+    },
+    {
+      "prompt": "short",
+      "variant": "native_compiled",
+      "median_tps": 54.95989769720241,
+      "min_tps": 54.95041122011148,
+      "max_tps": 55.317753677373155,
+      "paired_ratio_vs_original": 1.0088168563133393,
+      "paired_ratio_vs_compiled": 1.0
+    },
+    {
+      "prompt": "short",
+      "variant": "exact",
+      "median_tps": 61.000935717728744,
+      "min_tps": 60.777353666425356,
+      "max_tps": 61.07961701900612,
+      "paired_ratio_vs_original": 1.115816705250647,
+      "paired_ratio_vs_compiled": 1.110108811986521
+    },
+    {
+      "prompt": "short",
+      "variant": "scheduled",
+      "median_tps": 47.08945067401309,
+      "min_tps": 46.61252112345487,
+      "max_tps": 47.1577253083172,
+      "paired_ratio_vs_original": 0.8594301954403618,
+      "paired_ratio_vs_compiled": 0.8512538478812866
+    },
+    {
+      "prompt": "short",
+      "variant": "prefetch",
+      "median_tps": 43.39121450444179,
+      "min_tps": 43.12972120787741,
+      "max_tps": 44.222966349229004,
+      "paired_ratio_vs_original": 0.7919336375382051,
+      "paired_ratio_vs_compiled": 0.7847489354055478
+    },
+    {
+      "prompt": "short",
+      "variant": "staged",
+      "median_tps": 45.68486004823931,
+      "min_tps": 42.87046269435717,
+      "max_tps": 46.069438578468976,
+      "paired_ratio_vs_original": 0.8337949931021736,
+      "paired_ratio_vs_compiled": 0.8258625307651632
+    },
+    {
+      "prompt": "long",
+      "variant": "original",
+      "median_tps": 48.43624040925388,
+      "min_tps": 45.37145174093142,
+      "max_tps": 49.13162025937576,
+      "paired_ratio_vs_original": 1.0,
+      "paired_ratio_vs_compiled": 0.9763997806333801
+    },
+    {
+      "prompt": "long",
+      "variant": "native_compiled",
+      "median_tps": 50.319163557681875,
+      "min_tps": 49.052586201818286,
+      "max_tps": 51.93993806181321,
+      "paired_ratio_vs_original": 1.024170652057409,
+      "paired_ratio_vs_compiled": 1.0
+    },
+    {
+      "prompt": "long",
+      "variant": "exact",
+      "median_tps": 54.1319784932837,
+      "min_tps": 52.19704254680187,
+      "max_tps": 55.309728500836805,
+      "paired_ratio_vs_original": 1.1017747472505495,
+      "paired_ratio_vs_compiled": 1.0648785994895342
+    },
+    {
+      "prompt": "long",
+      "variant": "scheduled",
+      "median_tps": 41.21145071661541,
+      "min_tps": 40.80862614994236,
+      "max_tps": 43.533542246473125,
+      "paired_ratio_vs_original": 0.8425225782417614,
+      "paired_ratio_vs_compiled": 0.8319362812399413
+    },
+    {
+      "prompt": "long",
+      "variant": "prefetch",
+      "median_tps": 41.11571165762831,
+      "min_tps": 38.8130734029906,
+      "max_tps": 41.438344128019594,
+      "paired_ratio_vs_original": 0.8368482749107429,
+      "paired_ratio_vs_compiled": 0.7978127366787429
+    },
+    {
+      "prompt": "long",
+      "variant": "staged",
+      "median_tps": 41.1256333083196,
+      "min_tps": 39.306136978794456,
+      "max_tps": 41.56722485400944,
+      "paired_ratio_vs_original": 0.8490674123514845,
+      "paired_ratio_vs_compiled": 0.8260714589653321
+    },
+    {
+      "prompt": "rust",
+      "variant": "original",
+      "median_tps": 52.363152395478416,
+      "min_tps": 52.04536807775278,
+      "max_tps": 53.891005024989205,
+      "paired_ratio_vs_original": 1.0,
+      "paired_ratio_vs_compiled": 0.9911014076310071
+    },
+    {
+      "prompt": "rust",
+      "variant": "native_compiled",
+      "median_tps": 54.26965826603382,
+      "min_tps": 51.61392910329346,
+      "max_tps": 54.37486478180157,
+      "paired_ratio_vs_original": 1.0089784882762531,
+      "paired_ratio_vs_compiled": 1.0
+    },
+    {
+      "prompt": "rust",
+      "variant": "exact",
+      "median_tps": 58.940823981543524,
+      "min_tps": 56.78166324739531,
+      "max_tps": 59.91262979167341,
+      "paired_ratio_vs_original": 1.1117371027668157,
+      "paired_ratio_vs_compiled": 1.1001228589623513
+    },
+    {
+      "prompt": "rust",
+      "variant": "scheduled",
+      "median_tps": 46.17565771621836,
+      "min_tps": 44.47293618639162,
+      "max_tps": 46.24402168626761,
+      "paired_ratio_vs_original": 0.8581027884862102,
+      "paired_ratio_vs_compiled": 0.8504668815607753
+    },
+    {
+      "prompt": "rust",
+      "variant": "prefetch",
+      "median_tps": 42.524967793845484,
+      "min_tps": 42.14809205980399,
+      "max_tps": 43.97099943609701,
+      "paired_ratio_vs_original": 0.8121162658938299,
+      "paired_ratio_vs_compiled": 0.8086640695576208
+    },
+    {
+      "prompt": "rust",
+      "variant": "staged",
+      "median_tps": 42.98905607128912,
+      "min_tps": 42.798105136846836,
+      "max_tps": 44.95184798504635,
+      "paired_ratio_vs_original": 0.8223230369493965,
+      "paired_ratio_vs_compiled": 0.8267027084192592
+    }
+  ],
+  "measured_requests": 54,
+  "generated_tokens_per_request": 256,
+  "all_tokens_match": true,
+  "bitwise_vector_comparisons": 5696,
+  "provenance": {
+    "kind": "provenance",
+    "device": {
+      "device_name": "Apple M4 Pro",
+      "max_recommended_working_set_size": 40200896512,
+      "memory_size": 51539607552,
+      "architecture": "applegpu_g16s",
+      "max_buffer_length": 30150672384,
+      "resource_limit": 499000
+    },
+    "mlx": "0.32.2",
+    "args": {
+      "tokens": 256,
+      "runs": 3,
+      "teacher_steps": 0,
+      "workers": 160,
+      "rows": 16,
+      "modes": [
+        "native_compiled",
+        "exact",
+        "scheduled",
+        "prefetch",
+        "staged"
+      ],
+      "prompts": [
+        "short",
+        "long",
+        "rust"
+      ],
+      "output": "experiments/north/correctness/results/benchmark-all-v3.jsonl"
+    },
+    "model_revision": "dfbe084dfa26e241345af99ca32848f38fd865f9",
+    "source_revision": "cdc745ad8a32d162f6d8e9d08be256910d663ac2",
+    "source_sha256": {
+      "exact.py": "bc2b47cd4fee23559c04dbadb0b3feeb16ac5cdfbc8a115a29f2da1ad464ecf7",
+      "patch.py": "a069ed772aa9d8f134e81aac84cdeaa493e72861c9d7a632a4b3436811cc49fd",
+      "kernels.py": "1d825d58db931a7c079c917beadd20af6f097b950c9f7f9c033147af51d3e041",
+      "kernel.h": "b5a11042ad903b21326a9dc62711900e6cdd7f47f3306ff14f80d9a4def7fc66"
+    },
+    "harness_sha256": "72c4807969dac56cfb9113b3ddf2556d9f7431c831b3219ca666467fa23edd87",
+    "scheduler_sources": {
+      "branch.py": "e5b2f019478adc46ad98908402c994e2d59b1f078136c860e9ea2c891b6685ea",
+      "down.h": "4c7a3038582a76aeeb015a3831106f69b68c9844bf6f22435efdbd9325ca23fb",
+      "prefetch.py": "5921d9fff73d92e069fc23a0c7c6b7762d5557a9d8851582f9a3f6a649c54852"
+    },
+    "specialization": {
+      "workers": 160,
+      "rows": 16,
+      "interleave": true,
+      "patched_layers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48
+      ]
+    },
+    "note": "Only single-token branches replaced; original prefill and layer 0. All variants share loaded weight buffers. One warmup and rotated variant order. Teacher-forced paths use identical baseline tokens; greedy paths free-run."
+  }
+}

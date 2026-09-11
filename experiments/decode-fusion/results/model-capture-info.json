@@ -1,0 +1,1967 @@
+{
+  "metadata": {
+    "uuid": "80A6EB5C-991E-44C8-A43F-AB7C94AC9242",
+    "captured_frames": 1,
+    "graphics_api": "Metal"
+  },
+  "resources": [
+    {
+      "filename": "MTLBuffer-100-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-100-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-101-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-101-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-102-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-102-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-103-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-103-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-104-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-104-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-105-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-105-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-106-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-106-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-107-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-107-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-108-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-108-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-109-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-109-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-110-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-110-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-111-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-111-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-112-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-112-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-113-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-113-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-114-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-114-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-115-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-115-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-116-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-116-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-117-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-117-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-118-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-118-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-119-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-119-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-120-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-120-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-121-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-121-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-122-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-122-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-123-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-123-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-124-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-124-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-125-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-125-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-126-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-126-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-127-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-127-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-128-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-128-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-129-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-129-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-130-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-130-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-131-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-131-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-132-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-132-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-133-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-133-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-134-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-134-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-135-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-135-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-136-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-136-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-137-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-137-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-138-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-138-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-139-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-139-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-140-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-140-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-141-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-141-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-142-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-142-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-143-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-143-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-144-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-144-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-145-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-145-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-146-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-146-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-147-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-147-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-148-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-148-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-149-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-149-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-150-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-150-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-151-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-151-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-152-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-152-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-153-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-153-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-154-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-154-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-155-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-155-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-156-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-156-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-157-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-157-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-158-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-158-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-159-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-159-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-160-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-160-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-161-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-161-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-162-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-162-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-163-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-163-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-164-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-164-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-165-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-165-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-166-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-166-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-167-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-167-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-168-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-168-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-169-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-169-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-170-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-170-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-171-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-171-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-172-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-172-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-173-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-173-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-174-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-174-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-175-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-175-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-176-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-176-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-177-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-177-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-178-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-178-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-179-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-179-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-18-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-18-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-180-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-180-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-181-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-181-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-182-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-182-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-183-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-183-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-184-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-184-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-185-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-185-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-186-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-186-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-187-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-187-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-188-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-188-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-189-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-189-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-190-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-190-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-191-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-191-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-192-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-192-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-193-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-193-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-194-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-194-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-195-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-195-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-196-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-196-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-197-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-197-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-198-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-198-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-199-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-199-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-200-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-200-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-201-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-201-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-202-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-202-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-203-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-203-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-204-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-204-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-205-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-205-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-206-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-206-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-207-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-207-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-208-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-208-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-209-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-209-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-210-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-210-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-211-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-211-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-212-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-212-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-213-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-213-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-214-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-214-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-215-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-215-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-216-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-216-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-217-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-217-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-218-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-218-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-219-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-219-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-220-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-220-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-221-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-221-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-222-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-222-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-223-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-223-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-224-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-224-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-225-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-225-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-226-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-226-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-227-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-227-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-228-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-228-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-229-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-229-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-230-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-230-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-231-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-231-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-296-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-351-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-370-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-391-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-410-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-425-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-444-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-465-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-5-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-5-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-57-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-57-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-6-0",
+      "size_bytes": 317849600,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-6-1",
+      "size_bytes": 317849600,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-63-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-63-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-64-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-64-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-7-0",
+      "size_bytes": 39731200,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-7-1",
+      "size_bytes": 39731200,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-70-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-70-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-71-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-71-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-72-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-72-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-73-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-73-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-74-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-74-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-75-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-75-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-76-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-76-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-77-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-77-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-78-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-78-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-79-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-79-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-8-0",
+      "size_bytes": 9945088,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-8-1",
+      "size_bytes": 9945088,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-80-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-80-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-81-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-81-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-93-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-93-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-94-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-94-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-95-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-95-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-96-0",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-96-1",
+      "size_bytes": 15810560,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-97-0",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-97-1",
+      "size_bytes": 8388608,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-98-0",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-98-1",
+      "size_bytes": 23592960,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-99-0",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    },
+    {
+      "filename": "MTLBuffer-99-1",
+      "size_bytes": 11796480,
+      "label": "",
+      "kind": "buffer"
+    }
+  ],
+  "shader_functions": [],
+  "shader_libraries": []
+}

@@ -1,0 +1,1328 @@
+{
+  "checks" : 33,
+  "device" : "Apple M4 Pro",
+  "note" : "North dimensions. Selected 8 expert branches plus attention output projection. BF16 materialized weights. Local up\/gate\/down-partial chains; global residual join in second dispatch. No full attention, routing or quantized weight-streaming here. All variants share same split-K math. GPU\/host time includes counter reset.",
+  "samples" : [
+    {
+      "gpu_us" : 586.91669255495071,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 845.54200000000003,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 602.12501557543874,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "local_fusion",
+      "wall_us" : 752.875,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 592.41667622700334,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "mixed_grid",
+      "wall_us" : 746.45799999999997,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 1814.7083465009928,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 1967.0419999999999,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 2037.4166779220104,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 2330,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 846.87495836988091,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 1159.7909999999999,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 738.87500911951065,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 914.66700000000003,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 561.29164295271039,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 752.04100000000005,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 577.62500364333391,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 779.04200000000003,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 568.95834859460592,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 734.5,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 549.70831843093038,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 758.29200000000003,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 579.50004702433944,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 767.79100000000005,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 558.12502978369594,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 805.125,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 577.87500554695725,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 741,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 601.08333127573133,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 788.95799999999997,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 558.70832875370979,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 726.91700000000003,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 773.12497887760401,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 934.58299999999997,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 913.00002532079816,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 1112.75,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 1803.3333471976221,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 1984.3330000000001,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 1797.2916830331087,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 1963.6659999999999,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 582.8750436194241,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "mixed_grid",
+      "wall_us" : 771.08299999999997,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 588.29167392104864,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "local_fusion",
+      "wall_us" : 780,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 566.83336151763797,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "mixed_grid",
+      "wall_us" : 738.70799999999997,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 1615.5833727680147,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 1781.6669999999999,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 1686.8749517016113,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 1869.2080000000001,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 703.49994348362088,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 860.41600000000005,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 770.29166277498007,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 913.04200000000003,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 595.16663895919919,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 755,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 636.12504163756967,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 790.75,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 610.70831725373864,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 835,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 570.33332996070385,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 725.79200000000003,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 601.16668464615941,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 757.91700000000003,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 657.1250269189477,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "local_fusion",
+      "wall_us" : 942.45899999999995,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 665.16670631244779,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "mixed_grid",
+      "wall_us" : 876.16600000000005,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 609.95836975052953,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "local_fusion",
+      "wall_us" : 795.75,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 572.16669665649533,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 775.25,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 548.62495744600892,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 726.41700000000003,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 576.62499602884054,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 749,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 574.91665938869119,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 751.83399999999995,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 529.91666598245502,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 695.58299999999997,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 722.33332321047783,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 909.79200000000003,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 700.74998075142503,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 879.66600000000005,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 1844.8333721607924,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 2014.9580000000001,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 1964.2499973997474,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 2131.375,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 1994.2499930039048,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 2193.0839999999998,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 1092.33328839764,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 1244.875,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 784.45835970342159,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 1011.5,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 599.49996648356318,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 771.58299999999997,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 587.37496146932244,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 837.375,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 587.58334489539266,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 840.33399999999995,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 555.75004080310464,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 767.625,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 572.99999753013253,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 814.95799999999997,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 564.74999291822314,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "local_fusion",
+      "wall_us" : 762.125,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 577.45829690247774,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "mixed_grid",
+      "wall_us" : 789,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 1760.8749913051724,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 1940.5419999999999,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 2100.6250171922147,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 2271.5830000000001,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 1940.083340741694,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 2156.3339999999998,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 745.24997035041451,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "mixed_grid",
+      "wall_us" : 960.33299999999997,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 614.54164097085595,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "local_fusion",
+      "wall_us" : 789.45799999999997,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 677.33332980424166,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 886.125,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 585.33332776278257,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 772.25,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 581.70832926407456,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 776.70799999999997,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 562.37500393763185,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 730.5,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 552.12498409673572,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 717,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 716.74998616799712,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 894.58299999999997,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 700.62500890344381,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 916.625,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 766.95834286510944,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 938.75,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 696.12503284588456,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 897.33399999999995,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 640.99999144673347,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 813.875,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 620.62498182058334,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 806.08299999999997,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 583.95834639668465,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 770.75,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 595.3750223852694,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 773,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 687.4999962747097,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "local_fusion",
+      "wall_us" : 986.875,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 628.70833789929748,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "mixed_grid",
+      "wall_us" : 920.79200000000003,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 1869.3750025704503,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 2076.75,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 2005.5833738297224,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 2220.75,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 794.04166899621487,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 1080.625,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 766.62498759105802,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 963.58299999999997,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 702.6667008176446,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 1035.4169999999999,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 1808.2499736919999,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 2007.4169999999999,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 2112.5416387803853,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 2309.75,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 646.45829843357205,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "mixed_grid",
+      "wall_us" : 882,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 617.12501337751746,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "local_fusion",
+      "wall_us" : 821.70799999999997,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 587.29166630655527,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 815.66700000000003,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 644.00001429021358,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 827.66600000000005,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 614.75002439692616,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 849.08299999999997,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 601.37500986456871,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 897.08299999999997,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 610.58334540575743,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 830.54200000000003,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 601.37500986456871,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 821.25,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 621.37498753145337,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 859.20799999999997,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 549.24999130889773,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 808.16700000000003,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 607.79164778068662,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 761.875,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 654.12500407546759,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "local_fusion",
+      "wall_us" : 829.375,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 605.87498592212796,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "mixed_grid",
+      "wall_us" : 793.91600000000005,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 1823.8750053569674,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 2009.1669999999999,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 2431.5000046044588,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 2815.8339999999998,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 911.45833721384406,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 1101.2080000000001,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 806.04164395481348,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 1013.3339999999999,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 596.24999994412065,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 817.45799999999997,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 606.41666641458869,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 808.41700000000003,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 572.8749674744904,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 795.29200000000003,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 779.12502456456423,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 958.75,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 806.04164395481348,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 1030.6669999999999,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 2037.9166817292571,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 2230.2910000000002,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 2080.3333609364927,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 2381.1669999999999,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 874.04169607907534,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "mixed_grid",
+      "wall_us" : 1067.2080000000001,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 645.75002761557698,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "local_fusion",
+      "wall_us" : 911.70899999999995,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 635.9583348967135,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 850.95799999999997,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 602.62501938268542,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 799.5,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 592.37499954178929,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 818.91600000000005,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 599.16666941717267,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 853,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 596.24999994412065,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 810.45899999999995,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 593.12494704499841,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "local_fusion",
+      "wall_us" : 778.54200000000003,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 650.4167104139924,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "mixed_grid",
+      "wall_us" : 867.25,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 1894.0833397209644,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 2072,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 2169.2916634492576,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 2381.0830000000001,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 1443.8749640248716,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 1683.2919999999999,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 829.79165017604828,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 1021.7910000000001,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 592.58332476019859,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 813.5,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 619.16670529171824,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 802.33399999999995,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 627.25000316277146,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 812.79100000000005,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 569.50002908706665,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 763.66700000000003,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 584.91667732596397,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 763.16700000000003,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 594.54166330397129,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 766.83299999999997,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 543.87503769248724,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 734.54200000000003,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 763.99999670684338,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 944.04100000000005,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 737.04164242371917,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 918.58299999999997,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 2074.9999675899744,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 2241.5419999999999,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 2330.7916708290577,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 2516.9169999999999,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 1100.9583249688148,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "mixed_grid",
+      "wall_us" : 1282.9169999999999,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 655.45830875635147,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "local_fusion",
+      "wall_us" : 816.91600000000005,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 840.62496898695827,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 1009.3339999999999,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 651.8749869428575,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "local_fusion",
+      "wall_us" : 830.04200000000003,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 591.00001817569137,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "mixed_grid",
+      "wall_us" : 796,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 1851.7500138841569,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 2157.0419999999999,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 2021.0000220686197,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 2296.3330000000001,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 1123.5833517275751,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 1378.0419999999999,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 891.99998183175921,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 1080.625,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 636.66666392236948,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 829.16600000000005,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 1021.7499802820385,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 1244.3330000000001,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 676.4582940377295,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 882.79100000000005,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 587.37496146932244,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 778.83399999999995,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 603.83335221558809,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 773.70799999999997,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 680.91670982539654,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "local_fusion",
+      "wall_us" : 882.375,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 640.87501959875226,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 831.125,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 592.99997519701719,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 787.41700000000003,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 591.50002198293805,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 796.29200000000003,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 590.6249862164259,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 778.33299999999997,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 550.66670756787062,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 753.25,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 760.95835538581014,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 950.91700000000003,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 742.00000381097198,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 949.16700000000003,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 2077.0416595041752,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 2248,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 2479.3333141133189,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 2661.6669999999999,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 1726.8750234507024,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "mixed_grid",
+      "wall_us" : 1981.4580000000001,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 2228.0417033471167,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 2420.6660000000002,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 2230.9166379272938,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 2464.0419999999999,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 1001.7500026151538,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 1200.4159999999999,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 802.7500007301569,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 982.54200000000003,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 605.7083373889327,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 784.875,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 643.12503673136234,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 813.625,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 659.62504595518112,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "static",
+      "wall_us" : 836.33299999999997,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 614.58331765606999,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "dynamic",
+      "wall_us" : 798.375,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 848.24999794363976,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 1135,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 790.58337723836303,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "local_fusion",
+      "wall_us" : 972.16600000000005,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 677.12500458583236,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "mixed_grid",
+      "wall_us" : 899.04100000000005,
+      "workers" : 256
+    }
+  ],
+  "tensors" : "synthetic"
+}

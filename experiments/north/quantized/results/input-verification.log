@@ -1,0 +1,14 @@
+Verified pinned runtime source cdc745ad8a32d162f6d8e9d08be256910d663ac2
+Verified README.md
+Verified chat_template.jinja
+Verified config.json
+Verified generation_config.json
+Verified model-00001-of-00004.safetensors
+Verified model-00002-of-00004.safetensors
+Verified model-00003-of-00004.safetensors
+Verified model-00004-of-00004.safetensors
+Verified model.safetensors.index.json
+Verified special_tokens_map.json
+Verified tokenizer.json
+Verified tokenizer_config.json
+All pinned inputs verified.

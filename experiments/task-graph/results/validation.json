@@ -1,0 +1,40 @@
+{
+  "correctness_runs" : 144,
+  "descriptor_orders" : [
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      5,
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    [
+      3,
+      1,
+      5,
+      2,
+      4,
+      0
+    ]
+  ],
+  "device" : "Apple M4 Pro",
+  "every_intermediate_bitwise_exact" : true,
+  "jobs" : 4096,
+  "samples" : [
+
+  ],
+  "scope" : "Synthetic six-op diamond DAG. Dynamic queue claims whole independent graphs; dependencies stay inside one threadgroup. No cross-threadgroup dependency scheduler, model weights, prefetch, or full-model decode.",
+  "task_visits_exactly_once" : true,
+  "tasks_per_job" : 6,
+  "timing" : "GPU-side counter reset and scratch poison included. Host descriptor construction\/input upload and post-run verification excluded. Shared device scratch for all variants.",
+  "width" : 64
+}

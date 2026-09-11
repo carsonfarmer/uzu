@@ -1,0 +1,10 @@
+🚀 OpenAI-compatible server for model: Qwen3.5-4B-M-toolchain015
+🌐 Available at: http://127.0.0.1:18000
+🗄️  Prefix cache: disabled
+📝 Endpoints:
+   POST /v1/chat/completions (or /chat/completions)
+   GET  /v1/models           (or /models)
+[req 119eab39] received: 1 messages, blocking, 0 tools, reasoning_effort=unspecified
+Started capturing to "/tmp/uzu-capture-metal-decode"
+Successfully saved capture to "/tmp/uzu-capture-metal-decode"
+[req 119eab39] completed in 3.38s, finish=length, prompt 16 tok (0 cached, 16 prefilled @ 33.0 tok/s), ttft 0.49s, decode 8 tok @ 2.5 tok/s, spec 1.00 tok/pass (9 passes)

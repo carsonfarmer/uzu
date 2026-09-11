@@ -1,0 +1,513 @@
+{
+  "checks" : [
+    {
+      "bit_mismatches" : 0,
+      "input_magnitude" : 0,
+      "max_abs_error" : 0
+    },
+    {
+      "bit_mismatches" : 0,
+      "input_magnitude" : 0.0099999997764825821,
+      "max_abs_error" : 0
+    },
+    {
+      "bit_mismatches" : 0,
+      "input_magnitude" : 1,
+      "max_abs_error" : 0
+    },
+    {
+      "bit_mismatches" : 0,
+      "input_magnitude" : 8,
+      "max_abs_error" : 0
+    }
+  ],
+  "device" : "Apple M4 Pro",
+  "fused_kernel" : "paired_parallel_projection_gate",
+  "h" : 9216,
+  "k" : 2560,
+  "model_tensors" : "work\/layer0",
+  "note" : "W4\/group32 unsigned weights (see model_tensors); synthetic input activations; BF16 RHT\/SiLU\/RHT; reused weights; GPU command-buffer time; no model or decode trace; excludes compile.",
+  "samples" : [
+    {
+      "gpu_us" : 109.79169746860862,
+      "iterations" : 1,
+      "optimized" : false,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "wall_us" : 251.5
+    },
+    {
+      "gpu_us" : 169.37503824010491,
+      "iterations" : 1,
+      "optimized" : true,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "wall_us" : 546.70799999999997
+    },
+    {
+      "gpu_us" : 153.25000276789069,
+      "iterations" : 1,
+      "optimized" : true,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "wall_us" : 2119.375
+    },
+    {
+      "gpu_us" : 487.41663340479136,
+      "iterations" : 1,
+      "optimized" : false,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "wall_us" : 1101.25
+    },
+    {
+      "gpu_us" : 385.50002500414848,
+      "iterations" : 1,
+      "optimized" : false,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "wall_us" : 684
+    },
+    {
+      "gpu_us" : 145.58335533365607,
+      "iterations" : 1,
+      "optimized" : true,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "wall_us" : 326.33300000000003
+    },
+    {
+      "gpu_us" : 135.95831114798784,
+      "iterations" : 1,
+      "optimized" : true,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "wall_us" : 281.334
+    },
+    {
+      "gpu_us" : 113.87496488168836,
+      "iterations" : 1,
+      "optimized" : false,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "wall_us" : 315.20800000000003
+    },
+    {
+      "gpu_us" : 119.74998051300645,
+      "iterations" : 1,
+      "optimized" : false,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "wall_us" : 268.166
+    },
+    {
+      "gpu_us" : 126.49997370317578,
+      "iterations" : 1,
+      "optimized" : true,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "wall_us" : 266.41699999999997
+    },
+    {
+      "gpu_us" : 131.33330503478646,
+      "iterations" : 1,
+      "optimized" : true,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "wall_us" : 273.959
+    },
+    {
+      "gpu_us" : 112.12500976398587,
+      "iterations" : 1,
+      "optimized" : false,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "wall_us" : 257.625
+    },
+    {
+      "gpu_us" : 119.91662904620171,
+      "iterations" : 1,
+      "optimized" : false,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "wall_us" : 259.125
+    },
+    {
+      "gpu_us" : 129.58334991708398,
+      "iterations" : 1,
+      "optimized" : true,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "wall_us" : 273.416
+    },
+    {
+      "gpu_us" : 131.12497981637716,
+      "iterations" : 1,
+      "optimized" : true,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "wall_us" : 274.66699999999997
+    },
+    {
+      "gpu_us" : 111.16667883470654,
+      "iterations" : 1,
+      "optimized" : false,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "wall_us" : 251.875
+    },
+    {
+      "gpu_us" : 123.33330232650042,
+      "iterations" : 1,
+      "optimized" : false,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "wall_us" : 266.20800000000003
+    },
+    {
+      "gpu_us" : 133.29170178622007,
+      "iterations" : 1,
+      "optimized" : true,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "wall_us" : 294.95800000000003
+    },
+    {
+      "gpu_us" : 240.16667157411575,
+      "iterations" : 1,
+      "optimized" : true,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "wall_us" : 775.66600000000005
+    },
+    {
+      "gpu_us" : 131.12497981637716,
+      "iterations" : 1,
+      "optimized" : false,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "wall_us" : 1551
+    },
+    {
+      "gpu_us" : 145.91665240004659,
+      "iterations" : 1,
+      "optimized" : false,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "wall_us" : 912.91700000000003
+    },
+    {
+      "gpu_us" : 510.74998918920755,
+      "iterations" : 1,
+      "optimized" : true,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "wall_us" : 834.58299999999997
+    },
+    {
+      "gpu_us" : 228.749995585531,
+      "iterations" : 1,
+      "optimized" : true,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "wall_us" : 431.875
+    },
+    {
+      "gpu_us" : 127.1250075660646,
+      "iterations" : 1,
+      "optimized" : false,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "wall_us" : 324
+    },
+    {
+      "gpu_us" : 123.0000052601099,
+      "iterations" : 1,
+      "optimized" : false,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "wall_us" : 270.959
+    },
+    {
+      "gpu_us" : 135.99998783320189,
+      "iterations" : 1,
+      "optimized" : true,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "wall_us" : 300.709
+    },
+    {
+      "gpu_us" : 132.83337466418743,
+      "iterations" : 1,
+      "optimized" : true,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "wall_us" : 369
+    },
+    {
+      "gpu_us" : 112.00003791600466,
+      "iterations" : 1,
+      "optimized" : false,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "wall_us" : 249.875
+    },
+    {
+      "gpu_us" : 123.75001097097993,
+      "iterations" : 1,
+      "optimized" : false,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "wall_us" : 261.54199999999997
+    },
+    {
+      "gpu_us" : 138.50000686943531,
+      "iterations" : 1,
+      "optimized" : true,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "wall_us" : 300.416
+    },
+    {
+      "gpu_us" : 185.2005207183538,
+      "iterations" : 32,
+      "optimized" : false,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "wall_us" : 192.57681249999999
+    },
+    {
+      "gpu_us" : 141.68880261422601,
+      "iterations" : 32,
+      "optimized" : true,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "wall_us" : 163.85806249999999
+    },
+    {
+      "gpu_us" : 185.46484352555126,
+      "iterations" : 32,
+      "optimized" : true,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "wall_us" : 193.25912500000001
+    },
+    {
+      "gpu_us" : 184.77734374755528,
+      "iterations" : 32,
+      "optimized" : false,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "wall_us" : 191.40496874999999
+    },
+    {
+      "gpu_us" : 128.87630327895749,
+      "iterations" : 32,
+      "optimized" : false,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "wall_us" : 152.29296875
+    },
+    {
+      "gpu_us" : 192.87499890197068,
+      "iterations" : 32,
+      "optimized" : true,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "wall_us" : 220.47524999999999
+    },
+    {
+      "gpu_us" : 216.09765644825529,
+      "iterations" : 32,
+      "optimized" : true,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "wall_us" : 224.95440625000001
+    },
+    {
+      "gpu_us" : 206.16015535779297,
+      "iterations" : 32,
+      "optimized" : false,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "wall_us" : 212.76690625000001
+    },
+    {
+      "gpu_us" : 122.7890625159489,
+      "iterations" : 32,
+      "optimized" : false,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "wall_us" : 150.07162500000001
+    },
+    {
+      "gpu_us" : 177.87109209166374,
+      "iterations" : 32,
+      "optimized" : true,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "wall_us" : 185.31509374999999
+    },
+    {
+      "gpu_us" : 180.23697884927969,
+      "iterations" : 32,
+      "optimized" : true,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "wall_us" : 194.98696874999999
+    },
+    {
+      "gpu_us" : 127.29557420243509,
+      "iterations" : 32,
+      "optimized" : false,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "wall_us" : 145.78384374999999
+    },
+    {
+      "gpu_us" : 158.57812468311749,
+      "iterations" : 32,
+      "optimized" : false,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "wall_us" : 167.17449999999999
+    },
+    {
+      "gpu_us" : 187.88281340675894,
+      "iterations" : 32,
+      "optimized" : true,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "wall_us" : 194.64584375000001
+    },
+    {
+      "gpu_us" : 139.46614672022406,
+      "iterations" : 32,
+      "optimized" : true,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "wall_us" : 158.78125
+    },
+    {
+      "gpu_us" : 159.74479174474254,
+      "iterations" : 32,
+      "optimized" : false,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "wall_us" : 168.76953125
+    },
+    {
+      "gpu_us" : 165.40625074412674,
+      "iterations" : 32,
+      "optimized" : false,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "wall_us" : 178.84506250000001
+    },
+    {
+      "gpu_us" : 136.14843737741467,
+      "iterations" : 32,
+      "optimized" : true,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "wall_us" : 160.41665624999999
+    },
+    {
+      "gpu_us" : 172.33463404409122,
+      "iterations" : 32,
+      "optimized" : true,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "wall_us" : 187.72528124999999
+    },
+    {
+      "gpu_us" : 168.72265769052319,
+      "iterations" : 32,
+      "optimized" : false,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "wall_us" : 178.1640625
+    },
+    {
+      "gpu_us" : 121.55989497841801,
+      "iterations" : 32,
+      "optimized" : false,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "wall_us" : 151.23046875
+    },
+    {
+      "gpu_us" : 172.98828061029781,
+      "iterations" : 32,
+      "optimized" : true,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "wall_us" : 188.90365625000001
+    },
+    {
+      "gpu_us" : 181.11067765858024,
+      "iterations" : 32,
+      "optimized" : true,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "wall_us" : 197.10024999999999
+    },
+    {
+      "gpu_us" : 143.28906217997428,
+      "iterations" : 32,
+      "optimized" : false,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "wall_us" : 150.83462499999999
+    },
+    {
+      "gpu_us" : 157.04166617069859,
+      "iterations" : 32,
+      "optimized" : false,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "wall_us" : 166.47265625
+    },
+    {
+      "gpu_us" : 193.93229194974992,
+      "iterations" : 32,
+      "optimized" : true,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "wall_us" : 199.55340624999999
+    },
+    {
+      "gpu_us" : 144.07291564566549,
+      "iterations" : 32,
+      "optimized" : true,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "wall_us" : 150.20834375000001
+    },
+    {
+      "gpu_us" : 158.85937500570435,
+      "iterations" : 32,
+      "optimized" : false,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "wall_us" : 165.76821874999999
+    },
+    {
+      "gpu_us" : 188.68749975808896,
+      "iterations" : 32,
+      "optimized" : false,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "wall_us" : 194.46484375
+    },
+    {
+      "gpu_us" : 136.61718730872963,
+      "iterations" : 32,
+      "optimized" : true,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "wall_us" : 157.73959375000001
+    }
+  ],
+  "warmup_pairs" : 10
+}

@@ -1,0 +1,4 @@
+<|START_TEXT|>```python
+def add(a, b):
+    return a + b
+```<|END_TEXT|>

@@ -1,0 +1,30 @@
+experiments/decode-fusion/results/microbenchmark-ac-parallel-1.json
+  iterations=1: GPU median us baseline=123.750, fused=140.875; paired median change=+13.67%
+    wall median us baseline=275.875, fused=293.667; thermal states=[0]
+  iterations=32: GPU median us baseline=119.109, fused=135.875; paired median change=+13.08%
+    wall median us baseline=125.717, fused=143.855; thermal states=[0]
+experiments/decode-fusion/results/microbenchmark-ac-parallel-2.json
+  iterations=1: GPU median us baseline=122.625, fused=143.667; paired median change=+15.90%
+    wall median us baseline=268.750, fused=288.167; thermal states=[0]
+  iterations=32: GPU median us baseline=126.398, fused=131.686; paired median change=+9.73%
+    wall median us baseline=134.116, fused=138.490; thermal states=[0]
+experiments/decode-fusion/results/microbenchmark-ac-parallel-3.json
+  iterations=1: GPU median us baseline=115.000, fused=127.250; paired median change=+11.53%
+    wall median us baseline=256.250, fused=266.125; thermal states=[0]
+  iterations=32: GPU median us baseline=112.831, fused=134.253; paired median change=+17.86%
+    wall median us baseline=119.727, fused=139.922; thermal states=[0]
+experiments/decode-fusion/results/microbenchmark-ac-sequential-1.json
+  iterations=1: GPU median us baseline=293.917, fused=316.375; paired median change=+5.11%
+    wall median us baseline=475.292, fused=499.666; thermal states=[0]
+  iterations=32: GPU median us baseline=129.538, fused=119.210; paired median change=-2.41%
+    wall median us baseline=137.180, fused=125.513; thermal states=[0]
+experiments/decode-fusion/results/microbenchmark-ac-sequential-2.json
+  iterations=1: GPU median us baseline=125.708, fused=132.000; paired median change=+2.75%
+    wall median us baseline=279.875, fused=285.584; thermal states=[0]
+  iterations=32: GPU median us baseline=122.832, fused=118.178; paired median change=-4.53%
+    wall median us baseline=130.539, fused=125.431; thermal states=[0]
+experiments/decode-fusion/results/microbenchmark-ac-sequential-3.json
+  iterations=1: GPU median us baseline=115.375, fused=114.792; paired median change=-0.59%
+    wall median us baseline=266.042, fused=264.208; thermal states=[0]
+  iterations=32: GPU median us baseline=109.913, fused=110.311; paired median change=+0.24%
+    wall median us baseline=116.819, fused=118.271; thermal states=[0]

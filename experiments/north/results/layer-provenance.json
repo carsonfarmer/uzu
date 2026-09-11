@@ -1,0 +1,136 @@
+{
+  "layer": 1,
+  "prompt": "Return only Python code for merging two sorted lists with an assertion.",
+  "prompt_tokens": 130,
+  "decode_token": 255012,
+  "experts": [
+    2,
+    37,
+    62,
+    8,
+    47,
+    51,
+    119,
+    20
+  ],
+  "arrays": {
+    "ax": {
+      "shape": [
+        1,
+        1,
+        4096
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 8192
+    },
+    "attention": {
+      "shape": [
+        1,
+        1,
+        2048
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 4096
+    },
+    "x": {
+      "shape": [
+        1,
+        1,
+        2048
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 4096
+    },
+    "moe": {
+      "shape": [
+        1,
+        1,
+        2048
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 4096
+    },
+    "residual": {
+      "shape": [
+        1,
+        1,
+        2048
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 4096
+    },
+    "output": {
+      "shape": [
+        1,
+        1,
+        2048
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 4096
+    },
+    "scores": {
+      "shape": [
+        8
+      ],
+      "source_dtype": "mlx.core.float32",
+      "storage": "float32",
+      "bytes": 32
+    },
+    "aw": {
+      "shape": [
+        2048,
+        4096
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 16777216
+    },
+    "up": {
+      "shape": [
+        8,
+        768,
+        2048
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 25165824
+    },
+    "gate": {
+      "shape": [
+        8,
+        768,
+        2048
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 25165824
+    },
+    "down": {
+      "shape": [
+        8,
+        2048,
+        768
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 25165824
+    },
+    "materialized_output": {
+      "shape": [
+        1,
+        1,
+        2048
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 4096
+    }
+  },
+  "note": "Captured single decode token. Selected affine 4bit expert weights dequantized/materialized to BF16 for initial scheduler experiment; original runtime continues to use quantized matmuls."
+}

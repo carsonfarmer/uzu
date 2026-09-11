@@ -1,0 +1,62 @@
+[
+  {
+    "prompt": "short",
+    "runs": 3,
+    "prompt_tokens": [
+      136
+    ],
+    "generated_tokens": [
+      512,
+      512,
+      512
+    ],
+    "median_decode_tps": 55.451861593141956,
+    "median_ttft_seconds": 0.28470999997807667,
+    "median_wall_seconds": 9.501559707976412,
+    "peak_memory_bytes": 18790203206,
+    "identical_tokens": true,
+    "finish_reasons": [
+      "length"
+    ]
+  },
+  {
+    "prompt": "long",
+    "runs": 3,
+    "prompt_tokens": [
+      1672
+    ],
+    "generated_tokens": [
+      512,
+      512,
+      512
+    ],
+    "median_decode_tps": 49.02329167362803,
+    "median_ttft_seconds": 2.8251766249886714,
+    "median_wall_seconds": 13.264212334004696,
+    "peak_memory_bytes": 19185401926,
+    "identical_tokens": true,
+    "finish_reasons": [
+      "length"
+    ]
+  },
+  {
+    "prompt": "rust",
+    "runs": 3,
+    "prompt_tokens": [
+      140
+    ],
+    "generated_tokens": [
+      403,
+      403,
+      403
+    ],
+    "median_decode_tps": 54.12735440645162,
+    "median_ttft_seconds": 0.28984174999641255,
+    "median_wall_seconds": 7.7158744590124115,
+    "peak_memory_bytes": 18798286534,
+    "identical_tokens": true,
+    "finish_reasons": [
+      "stop"
+    ]
+  }
+]

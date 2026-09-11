@@ -1,0 +1,10 @@
+
+running 5 tests
+test tests::test_duplicate_at_start ... ok
+test tests::test_empty_slice ... ok
+test tests::test_first_duplicate ... ok
+test tests::test_multiple_duplicates ... ok
+test tests::test_no_duplicates ... ok
+
+test result: ok. 5 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

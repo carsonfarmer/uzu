@@ -1,0 +1,5782 @@
+{
+  "layer": 1,
+  "capture": "work/north-layer",
+  "checks": {
+    "native_eager": {
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "finite": true
+    },
+    "native_compiled": {
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "finite": true
+    },
+    "c32_phased_eager": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c32_phased_compiled": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c32_static20_eager": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c32_static20_compiled": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c32_static64_eager": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c32_static64_compiled": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c32_static128_eager": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c32_static128_compiled": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c32_static256_eager": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c32_static256_compiled": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c32_interleaved128_eager": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c32_interleaved128_compiled": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c64_phased_eager": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c64_phased_compiled": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c64_static20_eager": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c64_static20_compiled": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c64_static64_eager": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c64_static64_compiled": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c64_static128_eager": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c64_static128_compiled": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c64_static160_eager": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c64_static160_compiled": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c64_interleaved128_eager": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c64_interleaved128_compiled": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c128_phased_eager": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c128_phased_compiled": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c128_static20_eager": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c128_static20_compiled": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c128_static64_eager": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c128_static64_compiled": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c128_static112_eager": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c128_static112_compiled": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c128_interleaved112_eager": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    },
+    "c128_interleaved112_compiled": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744,
+      "finite": true
+    }
+  },
+  "samples": [
+    {
+      "variant": "native_eager",
+      "repetition": 0,
+      "wall_us": 460.20798617973924
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 0,
+      "wall_us": 416.87500197440386
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 0,
+      "wall_us": 584.1249949298799
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 0,
+      "wall_us": 554.499973077327
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 0,
+      "wall_us": 1430.7909877970815
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 0,
+      "wall_us": 1421.749999281019
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 0,
+      "wall_us": 641.7090189643204
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 0,
+      "wall_us": 687.3340462334454
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 0,
+      "wall_us": 592.7500315010548
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 0,
+      "wall_us": 731.8329880945385
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 0,
+      "wall_us": 601.7499836161733
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 0,
+      "wall_us": 640.3749575838447
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 0,
+      "wall_us": 568.4590432792902
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 0,
+      "wall_us": 545.0420430861413
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 0,
+      "wall_us": 562.7089994959533
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 0,
+      "wall_us": 562.3749457299709
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 0,
+      "wall_us": 1341.1659747362137
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 0,
+      "wall_us": 1213.6250152252614
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 0,
+      "wall_us": 446.7089893296361
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 0,
+      "wall_us": 444.0830089151859
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 0,
+      "wall_us": 431.29100231453776
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 0,
+      "wall_us": 415.62499245628715
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 0,
+      "wall_us": 420.95803655683994
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 0,
+      "wall_us": 415.9579984843731
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 0,
+      "wall_us": 430.45898200944066
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 0,
+      "wall_us": 425.9169800207019
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 0,
+      "wall_us": 484.62499398738146
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 0,
+      "wall_us": 453.08301923796535
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 0,
+      "wall_us": 875.0829729251564
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 0,
+      "wall_us": 886.6669959388673
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 0,
+      "wall_us": 589.7500086575747
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 0,
+      "wall_us": 441.625015810132
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 0,
+      "wall_us": 403.16698141396046
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 0,
+      "wall_us": 391.16694824770093
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 0,
+      "wall_us": 415.50002060830593
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 0,
+      "wall_us": 406.0409846715629
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 1,
+      "wall_us": 411.66599839925766
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 1,
+      "wall_us": 401.8330364488065
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 1,
+      "wall_us": 568.4579955413938
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 1,
+      "wall_us": 390.08300518617034
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 1,
+      "wall_us": 392.2499599866569
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 1,
+      "wall_us": 434.2920146882534
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 1,
+      "wall_us": 556.2499864026904
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 1,
+      "wall_us": 916.6250238195062
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 1,
+      "wall_us": 933.124974835664
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 1,
+      "wall_us": 433.1669770181179
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 1,
+      "wall_us": 700.1250050961971
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 1,
+      "wall_us": 430.0419823266566
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 1,
+      "wall_us": 422.87498945370317
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 1,
+      "wall_us": 406.16700425744057
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 1,
+      "wall_us": 399.7500170953572
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 1,
+      "wall_us": 425.24997843429446
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 1,
+      "wall_us": 411.8329961784184
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 1,
+      "wall_us": 459.9170060828328
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 1,
+      "wall_us": 445.7500181160867
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 1,
+      "wall_us": 1017.2920301556587
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 1,
+      "wall_us": 965.4589812271297
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 1,
+      "wall_us": 417.1659820713103
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 1,
+      "wall_us": 428.66700096055865
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 1,
+      "wall_us": 448.95801693201065
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 1,
+      "wall_us": 458.5420247167349
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 1,
+      "wall_us": 434.4580229371786
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 1,
+      "wall_us": 440.9999819472432
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 1,
+      "wall_us": 450.249994173646
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 1,
+      "wall_us": 456.9169832393527
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 1,
+      "wall_us": 451.750005595386
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 1,
+      "wall_us": 452.37503945827484
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 1,
+      "wall_us": 949.2500103078783
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 1,
+      "wall_us": 974.4999697431922
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 1,
+      "wall_us": 568.8749952241778
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 1,
+      "wall_us": 734.2500030063093
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 1,
+      "wall_us": 378.79199953749776
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 2,
+      "wall_us": 436.7500077933073
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 2,
+      "wall_us": 575.4579906351864
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 2,
+      "wall_us": 933.7079827673733
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 2,
+      "wall_us": 922.9159913957119
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 2,
+      "wall_us": 455.2499740384519
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 2,
+      "wall_us": 450.0410286709666
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 2,
+      "wall_us": 456.70795952901244
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 2,
+      "wall_us": 440.70801232010126
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 2,
+      "wall_us": 426.7909680493176
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 2,
+      "wall_us": 424.7920005582273
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 2,
+      "wall_us": 430.7909985072911
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 2,
+      "wall_us": 426.75004806369543
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 2,
+      "wall_us": 420.1669944450259
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 2,
+      "wall_us": 404.0420171804726
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 2,
+      "wall_us": 925.7909841835499
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 2,
+      "wall_us": 909.8750306293368
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 2,
+      "wall_us": 469.2919901572168
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 2,
+      "wall_us": 434.16599510237575
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 2,
+      "wall_us": 417.54101403057575
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 2,
+      "wall_us": 424.4579467922449
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 2,
+      "wall_us": 406.3749802298844
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 2,
+      "wall_us": 418.54201117530465
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 2,
+      "wall_us": 420.0830007903278
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 2,
+      "wall_us": 531.1670247465372
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 2,
+      "wall_us": 444.91601875051856
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 2,
+      "wall_us": 441.79201358929276
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 2,
+      "wall_us": 898.4170272015035
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 2,
+      "wall_us": 906.666973605752
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 2,
+      "wall_us": 469.3749942816794
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 2,
+      "wall_us": 503.0420143157244
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 2,
+      "wall_us": 403.7079634144902
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 2,
+      "wall_us": 420.6669982522726
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 2,
+      "wall_us": 494.12500811740756
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 2,
+      "wall_us": 436.91700557246804
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 2,
+      "wall_us": 431.3749959692359
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 2,
+      "wall_us": 375.25000516325235
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 3,
+      "wall_us": 599.1249927319586
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 3,
+      "wall_us": 410.25003883987665
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 3,
+      "wall_us": 425.9169800207019
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 3,
+      "wall_us": 465.2910283766687
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 3,
+      "wall_us": 448.24997894465923
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 3,
+      "wall_us": 420.45797454193234
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 3,
+      "wall_us": 563.7080175802112
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 3,
+      "wall_us": 688.8339994475245
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 3,
+      "wall_us": 679.4579676352441
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 3,
+      "wall_us": 1745.5419874750078
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 3,
+      "wall_us": 1276.5840510837734
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 3,
+      "wall_us": 566.6669458150864
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 3,
+      "wall_us": 569.665979128331
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 3,
+      "wall_us": 504.3339915573597
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 3,
+      "wall_us": 514.5410541445017
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 3,
+      "wall_us": 523.1670220382512
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 3,
+      "wall_us": 695.7920268177986
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 3,
+      "wall_us": 513.1670041009784
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 3,
+      "wall_us": 576.208985876292
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 3,
+      "wall_us": 585.3340262547135
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 3,
+      "wall_us": 582.8749854117632
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 3,
+      "wall_us": 1322.3339919932187
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 3,
+      "wall_us": 1309.2499575577676
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 3,
+      "wall_us": 531.2080029398203
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 3,
+      "wall_us": 600.2919981256127
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 3,
+      "wall_us": 573.1249693781137
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 3,
+      "wall_us": 584.3329709023237
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 3,
+      "wall_us": 586.2499820068479
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 3,
+      "wall_us": 668.2079983875155
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 3,
+      "wall_us": 664.8330017924309
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 3,
+      "wall_us": 662.5839741900563
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 3,
+      "wall_us": 710.4169926606119
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 3,
+      "wall_us": 607.7090511098504
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 3,
+      "wall_us": 1310.2090451866388
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 3,
+      "wall_us": 1417.8749988786876
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 3,
+      "wall_us": 536.416016984731
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 4,
+      "wall_us": 1328.1659921631217
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 4,
+      "wall_us": 1344.6249649859965
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 4,
+      "wall_us": 624.0000366233289
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 4,
+      "wall_us": 610.3329942561686
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 4,
+      "wall_us": 714.4580013118684
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 4,
+      "wall_us": 647.3329849541187
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 4,
+      "wall_us": 623.1250008568168
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 4,
+      "wall_us": 687.2090161778033
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 4,
+      "wall_us": 603.6660051904619
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 4,
+      "wall_us": 1142.8750003688037
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 4,
+      "wall_us": 631.2920013442636
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 4,
+      "wall_us": 608.3329790271819
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 4,
+      "wall_us": 1583.3329525776207
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 4,
+      "wall_us": 1602.3750067688525
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 4,
+      "wall_us": 658.3330105058849
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 4,
+      "wall_us": 776.4160400256515
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 4,
+      "wall_us": 524.1669714450836
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 4,
+      "wall_us": 511.79202273488045
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 4,
+      "wall_us": 522.4170163273811
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 4,
+      "wall_us": 514.3749876879156
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 4,
+      "wall_us": 494.29101636633277
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 4,
+      "wall_us": 493.2080046273768
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 4,
+      "wall_us": 558.2500016316772
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 4,
+      "wall_us": 546.0000247694552
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 4,
+      "wall_us": 1410.6250018812716
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 4,
+      "wall_us": 1573.4999906271696
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 4,
+      "wall_us": 1083.9159949682653
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 4,
+      "wall_us": 755.6669879704714
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 4,
+      "wall_us": 591.3749919272959
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 4,
+      "wall_us": 564.1249590553343
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 4,
+      "wall_us": 668.541993945837
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 4,
+      "wall_us": 655.6250154972076
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 4,
+      "wall_us": 489.91601215675473
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 4,
+      "wall_us": 755.5410265922546
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 4,
+      "wall_us": 813.2500224746764
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 4,
+      "wall_us": 860.6670307926834
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 5,
+      "wall_us": 1616.1659732460976
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 5,
+      "wall_us": 532.9999839887023
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 5,
+      "wall_us": 548.2499836944044
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 5,
+      "wall_us": 394.29200114682317
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 5,
+      "wall_us": 420.29196629300714
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 5,
+      "wall_us": 758.7919826619327
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 5,
+      "wall_us": 716.2080146372318
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 5,
+      "wall_us": 578.2909574918449
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 5,
+      "wall_us": 561.791006475687
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 5,
+      "wall_us": 1000.5839867517352
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 5,
+      "wall_us": 735.0420346483588
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 5,
+      "wall_us": 1473.2909621670842
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 5,
+      "wall_us": 1485.5420449748635
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 5,
+      "wall_us": 798.4580006450415
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 5,
+      "wall_us": 651.7080473713577
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 5,
+      "wall_us": 557.4579699896276
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 5,
+      "wall_us": 559.0000073425472
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 5,
+      "wall_us": 569.7919987142086
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 5,
+      "wall_us": 600.9589997120202
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 5,
+      "wall_us": 587.416987400502
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 5,
+      "wall_us": 652.4589844048023
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 5,
+      "wall_us": 683.374993968755
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 5,
+      "wall_us": 696.8340021558106
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 5,
+      "wall_us": 2510.791993699968
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 5,
+      "wall_us": 2198.7910149618983
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 5,
+      "wall_us": 604.5839982107282
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 5,
+      "wall_us": 613.4170107543468
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 5,
+      "wall_us": 595.0420163571835
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 5,
+      "wall_us": 625.167042016983
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 5,
+      "wall_us": 630.0840177573264
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 5,
+      "wall_us": 631.2080076895654
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 5,
+      "wall_us": 691.0419906489551
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 5,
+      "wall_us": 672.4580307491124
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 5,
+      "wall_us": 713.084009476006
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 5,
+      "wall_us": 714.7499709390104
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 5,
+      "wall_us": 1634.0840375050902
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 6,
+      "wall_us": 803.7499501369894
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 6,
+      "wall_us": 833.2919678650796
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 6,
+      "wall_us": 1059.9169763736427
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 6,
+      "wall_us": 1058.249967172742
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 6,
+      "wall_us": 1927.3750367574394
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 6,
+      "wall_us": 647.3750108852983
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 6,
+      "wall_us": 618.8339903019369
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 6,
+      "wall_us": 598.9590426906943
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 6,
+      "wall_us": 625.3339815884829
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 6,
+      "wall_us": 877.2920118644834
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 6,
+      "wall_us": 1572.3329852335155
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 6,
+      "wall_us": 1707.1669572032988
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 6,
+      "wall_us": 752.874999307096
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 6,
+      "wall_us": 736.958987545222
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 6,
+      "wall_us": 636.7920432239771
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 6,
+      "wall_us": 669.2910101264715
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 6,
+      "wall_us": 906.4169717021286
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 6,
+      "wall_us": 936.9999752379954
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 6,
+      "wall_us": 865.1670068502426
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 6,
+      "wall_us": 860.2499729022384
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 6,
+      "wall_us": 1103.582966607064
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 6,
+      "wall_us": 1027.6659741066396
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 6,
+      "wall_us": 1494.0419932827353
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 6,
+      "wall_us": 1506.2909806147218
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 6,
+      "wall_us": 727.3330120369792
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 6,
+      "wall_us": 716.4169801399112
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 6,
+      "wall_us": 583.7920471094549
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 6,
+      "wall_us": 597.9169509373605
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 6,
+      "wall_us": 757.0839952677488
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 6,
+      "wall_us": 765.0000043213367
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 6,
+      "wall_us": 866.0829626023769
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 6,
+      "wall_us": 652.2079929709435
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 6,
+      "wall_us": 1008.1670479848981
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 6,
+      "wall_us": 1008.7919654324651
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 6,
+      "wall_us": 3395.3330130316317
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 6,
+      "wall_us": 2595.666970591992
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 7,
+      "wall_us": 737.2079999186099
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 7,
+      "wall_us": 1657.1669839322567
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 7,
+      "wall_us": 1711.6250237450004
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 7,
+      "wall_us": 639.9580161087215
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 7,
+      "wall_us": 944.7499760426581
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 7,
+      "wall_us": 662.9159906879067
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 7,
+      "wall_us": 788.0000048317015
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 7,
+      "wall_us": 1099.8749639838934
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 7,
+      "wall_us": 1166.7910148389637
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 7,
+      "wall_us": 966.7910053394735
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 7,
+      "wall_us": 1898.749964311719
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 7,
+      "wall_us": 1148.6249859444797
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 7,
+      "wall_us": 1175.5420127883554
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 7,
+      "wall_us": 2042.6249830052257
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 7,
+      "wall_us": 1528.291031718254
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 7,
+      "wall_us": 709.0410217642784
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 7,
+      "wall_us": 687.8339918330312
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 7,
+      "wall_us": 981.9159749895334
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 7,
+      "wall_us": 874.6660314500332
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 7,
+      "wall_us": 937.3750071972609
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 7,
+      "wall_us": 913.584022782743
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 7,
+      "wall_us": 973.5829662531614
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 7,
+      "wall_us": 1954.5420072972775
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 7,
+      "wall_us": 1109.9589755758643
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 7,
+      "wall_us": 1234.7089941613376
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 7,
+      "wall_us": 2638.458041474223
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 7,
+      "wall_us": 2331.0830001719296
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 7,
+      "wall_us": 636.667013168335
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 7,
+      "wall_us": 928.2500250265002
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 7,
+      "wall_us": 902.2500016726553
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 7,
+      "wall_us": 958.1249905750155
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 7,
+      "wall_us": 1049.3750451132655
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 7,
+      "wall_us": 994.8330116458237
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 7,
+      "wall_us": 1737.7499607391655
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 7,
+      "wall_us": 1058.5829732008278
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 7,
+      "wall_us": 1219.9999764561653
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 8,
+      "wall_us": 1074.334024451673
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 8,
+      "wall_us": 1020.0419928878546
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 8,
+      "wall_us": 953.7499863654375
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 8,
+      "wall_us": 1191.7499941773713
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 8,
+      "wall_us": 903.833017218858
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 8,
+      "wall_us": 1014.0830418094993
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 8,
+      "wall_us": 914.0420006588101
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 8,
+      "wall_us": 953.7080186419189
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 8,
+      "wall_us": 3112.250007688999
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 8,
+      "wall_us": 2691.166999284178
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 8,
+      "wall_us": 1311.8750066496432
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 8,
+      "wall_us": 1123.7500002607703
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 8,
+      "wall_us": 992.7499922923744
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 8,
+      "wall_us": 941.875041462481
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 8,
+      "wall_us": 916.83299979195
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 8,
+      "wall_us": 993.2909742929041
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 8,
+      "wall_us": 913.6250009760261
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 8,
+      "wall_us": 904.2500169016421
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 8,
+      "wall_us": 1149.1249897517264
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 8,
+      "wall_us": 1080.124988220632
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 8,
+      "wall_us": 2596.3750085793436
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 8,
+      "wall_us": 2485.2920323610306
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 8,
+      "wall_us": 1150.4170252010226
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 8,
+      "wall_us": 1130.041026044637
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 8,
+      "wall_us": 874.7920510359108
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 8,
+      "wall_us": 945.9580178372562
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 8,
+      "wall_us": 1241.9589911587536
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 8,
+      "wall_us": 1128.8330424576998
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 8,
+      "wall_us": 863.2499957457185
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 8,
+      "wall_us": 805.8749954216182
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 8,
+      "wall_us": 1489.2079634591937
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 8,
+      "wall_us": 1060.625014360994
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 8,
+      "wall_us": 3823.5000101849437
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 8,
+      "wall_us": 2591.750002466142
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 8,
+      "wall_us": 1198.0419512838125
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 8,
+      "wall_us": 1155.2079813554883
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 9,
+      "wall_us": 1085.3339917957783
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 9,
+      "wall_us": 1126.8749949522316
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 9,
+      "wall_us": 1175.332989078015
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 9,
+      "wall_us": 2618.1659777648747
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 9,
+      "wall_us": 2782.6669975183904
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 9,
+      "wall_us": 1458.5420140065253
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 9,
+      "wall_us": 1013.7499775737524
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 9,
+      "wall_us": 1005.6659812107682
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 9,
+      "wall_us": 851.5000226907432
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 9,
+      "wall_us": 1135.5419992469251
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 9,
+      "wall_us": 1170.9589743986726
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 9,
+      "wall_us": 873.9999611862004
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 9,
+      "wall_us": 1032.2080343030393
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 9,
+      "wall_us": 1146.3750270195305
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 9,
+      "wall_us": 1169.833994936198
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 9,
+      "wall_us": 3036.125039216131
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 9,
+      "wall_us": 2701.417019125074
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 9,
+      "wall_us": 1090.249978005886
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 9,
+      "wall_us": 1147.33399823308
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 9,
+      "wall_us": 963.5839960537851
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 9,
+      "wall_us": 1197.79200758785
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 9,
+      "wall_us": 1012.8330322913826
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 9,
+      "wall_us": 1188.7080036103725
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 9,
+      "wall_us": 1157.3329684324563
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 9,
+      "wall_us": 1170.7909870892763
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 9,
+      "wall_us": 1241.4160300977528
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 9,
+      "wall_us": 1951.000012923032
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 9,
+      "wall_us": 2907.124988269061
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 9,
+      "wall_us": 2671.708003617823
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 9,
+      "wall_us": 1247.29098752141
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 9,
+      "wall_us": 1172.2079943865538
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 9,
+      "wall_us": 1148.4999558888376
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 9,
+      "wall_us": 1098.3330430462956
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 9,
+      "wall_us": 1173.9999754354358
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 9,
+      "wall_us": 1240.5830202624202
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 9,
+      "wall_us": 1166.1669705063105
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 10,
+      "wall_us": 1596.999994944781
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 10,
+      "wall_us": 1411.4169753156602
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 10,
+      "wall_us": 1343.8329915516078
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 10,
+      "wall_us": 1143.3750041760504
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 10,
+      "wall_us": 995.2500113286078
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 10,
+      "wall_us": 1087.2500133700669
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 10,
+      "wall_us": 2691.500005312264
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 10,
+      "wall_us": 3504.207998048514
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 10,
+      "wall_us": 1164.4589831121266
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 10,
+      "wall_us": 1387.4999713152647
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 10,
+      "wall_us": 934.20798657462
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 10,
+      "wall_us": 1134.2089856043458
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 10,
+      "wall_us": 1141.4589826017618
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 10,
+      "wall_us": 1171.0839462466538
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 10,
+      "wall_us": 907.0410160347819
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 10,
+      "wall_us": 994.5000056177378
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 10,
+      "wall_us": 1500.4589804448187
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 10,
+      "wall_us": 1027.2919898852706
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 10,
+      "wall_us": 3489.2919939011335
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 10,
+      "wall_us": 3066.8340041302145
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 10,
+      "wall_us": 1197.708013933152
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 10,
+      "wall_us": 1201.5000102110207
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 10,
+      "wall_us": 1072.749961167574
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 10,
+      "wall_us": 994.0419695340097
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 10,
+      "wall_us": 1190.749986562878
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 10,
+      "wall_us": 1119.5000261068344
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 10,
+      "wall_us": 863.0409720353782
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 10,
+      "wall_us": 942.7079930901527
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 10,
+      "wall_us": 1158.208993729204
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 10,
+      "wall_us": 1049.4589805603027
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 10,
+      "wall_us": 2971.625013742596
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 10,
+      "wall_us": 2703.4159866161644
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 10,
+      "wall_us": 1294.416026212275
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 10,
+      "wall_us": 1187.3340117745101
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 10,
+      "wall_us": 1127.9580066911876
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 10,
+      "wall_us": 1205.707958433777
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 11,
+      "wall_us": 996.6249926947057
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 11,
+      "wall_us": 2010.7500022277236
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 11,
+      "wall_us": 1142.8339639678597
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 11,
+      "wall_us": 1287.1670187450945
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 11,
+      "wall_us": 1663.7910157442093
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 11,
+      "wall_us": 2779.3749468401074
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 11,
+      "wall_us": 2594.541001599282
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 11,
+      "wall_us": 1003.4579900093377
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 11,
+      "wall_us": 1172.6249940693378
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 11,
+      "wall_us": 994.9589730240405
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 11,
+      "wall_us": 1000.8339886553586
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 11,
+      "wall_us": 1719.8339919559658
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 11,
+      "wall_us": 1195.0419866479933
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 11,
+      "wall_us": 1779.4999876059592
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 11,
+      "wall_us": 1054.3749667704105
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 11,
+      "wall_us": 1214.2500490881503
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 11,
+      "wall_us": 1164.4999613054097
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 11,
+      "wall_us": 2556.250023189932
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 11,
+      "wall_us": 2467.749989591539
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 11,
+      "wall_us": 1115.4590174555779
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 11,
+      "wall_us": 1959.2500175349414
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 11,
+      "wall_us": 888.1250396370888
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 11,
+      "wall_us": 1174.8329852707684
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 11,
+      "wall_us": 1064.250012859702
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 11,
+      "wall_us": 1116.7920310981572
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 11,
+      "wall_us": 1204.7080090269446
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 11,
+      "wall_us": 1170.7080411724746
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 11,
+      "wall_us": 1179.7919869422913
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 11,
+      "wall_us": 1109.750010073185
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 11,
+      "wall_us": 2729.915955569595
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 11,
+      "wall_us": 2920.667000580579
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 11,
+      "wall_us": 1082.9580132849514
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 11,
+      "wall_us": 1367.6249654963613
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 11,
+      "wall_us": 1239.6250385791063
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 11,
+      "wall_us": 1240.417012013495
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 11,
+      "wall_us": 993.3750261552632
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 12,
+      "wall_us": 1291.6250270791352
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 12,
+      "wall_us": 1290.9580254927278
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 12,
+      "wall_us": 980.7909955270588
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 12,
+      "wall_us": 964.3750381655991
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 12,
+      "wall_us": 2842.041023541242
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 12,
+      "wall_us": 2779.2920009233057
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 12,
+      "wall_us": 1123.9589657634497
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 12,
+      "wall_us": 1113.4169762954116
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 12,
+      "wall_us": 1100.8749715983868
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 12,
+      "wall_us": 1146.750000771135
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 12,
+      "wall_us": 1123.833004385233
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 12,
+      "wall_us": 1078.957982826978
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 12,
+      "wall_us": 918.4159571304917
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 12,
+      "wall_us": 1012.3749962076545
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 12,
+      "wall_us": 1036.1670283600688
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 12,
+      "wall_us": 1997.3749876953661
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 12,
+      "wall_us": 2967.9170111194253
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 12,
+      "wall_us": 2418.917021714151
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 12,
+      "wall_us": 1240.5839515849948
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 12,
+      "wall_us": 1194.6670128963888
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 12,
+      "wall_us": 1167.4580164253712
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 12,
+      "wall_us": 1095.1250442303717
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 12,
+      "wall_us": 1192.7500017918646
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 12,
+      "wall_us": 2301.8339998088777
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 12,
+      "wall_us": 1106.3749552704394
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 12,
+      "wall_us": 791.3339650258422
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 12,
+      "wall_us": 1094.3750385195017
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 12,
+      "wall_us": 1011.0000148415565
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 12,
+      "wall_us": 2725.333033595234
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 12,
+      "wall_us": 2786.2919960170984
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 12,
+      "wall_us": 1368.7500031664968
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 12,
+      "wall_us": 1141.2089806981385
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 12,
+      "wall_us": 1786.9170405901968
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 12,
+      "wall_us": 1227.1670275367796
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 12,
+      "wall_us": 1136.7499828338623
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 12,
+      "wall_us": 1226.7919955775142
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 13,
+      "wall_us": 1194.833021145314
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 13,
+      "wall_us": 1046.9580302014947
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 13,
+      "wall_us": 1020.9170286543667
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 13,
+      "wall_us": 1077.4999973364174
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 13,
+      "wall_us": 1223.500003106892
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 13,
+      "wall_us": 1131.2499991618097
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 13,
+      "wall_us": 1124.0839958190918
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 13,
+      "wall_us": 3459.625004325062
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 13,
+      "wall_us": 3390.0419948622584
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 13,
+      "wall_us": 998.5840297304094
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 13,
+      "wall_us": 1047.6660099811852
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 13,
+      "wall_us": 715.1250028982759
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 13,
+      "wall_us": 825.2919651567936
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 13,
+      "wall_us": 1108.1669945269823
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 13,
+      "wall_us": 1089.7499741986394
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 13,
+      "wall_us": 858.625047840178
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 13,
+      "wall_us": 925.4169999621809
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 13,
+      "wall_us": 1230.333000421524
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 13,
+      "wall_us": 1183.584041427821
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 13,
+      "wall_us": 2470.5000105313957
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 13,
+      "wall_us": 2370.0830060988665
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 13,
+      "wall_us": 977.7499944902956
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 13,
+      "wall_us": 1049.75001886487
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 13,
+      "wall_us": 897.333025932312
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 13,
+      "wall_us": 948.2500026933849
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 13,
+      "wall_us": 937.7499809488654
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 13,
+      "wall_us": 988.5000181384385
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 13,
+      "wall_us": 918.3750371448696
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 13,
+      "wall_us": 1722.542045172304
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 13,
+      "wall_us": 1100.8330038748682
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 13,
+      "wall_us": 1109.5840018242598
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 13,
+      "wall_us": 2758.91600176692
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 13,
+      "wall_us": 2674.542018212378
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 13,
+      "wall_us": 980.7909955270588
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 13,
+      "wall_us": 973.5000203363597
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 13,
+      "wall_us": 928.7500288337469
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 14,
+      "wall_us": 916.6250238195062
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 14,
+      "wall_us": 993.4590198099613
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 14,
+      "wall_us": 3371.7909827828407
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 14,
+      "wall_us": 3217.4999942071736
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 14,
+      "wall_us": 1115.9999994561076
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 14,
+      "wall_us": 1099.9999940395355
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 14,
+      "wall_us": 995.707989204675
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 14,
+      "wall_us": 871.5000003576279
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 14,
+      "wall_us": 1014.874957036227
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 14,
+      "wall_us": 936.2919954583049
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 14,
+      "wall_us": 877.6250178925693
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 14,
+      "wall_us": 896.1670100688934
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 14,
+      "wall_us": 1120.3750036656857
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 14,
+      "wall_us": 1935.084001161158
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 14,
+      "wall_us": 2462.2500059194863
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 14,
+      "wall_us": 2367.4159892834723
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 14,
+      "wall_us": 1119.7089916095138
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 14,
+      "wall_us": 1123.1250246055424
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 14,
+      "wall_us": 894.41699674353
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 14,
+      "wall_us": 890.3340203687549
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 14,
+      "wall_us": 1145.3329934738576
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 14,
+      "wall_us": 1120.0419976375997
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 14,
+      "wall_us": 762.6250153407454
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 14,
+      "wall_us": 656.7089585587382
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 14,
+      "wall_us": 2114.208007697016
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 14,
+      "wall_us": 1023.7080277875066
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 14,
+      "wall_us": 2484.4169965945184
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 14,
+      "wall_us": 2592.249948065728
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 14,
+      "wall_us": 1207.8750296495855
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 14,
+      "wall_us": 1282.6659949496388
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 14,
+      "wall_us": 1064.7500166669488
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 14,
+      "wall_us": 1084.7090161405504
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 14,
+      "wall_us": 931.665999814868
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 14,
+      "wall_us": 987.4999523162842
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 14,
+      "wall_us": 1837.5409999862313
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 14,
+      "wall_us": 936.041004024446
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 15,
+      "wall_us": 979.2500059120357
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 15,
+      "wall_us": 1531.750021968037
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 15,
+      "wall_us": 917.7500032819808
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 15,
+      "wall_us": 962.7919644117355
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 15,
+      "wall_us": 953.2079566270113
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 15,
+      "wall_us": 1028.0839633196592
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 15,
+      "wall_us": 1026.9589838571846
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 15,
+      "wall_us": 1154.1669955477118
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 15,
+      "wall_us": 1185.3339965455234
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 15,
+      "wall_us": 3293.083980679512
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 15,
+      "wall_us": 2570.2500133775175
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 15,
+      "wall_us": 1824.1669749841094
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 15,
+      "wall_us": 1282.7919563278556
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 15,
+      "wall_us": 686.7499905638397
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 15,
+      "wall_us": 715.915986802429
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 15,
+      "wall_us": 1148.1669498607516
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 15,
+      "wall_us": 1136.4580132067204
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 15,
+      "wall_us": 896.6660243459046
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 15,
+      "wall_us": 940.5830060131848
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 15,
+      "wall_us": 1151.7080129124224
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 15,
+      "wall_us": 1197.6249516010284
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 15,
+      "wall_us": 2483.0829934217036
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 15,
+      "wall_us": 2611.7500383406878
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 15,
+      "wall_us": 1101.3330076821148
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 15,
+      "wall_us": 1005.2089928649366
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 15,
+      "wall_us": 950.1659660600126
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 15,
+      "wall_us": 1032.8339994885027
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 15,
+      "wall_us": 953.333976212889
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 15,
+      "wall_us": 919.8330226354301
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 15,
+      "wall_us": 1024.4169970974326
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 15,
+      "wall_us": 924.4999964721501
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 15,
+      "wall_us": 2061.458013486117
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 15,
+      "wall_us": 1106.7920131608844
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 15,
+      "wall_us": 2794.7500348091125
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 15,
+      "wall_us": 2667.8339927457273
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 15,
+      "wall_us": 1056.582957971841
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 16,
+      "wall_us": 2684.249950107187
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 16,
+      "wall_us": 2701.3749931938946
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 16,
+      "wall_us": 2251.2080031447113
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 16,
+      "wall_us": 1125.6670113652945
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 16,
+      "wall_us": 923.6249607056379
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 16,
+      "wall_us": 1508.9159714989364
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 16,
+      "wall_us": 1121.9170410186052
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 16,
+      "wall_us": 1055.5419721640646
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 16,
+      "wall_us": 1104.8339656554163
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 16,
+      "wall_us": 1127.2499687038362
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 16,
+      "wall_us": 1209.00000911206
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 16,
+      "wall_us": 1040.2919724583626
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 16,
+      "wall_us": 2532.5000169686973
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 16,
+      "wall_us": 3316.70802552253
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 16,
+      "wall_us": 1182.0829822681844
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 16,
+      "wall_us": 1203.2919912599027
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 16,
+      "wall_us": 905.3340181708336
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 16,
+      "wall_us": 872.0000041648746
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 16,
+      "wall_us": 1130.7919630780816
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 16,
+      "wall_us": 1198.3750155195594
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 16,
+      "wall_us": 845.0419991277158
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 16,
+      "wall_us": 960.3329817764461
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 16,
+      "wall_us": 1511.3329864107072
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 16,
+      "wall_us": 988.5409963317215
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 16,
+      "wall_us": 3631.0410359874368
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 16,
+      "wall_us": 3098.374989349395
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 16,
+      "wall_us": 1187.667017802596
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 16,
+      "wall_us": 1161.6670526564121
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 16,
+      "wall_us": 1394.6249964646995
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 16,
+      "wall_us": 1181.375002488494
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 16,
+      "wall_us": 1144.0420057624578
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 16,
+      "wall_us": 1184.7499990835786
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 16,
+      "wall_us": 2108.5409680381417
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 16,
+      "wall_us": 1140.8329592086375
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 16,
+      "wall_us": 1094.8330163955688
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 16,
+      "wall_us": 1661.666959989816
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 17,
+      "wall_us": 2821.332949679345
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 17,
+      "wall_us": 1115.499995648861
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 17,
+      "wall_us": 1145.8340450190008
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 17,
+      "wall_us": 1126.04204332456
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 17,
+      "wall_us": 974.1249959915876
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 17,
+      "wall_us": 984.2499857768416
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 17,
+      "wall_us": 2260.000037495047
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 17,
+      "wall_us": 1066.999975591898
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 17,
+      "wall_us": 1174.3750073947012
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 17,
+      "wall_us": 1285.6250395998359
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 17,
+      "wall_us": 1155.6249810382724
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 17,
+      "wall_us": 2671.0419915616512
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 17,
+      "wall_us": 2775.4579787142575
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 17,
+      "wall_us": 1033.9579894207418
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 17,
+      "wall_us": 1118.374988436699
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 17,
+      "wall_us": 1806.4590403810143
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 17,
+      "wall_us": 857.9579880461097
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 17,
+      "wall_us": 1166.7919461615384
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 17,
+      "wall_us": 1246.4579776860774
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 17,
+      "wall_us": 898.6659813672304
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 17,
+      "wall_us": 1110.0000119768083
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 17,
+      "wall_us": 1146.1660033091903
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 17,
+      "wall_us": 1188.2500257343054
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 17,
+      "wall_us": 2443.375007715076
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 17,
+      "wall_us": 2528.1659909524024
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 17,
+      "wall_us": 2168.542006984353
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 17,
+      "wall_us": 1045.4169823788106
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 17,
+      "wall_us": 949.417008087039
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 17,
+      "wall_us": 1886.7080216296017
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 17,
+      "wall_us": 1001.7079766839743
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 17,
+      "wall_us": 966.2500233389437
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 17,
+      "wall_us": 924.2920204997063
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 17,
+      "wall_us": 967.7499765530229
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 17,
+      "wall_us": 1229.2919564060867
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 17,
+      "wall_us": 1170.3749769367278
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 17,
+      "wall_us": 2735.9590167179704
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 18,
+      "wall_us": 2075.791999232024
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 18,
+      "wall_us": 1210.7500224374235
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 18,
+      "wall_us": 1166.0000309348106
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 18,
+      "wall_us": 977.3750207386911
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 18,
+      "wall_us": 936.1249976791441
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 18,
+      "wall_us": 932.4999991804361
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 18,
+      "wall_us": 935.1249900646508
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 18,
+      "wall_us": 965.6670154072344
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 18,
+      "wall_us": 1148.7080482766032
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 18,
+      "wall_us": 1118.1669542565942
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 18,
+      "wall_us": 2491.957973688841
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 18,
+      "wall_us": 2472.2079979255795
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 18,
+      "wall_us": 1722.874992992729
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 18,
+      "wall_us": 1167.000038549304
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 18,
+      "wall_us": 918.8749827444553
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 18,
+      "wall_us": 931.4590133726597
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 18,
+      "wall_us": 1094.7500122711062
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 18,
+      "wall_us": 1089.9579501710832
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 18,
+      "wall_us": 1007.1250144392252
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 18,
+      "wall_us": 783.4999705664814
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 18,
+      "wall_us": 987.0000067166984
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 18,
+      "wall_us": 1184.0409715659916
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 18,
+      "wall_us": 3437.291015870869
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 18,
+      "wall_us": 3051.708044949919
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 18,
+      "wall_us": 1236.83299170807
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 18,
+      "wall_us": 1284.8330079577863
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 18,
+      "wall_us": 1250.2079480327666
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 18,
+      "wall_us": 1072.5840111263096
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 18,
+      "wall_us": 1127.7090525254607
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 18,
+      "wall_us": 1085.6669978238642
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 18,
+      "wall_us": 1237.125019542873
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 18,
+      "wall_us": 1923.1669721193612
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 18,
+      "wall_us": 1091.5000457316637
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 18,
+      "wall_us": 1120.5830378457904
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 18,
+      "wall_us": 2706.2500012107193
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 18,
+      "wall_us": 2647.1249875612557
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 19,
+      "wall_us": 1157.1250506676733
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 19,
+      "wall_us": 2648.6249989829957
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 19,
+      "wall_us": 2883.0840019509196
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 19,
+      "wall_us": 973.9159722812474
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 19,
+      "wall_us": 992.8750223480165
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 19,
+      "wall_us": 1369.7080430574715
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 19,
+      "wall_us": 978.6660084500909
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 19,
+      "wall_us": 1179.9170169979334
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 19,
+      "wall_us": 1130.9999972581863
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 19,
+      "wall_us": 1254.167000297457
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 19,
+      "wall_us": 1144.3750117905438
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 19,
+      "wall_us": 1159.9170393310487
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 19,
+      "wall_us": 1208.4580375812948
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 19,
+      "wall_us": 2792.5410540774465
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 19,
+      "wall_us": 2657.2499773465097
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 19,
+      "wall_us": 1530.707988422364
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 19,
+      "wall_us": 1050.4169622436166
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 19,
+      "wall_us": 872.6250380277634
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 19,
+      "wall_us": 1037.375011947006
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 19,
+      "wall_us": 1110.0000119768083
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 19,
+      "wall_us": 1148.3330163173378
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 19,
+      "wall_us": 889.4169586710632
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 19,
+      "wall_us": 1024.33399297297
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 19,
+      "wall_us": 1156.8330228328705
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 19,
+      "wall_us": 1745.374989695847
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 19,
+      "wall_us": 2595.0419949367642
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 19,
+      "wall_us": 2640.9999700263143
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 19,
+      "wall_us": 1052.91698127985
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 19,
+      "wall_us": 1150.374999269843
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 19,
+      "wall_us": 1202.791987452656
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 19,
+      "wall_us": 1004.6669631265104
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 19,
+      "wall_us": 931.332993786782
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 19,
+      "wall_us": 933.0830071121454
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 19,
+      "wall_us": 933.9580428786576
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 19,
+      "wall_us": 955.5419674143195
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 19,
+      "wall_us": 2109.499997459352
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 20,
+      "wall_us": 924.7079724445939
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 20,
+      "wall_us": 1559.5839940942824
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 20,
+      "wall_us": 1114.791026338935
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 20,
+      "wall_us": 1143.2080063968897
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 20,
+      "wall_us": 1078.4590267576277
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 20,
+      "wall_us": 938.9169863425195
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 20,
+      "wall_us": 1537.5830116681755
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 20,
+      "wall_us": 1130.6669912301004
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 20,
+      "wall_us": 2518.1249948218465
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 20,
+      "wall_us": 2510.7080000452697
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 20,
+      "wall_us": 1811.8330044671893
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 20,
+      "wall_us": 1147.7500083856285
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 20,
+      "wall_us": 1014.2499813809991
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 20,
+      "wall_us": 832.0420165546238
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 20,
+      "wall_us": 1182.0829822681844
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 20,
+      "wall_us": 1167.7079601213336
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 20,
+      "wall_us": 1081.916969269514
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 20,
+      "wall_us": 799.0829763002694
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 20,
+      "wall_us": 1011.2079908140004
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 20,
+      "wall_us": 1152.459008153528
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 20,
+      "wall_us": 3460.708016064018
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 20,
+      "wall_us": 3021.0419790819287
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 20,
+      "wall_us": 1267.8329949267209
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 20,
+      "wall_us": 1188.2910039275885
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 20,
+      "wall_us": 1212.1250038035214
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 20,
+      "wall_us": 1252.3329933173954
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 20,
+      "wall_us": 1035.1670207455754
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 20,
+      "wall_us": 1112.0419949293137
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 20,
+      "wall_us": 973.000016529113
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 20,
+      "wall_us": 1894.6669879369438
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 20,
+      "wall_us": 1133.9159682393074
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 20,
+      "wall_us": 1207.4169935658574
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 20,
+      "wall_us": 2699.5829539373517
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 20,
+      "wall_us": 2921.207982581109
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 20,
+      "wall_us": 1291.3329992443323
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 20,
+      "wall_us": 1145.1669852249324
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 21,
+      "wall_us": 999.3750136345625
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 21,
+      "wall_us": 1226.8749997019768
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 21,
+      "wall_us": 2030.7910162955523
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 21,
+      "wall_us": 2975.3330163657665
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 21,
+      "wall_us": 2754.1660238057375
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 21,
+      "wall_us": 1098.0420047417283
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 21,
+      "wall_us": 1199.83300101012
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 21,
+      "wall_us": 1238.5830050334334
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 21,
+      "wall_us": 958.4579966031015
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 21,
+      "wall_us": 988.9580542221665
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 21,
+      "wall_us": 1008.6669935844839
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 21,
+      "wall_us": 2037.6250031404197
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 21,
+      "wall_us": 1247.6249830797315
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 21,
+      "wall_us": 1726.499991491437
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 21,
+      "wall_us": 1286.4170130342245
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 21,
+      "wall_us": 2669.3749823607504
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 21,
+      "wall_us": 2768.0000057443976
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 21,
+      "wall_us": 1124.958973377943
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 21,
+      "wall_us": 984.2499857768416
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 21,
+      "wall_us": 799.2920000106096
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 21,
+      "wall_us": 1098.0830411426723
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 21,
+      "wall_us": 1143.6249478720129
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 21,
+      "wall_us": 1145.8750232122838
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 21,
+      "wall_us": 890.1670225895941
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 21,
+      "wall_us": 884.7920107655227
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 21,
+      "wall_us": 1246.8750355765224
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 21,
+      "wall_us": 1160.041952971369
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 21,
+      "wall_us": 2635.332988575101
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 21,
+      "wall_us": 2550.0410120002925
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 21,
+      "wall_us": 1158.0830323509872
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 21,
+      "wall_us": 1094.4170062430203
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 21,
+      "wall_us": 1075.417036190629
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 21,
+      "wall_us": 1854.3750047683716
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 21,
+      "wall_us": 1070.3749721869826
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 21,
+      "wall_us": 944.4169700145721
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 21,
+      "wall_us": 923.0829891748726
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 22,
+      "wall_us": 1101.9170051440597
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 22,
+      "wall_us": 1537.8750395029783
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 22,
+      "wall_us": 933.0829489044845
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 22,
+      "wall_us": 894.6250309236348
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 22,
+      "wall_us": 1080.5840138345957
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 22,
+      "wall_us": 1136.7499828338623
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 22,
+      "wall_us": 2517.541986890137
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 22,
+      "wall_us": 2556.9169665686786
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 22,
+      "wall_us": 1342.6669756881893
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 22,
+      "wall_us": 1257.0000253617764
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 22,
+      "wall_us": 997.7080044336617
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 22,
+      "wall_us": 868.2089974172413
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 22,
+      "wall_us": 1174.25003554672
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 22,
+      "wall_us": 1155.8340047486126
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 22,
+      "wall_us": 2097.958989907056
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 22,
+      "wall_us": 787.624972872436
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 22,
+      "wall_us": 1000.4169889725745
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 22,
+      "wall_us": 2088.83301820606
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 22,
+      "wall_us": 2633.9999749325216
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 22,
+      "wall_us": 2747.874998021871
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 22,
+      "wall_us": 1344.1669871099293
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 22,
+      "wall_us": 1187.9170197062194
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 22,
+      "wall_us": 1105.2080080844462
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 22,
+      "wall_us": 1175.332989078015
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 22,
+      "wall_us": 989.207997918129
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 22,
+      "wall_us": 961.2090070731938
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 22,
+      "wall_us": 1681.4169939607382
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 22,
+      "wall_us": 999.5410218834877
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 22,
+      "wall_us": 1035.9999723732471
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 22,
+      "wall_us": 979.3330100364983
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 22,
+      "wall_us": 2716.6659710928798
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 22,
+      "wall_us": 2720.583986956626
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 22,
+      "wall_us": 1187.0830203406513
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 22,
+      "wall_us": 2048.416994512081
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 22,
+      "wall_us": 1022.2499840892851
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 22,
+      "wall_us": 988.7500200420618
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 23,
+      "wall_us": 1029.8750130459666
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 23,
+      "wall_us": 948.7500065006316
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 23,
+      "wall_us": 992.832996416837
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 23,
+      "wall_us": 1138.2499942556024
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 23,
+      "wall_us": 1191.3750204257667
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 23,
+      "wall_us": 2662.624989170581
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 23,
+      "wall_us": 2685.5410542339087
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 23,
+      "wall_us": 1128.583971876651
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 23,
+      "wall_us": 988.5409963317215
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 23,
+      "wall_us": 1241.8749975040555
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 23,
+      "wall_us": 1104.625000152737
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 23,
+      "wall_us": 1025.6249806843698
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 23,
+      "wall_us": 1252.5829952210188
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 23,
+      "wall_us": 1145.250047557056
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 23,
+      "wall_us": 1065.7089878804982
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 23,
+      "wall_us": 1249.2499663494527
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 23,
+      "wall_us": 1152.6250164024532
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 23,
+      "wall_us": 3134.1250287368894
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 23,
+      "wall_us": 2809.7910108044744
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 23,
+      "wall_us": 1529.292028862983
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 23,
+      "wall_us": 1015.7079668715596
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 23,
+      "wall_us": 804.5000140555203
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 23,
+      "wall_us": 1063.0000033415854
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 23,
+      "wall_us": 1124.6249778196216
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 23,
+      "wall_us": 1153.2919597811997
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 23,
+      "wall_us": 849.9590330757201
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 23,
+      "wall_us": 1081.4580018632114
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 23,
+      "wall_us": 1966.6659645736217
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 23,
+      "wall_us": 1196.4160366915166
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 23,
+      "wall_us": 2493.3340027928352
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 23,
+      "wall_us": 2612.7080200240016
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 23,
+      "wall_us": 1030.2499867975712
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 23,
+      "wall_us": 1170.6670047715306
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 23,
+      "wall_us": 1289.7500419057906
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 23,
+      "wall_us": 1076.1250159703195
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 23,
+      "wall_us": 1193.8330135308206
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 24,
+      "wall_us": 1212.499977555126
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 24,
+      "wall_us": 971.0830054245889
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 24,
+      "wall_us": 1997.3329617641866
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 24,
+      "wall_us": 1016.0000529140234
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 24,
+      "wall_us": 2758.416987489909
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 24,
+      "wall_us": 2568.375028204173
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 24,
+      "wall_us": 1273.4580086544156
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 24,
+      "wall_us": 1141.2500170990825
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 24,
+      "wall_us": 988.3330203592777
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 24,
+      "wall_us": 890.4160349629819
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 24,
+      "wall_us": 1212.2089974582195
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 24,
+      "wall_us": 2094.9580357410014
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 24,
+      "wall_us": 858.6249896325171
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 24,
+      "wall_us": 975.7079533301294
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 24,
+      "wall_us": 1732.249977067113
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 24,
+      "wall_us": 1509.1670211404562
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 24,
+      "wall_us": 2590.666990727186
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 24,
+      "wall_us": 2813.541970681399
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 24,
+      "wall_us": 1239.4999503158033
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 24,
+      "wall_us": 1143.125002272427
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 24,
+      "wall_us": 1863.9169866219163
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 24,
+      "wall_us": 1064.0000109560788
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 24,
+      "wall_us": 1176.1669884435833
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 24,
+      "wall_us": 1841.8330000713468
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 24,
+      "wall_us": 1287.124992813915
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 24,
+      "wall_us": 1295.6670252606273
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 24,
+      "wall_us": 1051.8329800106585
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 24,
+      "wall_us": 1073.2910013757646
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 24,
+      "wall_us": 2681.9159975275397
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 24,
+      "wall_us": 3536.708012688905
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 24,
+      "wall_us": 1288.0419963039458
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 24,
+      "wall_us": 1084.375020582229
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 24,
+      "wall_us": 1852.1250458434224
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 24,
+      "wall_us": 1173.1249978765845
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 24,
+      "wall_us": 1062.5410359352827
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 24,
+      "wall_us": 928.1670209020376
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 25,
+      "wall_us": 947.9169966652989
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 25,
+      "wall_us": 1277.3749767802656
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 25,
+      "wall_us": 1158.7499757297337
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 25,
+      "wall_us": 1174.5409574359655
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 25,
+      "wall_us": 1141.0000151954591
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 25,
+      "wall_us": 2036.4170195534825
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 25,
+      "wall_us": 1090.3750080615282
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 25,
+      "wall_us": 2913.5000077076256
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 25,
+      "wall_us": 2767.083002254367
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 25,
+      "wall_us": 1107.0839827880263
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 25,
+      "wall_us": 1132.9999542795122
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 25,
+      "wall_us": 1123.7500002607703
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 25,
+      "wall_us": 986.6660111583769
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 25,
+      "wall_us": 983.6659883148968
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 25,
+      "wall_us": 1010.917010717094
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 25,
+      "wall_us": 1095.5000179819763
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 25,
+      "wall_us": 1516.8330282904208
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 25,
+      "wall_us": 1426.0829775594175
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 25,
+      "wall_us": 1173.167023807764
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 25,
+      "wall_us": 2693.624992389232
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 25,
+      "wall_us": 2803.2090049237013
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 25,
+      "wall_us": 1677.5830299593508
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 25,
+      "wall_us": 2197.9170269332826
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 25,
+      "wall_us": 856.5000025555491
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 25,
+      "wall_us": 910.2089679799974
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 25,
+      "wall_us": 1317.458983976394
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 25,
+      "wall_us": 1246.666011866182
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 25,
+      "wall_us": 970.040971878916
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 25,
+      "wall_us": 930.2920079790056
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 25,
+      "wall_us": 1144.5420095697045
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 25,
+      "wall_us": 1261.3339931704104
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 25,
+      "wall_us": 2608.374983537942
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 25,
+      "wall_us": 2681.6250174306333
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 25,
+      "wall_us": 1047.50000173226
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 25,
+      "wall_us": 1141.6670167818666
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 25,
+      "wall_us": 1032.1249719709158
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 26,
+      "wall_us": 1124.0000021643937
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 26,
+      "wall_us": 1084.375020582229
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 26,
+      "wall_us": 2448.5000176355243
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 26,
+      "wall_us": 2472.8329735808074
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 26,
+      "wall_us": 1148.4170099720359
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 26,
+      "wall_us": 2063.3329986594617
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 26,
+      "wall_us": 869.4580174051225
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 26,
+      "wall_us": 857.125036418438
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 26,
+      "wall_us": 1139.6670015528798
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 26,
+      "wall_us": 1219.5410090498626
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 26,
+      "wall_us": 777.8330473229289
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 26,
+      "wall_us": 2996.374969370663
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 26,
+      "wall_us": 1001.4170547947288
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 26,
+      "wall_us": 982.2919964790344
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 26,
+      "wall_us": 2578.4170138649642
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 26,
+      "wall_us": 2590.3750211000443
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 26,
+      "wall_us": 1112.5830351375043
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 26,
+      "wall_us": 1129.8329918645322
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 26,
+      "wall_us": 1051.79101228714
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 26,
+      "wall_us": 2895.0839769095182
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 26,
+      "wall_us": 1034.3340109102428
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 26,
+      "wall_us": 967.125000897795
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 26,
+      "wall_us": 1026.2500145472586
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 26,
+      "wall_us": 945.7499836571515
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 26,
+      "wall_us": 987.5419782474637
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 26,
+      "wall_us": 983.2500363700092
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 26,
+      "wall_us": 2727.709012106061
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 26,
+      "wall_us": 2582.7919598668814
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 26,
+      "wall_us": 1259.2499842867255
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 26,
+      "wall_us": 1216.9170076958835
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 26,
+      "wall_us": 936.750031542033
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 26,
+      "wall_us": 902.3339953273535
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 26,
+      "wall_us": 912.1670154854655
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 26,
+      "wall_us": 902.6250336319208
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 26,
+      "wall_us": 858.3750459365547
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 26,
+      "wall_us": 857.9159621149302
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 27,
+      "wall_us": 976.9170428626239
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 27,
+      "wall_us": 851.8749964423478
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 27,
+      "wall_us": 1809.2080135829747
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 27,
+      "wall_us": 886.3750263117254
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 27,
+      "wall_us": 899.7500408440828
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 27,
+      "wall_us": 947.0420191064477
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 27,
+      "wall_us": 914.4170326180756
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 27,
+      "wall_us": 1057.000015862286
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 27,
+      "wall_us": 1076.6659979708493
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 27,
+      "wall_us": 3093.0829816497862
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 27,
+      "wall_us": 4632.20797246322
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 27,
+      "wall_us": 952.0419989712536
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 27,
+      "wall_us": 963.7920302338898
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 27,
+      "wall_us": 984.7080218605697
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 27,
+      "wall_us": 1745.3330219723284
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 27,
+      "wall_us": 973.2920443639159
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 27,
+      "wall_us": 974.4589915499091
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 27,
+      "wall_us": 1150.0000255182385
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 27,
+      "wall_us": 1084.333984181285
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 27,
+      "wall_us": 1217.0420377515256
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 27,
+      "wall_us": 1170.917006675154
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 27,
+      "wall_us": 3556.2499542720616
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 27,
+      "wall_us": 2620.0420106761158
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 27,
+      "wall_us": 1846.9169735908508
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 27,
+      "wall_us": 994.8340011760592
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 27,
+      "wall_us": 723.1250056065619
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 27,
+      "wall_us": 731.7080162465572
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 27,
+      "wall_us": 1140.7500132918358
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 27,
+      "wall_us": 1126.0000173933804
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 27,
+      "wall_us": 888.6249852366745
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 27,
+      "wall_us": 926.6659617424011
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 27,
+      "wall_us": 1115.7090193592012
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 27,
+      "wall_us": 2052.666968666017
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 27,
+      "wall_us": 2462.624979671091
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 27,
+      "wall_us": 2509.9999620579183
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 27,
+      "wall_us": 995.0409876182675
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 28,
+      "wall_us": 2479.416027199477
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 28,
+      "wall_us": 2450.166968628764
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 28,
+      "wall_us": 1173.50002983585
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 28,
+      "wall_us": 1125.2079857513309
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 28,
+      "wall_us": 1827.4169997312129
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 28,
+      "wall_us": 966.1249932833016
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 28,
+      "wall_us": 1126.8340167589486
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 28,
+      "wall_us": 1116.375031415373
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 28,
+      "wall_us": 1426.6670332290232
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 28,
+      "wall_us": 683.2919898442924
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 28,
+      "wall_us": 1008.2499939016998
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 28,
+      "wall_us": 976.4999849721789
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 28,
+      "wall_us": 2566.7090085335076
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 28,
+      "wall_us": 2553.125028498471
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 28,
+      "wall_us": 1841.3750221952796
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 28,
+      "wall_us": 1169.5419671013951
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 28,
+      "wall_us": 1089.6659805439413
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 28,
+      "wall_us": 1255.583018064499
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 28,
+      "wall_us": 1275.7499935105443
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 28,
+      "wall_us": 996.6249926947057
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 28,
+      "wall_us": 962.8339903429151
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 28,
+      "wall_us": 936.0409458167851
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 28,
+      "wall_us": 951.5000274404883
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 28,
+      "wall_us": 976.0420070961118
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 28,
+      "wall_us": 2575.1249631866813
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 28,
+      "wall_us": 2826.0419494472444
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 28,
+      "wall_us": 1127.875002566725
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 28,
+      "wall_us": 1118.374988436699
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 28,
+      "wall_us": 930.8750159107149
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 28,
+      "wall_us": 1189.7910153493285
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 28,
+      "wall_us": 941.2919753231108
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 28,
+      "wall_us": 974.2500260472298
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 28,
+      "wall_us": 891.8329840525985
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 28,
+      "wall_us": 877.1669818088412
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 28,
+      "wall_us": 1073.3749950304627
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 28,
+      "wall_us": 969.5420158095658
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 29,
+      "wall_us": 3560.7920144684613
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 29,
+      "wall_us": 1007.2080185636878
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 29,
+      "wall_us": 1021.5840302407742
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 29,
+      "wall_us": 1056.124980095774
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 29,
+      "wall_us": 1045.8339820615947
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 29,
+      "wall_us": 930.5409621447325
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 29,
+      "wall_us": 904.3329628184438
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 29,
+      "wall_us": 902.0000579766929
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 29,
+      "wall_us": 1005.5000311695039
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 29,
+      "wall_us": 1061.7500520311296
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 29,
+      "wall_us": 1064.4160211086273
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 29,
+      "wall_us": 3316.9169910252094
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 29,
+      "wall_us": 2572.9999761097133
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 29,
+      "wall_us": 958.6670203134418
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 29,
+      "wall_us": 1525.375002529472
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 29,
+      "wall_us": 1261.7920292541385
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 29,
+      "wall_us": 940.3330041095614
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 29,
+      "wall_us": 960.1659839972854
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 29,
+      "wall_us": 1026.3330186717212
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 29,
+      "wall_us": 1083.2499829120934
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 29,
+      "wall_us": 1076.6669875010848
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 29,
+      "wall_us": 1103.0830210074782
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 29,
+      "wall_us": 2157.1250399574637
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 29,
+      "wall_us": 2598.5000538639724
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 29,
+      "wall_us": 2757.1249520406127
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 29,
+      "wall_us": 947.1669909544289
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 29,
+      "wall_us": 971.7079810798168
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 29,
+      "wall_us": 689.2089731991291
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 29,
+      "wall_us": 781.6249853931367
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 29,
+      "wall_us": 1081.0419917106628
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 29,
+      "wall_us": 1091.333047952503
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 29,
+      "wall_us": 894.5420267991722
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 29,
+      "wall_us": 890.8750023692846
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 29,
+      "wall_us": 1788.3339896798134
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 29,
+      "wall_us": 1148.4160204418004
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 29,
+      "wall_us": 2506.0000480152667
+    },
+    {
+      "variant": "c128_static64_eager",
+      "repetition": 30,
+      "wall_us": 1664.0829853713512
+    },
+    {
+      "variant": "c128_static64_compiled",
+      "repetition": 30,
+      "wall_us": 1140.4160177335143
+    },
+    {
+      "variant": "c128_static112_eager",
+      "repetition": 30,
+      "wall_us": 887.1660102158785
+    },
+    {
+      "variant": "c128_static112_compiled",
+      "repetition": 30,
+      "wall_us": 894.7079768404365
+    },
+    {
+      "variant": "c128_interleaved112_eager",
+      "repetition": 30,
+      "wall_us": 1098.7919522449374
+    },
+    {
+      "variant": "c128_interleaved112_compiled",
+      "repetition": 30,
+      "wall_us": 1079.9170122481883
+    },
+    {
+      "variant": "native_eager",
+      "repetition": 30,
+      "wall_us": 723.5410157591105
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 30,
+      "wall_us": 670.6250132992864
+    },
+    {
+      "variant": "c32_phased_eager",
+      "repetition": 30,
+      "wall_us": 1962.5420100055635
+    },
+    {
+      "variant": "c32_phased_compiled",
+      "repetition": 30,
+      "wall_us": 961.9580232538283
+    },
+    {
+      "variant": "c32_static20_eager",
+      "repetition": 30,
+      "wall_us": 2540.958987083286
+    },
+    {
+      "variant": "c32_static20_compiled",
+      "repetition": 30,
+      "wall_us": 2582.0000446401536
+    },
+    {
+      "variant": "c32_static64_eager",
+      "repetition": 30,
+      "wall_us": 1121.9580192118883
+    },
+    {
+      "variant": "c32_static64_compiled",
+      "repetition": 30,
+      "wall_us": 1105.7090014219284
+    },
+    {
+      "variant": "c32_static128_eager",
+      "repetition": 30,
+      "wall_us": 1031.7919659428298
+    },
+    {
+      "variant": "c32_static128_compiled",
+      "repetition": 30,
+      "wall_us": 1052.208011969924
+    },
+    {
+      "variant": "c32_static256_eager",
+      "repetition": 30,
+      "wall_us": 1010.0000072270632
+    },
+    {
+      "variant": "c32_static256_compiled",
+      "repetition": 30,
+      "wall_us": 957.7499586157501
+    },
+    {
+      "variant": "c32_interleaved128_eager",
+      "repetition": 30,
+      "wall_us": 869.4999851286411
+    },
+    {
+      "variant": "c32_interleaved128_compiled",
+      "repetition": 30,
+      "wall_us": 1872.2920212894678
+    },
+    {
+      "variant": "c64_phased_eager",
+      "repetition": 30,
+      "wall_us": 935.9170217067003
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 30,
+      "wall_us": 918.0419729091227
+    },
+    {
+      "variant": "c64_static20_eager",
+      "repetition": 30,
+      "wall_us": 2624.5409972034395
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 30,
+      "wall_us": 2649.083035066724
+    },
+    {
+      "variant": "c64_static64_eager",
+      "repetition": 30,
+      "wall_us": 1062.2499976307154
+    },
+    {
+      "variant": "c64_static64_compiled",
+      "repetition": 30,
+      "wall_us": 1054.6250268816948
+    },
+    {
+      "variant": "c64_static128_eager",
+      "repetition": 30,
+      "wall_us": 884.8329889588058
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 30,
+      "wall_us": 860.8329808339477
+    },
+    {
+      "variant": "c64_static160_eager",
+      "repetition": 30,
+      "wall_us": 884.1250091791153
+    },
+    {
+      "variant": "c64_static160_compiled",
+      "repetition": 30,
+      "wall_us": 1897.2500110976398
+    },
+    {
+      "variant": "c64_interleaved128_eager",
+      "repetition": 30,
+      "wall_us": 853.9999835193157
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 30,
+      "wall_us": 839.6659977734089
+    },
+    {
+      "variant": "c128_phased_eager",
+      "repetition": 30,
+      "wall_us": 965.4579916968942
+    },
+    {
+      "variant": "c128_phased_compiled",
+      "repetition": 30,
+      "wall_us": 1034.540997352451
+    },
+    {
+      "variant": "c128_static20_eager",
+      "repetition": 30,
+      "wall_us": 2473.333035595715
+    },
+    {
+      "variant": "c128_static20_compiled",
+      "repetition": 30,
+      "wall_us": 2333.084004931152
+    }
+  ],
+  "device": {
+    "device_name": "Apple M4 Pro",
+    "max_recommended_working_set_size": 40200896512,
+    "memory_size": 51539607552,
+    "architecture": "applegpu_g16s",
+    "max_buffer_length": 30150672384,
+    "resource_limit": 499000
+  },
+  "source_sha256": {
+    "bench.py": "d48a438ddd1ab6bfbe8bf81f14da59586923e7ce746f34657447b90914fea741",
+    "kernels.py": "09f25e3ff531531ff34885487decaca6a58a8bb404cfb3e6b14061ff31af47d7",
+    "kernel.h": "66941875cfdd1b46c5f03c6140de797a4b99cc4edd20121b86ff324902628409"
+  },
+  "note": "Packed affine W4/group64 experts; fixed real routing; same MLX process and wall timing. Compiled functions take changing arrays. All schedules match their phased tile-size control bitwise, including intermediates. Compilation, model loading, warmup and checks excluded. Eager and compiled native outputs may differ through pointwise fusion. This is a selected branch, not whole-model decode."
+}

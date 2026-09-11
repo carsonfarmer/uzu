@@ -1,0 +1,258 @@
+{
+  "model.safetensors": {
+    "bytes": 2441914056,
+    "sha256": "76ae7f9e7170064cfb75e4333f25c7fe7eed4f8120481ab66b63e020f2d628ab",
+    "crc32c_base64": "iz+73Q=="
+  },
+  "encoding.json": {
+    "bytes": 38,
+    "sha256": "ae4ab257885744a409d0174eee6ac1dbc218de05e5a667fe2759038c9ea8f30a"
+  },
+  "config.json": {
+    "bytes": 95704,
+    "sha256": "220d2f84f1fe3c91aff3c67eb7cc7a196bdbe5e02abc3dc71b58d0d2143fd05a",
+    "crc32c_base64": "zfKxaQ=="
+  },
+  "tokenizer.json": {
+    "bytes": 19989343,
+    "sha256": "87a7830d63fcf43bf241c3c5242e96e62dd3fdc29224ca26fed8ea333db72de4",
+    "crc32c_base64": "Agb5rQ=="
+  },
+  "layer0_identical_to_original": {
+    "input_factors.bin": true,
+    "zeros.bin": true,
+    "output_factors.bin": true,
+    "weights.bin": true,
+    "scales.bin": true
+  },
+  "catalog": {
+    "id": "alibaba:qwen3.5:4b:mirai:mirai-m:4",
+    "registry": {
+      "id": "mirai",
+      "metadata": {
+        "id": "3fba87c2-aef1-4b15-be26-3655ba202760",
+        "name": "Mirai",
+        "description": "Mirai-hosted model catalog",
+        "icons": []
+      }
+    },
+    "backends": [
+      {
+        "id": "uzu",
+        "version": "0.15.0",
+        "metadata": {
+          "id": "4bf458f0-d54c-4282-b14b-cfc3bf7bc90a",
+          "name": "Uzu Engine",
+          "description": null,
+          "icons": []
+        }
+      }
+    ],
+    "family": {
+      "id": "alibaba:qwen3.5",
+      "vendor": {
+        "id": "alibaba",
+        "metadata": {
+          "id": "95028040-aedd-48fb-bb9b-fb7af581af76",
+          "name": "Alibaba",
+          "description": null,
+          "icons": [
+            {
+              "id": "15ae7d75-0b4c-4e54-a15c-fddbb8fb9b77",
+              "url": "https://assets.trymirai.com/registry/icons/alibaba/f8288b45570df7902ac5be2b9020298fa2e0591d0cf8045993129436cea1aa2f.png",
+              "theme": "dark",
+              "format": "png",
+              "description": null,
+              "width": null,
+              "height": null
+            },
+            {
+              "id": "c65b2eb2-5ffb-455c-bfa6-1c44961e7528",
+              "url": "https://assets.trymirai.com/registry/icons/alibaba/f8288b45570df7902ac5be2b9020298fa2e0591d0cf8045993129436cea1aa2f.png",
+              "theme": "light",
+              "format": "png",
+              "description": null,
+              "width": null,
+              "height": null
+            },
+            {
+              "id": "97df2605-0802-4ea3-9651-5ee670170899",
+              "url": "https://assets.trymirai.com/registry/icons/alibaba/796fd6ea01ca351f6397e2579d9412162293c410f14cdd3f70e99c4181d68bcd.svg",
+              "theme": "dark",
+              "format": "svg",
+              "description": null,
+              "width": null,
+              "height": null
+            },
+            {
+              "id": "9104b42e-cb8e-4d35-b39a-d649a9be7585",
+              "url": "https://assets.trymirai.com/registry/icons/alibaba/796fd6ea01ca351f6397e2579d9412162293c410f14cdd3f70e99c4181d68bcd.svg",
+              "theme": "light",
+              "format": "svg",
+              "description": null,
+              "width": null,
+              "height": null
+            }
+          ]
+        }
+      },
+      "metadata": {
+        "id": "5357c479-7629-4c74-bea0-78ad45aa64bb",
+        "name": "Qwen3.5",
+        "description": null,
+        "icons": []
+      }
+    },
+    "properties": {
+      "id": "4b",
+      "size": 4000000000,
+      "version": null,
+      "metadata": {
+        "id": "1850bce4-95e0-45a5-a045-c82cfbd4fb31",
+        "name": "4B",
+        "description": null,
+        "icons": []
+      }
+    },
+    "quantization": {
+      "id": "mirai:mirai-m:4",
+      "method": "mirai-m",
+      "bits_per_weight": 4,
+      "vendor": {
+        "id": "mirai",
+        "metadata": {
+          "id": "7664cb14-6699-4b4c-82b6-b0eb6d3a0289",
+          "name": "Mirai",
+          "description": null,
+          "icons": [
+            {
+              "id": "186ab453-414e-4fe5-8805-bcf7a881cb55",
+              "url": "https://assets.trymirai.com/registry/icons/mirai/9b78c71061ca021b75206abbcca35de83ab9ec1b83aa8b5566b3bc6517ea2c20.png",
+              "theme": "dark",
+              "format": "png",
+              "description": null,
+              "width": null,
+              "height": null
+            },
+            {
+              "id": "ba6b0035-090c-49f4-b79c-30ecfe6ffe0f",
+              "url": "https://assets.trymirai.com/registry/icons/mirai/9b78c71061ca021b75206abbcca35de83ab9ec1b83aa8b5566b3bc6517ea2c20.png",
+              "theme": "light",
+              "format": "png",
+              "description": null,
+              "width": null,
+              "height": null
+            },
+            {
+              "id": "3979e437-6a57-4173-922b-bc2099ccaeb3",
+              "url": "https://assets.trymirai.com/registry/icons/mirai/d3a30f10d918e55baad52ad3a95341d8031c673b88ab1bfffc3017b3aec7fd06.svg",
+              "theme": "dark",
+              "format": "svg",
+              "description": null,
+              "width": null,
+              "height": null
+            },
+            {
+              "id": "3a286a39-1af4-42aa-a99d-896ff875845a",
+              "url": "https://assets.trymirai.com/registry/icons/mirai/1145bbb1c64d4c8c4e698483f7f1a8a152f6f78f987da49929215b12b4c5f7d1.svg",
+              "theme": "light",
+              "format": "svg",
+              "description": null,
+              "width": null,
+              "height": null
+            }
+          ]
+        }
+      },
+      "metadata": {
+        "id": "3d3d022e-42d3-4414-ab3b-a3b44a8926e7",
+        "name": "Mirai Medium Quantization",
+        "description": null,
+        "icons": []
+      }
+    },
+    "specializations": [
+      {
+        "type": "chat"
+      }
+    ],
+    "accessibility": {
+      "type": "local",
+      "reference": {
+        "type": "mirai",
+        "toolchain_version": "0.15.0",
+        "repository": {
+          "identifier": "trymirai/Qwen3.5-4B-M",
+          "commit_hash": "ad86386e34fb3b82371b875f145eea01f2c92131",
+          "paths": null
+        },
+        "source_repository": {
+          "identifier": "trymirai/Qwen3.5-4B-M",
+          "commit_hash": null,
+          "paths": null
+        },
+        "files": [
+          {
+            "url": "https://assets.trymirai.com/models/0.15.0/trymirai-Qwen3.5-4B-M/16dc5a41-1eb2-420e-8d3d-0d8209da0d0a/.gitattributes",
+            "name": ".gitattributes",
+            "size": 1570,
+            "hashes": [
+              {
+                "method": "crc32c",
+                "value": "NICppg=="
+              }
+            ]
+          },
+          {
+            "url": "https://assets.trymirai.com/models/0.15.0/trymirai-Qwen3.5-4B-M/16dc5a41-1eb2-420e-8d3d-0d8209da0d0a/README.md",
+            "name": "README.md",
+            "size": 84731,
+            "hashes": [
+              {
+                "method": "crc32c",
+                "value": "jp+SYw=="
+              }
+            ]
+          },
+          {
+            "url": "https://assets.trymirai.com/models/0.15.0/trymirai-Qwen3.5-4B-M/16dc5a41-1eb2-420e-8d3d-0d8209da0d0a/config.json",
+            "name": "config.json",
+            "size": 95704,
+            "hashes": [
+              {
+                "method": "crc32c",
+                "value": "zfKxaQ=="
+              }
+            ]
+          },
+          {
+            "url": "https://assets.trymirai.com/models/0.15.0/trymirai-Qwen3.5-4B-M/16dc5a41-1eb2-420e-8d3d-0d8209da0d0a/model.safetensors",
+            "name": "model.safetensors",
+            "size": 2441914056,
+            "hashes": [
+              {
+                "method": "crc32c",
+                "value": "iz+73Q=="
+              }
+            ]
+          },
+          {
+            "url": "https://assets.trymirai.com/models/0.15.0/trymirai-Qwen3.5-4B-M/16dc5a41-1eb2-420e-8d3d-0d8209da0d0a/tokenizer.json",
+            "name": "tokenizer.json",
+            "size": 19989343,
+            "hashes": [
+              {
+                "method": "crc32c",
+                "value": "Agb5rQ=="
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "encoding": {
+      "name": "qwen3.5",
+      "type": "hanashi"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "metadata": {
+    "device_name": "MacBook Pro (2)",
+    "device_model": "MacBook Pro",
+    "os_version": "27.0 (26A5425a)",
+    "target_process": "cli",
+    "target_pid": 50474,
+    "duration_ns": 15702087000,
+    "start_date": "2026-09-10T20:22:22.895-07:00",
+    "end_date": "2026-09-10T20:22:38.597-07:00",
+    "template_name": "Metal System Trace"
+  },
+  "utilization": {
+    "run_duration_ns": 15702087000,
+    "global_active_ns": 6615538272,
+    "global_idle_ns": 8626091273,
+    "global_coverage_ns": 15241629545,
+    "target_active_ns": 6059787852,
+    "window_start_ns": 477284208,
+    "window_end_ns": 12947795250,
+    "command_buffer_count": 502,
+    "encoder_count": 8627
+  },
+  "kernel_summary": [],
+  "limitations": [
+    "Trace spans the tail of the separate Rust completion and the short profiling request; not one isolated decode or matched HTTP benchmark.",
+    "No shader dispatch intervals were exported; per-kernel GPU attribution is unavailable.",
+    "target_active_ns is the union of GPU intervals attributed to the target command buffers by the upstream parser."
+  ]
+}

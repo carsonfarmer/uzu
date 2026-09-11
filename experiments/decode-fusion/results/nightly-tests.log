@@ -1,0 +1,20 @@
+    Finished `test` profile [optimized + debuginfo] target(s) in 3m 01s
+     Running unittests src/lib.rs (target/debug/build/uzu-engine/ba77b5191c16bc12/out/uzu_engine-ba77b5191c16bc12)
+
+running 13 tests
+test uzu_engine::backends::common::kernel::tests::gated_act_mul_test::test_gated_act_mul_clipping_bounds_wire_format ... ok
+test uzu_engine::backends::common::kernel::tests::gated_act_mul_test::test_gated_act_mul_interleaved_gelu_bf16 ... ok
+test uzu_engine::backends::common::kernel::tests::gated_act_mul_test::test_gated_act_mul_interleaved_gelu_exact_f32 ... ok
+test uzu_engine::backends::common::kernel::tests::gated_act_mul_test::test_gated_act_mul_interleaved_gelu_f32 ... ok
+test uzu_engine::backends::common::kernel::tests::gated_act_mul_test::test_gated_act_mul_interleaved_hadamard_bf16 ... ignored, flaky
+test uzu_engine::backends::common::kernel::tests::gated_act_mul_test::test_gated_act_mul_interleaved_silu_bf16 ... ok
+test uzu_engine::backends::common::kernel::tests::gated_act_mul_test::test_gated_act_mul_interleaved_silu_f32 ... ok
+test uzu_engine::backends::common::kernel::tests::gated_act_mul_test::test_gated_act_mul_one_sided_clipping_bf16 ... ok
+test uzu_engine::backends::common::kernel::tests::gated_act_mul_test::test_gated_act_mul_one_sided_clipping_f32 ... ok
+test uzu_engine::backends::common::kernel::tests::gated_act_mul_test::test_gated_act_mul_separate_bf16 ... ok
+test uzu_engine::backends::common::kernel::tests::gated_act_mul_test::test_gated_act_mul_separate_f32 ... ok
+test uzu_engine::backends::common::kernel::tests::gated_act_mul_test::test_gated_act_mul_transforms_bf16 ... ok
+test uzu_engine::backends::common::kernel::tests::gated_act_mul_test::test_gated_act_mul_transforms_f32 ... ok
+
+test result: ok. 12 passed; 0 failed; 1 ignored; 0 measured; 511 filtered out; finished in 0.09s
+

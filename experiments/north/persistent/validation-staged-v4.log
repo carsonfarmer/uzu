@@ -1,0 +1,10 @@
+2026-09-11 10:44:37.413 python[11836:23726283] Metal API Validation Enabled
+2026-09-11 10:44:37.413 python[11836:23726283] Metal GPU Validation Enabled
+{'repetition': 0, 'variant': 'w64_after_ready', 'unequal_bytes': [0, 0, 0, 0], 'errors': 0, 'task_visits_min': 1, 'task_visits_max': 1, 'first_down_completed_up_tiles': 30, 'completed_up_tiles': 96, 'early_prefetch_tiles': 0}
+{'repetition': 0, 'variant': 'w64_prefetch', 'unequal_bytes': [0, 0, 0, 0], 'errors': 0, 'task_visits_min': 1, 'task_visits_max': 1, 'first_down_completed_up_tiles': 30, 'completed_up_tiles': 96, 'early_prefetch_tiles': 209}
+{'repetition': 1, 'variant': 'w64_after_ready', 'unequal_bytes': [0, 0, 0, 0], 'errors': 0, 'task_visits_min': 1, 'task_visits_max': 1, 'first_down_completed_up_tiles': 31, 'completed_up_tiles': 96, 'early_prefetch_tiles': 0}
+{'repetition': 1, 'variant': 'w64_prefetch', 'unequal_bytes': [0, 0, 0, 0], 'errors': 0, 'task_visits_min': 1, 'task_visits_max': 1, 'first_down_completed_up_tiles': 31, 'completed_up_tiles': 96, 'early_prefetch_tiles': 191}
+{'repetition': 2, 'variant': 'w64_after_ready', 'unequal_bytes': [0, 0, 0, 0], 'errors': 0, 'task_visits_min': 1, 'task_visits_max': 1, 'first_down_completed_up_tiles': 31, 'completed_up_tiles': 96, 'early_prefetch_tiles': 0}
+{'repetition': 2, 'variant': 'w64_prefetch', 'unequal_bytes': [0, 0, 0, 0], 'errors': 0, 'task_visits_min': 1, 'task_visits_max': 1, 'first_down_completed_up_tiles': 30, 'completed_up_tiles': 96, 'early_prefetch_tiles': 191}
+w64_after_ready 1358.0830418504775
+w64_prefetch 1225.62499018386

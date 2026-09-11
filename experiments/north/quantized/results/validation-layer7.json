@@ -1,0 +1,87 @@
+{
+  "layer": 7,
+  "capture": "work/north-layer7",
+  "checks": {
+    "native_eager": {
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "finite": true
+    },
+    "native_compiled": {
+      "max_abs": 0.0,
+      "relative_l2": 0.0,
+      "finite": true
+    },
+    "c64_phased_compiled": {
+      "max_abs": 0.0001220703125,
+      "relative_l2": 9.002595106721856e-06,
+      "finite": true
+    },
+    "c64_static20_compiled": {
+      "max_abs": 0.0001220703125,
+      "relative_l2": 9.002595106721856e-06,
+      "finite": true
+    },
+    "c64_static128_compiled": {
+      "max_abs": 0.0001220703125,
+      "relative_l2": 9.002595106721856e-06,
+      "finite": true
+    },
+    "c64_interleaved128_compiled": {
+      "max_abs": 0.0001220703125,
+      "relative_l2": 9.002595106721856e-06,
+      "finite": true
+    }
+  },
+  "samples": [
+    {
+      "variant": "native_eager",
+      "repetition": 0,
+      "wall_us": 2074.916963465512
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 0,
+      "wall_us": 1593.999972101301
+    },
+    {
+      "variant": "c64_phased_compiled",
+      "repetition": 0,
+      "wall_us": 1640.7090006396174
+    },
+    {
+      "variant": "c64_static20_compiled",
+      "repetition": 0,
+      "wall_us": 2944.20903082937
+    },
+    {
+      "variant": "c64_static128_compiled",
+      "repetition": 0,
+      "wall_us": 1719.4999963976443
+    },
+    {
+      "variant": "c64_interleaved128_compiled",
+      "repetition": 0,
+      "wall_us": 1446.1670070886612
+    }
+  ],
+  "device": {
+    "device_name": "Apple M4 Pro",
+    "max_recommended_working_set_size": 40200896512,
+    "memory_size": 51539607552,
+    "architecture": "applegpu_g16s",
+    "max_buffer_length": 30150672384,
+    "resource_limit": 499000
+  },
+  "mlx": "0.32.2",
+  "macos": "27.0",
+  "thermal_before": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded\n",
+  "thermal_after": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded\n",
+  "power_source": "Now drawing from 'AC Power'",
+  "source_sha256": {
+    "bench.py": "39c727c2f81dcdd038bb1967ea33f4495d6f8984177d92328d3dbc448173ba6b",
+    "kernels.py": "1d825d58db931a7c079c917beadd20af6f097b950c9f7f9c033147af51d3e041",
+    "kernel.h": "b5aaa29af0136cf7dc07523a58182f13c777a2dfcc9ed68b51144b7ff183ed5b"
+  },
+  "note": "Packed affine W4/group64 experts; fixed real routing; same MLX process and wall timing. Compiled functions take changing arrays. All schedules match their phased tile-size control bitwise, including intermediates. Compilation, model loading, warmup and checks excluded. Eager and compiled native outputs may differ through pointwise fusion. This is a selected branch, not whole-model decode."
+}

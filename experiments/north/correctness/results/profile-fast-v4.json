@@ -1,0 +1,12 @@
+{
+  "label": "fast",
+  "steps": 128,
+  "compute_active_ms": 2100.933925,
+  "compute_span_ms": 4231.354041,
+  "compute_active_ms_per_step": 16.4135462890625,
+  "compute_active_fraction_of_span": 0.4965157499568352,
+  "command_buffers": 6527,
+  "command_buffers_per_step": 50.9921875,
+  "compute_intervals": 6551,
+  "note": "Instrumented 128-step short-prompt run, separate from uninstrumented throughput. Union of target Compute intervals. No per-kernel timing, memory bandwidth or hardware-counter claim. Gaps include CPU work, waits and desktop contention."
+}

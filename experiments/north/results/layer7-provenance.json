@@ -1,0 +1,136 @@
+{
+  "layer": 7,
+  "prompt": "Write a Rust function that finds the first duplicate in a slice.",
+  "prompt_tokens": 130,
+  "decode_token": 255012,
+  "experts": [
+    95,
+    123,
+    39,
+    100,
+    12,
+    20,
+    86,
+    4
+  ],
+  "arrays": {
+    "ax": {
+      "shape": [
+        1,
+        1,
+        4096
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 8192
+    },
+    "attention": {
+      "shape": [
+        1,
+        1,
+        2048
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 4096
+    },
+    "x": {
+      "shape": [
+        1,
+        1,
+        2048
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 4096
+    },
+    "moe": {
+      "shape": [
+        1,
+        1,
+        2048
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 4096
+    },
+    "residual": {
+      "shape": [
+        1,
+        1,
+        2048
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 4096
+    },
+    "output": {
+      "shape": [
+        1,
+        1,
+        2048
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 4096
+    },
+    "scores": {
+      "shape": [
+        8
+      ],
+      "source_dtype": "mlx.core.float32",
+      "storage": "float32",
+      "bytes": 32
+    },
+    "aw": {
+      "shape": [
+        2048,
+        4096
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 16777216
+    },
+    "up": {
+      "shape": [
+        8,
+        768,
+        2048
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 25165824
+    },
+    "gate": {
+      "shape": [
+        8,
+        768,
+        2048
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 25165824
+    },
+    "down": {
+      "shape": [
+        8,
+        2048,
+        768
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 25165824
+    },
+    "materialized_output": {
+      "shape": [
+        1,
+        1,
+        2048
+      ],
+      "source_dtype": "mlx.core.bfloat16",
+      "storage": "bf16",
+      "bytes": 4096
+    }
+  },
+  "note": "Captured single decode token. Selected affine 4bit expert weights dequantized/materialized to BF16 for initial scheduler experiment; original runtime continues to use quantized matmuls."
+}

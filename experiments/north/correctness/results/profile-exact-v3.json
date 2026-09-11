@@ -1,0 +1,12 @@
+{
+  "label": "exact-v3",
+  "steps": 128,
+  "compute_active_ms": 2015.198755,
+  "compute_span_ms": 2477.861458,
+  "compute_active_ms_per_step": 15.7437402734375,
+  "compute_active_fraction_of_span": 0.8132814481995143,
+  "command_buffers": 6528,
+  "command_buffers_per_step": 51.0,
+  "compute_intervals": 6590,
+  "note": "Instrumented 128-step short-prompt run, separate from uninstrumented throughput. Union of target Compute intervals. No per-kernel timing, memory bandwidth or hardware-counter claim. Gaps include CPU work, waits and desktop contention."
+}

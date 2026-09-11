@@ -1,0 +1,40 @@
+{
+  "capture": [
+    "DeltaNetConvUpdate",
+    "DeltaNetUpdate",
+    "GatedActMul",
+    "Gemv",
+    "Normalization",
+    "QKVNorm",
+    "_D4GemvS6VbfloatS6VbfloatS6VbfloatS21VScaleZeroPointDequantS2V32S1V4S1V1S4VtrueS1V1S2V32S2V32S1V2S1V8",
+    "hadamard_factors",
+    "normalization",
+    "qkv norm"
+  ],
+  "device-resources-0x794c500000": [
+    "_D11GatedActMulS6Vbfloat",
+    "_D13NormalizationS6VbfloatS5VfloatS6VbfloatS5Vfloat",
+    "_D14DeltaNetUpdateS6VbfloatS3V128",
+    "_D18DeltaNetConvUpdateS6Vbfloat",
+    "_D4GemvS6VbfloatS6VbfloatS6VbfloatS21VScaleZeroPointDequantS2V32S1V4S1V1S4VtrueS1V1S2V32S2V32S1V2S1V8",
+    "_D7QKVNormS6VbfloatS5VfloatS6VbfloatS5Vfloat",
+    "gated_dim",
+    "hadamard_factors",
+    "norm_epsilon",
+    "norm_weight",
+    "output_hadamard_factors"
+  ],
+  "unused-device-resources-0x794c500000": [
+    "_D15DeltaNetPrefillS6VbfloatS3V128",
+    "_D16DeltaNetConvScanS6Vbfloat",
+    "_D16DeltaNetNormGateS6Vbfloat",
+    "_D19DeltaNetPrefillPrepS6VbfloatS5VfloatS3V128",
+    "_D19DeltaNetPrefillPrepS6VbfloatS6VbfloatS3V128",
+    "k_norm",
+    "k_norm_out",
+    "norm_epsilon",
+    "norm_weight",
+    "q_norm",
+    "q_norm_out"
+  ]
+}

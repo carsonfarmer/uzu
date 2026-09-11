@@ -1,0 +1,45 @@
+experiments/north/results/branch-layer7-1.json
+phased 256 gpu_us 582.58 wall_us 772.29 paired_ratio 1.0
+local_fusion 256 gpu_us 589.5 wall_us 774 paired_ratio 0.984
+mixed_grid 256 gpu_us 589.54 wall_us 767.62 paired_ratio 0.984
+mixed_interleaved 256 gpu_us 585.62 wall_us 802.29 paired_ratio 0.989
+static 20 gpu_us 1758.33 wall_us 1926.04 paired_ratio 2.586
+dynamic 20 gpu_us 1769.42 wall_us 1924.04 paired_ratio 2.574
+static 64 gpu_us 698.71 wall_us 872.5 paired_ratio 1.129
+dynamic 64 gpu_us 759.62 wall_us 931.79 paired_ratio 1.243
+static 128 gpu_us 544.67 wall_us 762.54 paired_ratio 0.914
+static_interleaved 128 gpu_us 588.0 wall_us 772.83 paired_ratio 0.979
+dynamic 128 gpu_us 573.67 wall_us 781.62 paired_ratio 0.962
+static 256 gpu_us 577.42 wall_us 772 paired_ratio 0.973
+static_interleaved 256 gpu_us 558.5 wall_us 757.92 paired_ratio 0.958
+dynamic 256 gpu_us 572.08 wall_us 764.83 paired_ratio 0.947
+experiments/north/results/branch-layer7-2.json
+phased 256 gpu_us 547.54 wall_us 725.46 paired_ratio 1.0
+local_fusion 256 gpu_us 545.0 wall_us 724.38 paired_ratio 0.994
+mixed_grid 256 gpu_us 540.0 wall_us 721.46 paired_ratio 0.988
+mixed_interleaved 256 gpu_us 537.0 wall_us 722.67 paired_ratio 0.978
+static 20 gpu_us 1368.92 wall_us 1557.46 paired_ratio 2.502
+dynamic 20 gpu_us 1363.75 wall_us 1557.29 paired_ratio 2.51
+static 64 gpu_us 601.42 wall_us 794.75 paired_ratio 1.101
+dynamic 64 gpu_us 660.87 wall_us 838.33 paired_ratio 1.214
+static 128 gpu_us 505.25 wall_us 696 paired_ratio 0.92
+static_interleaved 128 gpu_us 542.46 wall_us 717.54 paired_ratio 0.99
+dynamic 128 gpu_us 544.92 wall_us 726.04 paired_ratio 0.988
+static 256 gpu_us 538.17 wall_us 718.62 paired_ratio 0.978
+static_interleaved 256 gpu_us 532.5 wall_us 730.67 paired_ratio 0.973
+dynamic 256 gpu_us 520.5 wall_us 704.71 paired_ratio 0.956
+experiments/north/results/branch-layer7-3.json
+phased 256 gpu_us 554.67 wall_us 733.46 paired_ratio 1.0
+local_fusion 256 gpu_us 551.92 wall_us 731.46 paired_ratio 0.992
+mixed_grid 256 gpu_us 550.25 wall_us 743.08 paired_ratio 0.994
+mixed_interleaved 256 gpu_us 549.29 wall_us 732.88 paired_ratio 0.996
+static 20 gpu_us 1363.87 wall_us 1544.67 paired_ratio 2.464
+dynamic 20 gpu_us 1371.5 wall_us 1553.29 paired_ratio 2.483
+static 64 gpu_us 608.5 wall_us 791.04 paired_ratio 1.103
+dynamic 64 gpu_us 663.5 wall_us 849.38 paired_ratio 1.198
+static 128 gpu_us 509.92 wall_us 695.62 paired_ratio 0.92
+static_interleaved 128 gpu_us 538.33 wall_us 714.04 paired_ratio 0.968
+dynamic 128 gpu_us 550.5 wall_us 726.17 paired_ratio 0.992
+static 256 gpu_us 541.5 wall_us 714.46 paired_ratio 0.975
+static_interleaved 256 gpu_us 548.42 wall_us 725.67 paired_ratio 0.985
+dynamic 256 gpu_us 538.62 wall_us 713.25 paired_ratio 0.961

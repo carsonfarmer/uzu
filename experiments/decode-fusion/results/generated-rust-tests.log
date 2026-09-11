@@ -1,0 +1,11 @@
+
+running 6 tests
+test tests::test_duplicate_at_end ... ok
+test tests::test_duplicate_at_start ... ok
+test tests::test_duplicate_in_middle ... ok
+test tests::test_no_duplicates ... ok
+test tests::test_duplicate_with_large_numbers ... ok
+test tests::test_empty_slice ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

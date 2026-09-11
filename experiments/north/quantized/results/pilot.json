@@ -1,0 +1,1130 @@
+{
+  "layer": 1,
+  "capture": "work/north-layer",
+  "checks": {
+    "native": {
+      "max_abs": 0.0,
+      "relative_l2": 0.0
+    },
+    "phased": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744
+    },
+    "static20": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744
+    },
+    "static64": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744
+    },
+    "static128": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744
+    },
+    "static256": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744
+    },
+    "interleaved128": {
+      "max_abs": 0.00390625,
+      "relative_l2": 0.0030931306537240744
+    }
+  },
+  "samples": [
+    {
+      "variant": "native",
+      "repetition": 0,
+      "wall_us": 945.7090054638684
+    },
+    {
+      "variant": "phased",
+      "repetition": 0,
+      "wall_us": 770.582992117852
+    },
+    {
+      "variant": "static20",
+      "repetition": 0,
+      "wall_us": 1295.2500255778432
+    },
+    {
+      "variant": "static64",
+      "repetition": 0,
+      "wall_us": 886.0829984769225
+    },
+    {
+      "variant": "static128",
+      "repetition": 0,
+      "wall_us": 679.791031870991
+    },
+    {
+      "variant": "static256",
+      "repetition": 0,
+      "wall_us": 528.9169494062662
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 0,
+      "wall_us": 692.417030222714
+    },
+    {
+      "variant": "native",
+      "repetition": 1,
+      "wall_us": 706.9159764796495
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 1,
+      "wall_us": 654.7909579239786
+    },
+    {
+      "variant": "static256",
+      "repetition": 1,
+      "wall_us": 489.95797988027334
+    },
+    {
+      "variant": "static128",
+      "repetition": 1,
+      "wall_us": 521.1670068092644
+    },
+    {
+      "variant": "static64",
+      "repetition": 1,
+      "wall_us": 621.8329654075205
+    },
+    {
+      "variant": "static20",
+      "repetition": 1,
+      "wall_us": 1133.6670140735805
+    },
+    {
+      "variant": "phased",
+      "repetition": 1,
+      "wall_us": 674.9159656465054
+    },
+    {
+      "variant": "static20",
+      "repetition": 2,
+      "wall_us": 1179.6249891631305
+    },
+    {
+      "variant": "static64",
+      "repetition": 2,
+      "wall_us": 536.5409888327122
+    },
+    {
+      "variant": "static128",
+      "repetition": 2,
+      "wall_us": 495.4169853590429
+    },
+    {
+      "variant": "static256",
+      "repetition": 2,
+      "wall_us": 464.37501441687346
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 2,
+      "wall_us": 761.5420036017895
+    },
+    {
+      "variant": "native",
+      "repetition": 2,
+      "wall_us": 452.041975222528
+    },
+    {
+      "variant": "phased",
+      "repetition": 2,
+      "wall_us": 455.54101234301925
+    },
+    {
+      "variant": "static20",
+      "repetition": 3,
+      "wall_us": 969.5420158095658
+    },
+    {
+      "variant": "phased",
+      "repetition": 3,
+      "wall_us": 937.4170331284404
+    },
+    {
+      "variant": "native",
+      "repetition": 3,
+      "wall_us": 478.16603910177946
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 3,
+      "wall_us": 766.6670135222375
+    },
+    {
+      "variant": "static256",
+      "repetition": 3,
+      "wall_us": 478.541012853384
+    },
+    {
+      "variant": "static128",
+      "repetition": 3,
+      "wall_us": 478.04199857637286
+    },
+    {
+      "variant": "static64",
+      "repetition": 3,
+      "wall_us": 462.4159773811698
+    },
+    {
+      "variant": "static128",
+      "repetition": 4,
+      "wall_us": 459.66700417920947
+    },
+    {
+      "variant": "static256",
+      "repetition": 4,
+      "wall_us": 447.00002763420343
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 4,
+      "wall_us": 517.2090022824705
+    },
+    {
+      "variant": "native",
+      "repetition": 4,
+      "wall_us": 527.5420262478292
+    },
+    {
+      "variant": "phased",
+      "repetition": 4,
+      "wall_us": 585.0830348208547
+    },
+    {
+      "variant": "static20",
+      "repetition": 4,
+      "wall_us": 1011.7500205524266
+    },
+    {
+      "variant": "static64",
+      "repetition": 4,
+      "wall_us": 480.49999168142676
+    },
+    {
+      "variant": "static128",
+      "repetition": 5,
+      "wall_us": 455.37500409409404
+    },
+    {
+      "variant": "static64",
+      "repetition": 5,
+      "wall_us": 464.0000406652689
+    },
+    {
+      "variant": "static20",
+      "repetition": 5,
+      "wall_us": 970.6669952720404
+    },
+    {
+      "variant": "phased",
+      "repetition": 5,
+      "wall_us": 556.9590139202774
+    },
+    {
+      "variant": "native",
+      "repetition": 5,
+      "wall_us": 392.707996070385
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 5,
+      "wall_us": 551.207980606705
+    },
+    {
+      "variant": "static256",
+      "repetition": 5,
+      "wall_us": 449.1249565035105
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 6,
+      "wall_us": 523.5419957898557
+    },
+    {
+      "variant": "native",
+      "repetition": 6,
+      "wall_us": 404.1659994982183
+    },
+    {
+      "variant": "phased",
+      "repetition": 6,
+      "wall_us": 588.6250291951001
+    },
+    {
+      "variant": "static20",
+      "repetition": 6,
+      "wall_us": 1047.4160080775619
+    },
+    {
+      "variant": "static64",
+      "repetition": 6,
+      "wall_us": 474.6670019812882
+    },
+    {
+      "variant": "static128",
+      "repetition": 6,
+      "wall_us": 453.1670128926635
+    },
+    {
+      "variant": "static256",
+      "repetition": 6,
+      "wall_us": 444.16700256988406
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 7,
+      "wall_us": 521.6670106165111
+    },
+    {
+      "variant": "static256",
+      "repetition": 7,
+      "wall_us": 447.8340269997716
+    },
+    {
+      "variant": "static128",
+      "repetition": 7,
+      "wall_us": 447.8750051930547
+    },
+    {
+      "variant": "static64",
+      "repetition": 7,
+      "wall_us": 463.4999786503613
+    },
+    {
+      "variant": "static20",
+      "repetition": 7,
+      "wall_us": 1002.5419760495424
+    },
+    {
+      "variant": "phased",
+      "repetition": 7,
+      "wall_us": 574.5000089518726
+    },
+    {
+      "variant": "native",
+      "repetition": 7,
+      "wall_us": 437.7919831313193
+    },
+    {
+      "variant": "phased",
+      "repetition": 8,
+      "wall_us": 564.0419549308717
+    },
+    {
+      "variant": "static20",
+      "repetition": 8,
+      "wall_us": 992.459012195468
+    },
+    {
+      "variant": "static64",
+      "repetition": 8,
+      "wall_us": 465.83404764533043
+    },
+    {
+      "variant": "static128",
+      "repetition": 8,
+      "wall_us": 464.8329922929406
+    },
+    {
+      "variant": "static256",
+      "repetition": 8,
+      "wall_us": 430.33401016145945
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 8,
+      "wall_us": 549.082993529737
+    },
+    {
+      "variant": "native",
+      "repetition": 8,
+      "wall_us": 549.7080273926258
+    },
+    {
+      "variant": "phased",
+      "repetition": 9,
+      "wall_us": 569.1249971278012
+    },
+    {
+      "variant": "native",
+      "repetition": 9,
+      "wall_us": 398.8330136053264
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 9,
+      "wall_us": 540.6250129453838
+    },
+    {
+      "variant": "static256",
+      "repetition": 9,
+      "wall_us": 761.3750058226287
+    },
+    {
+      "variant": "static128",
+      "repetition": 9,
+      "wall_us": 468.29204075038433
+    },
+    {
+      "variant": "static64",
+      "repetition": 9,
+      "wall_us": 465.7499957829714
+    },
+    {
+      "variant": "static20",
+      "repetition": 9,
+      "wall_us": 1001.2909770011902
+    },
+    {
+      "variant": "static64",
+      "repetition": 10,
+      "wall_us": 456.3329857774079
+    },
+    {
+      "variant": "static128",
+      "repetition": 10,
+      "wall_us": 455.1250021904707
+    },
+    {
+      "variant": "static256",
+      "repetition": 10,
+      "wall_us": 444.3340003490448
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 10,
+      "wall_us": 533.7079637683928
+    },
+    {
+      "variant": "native",
+      "repetition": 10,
+      "wall_us": 411.0830486752093
+    },
+    {
+      "variant": "phased",
+      "repetition": 10,
+      "wall_us": 588.916998822242
+    },
+    {
+      "variant": "static20",
+      "repetition": 10,
+      "wall_us": 976.2079571373761
+    },
+    {
+      "variant": "static64",
+      "repetition": 11,
+      "wall_us": 462.49997103586793
+    },
+    {
+      "variant": "static20",
+      "repetition": 11,
+      "wall_us": 1003.4590377472341
+    },
+    {
+      "variant": "phased",
+      "repetition": 11,
+      "wall_us": 568.6659715138376
+    },
+    {
+      "variant": "native",
+      "repetition": 11,
+      "wall_us": 410.1249505765736
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 11,
+      "wall_us": 531.7499744705856
+    },
+    {
+      "variant": "static256",
+      "repetition": 11,
+      "wall_us": 436.45803816616535
+    },
+    {
+      "variant": "static128",
+      "repetition": 11,
+      "wall_us": 447.75003334507346
+    },
+    {
+      "variant": "static256",
+      "repetition": 12,
+      "wall_us": 456.62501361221075
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 12,
+      "wall_us": 561.8329741992056
+    },
+    {
+      "variant": "native",
+      "repetition": 12,
+      "wall_us": 392.99996569752693
+    },
+    {
+      "variant": "phased",
+      "repetition": 12,
+      "wall_us": 471.6250114142895
+    },
+    {
+      "variant": "static20",
+      "repetition": 12,
+      "wall_us": 1033.5420374758542
+    },
+    {
+      "variant": "static64",
+      "repetition": 12,
+      "wall_us": 468.2090366259217
+    },
+    {
+      "variant": "static128",
+      "repetition": 12,
+      "wall_us": 467.6670068874955
+    },
+    {
+      "variant": "static256",
+      "repetition": 13,
+      "wall_us": 429.91701047867537
+    },
+    {
+      "variant": "static128",
+      "repetition": 13,
+      "wall_us": 457.2920151986182
+    },
+    {
+      "variant": "static64",
+      "repetition": 13,
+      "wall_us": 458.45803106203675
+    },
+    {
+      "variant": "static20",
+      "repetition": 13,
+      "wall_us": 980.3330176509917
+    },
+    {
+      "variant": "phased",
+      "repetition": 13,
+      "wall_us": 439.54100692644715
+    },
+    {
+      "variant": "native",
+      "repetition": 13,
+      "wall_us": 407.6669574715197
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 13,
+      "wall_us": 660.2919893339276
+    },
+    {
+      "variant": "native",
+      "repetition": 14,
+      "wall_us": 387.4170361086726
+    },
+    {
+      "variant": "phased",
+      "repetition": 14,
+      "wall_us": 554.2499711737037
+    },
+    {
+      "variant": "static20",
+      "repetition": 14,
+      "wall_us": 944.5000323466957
+    },
+    {
+      "variant": "static64",
+      "repetition": 14,
+      "wall_us": 456.7920113913715
+    },
+    {
+      "variant": "static128",
+      "repetition": 14,
+      "wall_us": 446.58296974375844
+    },
+    {
+      "variant": "static256",
+      "repetition": 14,
+      "wall_us": 440.04101073369384
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 14,
+      "wall_us": 545.124989002943
+    },
+    {
+      "variant": "native",
+      "repetition": 15,
+      "wall_us": 373.2909681275487
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 15,
+      "wall_us": 523.6249999143183
+    },
+    {
+      "variant": "static256",
+      "repetition": 15,
+      "wall_us": 548.791023902595
+    },
+    {
+      "variant": "static128",
+      "repetition": 15,
+      "wall_us": 428.29103767871857
+    },
+    {
+      "variant": "static64",
+      "repetition": 15,
+      "wall_us": 463.3330390788615
+    },
+    {
+      "variant": "static20",
+      "repetition": 15,
+      "wall_us": 974.5000279508531
+    },
+    {
+      "variant": "phased",
+      "repetition": 15,
+      "wall_us": 654.3329800479114
+    },
+    {
+      "variant": "static20",
+      "repetition": 16,
+      "wall_us": 951.9169689156115
+    },
+    {
+      "variant": "static64",
+      "repetition": 16,
+      "wall_us": 483.58296044170856
+    },
+    {
+      "variant": "static128",
+      "repetition": 16,
+      "wall_us": 462.9999748431146
+    },
+    {
+      "variant": "static256",
+      "repetition": 16,
+      "wall_us": 466.16600593551993
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 16,
+      "wall_us": 535.6250330805779
+    },
+    {
+      "variant": "native",
+      "repetition": 16,
+      "wall_us": 397.16699393466115
+    },
+    {
+      "variant": "phased",
+      "repetition": 16,
+      "wall_us": 580.3329986520112
+    },
+    {
+      "variant": "static20",
+      "repetition": 17,
+      "wall_us": 943.7910048291087
+    },
+    {
+      "variant": "phased",
+      "repetition": 17,
+      "wall_us": 562.8750077448785
+    },
+    {
+      "variant": "native",
+      "repetition": 17,
+      "wall_us": 400.12499084696174
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 17,
+      "wall_us": 554.167025256902
+    },
+    {
+      "variant": "static256",
+      "repetition": 17,
+      "wall_us": 457.87502313032746
+    },
+    {
+      "variant": "static128",
+      "repetition": 17,
+      "wall_us": 444.3750367499888
+    },
+    {
+      "variant": "static64",
+      "repetition": 17,
+      "wall_us": 439.5830328576267
+    },
+    {
+      "variant": "static128",
+      "repetition": 18,
+      "wall_us": 428.2089648768306
+    },
+    {
+      "variant": "static256",
+      "repetition": 18,
+      "wall_us": 417.95801371335983
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 18,
+      "wall_us": 517.5829865038395
+    },
+    {
+      "variant": "native",
+      "repetition": 18,
+      "wall_us": 428.958039265126
+    },
+    {
+      "variant": "phased",
+      "repetition": 18,
+      "wall_us": 558.1669975072145
+    },
+    {
+      "variant": "static20",
+      "repetition": 18,
+      "wall_us": 955.3749696351588
+    },
+    {
+      "variant": "static64",
+      "repetition": 18,
+      "wall_us": 461.0830219462514
+    },
+    {
+      "variant": "static128",
+      "repetition": 19,
+      "wall_us": 454.20898823067546
+    },
+    {
+      "variant": "static64",
+      "repetition": 19,
+      "wall_us": 473.74999849125743
+    },
+    {
+      "variant": "static20",
+      "repetition": 19,
+      "wall_us": 972.0419766381383
+    },
+    {
+      "variant": "phased",
+      "repetition": 19,
+      "wall_us": 591.8749957345426
+    },
+    {
+      "variant": "native",
+      "repetition": 19,
+      "wall_us": 393.08296982198954
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 19,
+      "wall_us": 534.8339909687638
+    },
+    {
+      "variant": "static256",
+      "repetition": 19,
+      "wall_us": 440.457952208817
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 20,
+      "wall_us": 515.9999709576368
+    },
+    {
+      "variant": "native",
+      "repetition": 20,
+      "wall_us": 379.37500746920705
+    },
+    {
+      "variant": "phased",
+      "repetition": 20,
+      "wall_us": 557.1249639615417
+    },
+    {
+      "variant": "static20",
+      "repetition": 20,
+      "wall_us": 960.8750115148723
+    },
+    {
+      "variant": "static64",
+      "repetition": 20,
+      "wall_us": 445.79198583960533
+    },
+    {
+      "variant": "static128",
+      "repetition": 20,
+      "wall_us": 440.2089980430901
+    },
+    {
+      "variant": "static256",
+      "repetition": 20,
+      "wall_us": 424.250029027462
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 21,
+      "wall_us": 517.2090022824705
+    },
+    {
+      "variant": "static256",
+      "repetition": 21,
+      "wall_us": 422.040990088135
+    },
+    {
+      "variant": "static128",
+      "repetition": 21,
+      "wall_us": 434.54195838421583
+    },
+    {
+      "variant": "static64",
+      "repetition": 21,
+      "wall_us": 442.1250196173787
+    },
+    {
+      "variant": "static20",
+      "repetition": 21,
+      "wall_us": 915.1249541901052
+    },
+    {
+      "variant": "phased",
+      "repetition": 21,
+      "wall_us": 560.4579928331077
+    },
+    {
+      "variant": "native",
+      "repetition": 21,
+      "wall_us": 496.7499990016222
+    },
+    {
+      "variant": "phased",
+      "repetition": 22,
+      "wall_us": 567.3340056091547
+    },
+    {
+      "variant": "static20",
+      "repetition": 22,
+      "wall_us": 974.3330301716924
+    },
+    {
+      "variant": "static64",
+      "repetition": 22,
+      "wall_us": 621.2499574758112
+    },
+    {
+      "variant": "static128",
+      "repetition": 22,
+      "wall_us": 450.74999798089266
+    },
+    {
+      "variant": "static256",
+      "repetition": 22,
+      "wall_us": 456.2500398606062
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 22,
+      "wall_us": 512.8330085426569
+    },
+    {
+      "variant": "native",
+      "repetition": 22,
+      "wall_us": 421.58301221206784
+    },
+    {
+      "variant": "phased",
+      "repetition": 23,
+      "wall_us": 553.7079996429384
+    },
+    {
+      "variant": "native",
+      "repetition": 23,
+      "wall_us": 376.33400643244386
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 23,
+      "wall_us": 526.2919585220516
+    },
+    {
+      "variant": "static256",
+      "repetition": 23,
+      "wall_us": 439.95899613946676
+    },
+    {
+      "variant": "static128",
+      "repetition": 23,
+      "wall_us": 445.87498996406794
+    },
+    {
+      "variant": "static64",
+      "repetition": 23,
+      "wall_us": 513.0000063218176
+    },
+    {
+      "variant": "static20",
+      "repetition": 23,
+      "wall_us": 997.8750022128224
+    },
+    {
+      "variant": "static64",
+      "repetition": 24,
+      "wall_us": 475.2919776365161
+    },
+    {
+      "variant": "static128",
+      "repetition": 24,
+      "wall_us": 450.58398973196745
+    },
+    {
+      "variant": "static256",
+      "repetition": 24,
+      "wall_us": 434.9589580669999
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 24,
+      "wall_us": 516.6250048205256
+    },
+    {
+      "variant": "native",
+      "repetition": 24,
+      "wall_us": 381.5420204773545
+    },
+    {
+      "variant": "phased",
+      "repetition": 24,
+      "wall_us": 575.499958358705
+    },
+    {
+      "variant": "static20",
+      "repetition": 24,
+      "wall_us": 948.7500065006316
+    },
+    {
+      "variant": "static64",
+      "repetition": 25,
+      "wall_us": 473.20802696049213
+    },
+    {
+      "variant": "static20",
+      "repetition": 25,
+      "wall_us": 927.6660275645554
+    },
+    {
+      "variant": "phased",
+      "repetition": 25,
+      "wall_us": 552.4999578483403
+    },
+    {
+      "variant": "native",
+      "repetition": 25,
+      "wall_us": 354.7919914126396
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 25,
+      "wall_us": 521.9579907134175
+    },
+    {
+      "variant": "static256",
+      "repetition": 25,
+      "wall_us": 430.2919842302799
+    },
+    {
+      "variant": "static128",
+      "repetition": 25,
+      "wall_us": 418.12501149252057
+    },
+    {
+      "variant": "static256",
+      "repetition": 26,
+      "wall_us": 430.1249864511192
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 26,
+      "wall_us": 506.2079872004688
+    },
+    {
+      "variant": "native",
+      "repetition": 26,
+      "wall_us": 654.7500379383564
+    },
+    {
+      "variant": "phased",
+      "repetition": 26,
+      "wall_us": 552.1250423043966
+    },
+    {
+      "variant": "static20",
+      "repetition": 26,
+      "wall_us": 958.7920503690839
+    },
+    {
+      "variant": "static64",
+      "repetition": 26,
+      "wall_us": 470.95800982788205
+    },
+    {
+      "variant": "static128",
+      "repetition": 26,
+      "wall_us": 453.7089844234288
+    },
+    {
+      "variant": "static256",
+      "repetition": 27,
+      "wall_us": 441.83299178257585
+    },
+    {
+      "variant": "static128",
+      "repetition": 27,
+      "wall_us": 443.95896838977933
+    },
+    {
+      "variant": "static64",
+      "repetition": 27,
+      "wall_us": 466.87497524544597
+    },
+    {
+      "variant": "static20",
+      "repetition": 27,
+      "wall_us": 946.4169852435589
+    },
+    {
+      "variant": "phased",
+      "repetition": 27,
+      "wall_us": 571.8329921364784
+    },
+    {
+      "variant": "native",
+      "repetition": 27,
+      "wall_us": 406.25000838190317
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 27,
+      "wall_us": 541.16704268381
+    },
+    {
+      "variant": "native",
+      "repetition": 28,
+      "wall_us": 379.2079514823854
+    },
+    {
+      "variant": "phased",
+      "repetition": 28,
+      "wall_us": 581.7920318804681
+    },
+    {
+      "variant": "static20",
+      "repetition": 28,
+      "wall_us": 1053.2920132391155
+    },
+    {
+      "variant": "static64",
+      "repetition": 28,
+      "wall_us": 450.999999884516
+    },
+    {
+      "variant": "static128",
+      "repetition": 28,
+      "wall_us": 431.8749997764826
+    },
+    {
+      "variant": "static256",
+      "repetition": 28,
+      "wall_us": 429.5000107958913
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 28,
+      "wall_us": 497.8330107405782
+    },
+    {
+      "variant": "native",
+      "repetition": 29,
+      "wall_us": 359.2920256778598
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 29,
+      "wall_us": 507.66702042892575
+    },
+    {
+      "variant": "static256",
+      "repetition": 29,
+      "wall_us": 425.29101483523846
+    },
+    {
+      "variant": "static128",
+      "repetition": 29,
+      "wall_us": 414.33394653722644
+    },
+    {
+      "variant": "static64",
+      "repetition": 29,
+      "wall_us": 702.6669918559492
+    },
+    {
+      "variant": "static20",
+      "repetition": 29,
+      "wall_us": 964.8329578340054
+    },
+    {
+      "variant": "phased",
+      "repetition": 29,
+      "wall_us": 567.2090337611735
+    },
+    {
+      "variant": "static20",
+      "repetition": 30,
+      "wall_us": 934.6249862574041
+    },
+    {
+      "variant": "static64",
+      "repetition": 30,
+      "wall_us": 455.8750079013407
+    },
+    {
+      "variant": "static128",
+      "repetition": 30,
+      "wall_us": 433.29200707376003
+    },
+    {
+      "variant": "static256",
+      "repetition": 30,
+      "wall_us": 435.20802864804864
+    },
+    {
+      "variant": "interleaved128",
+      "repetition": 30,
+      "wall_us": 530.292047187686
+    },
+    {
+      "variant": "native",
+      "repetition": 30,
+      "wall_us": 409.417029004544
+    },
+    {
+      "variant": "phased",
+      "repetition": 30,
+      "wall_us": 561.8330324068666
+    }
+  ],
+  "device": {
+    "device_name": "Apple M4 Pro",
+    "max_recommended_working_set_size": 40200896512,
+    "memory_size": 51539607552,
+    "architecture": "applegpu_g16s",
+    "max_buffer_length": 30150672384,
+    "resource_limit": 499000
+  },
+  "note": "Native affine 4bit/group64 weights stay packed; real captured routing fixed; same MLX process, interleaved variants. Wall includes lazy graph creation/evaluation, no host sampling. Operator selection still distinct from whole-model decode."
+}

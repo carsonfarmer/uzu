@@ -1,0 +1,16 @@
+{
+  "machine": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "model_revision": "dfbe084dfa26e241345af99ca32848f38fd865f9",
+  "runtime_revision": "cdc745ad8a32d162f6d8e9d08be256910d663ac2",
+  "source_sha256": {
+    "experiments/north/export_layer.py": "434ab1e8ddf422cee45504bd3ea9ea596189bc826a625afdfc8ad845e0dc2b1c",
+    "experiments/north/baseline.py": "2c039726bb3b5042c1d283153e89db7e207bba654e8f23e88a670e953e3bb245",
+    "experiments/north/summarize_baseline.py": "87b299fc618b54efe220181472ffede582b19518290539ccb8999f8a6218f750",
+    "experiments/north/summarize.py": "ca26c9d4dc07872f375b1f3188692dc97f58eb82ab79be12b302c9102e022251",
+    "experiments/north/compare_output.py": "79fc214a570a492f61b014b7a12112719983c76c0c0ecd2cf53e5c1979177f4e",
+    "experiments/north/reference.py": "2a3d6f4d3769561d0da5b8cefa62aa4ae23af7bdef7c498917f512234fe0ebe2",
+    "experiments/north/metal/run.sh": "c9fdc79207ce932185ba71cef5b164209b948b91a0217ba193cc84500d38cf98",
+    "experiments/north/metal/branch.metal": "4e014f58bc3f7f8dbe6e9447b1ea9d7895048007955cac1a96817d8df27efdbb",
+    "experiments/north/metal/run.swift": "e22aaa70fd12f4d1b2d7d153b9a8476edf79910f45cb95cb27612df12877cd4d"
+  }
+}

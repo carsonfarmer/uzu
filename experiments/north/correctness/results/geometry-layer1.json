@@ -1,0 +1,1724 @@
+{
+  "layer": 1,
+  "device": {
+    "device_name": "Apple M4 Pro",
+    "max_recommended_working_set_size": 40200896512,
+    "memory_size": 51539607552,
+    "architecture": "applegpu_g16s",
+    "max_buffer_length": 30150672384,
+    "resource_limit": 499000
+  },
+  "exact_outputs": true,
+  "samples": [
+    {
+      "variant": "native",
+      "repetition": 0,
+      "wall_us": 898.7500332295895
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 0,
+      "wall_us": 873.6670133657753
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 0,
+      "wall_us": 598.5419848002493
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 0,
+      "wall_us": 912.3749914579093
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 0,
+      "wall_us": 688.083004206419
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 0,
+      "wall_us": 521.3330150581896
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 0,
+      "wall_us": 502.99998838454485
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 0,
+      "wall_us": 538.666034117341
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 0,
+      "wall_us": 494.45900367572904
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 0,
+      "wall_us": 507.16695841401815
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 0,
+      "wall_us": 532.6669779606164
+    },
+    {
+      "variant": "native",
+      "repetition": 1,
+      "wall_us": 1767.8749863989651
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 1,
+      "wall_us": 503.2920162193477
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 1,
+      "wall_us": 497.9579825885594
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 1,
+      "wall_us": 481.8749730475247
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 1,
+      "wall_us": 548.2920096255839
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 1,
+      "wall_us": 507.75002455338836
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 1,
+      "wall_us": 517.1250086277723
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 1,
+      "wall_us": 617.3329893499613
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 1,
+      "wall_us": 531.4580048434436
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 1,
+      "wall_us": 873.12504183501
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 1,
+      "wall_us": 815.2500377036631
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 2,
+      "wall_us": 564.4580232910812
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 2,
+      "wall_us": 598.1249851174653
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 2,
+      "wall_us": 534.5000536181033
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 2,
+      "wall_us": 508.541997987777
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 2,
+      "wall_us": 523.0829701758921
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 2,
+      "wall_us": 537.7080524340272
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 2,
+      "wall_us": 532.2920042090118
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 2,
+      "wall_us": 571.4999861083925
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 2,
+      "wall_us": 533.9580238796771
+    },
+    {
+      "variant": "native",
+      "repetition": 2,
+      "wall_us": 739.0420068986714
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 2,
+      "wall_us": 826.9170066341758
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 3,
+      "wall_us": 595.6250242888927
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 3,
+      "wall_us": 631.5420032478869
+    },
+    {
+      "variant": "native",
+      "repetition": 3,
+      "wall_us": 662.0000349357724
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 3,
+      "wall_us": 515.7500272616744
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 3,
+      "wall_us": 581.2500021420419
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 3,
+      "wall_us": 583.791988901794
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 3,
+      "wall_us": 534.4579694792628
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 3,
+      "wall_us": 532.9999839887023
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 3,
+      "wall_us": 543.6670035123825
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 3,
+      "wall_us": 666.8749847449362
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 3,
+      "wall_us": 562.7909558825195
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 4,
+      "wall_us": 574.9589763581753
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 4,
+      "wall_us": 518.7909700907767
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 4,
+      "wall_us": 548.4159919433296
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 4,
+      "wall_us": 570.5420044250786
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 4,
+      "wall_us": 500.54199527949095
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 4,
+      "wall_us": 518.0420121178031
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 4,
+      "wall_us": 536.3330128602684
+    },
+    {
+      "variant": "native",
+      "repetition": 4,
+      "wall_us": 1729.9999599345028
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 4,
+      "wall_us": 639.9580161087215
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 4,
+      "wall_us": 564.7919606417418
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 4,
+      "wall_us": 586.1250101588666
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 5,
+      "wall_us": 573.7500032410026
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 5,
+      "wall_us": 556.6669860854745
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 5,
+      "wall_us": 573.7500032410026
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 5,
+      "wall_us": 634.7500020638108
+    },
+    {
+      "variant": "native",
+      "repetition": 5,
+      "wall_us": 665.3339951299131
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 5,
+      "wall_us": 533.5420137271285
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 5,
+      "wall_us": 541.9999943114817
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 5,
+      "wall_us": 534.7499973140657
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 5,
+      "wall_us": 561.6249982267618
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 5,
+      "wall_us": 517.8329884074628
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 5,
+      "wall_us": 538.9589932747185
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 6,
+      "wall_us": 530.5410013534129
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 6,
+      "wall_us": 531.0410051606596
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 6,
+      "wall_us": 495.2079616487026
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 6,
+      "wall_us": 506.750016938895
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 6,
+      "wall_us": 511.1249629408121
+    },
+    {
+      "variant": "native",
+      "repetition": 6,
+      "wall_us": 673.3750342391431
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 6,
+      "wall_us": 639.3339717760682
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 6,
+      "wall_us": 1523.9999629557133
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 6,
+      "wall_us": 557.8330019488931
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 6,
+      "wall_us": 583.791988901794
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 6,
+      "wall_us": 521.4170087128878
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 7,
+      "wall_us": 519.0420197322965
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 7,
+      "wall_us": 530.4999649524689
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 7,
+      "wall_us": 593.3750071562827
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 7,
+      "wall_us": 562.1250020340085
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 7,
+      "wall_us": 566.3329502567649
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 7,
+      "wall_us": 717.0419557951391
+    },
+    {
+      "variant": "native",
+      "repetition": 7,
+      "wall_us": 684.7920012660325
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 7,
+      "wall_us": 504.0410323999822
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 7,
+      "wall_us": 498.5419800505042
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 7,
+      "wall_us": 501.24997505918145
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 7,
+      "wall_us": 374.4999994523823
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 8,
+      "wall_us": 403.74998934566975
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 8,
+      "wall_us": 539.9169749580324
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 8,
+      "wall_us": 573.0830016545951
+    },
+    {
+      "variant": "native",
+      "repetition": 8,
+      "wall_us": 659.7500178031623
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 8,
+      "wall_us": 634.2090200632811
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 8,
+      "wall_us": 557.8750278800726
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 8,
+      "wall_us": 578.7090049125254
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 8,
+      "wall_us": 1473.12501212582
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 8,
+      "wall_us": 541.9590161181986
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 8,
+      "wall_us": 574.040983337909
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 8,
+      "wall_us": 549.832999240607
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 9,
+      "wall_us": 500.9999731555581
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 9,
+      "wall_us": 565.7080328091979
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 9,
+      "wall_us": 620.7089754752815
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 9,
+      "wall_us": 570.5420044250786
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 9,
+      "wall_us": 580.3749663755298
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 9,
+      "wall_us": 556.7079642787576
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 9,
+      "wall_us": 559.4170070253313
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 9,
+      "wall_us": 648.0419542640448
+    },
+    {
+      "variant": "native",
+      "repetition": 9,
+      "wall_us": 683.5830281488597
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 9,
+      "wall_us": 525.9590107016265
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 9,
+      "wall_us": 652.0419847220182
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 10,
+      "wall_us": 513.5420360602438
+    },
+    {
+      "variant": "native",
+      "repetition": 10,
+      "wall_us": 678.4590077586472
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 10,
+      "wall_us": 642.5830069929361
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 10,
+      "wall_us": 575.5829624831676
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 10,
+      "wall_us": 576.6660324297845
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 10,
+      "wall_us": 650.0000017695129
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 10,
+      "wall_us": 761.5829817950726
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 10,
+      "wall_us": 527.2499984130263
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 10,
+      "wall_us": 517.3339741304517
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 10,
+      "wall_us": 525.8339806459844
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 10,
+      "wall_us": 501.79200479760766
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 11,
+      "wall_us": 572.0829940401018
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 11,
+      "wall_us": 488.4999943897128
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 11,
+      "wall_us": 511.29201892763376
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 11,
+      "wall_us": 540.2499809861183
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 11,
+      "wall_us": 528.500007931143
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 11,
+      "wall_us": 515.4169630259275
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 11,
+      "wall_us": 569.5000290870667
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 11,
+      "wall_us": 566.875038202852
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 11,
+      "wall_us": 545.0419848784804
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 11,
+      "wall_us": 671.9160010106862
+    },
+    {
+      "variant": "native",
+      "repetition": 11,
+      "wall_us": 676.5830330550671
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 12,
+      "wall_us": 631.7920051515102
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 12,
+      "wall_us": 539.7500353865325
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 12,
+      "wall_us": 568.6249933205545
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 12,
+      "wall_us": 566.1249742843211
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 12,
+      "wall_us": 523.8750018179417
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 12,
+      "wall_us": 637.2919888235629
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 12,
+      "wall_us": 778.1250169500709
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 12,
+      "wall_us": 470.37500189617276
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 12,
+      "wall_us": 495.6660559400916
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 12,
+      "wall_us": 553.457997739315
+    },
+    {
+      "variant": "native",
+      "repetition": 12,
+      "wall_us": 644.3330203182995
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 13,
+      "wall_us": 616.8329855427146
+    },
+    {
+      "variant": "native",
+      "repetition": 13,
+      "wall_us": 667.6660268567502
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 13,
+      "wall_us": 535.7920308597386
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 13,
+      "wall_us": 510.7090109959245
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 13,
+      "wall_us": 522.2499603405595
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 13,
+      "wall_us": 572.3750218749046
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 13,
+      "wall_us": 532.0410127751529
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 13,
+      "wall_us": 520.3329492360353
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 13,
+      "wall_us": 568.9590470865369
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 13,
+      "wall_us": 692.8750080987811
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 13,
+      "wall_us": 569.6250009350479
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 14,
+      "wall_us": 553.8749974220991
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 14,
+      "wall_us": 569.7080050595105
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 14,
+      "wall_us": 502.5840364396572
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 14,
+      "wall_us": 535.4580353014171
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 14,
+      "wall_us": 544.7919829748571
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 14,
+      "wall_us": 1485.2500171400607
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 14,
+      "wall_us": 495.87502144277096
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 14,
+      "wall_us": 520.9170049056411
+    },
+    {
+      "variant": "native",
+      "repetition": 14,
+      "wall_us": 680.2499992772937
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 14,
+      "wall_us": 621.7079935595393
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 14,
+      "wall_us": 569.3339626304805
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 15,
+      "wall_us": 557.5410323217511
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 15,
+      "wall_us": 557.9589633271098
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 15,
+      "wall_us": 634.542026091367
+    },
+    {
+      "variant": "native",
+      "repetition": 15,
+      "wall_us": 661.8750048801303
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 15,
+      "wall_us": 515.2089870534837
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 15,
+      "wall_us": 498.25001042336226
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 15,
+      "wall_us": 490.62498146668077
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 15,
+      "wall_us": 549.8750251717865
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 15,
+      "wall_us": 500.33401930704713
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 15,
+      "wall_us": 530.6250532157719
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 15,
+      "wall_us": 570.2499765902758
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 16,
+      "wall_us": 554.6669708564878
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 16,
+      "wall_us": 539.2089951783419
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 16,
+      "wall_us": 547.5420039147139
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 16,
+      "wall_us": 517.4999823793769
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 16,
+      "wall_us": 567.8340094164014
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 16,
+      "wall_us": 699.0830297581851
+    },
+    {
+      "variant": "native",
+      "repetition": 16,
+      "wall_us": 654.9580139108002
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 16,
+      "wall_us": 673.1670000590384
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 16,
+      "wall_us": 557.6249677687883
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 16,
+      "wall_us": 627.5419727899134
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 16,
+      "wall_us": 598.8339544273913
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 17,
+      "wall_us": 521.5840064920485
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 17,
+      "wall_us": 633.6669903248549
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 17,
+      "wall_us": 564.7919606417418
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 17,
+      "wall_us": 554.7920009121299
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 17,
+      "wall_us": 640.5830499716103
+    },
+    {
+      "variant": "native",
+      "repetition": 17,
+      "wall_us": 655.2920094691217
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 17,
+      "wall_us": 516.9999785721302
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 17,
+      "wall_us": 655.9170433320105
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 17,
+      "wall_us": 476.0000156238675
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 17,
+      "wall_us": 559.3749810941517
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 17,
+      "wall_us": 525.8339806459844
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 18,
+      "wall_us": 557.1669898927212
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 18,
+      "wall_us": 511.3339866511524
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 18,
+      "wall_us": 517.2499804757535
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 18,
+      "wall_us": 548.9999894052744
+    },
+    {
+      "variant": "native",
+      "repetition": 18,
+      "wall_us": 1714.9999621324241
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 18,
+      "wall_us": 599.374994635582
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 18,
+      "wall_us": 535.4579770937562
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 18,
+      "wall_us": 563.4169792756438
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 18,
+      "wall_us": 545.2079931274056
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 18,
+      "wall_us": 530.291988980025
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 18,
+      "wall_us": 541.791960131377
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 19,
+      "wall_us": 565.7910369336605
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 19,
+      "wall_us": 530.1670171320438
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 19,
+      "wall_us": 477.74997074157
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 19,
+      "wall_us": 572.2499918192625
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 19,
+      "wall_us": 549.2499913088977
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 19,
+      "wall_us": 544.0409877337515
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 19,
+      "wall_us": 636.0829574987292
+    },
+    {
+      "variant": "native",
+      "repetition": 19,
+      "wall_us": 650.7079815492034
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 19,
+      "wall_us": 509.7919492982328
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 19,
+      "wall_us": 531.7920004017651
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 19,
+      "wall_us": 471.0420034825802
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 20,
+      "wall_us": 468.6670145019889
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 20,
+      "wall_us": 487.12495481595397
+    },
+    {
+      "variant": "native",
+      "repetition": 20,
+      "wall_us": 638.3750005625188
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 20,
+      "wall_us": 698.1660262681544
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 20,
+      "wall_us": 811.0000053420663
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 20,
+      "wall_us": 532.749982085079
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 20,
+      "wall_us": 574.2500070482492
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 20,
+      "wall_us": 553.7500255741179
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 20,
+      "wall_us": 501.04199908673763
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 20,
+      "wall_us": 556.7499902099371
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 20,
+      "wall_us": 477.29199286550283
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 21,
+      "wall_us": 480.7080258615315
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 21,
+      "wall_us": 523.3340198174119
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 21,
+      "wall_us": 493.9169739373028
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 21,
+      "wall_us": 505.1249754615128
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 21,
+      "wall_us": 492.25002294406295
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 21,
+      "wall_us": 557.4169917963445
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 21,
+      "wall_us": 554.9589986912906
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 21,
+      "wall_us": 534.6250254660845
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 21,
+      "wall_us": 659.8749896511436
+    },
+    {
+      "variant": "native",
+      "repetition": 21,
+      "wall_us": 656.7499949596822
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 21,
+      "wall_us": 499.8749936930835
+    },
+    {
+      "variant": "native",
+      "repetition": 22,
+      "wall_us": 641.3329974748194
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 22,
+      "wall_us": 604.4170004315674
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 22,
+      "wall_us": 555.9580167755485
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 22,
+      "wall_us": 667.041982524097
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 22,
+      "wall_us": 820.2919852919877
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 22,
+      "wall_us": 500.8750013075769
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 22,
+      "wall_us": 546.3330307975411
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 22,
+      "wall_us": 564.3329932354391
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 22,
+      "wall_us": 472.4169848486781
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 22,
+      "wall_us": 476.79198905825615
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 22,
+      "wall_us": 454.5829724520445
+    },
+    {
+      "variant": "native",
+      "repetition": 23,
+      "wall_us": 657.8339962288737
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 23,
+      "wall_us": 504.7079757787287
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 23,
+      "wall_us": 477.5419947691262
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 23,
+      "wall_us": 457.0000455714762
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 23,
+      "wall_us": 523.4999698586762
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 23,
+      "wall_us": 484.1249901801348
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 23,
+      "wall_us": 491.9160273857415
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 23,
+      "wall_us": 564.5409692078829
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 23,
+      "wall_us": 531.9999763742089
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 23,
+      "wall_us": 514.9169592186809
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 23,
+      "wall_us": 638.2499705068767
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 24,
+      "wall_us": 516.4169706404209
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 24,
+      "wall_us": 532.8329862095416
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 24,
+      "wall_us": 545.5000209622085
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 24,
+      "wall_us": 488.4160007350147
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 24,
+      "wall_us": 546.1660330183804
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 24,
+      "wall_us": 575.9590421803296
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 24,
+      "wall_us": 636.0000115819275
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 24,
+      "wall_us": 494.00003626942635
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 24,
+      "wall_us": 479.87501602619886
+    },
+    {
+      "variant": "native",
+      "repetition": 24,
+      "wall_us": 690.8330251462758
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 24,
+      "wall_us": 609.1250106692314
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 25,
+      "wall_us": 580.7909765280783
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 25,
+      "wall_us": 636.5409935824573
+    },
+    {
+      "variant": "native",
+      "repetition": 25,
+      "wall_us": 710.5419645085931
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 25,
+      "wall_us": 518.9579678699374
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 25,
+      "wall_us": 498.87498607859015
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 25,
+      "wall_us": 518.2920140214264
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 25,
+      "wall_us": 526.249990798533
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 25,
+      "wall_us": 490.5840032733977
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 25,
+      "wall_us": 492.2079970128834
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 25,
+      "wall_us": 663.6250182054937
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 25,
+      "wall_us": 548.2090055011213
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 26,
+      "wall_us": 665.3750315308571
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 26,
+      "wall_us": 505.0410400144756
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 26,
+      "wall_us": 550.1250270754099
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 26,
+      "wall_us": 557.2920199483633
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 26,
+      "wall_us": 517.2090022824705
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 26,
+      "wall_us": 501.79200479760766
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 26,
+      "wall_us": 733.9160074479878
+    },
+    {
+      "variant": "native",
+      "repetition": 26,
+      "wall_us": 648.0410229414701
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 26,
+      "wall_us": 605.0830124877393
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 26,
+      "wall_us": 544.1249813884497
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 26,
+      "wall_us": 526.249990798533
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 27,
+      "wall_us": 553.3339572139084
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 27,
+      "wall_us": 579.4169846922159
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 27,
+      "wall_us": 530.2500212565064
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 27,
+      "wall_us": 613.4589784778655
+    },
+    {
+      "variant": "native",
+      "repetition": 27,
+      "wall_us": 649.2079701274633
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 27,
+      "wall_us": 500.95905316993594
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 27,
+      "wall_us": 470.9589993581176
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 27,
+      "wall_us": 476.20799159631133
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 27,
+      "wall_us": 577.2089934907854
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 27,
+      "wall_us": 485.6250016018748
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 27,
+      "wall_us": 483.25001262128353
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 28,
+      "wall_us": 465.8339894376695
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 28,
+      "wall_us": 497.95903032645583
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 28,
+      "wall_us": 527.2500566206872
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 28,
+      "wall_us": 547.5829821079969
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 28,
+      "wall_us": 541.541026905179
+    },
+    {
+      "variant": "native",
+      "repetition": 28,
+      "wall_us": 662.1250067837536
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 28,
+      "wall_us": 1799.1249915212393
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 28,
+      "wall_us": 548.1250118464231
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 28,
+      "wall_us": 553.7090473808348
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 28,
+      "wall_us": 586.4169797860086
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 28,
+      "wall_us": 497.58300883695483
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 29,
+      "wall_us": 498.04203445091844
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 29,
+      "wall_us": 492.99997044727206
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 29,
+      "wall_us": 507.6659726910293
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 29,
+      "wall_us": 554.2500293813646
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 29,
+      "wall_us": 549.4580254890025
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 29,
+      "wall_us": 627.5419727899134
+    },
+    {
+      "variant": "native",
+      "repetition": 29,
+      "wall_us": 655.2499835379422
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 29,
+      "wall_us": 483.87498827651143
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 29,
+      "wall_us": 477.6670248247683
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 29,
+      "wall_us": 524.0000318735838
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 29,
+      "wall_us": 503.04096657782793
+    },
+    {
+      "variant": "w160_r8",
+      "repetition": 30,
+      "wall_us": 531.7500326782465
+    },
+    {
+      "variant": "w160_r16",
+      "repetition": 30,
+      "wall_us": 465.9169935621321
+    },
+    {
+      "variant": "w160_r32",
+      "repetition": 30,
+      "wall_us": 493.37500240653753
+    },
+    {
+      "variant": "native",
+      "repetition": 30,
+      "wall_us": 652.7910009026527
+    },
+    {
+      "variant": "native_compiled",
+      "repetition": 30,
+      "wall_us": 624.709005933255
+    },
+    {
+      "variant": "w64_r8",
+      "repetition": 30,
+      "wall_us": 531.8330368027091
+    },
+    {
+      "variant": "w64_r16",
+      "repetition": 30,
+      "wall_us": 667.6670163869858
+    },
+    {
+      "variant": "w64_r32",
+      "repetition": 30,
+      "wall_us": 772.5409814156592
+    },
+    {
+      "variant": "w128_r8",
+      "repetition": 30,
+      "wall_us": 537.874992005527
+    },
+    {
+      "variant": "w128_r16",
+      "repetition": 30,
+      "wall_us": 517.0829826965928
+    },
+    {
+      "variant": "w128_r32",
+      "repetition": 30,
+      "wall_us": 539.4580075517297
+    }
+  ],
+  "sources": {
+    "kernel.h": "b5a11042ad903b21326a9dc62711900e6cdd7f47f3306ff14f80d9a4def7fc66",
+    "kernels.py": "1d825d58db931a7c079c917beadd20af6f097b950c9f7f9c033147af51d3e041",
+    "exact.py": "bc2b47cd4fee23559c04dbadb0b3feeb16ac5cdfbc8a115a29f2da1ad464ecf7"
+  }
+}

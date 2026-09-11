@@ -1,0 +1,18 @@
+{
+  "materialized_output": {
+    "max_abs": 0.00048828125,
+    "relative_l2": 4.0260056949781754e-05,
+    "cosine": 0.9999999991896137,
+    "reference_max_abs": 4.5,
+    "finite": true,
+    "elements": 2048
+  },
+  "output": {
+    "max_abs": 0.0078125,
+    "relative_l2": 0.0034902066404317667,
+    "cosine": 0.9999939095193253,
+    "reference_max_abs": 4.5,
+    "finite": true,
+    "elements": 2048
+  }
+}

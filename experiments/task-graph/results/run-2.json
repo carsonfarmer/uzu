@@ -1,0 +1,2199 @@
+{
+  "correctness_runs" : 144,
+  "descriptor_orders" : [
+    [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    [
+      5,
+      4,
+      3,
+      2,
+      1,
+      0
+    ],
+    [
+      3,
+      1,
+      5,
+      2,
+      4,
+      0
+    ]
+  ],
+  "device" : "Apple M4 Pro",
+  "every_intermediate_bitwise_exact" : true,
+  "jobs" : 4096,
+  "samples" : [
+    {
+      "gpu_us" : 120.54166290909052,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 271.29199999999997,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 62.624982092529535,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "fixed_fusion",
+      "wall_us" : 212.125,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 2952.3333651013672,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 3108.125,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 3256.1250263825059,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 3411.7080000000001,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 1429.5000000856817,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1610.2909999999999,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 1628.2500000670552,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1802.5840000000001,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 757.79162580147386,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 915.70799999999997,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 840.37496708333492,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1007.042,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 686.54166534543037,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 955.95799999999997,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 674.99995930120349,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 818.79100000000005,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 395.99998854100704,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 544.75,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 523.74997176229954,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 675.66600000000005,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 218.24997384101152,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 375.625,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 237.04167688265443,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 386.375,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 129.24999464303255,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 279.791,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 136.3332848995924,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 283.625,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 87.124994024634361,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 238.417,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 89.833338279277086,
+      "repetition" : 0,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 247,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 131.00000796839595,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 281.875,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 90.125016868114471,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 248.334,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 84.62503319606185,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 241.458,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 134.49997641146183,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 330.16699999999997,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 126.5000319108367,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 269.375,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 232.37499408423901,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 391.66699999999997,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 214.41670833155513,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 386.084,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 434.29166544228792,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 590.5,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 397.37502811476588,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 563.20899999999995,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 677.12500458583236,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 852.45899999999995,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 637.41666963323951,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 789.79200000000003,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 938.12495470046997,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1082.9169999999999,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 755.54166687652469,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 906.95799999999997,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 1638.6666684411466,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1801.1659999999999,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 1486.2916432321072,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1637.6659999999999,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 3202.7083216235042,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 3373.4169999999999,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 2967.5000114366412,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 3203.8330000000001,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 65.750034991651773,
+      "repetition" : 1,
+      "thermal_state" : 0,
+      "variant" : "fixed_fusion",
+      "wall_us" : 231.584,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 3167.1250471845269,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 3337.125,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 3300.9166363626719,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 3461.2080000000001,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 1488.4999836795032,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1645.5419999999999,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 1630.3333104588091,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1797.7919999999999,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 744.95829176157713,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 903,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 834.2500077560544,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1008.708,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 612.04168014228344,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 770.33299999999997,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 676.83332599699497,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 835.95799999999997,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 398.124975617975,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 549.83299999999997,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 472.9999927803874,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 622.25,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 243.00004588440061,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 381.875,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 267.41670444607735,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 409.416,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 130.25000225752592,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 274.70800000000003,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 137.2499973513186,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 280,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 86.250016465783119,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 239.958,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 91.374968178570271,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 257.29199999999997,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 128.62501898780465,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 285.08300000000003,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 68.375025875866413,
+      "repetition" : 2,
+      "thermal_state" : 0,
+      "variant" : "fixed_fusion",
+      "wall_us" : 236.958,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 2955.1250045187771,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 3112.1669999999999,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 64.624997321516275,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "fixed_fusion",
+      "wall_us" : 257.54199999999997,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 128.74999083578587,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 296.625,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 92.041678726673126,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 254.542,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 86.624990217387676,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 259.541,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 138.66665540263057,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 301.41699999999997,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 129.16664127260447,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 294.125,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 236.16669932380319,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 402.33300000000003,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 223.87498756870627,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 383,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 449.79166705161333,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 598.58299999999997,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 394.62500717490911,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 534.66700000000003,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 759.87505260854959,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 907.20899999999995,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 691.0000229254365,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 841.20799999999997,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 963.75000430271029,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1110.2090000000001,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 760.33332152292132,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 908.875,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 1653.9583448320627,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1815.0830000000001,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 1489.9999951012433,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1642.8330000000001,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 3192.0416513457894,
+      "repetition" : 3,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 3356.5830000000001,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 1475.5000011064112,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1648.2080000000001,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 1703.4166376106441,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1859.5,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 851.04163736104965,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 997.45899999999995,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 958.79164291545749,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1161.2909999999999,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 699.24996932968497,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 849.83399999999995,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 678.41669078916311,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 839,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 397.91670860722661,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 558.29200000000003,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 438.37499106302857,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 607.125,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 217.50002633780241,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 374.125,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 237.50000400468707,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 394.66699999999997,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 123.0000052601099,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 273.45800000000003,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 136.29166642203927,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 294.54199999999997,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 86.583313532173634,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 255.75,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 91.624970082193613,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 249.917,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 133.25002510100603,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 303.16699999999997,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 69.000001531094313,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "fixed_fusion",
+      "wall_us" : 226.917,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 2960.041631013155,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 3208.2919999999999,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 3710.7500247657299,
+      "repetition" : 4,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 3863.7089999999998,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 1662.6249998807907,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1818.5,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 3261.0000343993306,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 3422.8330000000001,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 2917.5000381655991,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 3070.6660000000002,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 67.249988205730915,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "fixed_fusion",
+      "wall_us" : 225.625,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 129.87502850592136,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 300.5,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 90.624962467700243,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 250.792,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 88.000029791146517,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 236.75,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 153.12497271224856,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 359.041,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 140.45834541320801,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 273.625,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 266.45831530913711,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 404.416,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 243.37496142834425,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 392.16699999999997,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 507.2916392236948,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 659.125,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 451.12502994015813,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 603.91700000000003,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 770.62495984137058,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 932.16700000000003,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 698.00001801922917,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 856.66700000000003,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 855.37496488541365,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1027.375,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 745.58332562446594,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 920.16700000000003,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 1643.3750279247761,
+      "repetition" : 5,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1810.0409999999999,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 758.79163341596723,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 932.66700000000003,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 841.33335622027516,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1008.542,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 616.12500576302409,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 767.95799999999997,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 707.66668068245053,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 865.33299999999997,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 444.87504055723548,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 585,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 494.54165855422616,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 651.54100000000005,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 245.04167959094048,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 398.20800000000003,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 267.08334917202592,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 497.79199999999997,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 142.29171210899949,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 299.58300000000003,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 153.37503282353282,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 310.084,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 95.916679129004478,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 264.16699999999997,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 100.04168143495917,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 261.45800000000003,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 144.66670108959079,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 321.83300000000003,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 75.58334618806839,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "fixed_fusion",
+      "wall_us" : 237.375,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 3067.8750481456518,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 3219.875,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 3218.6666503548622,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 3381.7919999999999,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 1553.4583362750709,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1705.25,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 1841.9583211652935,
+      "repetition" : 6,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1990.0419999999999,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 867.83338338136673,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1015.792,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 1859.4999564811587,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 2024.875,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 1688.7083766050637,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1839.6669999999999,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 3455.4583253338933,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 3614.875,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 2922.1249860711396,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 3097.5830000000001,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 72.95835530385375,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "fixed_fusion",
+      "wall_us" : 249.375,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 134.37500456348062,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 283.41699999999997,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 97.749987617135048,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 245.959,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 95.375056844204664,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 239,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 153.45832798629999,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 299.166,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 155.8333751745522,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 323.375,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 264.79171356186271,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 419.33300000000003,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 241.83333152905107,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 398.459,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 493.58332762494683,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 649.41700000000003,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 449.37501661479473,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 618.125,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 768.99997657164931,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 938.20799999999997,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 696.3750347495079,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 872.83299999999997,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 941.95833662524819,
+      "repetition" : 7,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1091.2080000000001,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 694.91664180532098,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 858,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 709.12501541897655,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 874.875,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 398.08329893276095,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 561.66700000000003,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 436.91671453416348,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 609.70799999999997,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 218.45829905942082,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 386.584,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 263.87500111013651,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 462.41699999999997,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 140.12499013915658,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 281.125,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 153.75000657513738,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 293.875,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 95.625000540167093,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 246.416,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 100.50000855699182,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 253.541,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 144.49999434873462,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 299.45800000000003,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 74.458308517932892,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "fixed_fusion",
+      "wall_us" : 243.625,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 3342.7500165998936,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 3500.1669999999999,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 3693.2500079274178,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 3854.0839999999998,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 1671.1250063963234,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1830.8340000000001,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 1782.7916890382767,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1942.75,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 971.87497885897756,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1116.9590000000001,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 947.62496883049607,
+      "repetition" : 8,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1135.2909999999999,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 694.12501761689782,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 851.66600000000005,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 953.49998446181417,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1111.25,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 862.45831334963441,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1010.5,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 1862.8750112839043,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 2028.5,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 1668.583310674876,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1838.2080000000001,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 3686.4583380520344,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 3845.9169999999999,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 3819.2083011381328,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 3962.9580000000001,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 73.708361014723778,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "fixed_fusion",
+      "wall_us" : 254.042,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 143.16663146018982,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 306.33300000000003,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 98.666700068861246,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 257.83300000000003,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 97.041658591479063,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 265.209,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 152.49999705702066,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 307.375,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 140.99996769800782,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 314.16699999999997,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 267.08329096436501,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 430.625,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 246.75001623108983,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 412.625,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 480.12501792982221,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 671.45799999999997,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 446.87499757856131,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 619.25,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 764.95838584378362,
+      "repetition" : 9,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 928.5,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 447.08332279697061,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 608.45799999999997,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 493.70835768058896,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 664.875,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 243.54166816920042,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 407.541,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 266.62496384233236,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 428.70800000000003,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 157.95836225152016,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 316.45800000000003,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 171.87499906867743,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 320.70800000000003,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 106.62496788427234,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 260.41699999999997,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 110.00002268701792,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 261.66699999999997,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 162.50001499429345,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 317.459,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 84.250001236796379,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "fixed_fusion",
+      "wall_us" : 242.584,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 3800.8749834261835,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 3964.375,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 3647.9166592471302,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 3817.5,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 1668.4583388268948,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1820.1669999999999,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 1868.8749987632036,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 2055.5,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 977.70837601274252,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1117.8330000000001,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 1090.7499818131328,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1243.5840000000001,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 796.49995313957334,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 953.08399999999995,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 882.41667253896594,
+      "repetition" : 10,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1042.9580000000001,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 515.95829427242279,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 681.20799999999997,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 884.04165580868721,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1055.0840000000001,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 801.29166599363089,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 960.45799999999997,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 957.62498676776886,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1119.4580000000001,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 858.45834109932184,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1026.4580000000001,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 1865.2500002644956,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 2026.625,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 1768.5833154246211,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1925.9580000000001,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 4283.2499602809548,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 4434.9160000000002,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 3845.5833564512432,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 3996.2919999999999,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 82.916696555912495,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "fixed_fusion",
+      "wall_us" : 250.083,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 162.62498684227467,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 339.709,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 114.37502689659595,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 281.125,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 107.20832506194711,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 275.625,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 176.16664990782738,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 352.29199999999997,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 145.08335152640939,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 305.5,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 268.41671206057072,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 426.416,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 244.12496713921428,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 391.875,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 493.08338202536106,
+      "repetition" : 11,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 652.20799999999997,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 275.83335759118199,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 425.875,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 302.7917118743062,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 440,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 162.58331015706062,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 307.91699999999997,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 174.24998804926872,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 329.459,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 107.50000365078449,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 343.75,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 113.45837265253067,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 260.45800000000003,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 163.74996630474925,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 314.75,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 86.749962065368891,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "fixed_fusion",
+      "wall_us" : 246.666,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 3850.9583100676537,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 4008,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 4231.4999736845493,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 4398.125,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 2013.2499630562961,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 2178.3330000000001,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 2577.6249822229147,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 2732.4160000000002,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 989.12499379366636,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1141.3330000000001,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 1098.7083078362048,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1261.75,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 800.37495354190469,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 965.29200000000003,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 870.45831605792046,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1033.625,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 512.79168110340834,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 667.41600000000005,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 566.12503249198198,
+      "repetition" : 12,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 730.5,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 278.54164363816381,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 447.584,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 568.08331282809377,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 733.95799999999997,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 514.62504779919982,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 674.33399999999995,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 882.95829482376575,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1053.4580000000001,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 968.54165894910693,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1116.9169999999999,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 1406.1666443012655,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1598.7909999999999,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 1261.6249732673168,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1411.9159999999999,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 2264.7500154562294,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 2422.375,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 1936.1666636541486,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 2102.5410000000002,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 4209.9999845959246,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 4379.3329999999996,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 4440.9999973140657,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 4615.4579999999996,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 104.49998080730438,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "fixed_fusion",
+      "wall_us" : 276.70800000000003,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 196.74998475238681,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 360.04199999999997,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 139.29163105785847,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 297.5,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 133.62499885261059,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 297.54199999999997,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 219.20830477029085,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 384.5,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 203.12500419095159,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 368.58300000000003,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 385.37499494850636,
+      "repetition" : 13,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 550.08299999999997,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 162.58331015706062,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 305.375,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 174.29166473448277,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 329.91699999999997,
+      "workers" : 128
+    },
+    {
+      "gpu_us" : 106.24999413266778,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 261.416,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 112.50004172325134,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 266.875,
+      "workers" : 256
+    },
+    {
+      "gpu_us" : 165.04165250808001,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "phased",
+      "wall_us" : 335.666,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 85.750012658536434,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "fixed_fusion",
+      "wall_us" : 251.375,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 3857.9166284762323,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 4008.125,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 5543.5416870750487,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 5709.4170000000004,
+      "workers" : 4
+    },
+    {
+      "gpu_us" : 2458.9999811723828,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 2629.1669999999999,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 2537.6249686814845,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 2705.625,
+      "workers" : 8
+    },
+    {
+      "gpu_us" : 987.95833764597774,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 1153.625,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 1095.6249898299575,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1260,
+      "workers" : 16
+    },
+    {
+      "gpu_us" : 800.5833369679749,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 971.29200000000003,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 1104.8750020563602,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 1250.7080000000001,
+      "workers" : 20
+    },
+    {
+      "gpu_us" : 650.37497552111745,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 806.5,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 717.25004818290472,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 890.20899999999995,
+      "workers" : 32
+    },
+    {
+      "gpu_us" : 350.24998942390084,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "static_tasks",
+      "wall_us" : 510.91699999999997,
+      "workers" : 64
+    },
+    {
+      "gpu_us" : 384.95834451168776,
+      "repetition" : 14,
+      "thermal_state" : 0,
+      "variant" : "dynamic_tasks",
+      "wall_us" : 559.20799999999997,
+      "workers" : 64
+    }
+  ],
+  "scope" : "Synthetic six-op diamond DAG. Dynamic queue claims whole independent graphs; dependencies stay inside one threadgroup. No cross-threadgroup dependency scheduler, model weights, prefetch, or full-model decode.",
+  "task_visits_exactly_once" : true,
+  "tasks_per_job" : 6,
+  "timing" : "GPU-side counter reset and scratch poison included. Host descriptor construction\/input upload and post-run verification excluded. Shared device scratch for all variants.",
+  "width" : 64
+}

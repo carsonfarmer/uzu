@@ -1,0 +1,2 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+{"mode": "exact", "prompt_tokens": 133, "generated_tokens": 19, "finish_reason": "stop", "logit_byte_checks": 19, "prefill_seconds": 2.3963969579781406, "decode_seconds": 0.6851164170075208, "note": "Verification and first-use compilation are included; use benchmark_decode.py for throughput comparisons."}
