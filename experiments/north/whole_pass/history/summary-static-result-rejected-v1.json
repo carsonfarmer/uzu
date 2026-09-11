@@ -1,0 +1,145 @@
+{
+  "schema": "north-apple-megakernel-summary-v1",
+  "device": {
+    "device_name": "Apple M4 Pro",
+    "max_recommended_working_set_size": 40200896512,
+    "memory_size": 51539607552,
+    "architecture": "applegpu_g16s",
+    "max_buffer_length": 30150672384,
+    "resource_limit": 499000
+  },
+  "mlx": "0.32.2",
+  "model": {
+    "id": "mlx-community/North-Mini-Code-1.0-4bit",
+    "revision": "dfbe084dfa26e241345af99ca32848f38fd865f9"
+  },
+  "cohere_reference_commit": "67d0b9ca22ea3652796b715d1d1863459e0e2c3c",
+  "scope": {
+    "batch_size": 1,
+    "transformer_layers_in_dispatch": 49,
+    "moe_layers_in_dispatch": 48,
+    "includes": [
+      "RMSNorm",
+      "QKV",
+      "RoPE",
+      "KV updates",
+      "attention",
+      "top-8 routing",
+      "MoE",
+      "residual joins",
+      "final RMSNorm",
+      "262144-vocabulary logits"
+    ],
+    "outside_dispatch": [
+      "token embedding lookup",
+      "argmax",
+      "prefill"
+    ]
+  },
+  "correctness": {
+    "primitive_cases": 18,
+    "whole_model_worker_counts": [
+      1,
+      20,
+      32
+    ],
+    "consecutive_full_logit_comparisons": 254,
+    "sequence_checks": {
+      "full-megakernel-python-short128-v1.jsonl": {
+        "prompt_tokens": 136,
+        "exact_decode_steps": 127,
+        "first_position": 136,
+        "last_position": 262,
+        "token_ids_sha256": "2a08690f93d0d332b24fe0e38d322066050666314ae7bfcc01984518f8532240"
+      },
+      "full-megakernel-rust-short128-v1.jsonl": {
+        "prompt_tokens": 140,
+        "exact_decode_steps": 127,
+        "first_position": 140,
+        "last_position": 266,
+        "token_ids_sha256": "519cddeaabe143aa7debfe850a0b634edcf740d2f1319e0cfdad58fa8cfbf4e9"
+      }
+    },
+    "measured_benchmark_runs_with_identical_tokens": 21,
+    "unique_measured_benchmark_token_sequences": 1,
+    "all_checked_logits_and_caches_bitwise_exact": true
+  },
+  "performance": {
+    "unit": "decode_tokens_per_second",
+    "statistic": "median_of_3_measured_runs_after_1_warmup",
+    "rates": {
+      "original_mlx": 53.83972344037237,
+      "exact_fused": 59.97790141282357,
+      "megakernel": 57.47178771641652,
+      "coarse_tiles": 54.14662690081101,
+      "fine_dependencies": 55.55178193546509,
+      "prefetch_1": 56.12481782883512,
+      "prefetch_10": 43.7298346401823
+    },
+    "megakernel_vs_original_percent": 6.746067854651372,
+    "megakernel_vs_exact_fused_percent": -4.1783951044863095,
+    "tuned_vs_coarse_percent": 6.141030394555758,
+    "fine_dependencies_vs_tuned_percent": -3.34077963682865,
+    "prefetch_1_vs_tuned_percent": -2.3437062619798166,
+    "prefetch_10_vs_tuned_percent": -23.910780614727432
+  },
+  "method": {
+    "prompt_tokens": 136,
+    "generated_tokens_per_run": 128,
+    "decode_steps_per_run": 127,
+    "baseline_and_megakernel_processes": "separate, adjacent runs",
+    "reason": "Keeping both weight layouts live creates memory-residency stalls at about 34 GB.",
+    "excluded": [
+      "model load",
+      "weight packing",
+      "tokenization",
+      "prefill",
+      "warmup"
+    ],
+    "included": [
+      "embedding lookup",
+      "kernel dispatch",
+      "KV carry and growth",
+      "argmax"
+    ]
+  },
+  "checks": {
+    "check-megakernel-full-v1.json": {
+      "workers": [
+        1,
+        20,
+        32
+      ],
+      "comparisons": 3,
+      "all_output_cache_and_logit_bytes_exact": true
+    },
+    "check-megakernel-fine-v1.json": {
+      "workers": [
+        32
+      ],
+      "comparisons": 1,
+      "all_output_cache_and_logit_bytes_exact": true
+    },
+    "check-megakernel-prefetch10-v1.json": {
+      "workers": [
+        32
+      ],
+      "comparisons": 1,
+      "all_output_cache_and_logit_bytes_exact": true
+    }
+  },
+  "artifacts": {
+    "benchmark-baselines-short128-v1.jsonl": "78179fc6a878626e23b59bc71082c49ce6a0a9516d6784b7b34fc5b40bfdd88f",
+    "benchmark-deployed-megakernel-short128-v1.jsonl": "fb9c1d1b9b4f82b35ef4e6b408f9fdc4fe3aa672067d373d90d5ce938f09b807",
+    "benchmark-deployed-megakernel-coarse-short128-v1.jsonl": "8e30f5c8e22a1d29f08ccec3965e27e344dbd359f15917c1fa91c6503492ef45",
+    "benchmark-deployed-megakernel-fine-short128-v1.jsonl": "e06ce840e2d06e013ae3b5117275b6affc8601284144671778c46bef3be7d836",
+    "benchmark-deployed-megakernel-prefetch1-short128-v1.jsonl": "7e25c5d823e6404e0a201e80aab94934cefa0273ef41be5a0c671aa337de33b5",
+    "benchmark-deployed-megakernel-prefetch10-short128-v1.jsonl": "2114c73b84ef1ca27d10b23ac6c40dee17374ef5cd4b4c65992014056d8d14e8",
+    "check-primitives-v1.json": "ae6b4170913bc384900491c72027fbb51a4a959bf63006eafb3564dfef144939",
+    "check-megakernel-full-v1.json": "6107863275e9aca42bf5aea2979ae151cc587487d5fcb3a3488937117a2f7c2d",
+    "check-megakernel-fine-v1.json": "c42554419c2a997e630e71cf042c20e9cba29a9e49d137c687b2615b039e671c",
+    "check-megakernel-prefetch10-v1.json": "4848ecd3cc626cbadc7ad2601a53b9c7a329ddb76ba44975325f6c4755edd4ec",
+    "full-megakernel-python-short128-v1.jsonl": "9ddc38b5a80699d4ec4cbc525cdc620b2f042ec96fe0f0c5942fd2d86d2c0ebc",
+    "full-megakernel-rust-short128-v1.jsonl": "5ee9aba169119dbb9b11e24aef222a4d23567b61ffffe16cb2b87df6bec1ea37"
+  }
+}

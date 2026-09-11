@@ -1,5 +1,11 @@
 # Full-layer persistent experiment
 
+**Superseded milestone:** `../whole_pass/` now integrates all 49 transformer
+layers, K/V updates, and the output head in one safe Metal dispatch. It is
+bitwise exact on the retained repeated-decode gates and reaches stock-MLX
+within 1% of stock MLX. The results below remain the one-dispatch-per-layer
+checkpoint that led to it.
+
 This experiment extends the verified persistent MoE/attention-output branch
 to include one-pass attention, the complete MoE branch, residual join, and the
 next layer's RMSNorm, Q/K/V projections, and router logits in one Metal

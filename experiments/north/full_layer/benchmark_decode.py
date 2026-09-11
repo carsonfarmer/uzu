@@ -126,8 +126,18 @@ with output.open("w") as stream:
 
     sources = [
         Path(__file__),
+        Path(__file__).resolve().parents[1] / "reference.py",
+        Path(__file__).resolve().parents[1] / "quantized/patch.py",
+        Path(__file__).resolve().parents[1] / "quantized/exact.py",
+        Path(__file__).resolve().parents[1] / "quantized/kernels.py",
+        Path(__file__).resolve().parents[1] / "quantized/kernel.h",
+        Path(__file__).resolve().parents[1] / "persistent/branch.py",
+        Path(__file__).resolve().parents[1] / "persistent/down.h",
+        Path(__file__).resolve().parents[1] / "persistent/prefetch.py",
+        Path(__file__).resolve().parents[1] / "persistent/fast.py",
         Path(__file__).with_name("patch.py"),
         Path(__file__).with_name("tail_prep.py"),
+        Path(__file__).with_name("static_tail.py"),
         Path(__file__).with_name("attention.py"),
         Path(__file__).with_name("full_attention.py"),
         Path(__file__).with_name("static_full_attention.py"),

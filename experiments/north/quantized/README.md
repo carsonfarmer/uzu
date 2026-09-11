@@ -1,5 +1,12 @@
 # Correct North Mini Code decoding on Metal
 
+**Latest result:** [the whole-pass experiment](../whole_pass/README.md) extends
+this exact branch work to one safe Metal dispatch containing all 49 transformer
+layers, K/V updates, final normalization, and full logits. It reaches 53.423
+decode tok/s on the tested M4 Pro versus 53.951 for stock MLX, with byte-exact
+logits on two 127-step coding continuations. The earlier 57.472 tok/s static
+result was rejected after that scheduler deadlocked on a repeated run.
+
 The original packed-W4 prototype contained accumulation-order bugs. Its old
 results are retained as history; use the corrected entry points below.
 

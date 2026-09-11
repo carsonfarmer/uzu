@@ -1,29 +1,23 @@
-# Apple megakernel experiments — preserved checkpoint, full validation active
+# Apple North megakernel status
 
-North Mini Code 4-bit now has correct, faster full-model decode on this M4 Pro.
-The fused Metal branch improves throughput by 6.6–11.7% and the persistent
-scheduler by 6.0–6.6% versus original MLX in the final paired comparison.
-Both beat the compiled-native control. Each passes 1,424 complete-logit checks;
-the final checks compare raw bytes. Tokens and stopping behavior match.
+The safe validation target is complete on this Apple M4 Pro:
 
-Completed checkpoint: numerical repairs, full-model branch integration,
-dependency and weight-prefetch ablations, GPU traces, Metal validation,
-arbitrary-prompt verification, repeated timing, and a shareable reproduction
-packet. This is not a complete single-kernel forward pass: QKV, attention,
-routing, normalization, layer transitions and the output head still use the
-pinned MLX implementation.
+- North Mini Code 4-bit runs all 49 transformer layers, K/V updates, final
+  RMSNorm, and all 262,144 logits in one custom Metal dispatch per decode step.
+- Two coding prompts pass 254 consecutive full-logit raw-byte comparisons with
+  MLX. Complete state, cache, logit, and queue-completion checks pass with 1,
+  20, 32, and 36 threadgroups.
+- Six safe-path runs have a 53.423 tok/s median. Six stock MLX runs have a
+  53.951 tok/s median. The safe path is 0.98% slower, or within 1% of stock.
+- The strongest exact fused control reaches 59.952 tok/s, 10.89% above the safe
+  megakernel.
+- In a step-interleaved test, tuned task sizes beat coarse task sizes by 3.31%.
+  Cache-warming approximations lose 4.79% with one stage and 24.85% with ten.
 
-Active goal: extend persistent execution through the remaining decode graph,
-including the next-layer QKV/router weight overlap emphasized by Cohere, then
-compare it with original MLX and the strongest fused baseline under the same
-bitwise-correctness gate. The goal is incomplete until that comparison exists.
+The original static all-grid scheduler reached 57.472 tok/s when it completed,
+then deadlocked during an adversarial repeated-decode rerun. That result is
+preserved as an unsafe finding and excluded from the headline.
 
-Read [NORTH_RESULTS.md](NORTH_RESULTS.md), use
-[the reproduction guide](experiments/north/quantized/README.md), or open
-[the share packet](experiments/north/share/SHARE.md). The
-[Cohere reference mapping](experiments/north/correctness/COHERE_REFERENCE.md)
-tracks the mechanisms tested and what remains for a larger port.
-
-No Uzu engine source changed. Earlier work is preserved under
-experiments/north/history/; its failed-prototype completion claim is superseded
-by this verified checkpoint. Nothing has been published or sent to Cohere.
+Read [the full walkthrough](experiments/north/whole_pass/README.md) and verify
+the [machine-readable summary](experiments/north/whole_pass/summary-v1.json).
+Nothing has been posted or sent to Cohere.

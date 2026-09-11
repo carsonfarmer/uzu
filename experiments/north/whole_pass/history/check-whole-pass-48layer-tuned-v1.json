@@ -1,0 +1,41 @@
+{
+  "device": {
+    "device_name": "Apple M4 Pro",
+    "max_recommended_working_set_size": 40200896512,
+    "memory_size": 51539607552,
+    "architecture": "applegpu_g16s",
+    "max_buffer_length": 30150672384,
+    "resource_limit": 499000
+  },
+  "args": {
+    "layers": 48,
+    "workers": [
+      32
+    ],
+    "schedule": "static",
+    "prefetch_stages": 0,
+    "prep_rows": 32,
+    "oproj_rows": 32,
+    "router_rows": 4,
+    "output": "experiments/north/whole_pass/check-whole-pass-48layer-tuned-v1.json"
+  },
+  "checks": [
+    {
+      "layers": 48,
+      "position": 127,
+      "workers": 32,
+      "schedule": "static",
+      "prefetch_stages": 0,
+      "prep_rows": 32,
+      "oproj_rows": 32,
+      "router_rows": 4,
+      "output_unequal_bytes": 0,
+      "cache_unequal_bytes": [
+        0,
+        0
+      ],
+      "barrier_min": 32,
+      "barrier_max": 32
+    }
+  ]
+}

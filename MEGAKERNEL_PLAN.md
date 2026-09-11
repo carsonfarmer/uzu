@@ -1,126 +1,72 @@
-# Apple megakernel research plan
+# Apple North megakernel: objective and result
 
-## Objective and correction
+## Objective
 
-Test whether the scheduling and dataflow ideas in Cohere's decode megakernel
-can improve small-batch inference on Apple GPUs. The working M4 Pro/Uzu/Qwen
-baseline is the test bed, not the research question. A negative up/gate fusion
-microbenchmark does not answer this question.
+Test whether the central ideas in Cohere's North Mini Code decode megakernel can
+work on an Apple GPU. The success gate requires a complete batch-one transformer
+and output head in one Metal dispatch, bitwise-correct logits during repeated
+generation, a scheduler that completes reliably at the tested geometry, and
+fair comparisons with stock MLX and the strongest exact fused path.
 
-The first experiment tested an operator epilogue. Subsequent work established
-correct packed-W4 kernels, cross-threadgroup dependency publication, a
-persistent ready-work scheduler and controlled weight-staging ablations on real
-North inputs. Opt-in fused and persistent branch replacements now run in all 48
-MoE layers and have been measured during full-model generation. The remaining
-goal is to extend persistent execution across the rest of the decode graph and
-test Cohere's cross-layer QKV/router overlap against the strongest fused control.
+References:
 
-## Preserved real-model checkpoint
+- [Cohere's megakernel article](https://cohere.com/blog/megakernels)
+- [Pinned Cohere source](https://github.com/cohere-ai/cohere-megakernel/tree/67d0b9ca22ea3652796b715d1d1863459e0e2c3c)
+- [Pinned North Mini Code 4-bit checkpoint](https://huggingface.co/mlx-community/North-Mini-Code-1.0-4bit/tree/dfbe084dfa26e241345af99ca32848f38fd865f9)
 
-NORTH_RESULTS.md records the current checkpoint. The corrected fused Metal
-branch improves paired full-model decode throughput by 6.6–11.7% over original
-MLX, and the optimized persistent scheduler improves it by 6.0–6.6% in the main
-run. An independent counterbalanced run confirms 7.0–9.0% persistent gains.
-Five corrected variants pass 1,424 full-vocabulary raw-logit byte comparisons
-each, for 7,120 comparisons plus prefill checks. A chart, reproducible packet
-and tweet draft are in experiments/north/share/.
+## Result
 
-This checkpoint validates useful pieces of Cohere's approach: mixing independent
-attention-output and MoE work, removing the false dependency between different
-experts, and running a persistent ready-work scheduler. It does not yet validate
-their full decode megakernel. QKV, attention, routing, normalization, layer
-transitions and the output head still run through MLX, and next-layer QKV/router
-weight overlap has not been implemented.
+The gate is met for the tested M4 Pro workload.
 
-## Earlier implemented checkpoint
+| Question | Evidence |
+|---|---|
+| Can the complete model stay in one Metal dispatch? | Yes: 49 layers, all K/V updates, final norm, and the 262,144-row head. |
+| Does it preserve model output? | Yes on the retained workloads: 254 consecutive full-logit vectors and all audited cache bytes are bitwise equal to MLX. |
+| Does the scheduler complete reliably? | Yes at 1, 20, 32, and 36 groups using the dynamic ready-task queue. |
+| Does it match stock speed? | Yes within measurement resolution: 53.423 versus 53.951 tok/s, a -0.98% point estimate. |
+| Does it beat the exact fused control? | No: the control reaches 59.952 tok/s, leaving the safe queue 10.89% behind. |
+| Do finer task sizes help? | Yes: +3.31% versus coarse jobs in the step-interleaved ablation. |
+| Does the tested next-weight cache warming help? | No: one stage is -4.79%; ten stages are -24.85%. |
+| Can a CUDA-style all-grid spin barrier be assumed safe? | No: the static Metal scheduler deadlocked after previously completing exact fast runs. |
 
-experiments/task-graph now provides phased, fixed-fused, static-interpreter and
-dynamic-graph-queue controls. It executes dependent tasks within an owning
-threadgroup, with shuffled descriptors and exactly-once checks. Three runs
-and separate Metal validation passed. This covers stage 1 and the local-chain
-subset of stage 2; cross-threadgroup fan-in remains open. See its README and
-results for the scope and synthetic timing limits.
+## Work completed
 
-NORTH_MINI_CODE.md assesses the requested real model. Next use a North-shaped
-parallel branch graph, then a quantized MLX reference and real dense/MoE layers.
-That assessment predates the completed local baseline and decode experiment.
+1. Matched MLX's affine-W4 arithmetic, reduction order, and BF16 rounding.
+2. Fused the per-layer parallel attention and MoE branches as an exact control.
+3. Added QKV/router projection, RoPE, cache writes, top-eight routing, attention,
+   MoE, and residual joins for all 49 layers.
+4. Packed the weights and caches so one Metal kernel can traverse the model
+   within Metal's buffer-binding limits.
+5. Added final RMSNorm and the full 262,144-logit output projection.
+6. Found a dense-down stride error at decode step 28 and regenerated every
+   retained result after fixing it.
+7. Rejected the faster static scheduler after a liveness failure and replaced
+   it with a ready-task queue whose progress does not require unscheduled groups.
+8. Added source hashes, two 127-step exactness gates, queue completion checks,
+   adjacent-process headline timing, and step-interleaved ablations.
 
-## Reference implementation inspected
+## What came from Cohere
 
-Reference: https://github.com/cohere-ai/cohere-megakernel
-Pinned local checkout: work/cohere-megakernel
-Commit: 67d0b9ca22ea3652796b715d1d1863459e0e2c3c
+The one-dispatch task engine, resident worker pool, small independent jobs,
+dependency-controlled progress, wave-filling experiment, and next-layer
+QKV/router overlap experiment directly test mechanisms described by Cohere.
 
-- src/decode/megakernel.cuh: task fields/opcodes, interpreter, cross-SM
-  synchronization, shared GEMM pipeline and dynamic work claims.
-- src/decode/schedule.py: host-built task streams; round-robin waves,
-  dependency-aware placement, context-dependent schedules.
-- src/decode/launch.cuh: launches num_sms blocks, with a fixed worker shape.
-- src/decode/abi.h: host/device launch parameters, task streams and barrier
-  storage shared with the serving runtime.
+The exact fused path is a control developed while exploring the same work. It
+combines selected operations inside specialized per-layer kernels, but it is not
+a full-model persistent megakernel. Its win shows that a general scheduler can
+lose to efficient targeted fusion even after launch overhead falls.
 
-The release targets H100/CUDA and North Mini Code. Its instruction sequences,
-block residency assumptions and scheduling choices are not a drop-in Metal
-implementation. The existing Qwen test model also has a different dependency
-graph; we cannot assume North Mini Code's parallel attention/FFN branches.
+## Next engineering questions
 
-Design explanation: https://cohere.com/blog/megakernels
+The validation covers one model, batch one, and short contiguous contexts. The
+next useful work is:
 
-## Experiments, with explicit controls
+1. replace per-step cache-prefix copying with in-place or alias-safe cache
+   updates;
+2. prototype true asynchronous weight staging with lower-level Metal APIs;
+3. measure longer contexts and additional Apple GPU generations;
+4. add continuous batching, paged caches, ragged attention, and sampling.
 
-| Stage | Question | Experiment/control |
-|---|---|---|
-| 1. Task execution | What does a persistent Metal worker/interpreter cost? | Same tiled math and outputs through ordinary dispatches, static descriptor lists, and a dynamic ready-work queue. Sweep worker counts; do not equate threadgroups with physical GPU cores. |
-| 2. Cross-operation scheduling | Can workers move directly into useful downstream work? | A small producer/consumer graph with fan-out and fan-in. Compare operation-wide phase boundaries with dependency-local execution. Keep arithmetic, data layout, and work totals fixed. |
-| 3. Real block | Does the mechanism survive real weight traffic and reductions? | Up/gate, activation/input preparation, and down projection from a complete MLP block; include reduction cost and all intermediates. Compare against the unchanged Uzu block. |
-| 4. Overlap | Can immutable weight loading overlap preceding work? | Add and remove prefetch/pipelining while holding the schedule fixed; measure bandwidth/latency and resource-pressure effects. |
-| 5. Decode graph | Does this improve something the user can run? | Extend the viable scheduler to normalization, QKV, attention or DeltaNet, projections and layer transitions, then an opt-in repeated-decoding route with the original fallback. |
-
-Stage 1 alone is not a megakernel demonstration. The first architectural
-milestone is stage 2: a Metal worker actually executes dependent tasks from
-different operations without returning to the CPU between each task.
-Stage 3 is the first real-model block milestone. Stage 5 is the serving goal.
-Each stage must report what mechanism it exercised, not just a throughput number.
-
-## Metal synchronization investigation
-
-Cohere's counter protocol includes device memory publication and cross-block
-waiting. Replacing its CUDA fences with relaxed Metal atomics is not a
-correctness argument.
-
-Before adopting a shared dependency queue, establish the supported memory-order
-and visibility protocol from the selected Metal language version and compile
-small producer/consumer checks. Establish forward progress independently of
-memory visibility. Historical progress tests found scheduling differences on
-Apple hardware; they are a warning against inheriting CUDA assumptions, not a
-measurement of this M4 Pro:
-https://arxiv.org/abs/2109.06132
-
-Start with independent ready tasks and threadgroup-local dependent chains.
-For dependencies across threadgroups, evaluate a nonblocking scheduler or
-bounded epochs with unresolved work resumed in a later dispatch. Do not run
-an unbounded spin-wait grid on an assumed one-worker-per-core residency model.
-A phased implementation must be labelled as such; it is not proof that a
-single-dispatch full-model megakernel works.
-
-Required scheduler checks: every task executes exactly once, no task consumes
-unpublished input, fan-in counters match actual producers, buffers/counters
-reset across steps, and results remain correct under changed worker counts
-and task ordering. Oversubscription must not introduce a dependency deadlock.
-
-## Measurement and promotion
-
-Use the same model tensors, math and context for comparisons. Preserve
-unfused, fusion-only, persistent-worker, dependency-scheduling and prefetch
-variants so benefits can be attributed. GPU command-buffer time and CPU wall
-time must remain separate. Include queue setup/reset, reductions and any extra
-dispatches; do not hide scheduler costs.
-
-Real-block outputs and then full-model logits/generated tokens need comparison
-with Uzu. Repeat multi-token decoding and coding prompts at multiple contexts.
-Record power/thermal state and retain negative results. A single benchmark win
-does not establish compatibility across Apple GPU families.
-
-Keep the existing isolated fusion result as one ablation. It is neither a
-reason to abandon the larger research program nor evidence that the larger
-program works.
+These are extensions to the validated experiment. The current evidence and its
+limits are recorded in
+[the whole-pass report](experiments/north/whole_pass/README.md).

@@ -1,23 +1,25 @@
-# Shareable result
+# Shareable Apple megakernel result
 
-Attach `north-m4-pro-results.png`. The source, raw evidence and reproduction
-commands are in `north-m4-pro-research.zip`. Read `RESULTS.md` for the complete
-scope and statistics. This packet supersedes the earlier failed-prototype
-packet; the new decoders preserve the checked logits and generated tokens.
+Attach north-m4-pro-megakernel-results.png. The reproducible source, canonical
+raw evidence, and report are in the project bundle. No model weights are
+included.
 
-Draft post (262 characters):
+## Suggested post
 
-> Testing Cohere’s megakernel ideas on M4 Pro: North Mini Code 4-bit, 48GB. Persistent Metal scheduling: ~6% faster full-model decode vs MLX. Fused branch: up to ~12%. All 1,424 checked decode steps matched logits bit-for-bit. 3 prompts × 3 runs. Repro + raw data.
+> Tested @Cohere’s megakernel idea on Apple: North Mini Code 4-bit, all 49 layers + KV + 262k logits in ONE Metal dispatch. Byte-exact for 254 decode steps. Safe queue: 53.42 tok/s vs MLX 53.95 (within 1%). Static hit 57.47—then deadlocked. H100 residency assumptions matter.
 
-Suggested follow-up:
+## Suggested follow-up
 
-> Scope: branch work in all 48 MoE layers; QKV, attention and routing still use MLX. Expert-level dependencies helped. Down-weight prefetch added cost here. Next-layer QKV/router prefetch—the area emphasized in Cohere’s batch-1 code—remains future work.
+> Apple result: finer ready-task tiles made the safe queue 3.31% faster. A QKV/router cache-warming approximation lost 4.79% with 1 stage and 24.85% with 10. Best exact fused control: 59.95 tok/s, 10.89% ahead of the safe megakernel. Repro + raw samples in the fork.
 
-Source references:
+## Prefetch caveat
+
+> The prefetch test performs extra cache-warming reads inside an MLX custom Metal kernel. It does not reproduce Cohere’s asynchronous H100 TMA/shared-memory pipeline; a lower-level Metal implementation remains an open experiment.
+
+## Links
 
 - [Cohere article](https://cohere.com/blog/megakernels)
 - [Pinned Cohere implementation](https://github.com/cohere-ai/cohere-megakernel/tree/67d0b9ca22ea3652796b715d1d1863459e0e2c3c)
 - [Pinned community 4-bit checkpoint](https://huggingface.co/mlx-community/North-Mini-Code-1.0-4bit/tree/dfbe084dfa26e241345af99ca32848f38fd865f9)
 
-The bundle is local; no public repository link has been created and no post
-has been sent. It contains no model weights or raw system traces.
+Nothing has been posted or sent to Cohere.

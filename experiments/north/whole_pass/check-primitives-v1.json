@@ -1,0 +1,264 @@
+{
+  "device": {
+    "device_name": "Apple M4 Pro",
+    "max_recommended_working_set_size": 40200896512,
+    "memory_size": 51539607552,
+    "architecture": "applegpu_g16s",
+    "max_buffer_length": 30150672384,
+    "resource_limit": 499000
+  },
+  "mlx": "0.32.2",
+  "args": {
+    "steps": 3,
+    "layers": [
+      1,
+      4,
+      7,
+      31,
+      47,
+      48
+    ],
+    "output": "experiments/north/whole_pass/check-primitives-v1.json"
+  },
+  "sources": {
+    "experiments/north/whole_pass/check_primitives.py": "71d6cbcd7674d5b216030501989ad93b610c14373c34d231ef7e3a899d26e4d6",
+    "experiments/north/reference.py": "2a3d6f4d3769561d0da5b8cefa62aa4ae23af7bdef7c498917f512234fe0ebe2",
+    "experiments/north/whole_pass/primitives.py": "cf8dd18d0d0c3acb99461cc3536132cec4822250fa00a815a5179cd7e995313b"
+  },
+  "checks": [
+    {
+      "step": 0,
+      "layer": 1,
+      "position": 127,
+      "use_rope": true,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "step": 0,
+      "layer": 4,
+      "position": 127,
+      "use_rope": false,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "step": 0,
+      "layer": 7,
+      "position": 127,
+      "use_rope": true,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "step": 0,
+      "layer": 31,
+      "position": 127,
+      "use_rope": true,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "step": 0,
+      "layer": 47,
+      "position": 127,
+      "use_rope": true,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "step": 0,
+      "layer": 48,
+      "position": 127,
+      "use_rope": false,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "step": 1,
+      "layer": 1,
+      "position": 128,
+      "use_rope": true,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "step": 1,
+      "layer": 4,
+      "position": 128,
+      "use_rope": false,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "step": 1,
+      "layer": 7,
+      "position": 128,
+      "use_rope": true,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "step": 1,
+      "layer": 31,
+      "position": 128,
+      "use_rope": true,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "step": 1,
+      "layer": 47,
+      "position": 128,
+      "use_rope": true,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "step": 1,
+      "layer": 48,
+      "position": 128,
+      "use_rope": false,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "step": 2,
+      "layer": 1,
+      "position": 129,
+      "use_rope": true,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "step": 2,
+      "layer": 4,
+      "position": 129,
+      "use_rope": false,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "step": 2,
+      "layer": 7,
+      "position": 129,
+      "use_rope": true,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "step": 2,
+      "layer": 31,
+      "position": 129,
+      "use_rope": true,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "step": 2,
+      "layer": 47,
+      "position": 129,
+      "use_rope": true,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "step": 2,
+      "layer": 48,
+      "position": 129,
+      "use_rope": false,
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

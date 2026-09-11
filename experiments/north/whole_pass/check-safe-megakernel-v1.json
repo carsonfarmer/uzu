@@ -1,0 +1,126 @@
+{
+  "device": {
+    "device_name": "Apple M4 Pro",
+    "max_recommended_working_set_size": 40200896512,
+    "memory_size": 51539607552,
+    "architecture": "applegpu_g16s",
+    "max_buffer_length": 30150672384,
+    "resource_limit": 499000
+  },
+  "mlx": "0.32.2",
+  "args": {
+    "layers": 48,
+    "workers": [
+      1,
+      20,
+      32,
+      36
+    ],
+    "schedule": "queue",
+    "prefetch_stages": 0,
+    "prep_rows": 64,
+    "oproj_rows": 64,
+    "router_rows": 8,
+    "head": true,
+    "lm_rows": 512,
+    "prefix": true,
+    "output": "experiments/north/whole_pass/check-safe-megakernel-v1.json"
+  },
+  "sources": {
+    "experiments/north/whole_pass/check_whole_pass.py": "c75089adc490ee0a10a851858aa314d4cc10af7c1918869feeac6652ee28a534",
+    "experiments/north/reference.py": "2a3d6f4d3769561d0da5b8cefa62aa4ae23af7bdef7c498917f512234fe0ebe2",
+    "experiments/north/whole_pass/kernel.py": "dc50190c9774a0b45906dcc7be0aa9ca12196f7371dbc229a40c1922d360c298",
+    "experiments/north/whole_pass/pack.py": "94300de86856a3ba17926a261bda3cf6ab128da1bac879a9ba5c5a1209426f78",
+    "experiments/north/whole_pass/primitives.py": "cf8dd18d0d0c3acb99461cc3536132cec4822250fa00a815a5179cd7e995313b",
+    "experiments/north/full_layer/full_attention.py": "5257123986b1e75568faf69bb4ca54a666164a5fa9dc7d1f174df31bd391c666",
+    "experiments/north/quantized/kernels.py": "1d825d58db931a7c079c917beadd20af6f097b950c9f7f9c033147af51d3e041",
+    "experiments/north/quantized/kernel.h": "b5a11042ad903b21326a9dc62711900e6cdd7f47f3306ff14f80d9a4def7fc66",
+    "experiments/north/persistent/down.h": "4c7a3038582a76aeeb015a3831106f69b68c9844bf6f22435efdbd9325ca23fb"
+  },
+  "checks": [
+    {
+      "layers": 48,
+      "position": 127,
+      "workers": 1,
+      "schedule": "queue",
+      "prefetch_stages": 0,
+      "prep_rows": 64,
+      "oproj_rows": 64,
+      "router_rows": 8,
+      "output_unequal_bytes": 0,
+      "cache_unequal_bytes": [
+        0,
+        0
+      ],
+      "logits_unequal_bytes": 0,
+      "state": [
+        297,
+        1212928,
+        1212928
+      ]
+    },
+    {
+      "layers": 48,
+      "position": 127,
+      "workers": 20,
+      "schedule": "queue",
+      "prefetch_stages": 0,
+      "prep_rows": 64,
+      "oproj_rows": 64,
+      "router_rows": 8,
+      "output_unequal_bytes": 0,
+      "cache_unequal_bytes": [
+        0,
+        0
+      ],
+      "logits_unequal_bytes": 0,
+      "state": [
+        297,
+        1212928,
+        1212928
+      ]
+    },
+    {
+      "layers": 48,
+      "position": 127,
+      "workers": 32,
+      "schedule": "queue",
+      "prefetch_stages": 0,
+      "prep_rows": 64,
+      "oproj_rows": 64,
+      "router_rows": 8,
+      "output_unequal_bytes": 0,
+      "cache_unequal_bytes": [
+        0,
+        0
+      ],
+      "logits_unequal_bytes": 0,
+      "state": [
+        297,
+        1212928,
+        1212928
+      ]
+    },
+    {
+      "layers": 48,
+      "position": 127,
+      "workers": 36,
+      "schedule": "queue",
+      "prefetch_stages": 0,
+      "prep_rows": 64,
+      "oproj_rows": 64,
+      "router_rows": 8,
+      "output_unequal_bytes": 0,
+      "cache_unequal_bytes": [
+        0,
+        0
+      ],
+      "logits_unequal_bytes": 0,
+      "state": [
+        297,
+        1212928,
+        1212928
+      ]
+    }
+  ]
+}

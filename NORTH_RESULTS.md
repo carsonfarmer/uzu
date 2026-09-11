@@ -1,138 +1,131 @@
-# Correct, faster North Mini Code decoding on M4 Pro
+# North Mini Code megakernel results on Apple M4 Pro
 
-The original prototype was incomplete and contained accumulation-order errors.
-Those errors are fixed. Both the fused branch and the optimized persistent
-scheduler now have repeatable full-model comparisons with identical generated
-tokens. The persistent path also passes 1,424 complete-logit byte comparisons,
-plus prefill; the fused path passes the same gate at the preceding checkpoint
-with unchanged kernel arithmetic.
+## The result
 
-## Full-model results
+We built a safe Metal path that executes all 49 North Mini Code transformer
+layers, every K/V update, final RMSNorm, and the entire 262,144-entry output
+head in one custom GPU dispatch for each generated token.
 
-Decode tokens per second, median of three measured runs per prompt:
+It is bitwise equal to stock MLX on two independent 127-step coding
+continuations. Six measured runs produce 53.423 tok/s, while six stock MLX runs
+produce 53.951 tok/s. The safe path is 0.98% slower, or within 1% on this
+desktop test. The best exact fused control remains faster at 59.952 tok/s.
 
-| Prompt | Original MLX | Compiled MLX | Fused Metal | Persistent Metal |
-|---|---:|---:|---:|---:|
-| short | 51.92 | 52.00 | 58.48 | 56.06 |
-| long | 47.54 | 48.69 | 52.99 | 50.83 |
-| rust | 52.11 | 50.52 | 55.32 | 54.88 |
+## Why the earlier +6.75% result is not the headline
 
-Median paired throughput changes (pair by prompt and repetition):
+The first complete kernel used a global barrier: every threadgroup had to reach
+each phase boundary before any could continue. That version completed long
+exact runs and measured 57.472 tok/s, 6.75% above its adjacent stock result.
 
-| Prompt | Fused / original | Persistent / original | Fused / compiled | Persistent / compiled |
-|---|---:|---:|---:|---:|
-| short | +11.7% | +6.6% | +12.5% | +7.3% |
-| long | +11.7% | +6.0% | +8.8% | +3.9% |
-| rust | +6.6% | +6.3% | +11.2% | +8.5% |
+When the exact test was rerun adversarially, the kernel produced two correct
+steps and then hung. Metal can schedule fewer threadgroups than were dispatched.
+A resident group can wait for a group that has not been scheduled, creating a
+deadlock. Correct output on completed steps does not fix a liveness failure.
 
-The ratio of medians and median paired ratio are different statistics; the
-percentages above use paired ratios. All 36 measured requests use identical
-token sequences across variants. Output cap is 256; the first token belongs
-to prefill, and decode throughput measures the subsequent 255 forward passes.
-The inputs contain 136, 1,672 and 140 tokens. Model load, tokenization and
-warmup compilation are excluded. These are decode timings within complete
-model generation, not end-to-end serving speedups. TTFT and full wall times
-are retained in the raw JSONL. Desktop clocks are unlocked; ranges and every
-paired observation are available in `summary.json` and the raw runs.
+We retained the benchmark and partial stalled artifact under
+[whole-pass history](experiments/north/whole_pass/history/STATIC_SCHEDULER_FAILURE.md),
+but removed the speedup from every validated claim.
 
-An additional confirmation uses only original MLX and the persistent path,
-with two measured repetitions per prompt: one in each order. All six pairs
-again improve, by 7.0–9.0%, with matching tokens. This separate confirmation is
-not pooled into the headline table. Its sources match the full-logit gate.
+## The replacement
 
-## What was wrong
+The safe version uses a dynamic ready-task queue. Each resident threadgroup:
 
-The old attention projection accumulated products in a different per-lane
-order and used a different reduction tree. The old down projection split K
-and reassociated partial sums. Those changes altered BF16 rounding and then
-logits and greedy tokens. Component isolation found exact up/gate/activation
-values but mismatches in down and attention. Preserving the native MLX
-accumulation order, reduction tree and rounding boundaries removed the errors.
-No tolerance was loosened and the model weights were not changed.
+1. reads the current phase;
+2. atomically claims one ready job;
+3. runs that job;
+4. increments the completion count;
+5. advances the phase if it finished the final job.
 
-The selected persistent scheduler further reduces overhead by having one
-thread acquire each dependency, publishing visibility through a device-memory
-threadgroup barrier, staging the hidden vector once per threadgroup, and
-caching readiness that cannot change back. Full-model timing omits diagnostic
-visit counters; correctness stress runs enable them and require every task
-to execute exactly once. Error/progress checks remain in the timed route.
+No group waits for a particular group that might not be resident. The full
+297-phase decode completes and returns matching claim/completion cursors at 1,
+20, 32, and 36 groups. Thirty-six groups are used for the measured path.
 
-## What the Cohere ideas showed here
+## Performance evidence
 
-The implementation follows [Cohere’s article](https://cohere.com/blog/megakernels)
-and [pinned code](https://github.com/cohere-ai/cohere-megakernel/tree/67d0b9ca22ea3652796b715d1d1863459e0e2c3c).
-Independent MoE and attention-output tiles share a grid. A persistent ready
-queue starts each expert’s down projection when its own hidden tiles are ready.
-Counters directly record starts before all experts finish. Separate variants
-load the same down weights into threadgroup memory before or after readiness.
+Apple M4 Pro with 20 GPU cores and 48 GB; MLX 0.32.2; batch one; 136-token
+prompt; 127 timed decode steps. Model load, packing, tokenization, prefill, and
+warmups are excluded. Embedding lookup, the transformer/logit dispatch, K/V
+carry and growth, synchronization, and argmax are included.
 
-The first implementation of those mechanisms had substantial overhead. Its
-complete, correctness-passing full-model comparison is retained separately:
-
-| Prompt | Original | Compiled | Fused | First scheduler | Prefetch | Stage after ready |
-|---|---:|---:|---:|---:|---:|---:|
-| short | 54.74 | 54.96 | 61.00 | 47.09 | 43.39 | 45.68 |
-| long | 48.44 | 50.32 | 54.13 | 41.21 | 41.12 | 41.13 |
-| rust | 52.36 | 54.27 | 58.94 | 46.18 | 42.52 | 42.99 |
-
-These are a separate run session; do not subtract its rates from the final
-table as if they were paired measurements. Fetching an expert's down-projection
-weights early did not beat the best fused branch in our implementation. Cohere
-also fetches the next layer's attention and routing weights while the current
-layer is finishing. We have not implemented that cross-layer optimization on
-Apple yet, so this experiment says nothing about whether it will help here.
-
-Controlled branch ablations use 29 timed pairs after two warmups on each of
-two captured-layer fixtures, varying activations and expert IDs. These numbers
-are changes in latency, so negative is faster:
-
-| Layer fixture | Per-expert readiness vs all experts | Prefetch vs load after ready |
+| Path | Median tok/s | Difference from stock |
 |---|---:|---:|
-| 1 | -5.2% | +2.9% |
-| 7 | -2.9% | +3.5% |
+| Stock MLX, 6 runs | 53.951 | — |
+| Exact fused control, 6 runs | 59.952 | +11.12% |
+| **Safe one-dispatch queue, 6 runs** | **53.423** | **-0.98%** |
 
-Both sides include workspace initialization, the final join and diagnostic
-counters. Each intermediate byte matches and every task runs exactly once.
-For the fine-grained scheduler, the first down job starts with only 28–52 of
-96 hidden tiles complete across these fixtures; the control waits for all 96.
-For the prefetch variant, counters confirm weights are staged while their
-activation dependencies are still unready. This distinguishes a measured
-mechanism from merely reducing the number of launches.
+The two adjacent safe-versus-stock process-pair estimates are -1.26% and
+-0.81%. Both pairs put the safe path within 1.3% of stock.
 
-The target-process GPU traces are retained locally, with aggregate summaries
-in `correctness/results/profile-*.json`. The final original/fast traces record
-roughly 75 versus 51 Compute-active command buffers per generated token and
-17.50 versus 16.41 ms of Compute activity per step. Instrumentation substantially
-increases CPU/driver overhead, so those trace wall times are not throughput
-results. These traces do not provide per-shader timings or bandwidth counters;
-the uninstrumented paired runs above are the performance evidence.
+## Scheduling and prefetch ablations
 
-## Correctness, scope and reproduction
+Four queue configurations share the packed weights in one process and rotate
+after every decode step. This makes the variants experience nearly the same
+clock and system conditions.
 
-Five corrected variants each pass 1,424 decode steps, totaling 7,120
-full-vocabulary byte comparisons, plus prefill checks. The three continuations
-contain 512, 512 and 403 generated tokens; Rust stops naturally, and the two
-Python requests reach the cap. This establishes equivalence on the checked
-workloads, not broad coding-quality evaluation. Additional scheduler stress
-varies activations, expert IDs and worker counts, including one worker and
-oversubscription. Source hashes and snapshots accompany the gates and timings.
-Metal API and GPU shader validation also pass for the dependency and staging
-variants. The arbitrary-prompt runner passes raw-logit verification with both
-the fused and persistent routes on an additional Python request.
+| Configuration | Median tok/s | Difference from tuned |
+|---|---:|---:|
+| Tuned 64/64/8-row jobs | 50.518 | — |
+| Coarse 128/128/16-row jobs | 48.898 | -3.21% |
+| Tuned plus one next-weight cache-warming stage | 48.098 | -4.79% |
+| Tuned plus ten cache-warming stages | 37.964 | -24.85% |
 
-This is a branch integration into all 48 MoE layers, not one kernel for the
-entire forward pass. Original MLX still handles layer 0, prefill, normalization,
-QKV, attention, routing and the output head. The checkpoint is the community
-affine-W4/group64 conversion, not Cohere’s H100 BF16 setup. The only tested
-device is this M4 Pro (20 GPU cores, 48 GB), macOS 27.0 / 26A5425a, MLX 0.32.2.
+The 3.31% tuned-over-coarse result supports Cohere's argument that smaller tasks
+fill the final partial GPU wave more effectively. The cache-warming experiment
+does not reproduce H100 TMA: it performs extra reads of next-layer QKV/router
+weights to warm cache. Those reads cost bandwidth on this path.
 
-Use `experiments/north/quantized/README.md` for installation and commands,
-`experiments/north/correctness/COHERE_REFERENCE.md` for the mechanism mapping,
-and `experiments/north/generate.py --mode exact --verify --prompt '...'` to
-try your own prompt. Use `--mode fast` for the persistent scheduler.
+## Correctness evidence
 
-Model: `mlx-community/North-Mini-Code-1.0-4bit`, revision
-`dfbe084dfa26e241345af99ca32848f38fd865f9`. Reference source: MLX-VLM revision
-`cdc745ad8a32d162f6d8e9d08be256910d663ac2`. Model files are downloaded and
-verified separately; the result packet contains no weights. Nothing has been
-posted, pushed or sent to Cohere.
+- 18 primitive raw-byte comparisons across six representative layers and three
+  positions.
+- Four complete one-step comparisons at 1, 20, 32, and 36 groups, covering the
+  final hidden state, all used cache bytes, all logits, and queue completion.
+- 127 exact full-logit decode steps for a Python prompt and 127 for a Rust
+  prompt.
+- Identical generated token sequences across all 30 measured benchmark rows.
+- Source SHA-256 provenance checked by the summary script.
+
+Changed logits or tokens fail the gate. No numeric tolerance is used.
+
+## How this maps to Cohere's work
+
+[Cohere's article](https://cohere.com/blog/megakernels) and
+[pinned source](https://github.com/cohere-ai/cohere-megakernel/tree/67d0b9ca22ea3652796b715d1d1863459e0e2c3c)
+inspired the full-model task engine, resident worker pool, fine task sizing,
+dependency queue, and next-layer weight-overlap test.
+
+The fused control is related research, not the megakernel result. It fuses
+selected parallel operations inside each layer and leaves the rest of the model
+under MLX. It establishes a strong Apple baseline and shows where specialized
+fusion still beats the general queue.
+
+## Why the fused control is hard to beat
+
+These are ranked hypotheses, not conclusions. Each has a direct experiment that
+can prove or reject it.
+
+| Rank | Hypothesis | Why it fits the evidence | Decisive next test |
+|---:|---|---|---|
+| 1 | The safe queue pays too much synchronization overhead. | The full path advances 297 phases with atomic claims, completions, device fences, and polling. The unsafe static schedule was faster when it completed. | Add per-phase GPU timestamps, then merge only the most expensive adjacent phases while retaining ready-task progress. |
+| 2 | Copying the active K/V prefix consumes the launch savings. | MLX custom-kernel outputs are new buffers, so the one-dispatch path copies every used cache entry on every token. The fused path updates native caches without this whole-prefix copy. | Implement alias-safe in-place cache updates through a lower-level Metal command path and compare identical queue math at several context lengths. |
+| 3 | The fused path keeps MLX's best specialized kernels. | It fuses the profitable attention-output/MoE branch while leaving QKV, normalization, routing, attention, and the huge output head to tuned MLX kernels. The megakernel replaces all of them with one general program. | Benchmark identical packed inputs operation by operation and compare bytes moved, GPU time, and arithmetic throughput with the MLX kernel for each stage. |
+| 4 | The giant kernel reduces GPU occupancy or compiler quality. | One Metal function contains dense and MoE paths, attention, routing, cache logic, queue logic, and the output head. Register pressure, instruction-cache pressure, or conservative compilation can offset fewer launches. | Compare one dispatch with carefully chosen two-, four-, and eight-dispatch cuts; collect Metal occupancy, register, and GPU-counter data. |
+| 5 | The strongest Cohere overlap mechanism is missing. | H100 TMA can move future weights asynchronously. The available cache-warming substitute adds reads and loses 4.79% to 24.85%. | Build a native Metal prototype with explicit staged transfers and double-buffered threadgroup memory, then measure overlap rather than cache warming. |
+| 6 | North's affine W4 decode has a different bottleneck from Cohere's BF16 H100 path. | Weight decoding, scales/biases, unified memory, and a 262k head make this Apple workload strongly bandwidth-sensitive. Launch count may be a smaller fraction of total time. | Produce a bytes-per-token roofline and repeat on M4 Max plus BF16 or another quantization with the same scheduler. |
+
+The first two tests are the highest priority. Removing the cache copy attacks
+work the fused path simply does not perform, while phase timing will show whether
+the queue itself or the math kernels dominate the remaining 10.89% gap.
+
+## Scope
+
+This validates the core complete-decode megakernel idea for this 4-bit model,
+batch-one generation, short context, and one M4 Pro. It does not validate
+Cohere's full serving system, continuous batching, paged attention, ragged
+sequences, 256K contexts, or a true asynchronous Metal weight-transfer
+pipeline.
+
+Use [the full walkthrough](experiments/north/whole_pass/README.md) for the
+implementation and reproduction commands. The
+[machine-readable summary](experiments/north/whole_pass/summary-v1.json)
+contains every retained sample and artifact hash.

@@ -1,6 +1,11 @@
 # North Mini Code on Apple Silicon: feasibility assessment
 
-**Follow-up:** the model has since been downloaded, hash-verified and run. See NORTH_RESULTS.md for measured baseline, coding checks and real-layer Metal experiments. The assessment below records the initial source-based findings.
+**Follow-up:** the model has since been downloaded, hash-verified, and run through
+a safe complete one-dispatch Metal decode path. The path is byte-exact on 254
+repeated decode steps and reaches within 1% of stock MLX on this M4
+Pro. See [NORTH_RESULTS.md](NORTH_RESULTS.md) and
+[the whole-pass report](experiments/north/whole_pass/README.md). The assessment
+below records the initial source-based findings before implementation.
 
 Assessed 2026-09-10 for this M4 Pro / 48 GB machine. **Yes: it is a strong eventual model for the megakernel experiment, and a quantized Apple baseline is available. It is not currently loadable as a correct North Mini Code model in this Uzu checkout.** No model weights were downloaded and no engine files were changed during this assessment.
 

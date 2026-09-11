@@ -1,0 +1,70 @@
+{
+  "device": {
+    "device_name": "Apple M4 Pro",
+    "max_recommended_working_set_size": 40200896512,
+    "memory_size": 51539607552,
+    "architecture": "applegpu_g16s",
+    "max_buffer_length": 30150672384,
+    "resource_limit": 499000
+  },
+  "mlx": "0.32.2",
+  "args": {
+    "layers": 2,
+    "workers": [
+      1,
+      32
+    ],
+    "schedule": "static",
+    "prefetch_stages": 0,
+    "prep_rows": 32,
+    "oproj_rows": 32,
+    "router_rows": 4,
+    "head": false,
+    "lm_rows": 128,
+    "output": "experiments/north/whole_pass/check-whole-pass-2layer-tuned-v1.json"
+  },
+  "sources": {
+    "experiments/north/whole_pass/check_whole_pass.py": "12d980426f6d143e5dc3b80b60b1094479adde58cbe8b61be8ae4cc1df7e2100",
+    "experiments/north/whole_pass/kernel.py": "e3a934d7c16fc55521857622e1496680464db273a89c7ed9ad6b78e75f5ffed3",
+    "experiments/north/whole_pass/pack.py": "653c619d364fd121560063d19f1c7cf0ea80bd647c7767db1ea0565abf264b48",
+    "experiments/north/whole_pass/primitives.py": "cf8dd18d0d0c3acb99461cc3536132cec4822250fa00a815a5179cd7e995313b"
+  },
+  "checks": [
+    {
+      "layers": 2,
+      "position": 127,
+      "workers": 1,
+      "schedule": "static",
+      "prefetch_stages": 0,
+      "prep_rows": 32,
+      "oproj_rows": 32,
+      "router_rows": 4,
+      "output_unequal_bytes": 0,
+      "cache_unequal_bytes": [
+        0,
+        0
+      ],
+      "logits_unequal_bytes": null,
+      "barrier_min": 1,
+      "barrier_max": 1
+    },
+    {
+      "layers": 2,
+      "position": 127,
+      "workers": 32,
+      "schedule": "static",
+      "prefetch_stages": 0,
+      "prep_rows": 32,
+      "oproj_rows": 32,
+      "router_rows": 4,
+      "output_unequal_bytes": 0,
+      "cache_unequal_bytes": [
+        0,
+        0
+      ],
+      "logits_unequal_bytes": null,
+      "barrier_min": 32,
+      "barrier_max": 32
+    }
+  ]
+}

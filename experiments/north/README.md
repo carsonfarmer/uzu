@@ -1,11 +1,14 @@
 # North Mini Code: real baseline and Metal branch experiment
 
-This directory establishes a real quantized North reference and tests a bounded
-part of its parallel layer graph. The corrected packed-W4 implementation now
-passes full-model equivalence checks and produces a measured decode speedup.
-See quantized/README.md for the current reproduction commands and
-correctness/COHERE_REFERENCE.md for the mapping to Cohere's code and article.
-The BF16 materialization and Swift graph described below are historical work.
+This directory establishes a real quantized North reference and now includes a
+complete batch-one decode graph in one Metal dispatch. The safe M4 Pro path
+runs all 49 transformer layers, K/V updates, final normalization, and the full
+language-model head; it matches MLX logits byte-for-byte on two repeated coding
+continuations and reaches within 1% of stock MLX. Start with
+[whole_pass/README.md](whole_pass/README.md). See quantized/README.md for model
+setup and correctness/COHERE_REFERENCE.md for the mapping to Cohere's code and
+article. The bounded branch, BF16 materialization, and Swift graph described
+below record earlier milestones.
 
 ## Reference model
 
