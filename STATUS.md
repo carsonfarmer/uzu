@@ -1,10 +1,24 @@
 # Apple North research status — September 13, 2026
 
-The full megakernel performance objective remains unfinished. The verified
-fused control and prior full-queue experiments are preserved. A separate
-worktree, on `cf/north-additional-ten-percent`, now has an active goal to improve
-decode throughput by another 10% over the strongest exact fused control using
-fresh matched measurements. GPU experiments use a shared exclusive lock.
+The additional 10% research-runner target is verified on the original short
+Python workload (+10.70%), corroborated by Rust (+10.92%). Both use the actual
+prior fused host-token loop as a fresh control; ten balanced rounds per prompt
+clear 10% with both bootstrap and independent log-ratio t intervals. Full logits
+match byte-for-byte. Longer-context correctness passes, but its throughput
+estimate remains uncertain after substantial timing stalls.
+
+The implementation and complete evidence are preserved separately on
+[`cf/north-additional-ten-percent`](https://github.com/carsonfarmer/uzu/tree/cf/north-additional-ten-percent/experiments/north/additional).
+Most of the runner gain comes from adopting the standard async pattern already
+present in pinned MLX-VLM generation. New preparation fusion adds roughly
+1.1–1.2% over the unchanged fused async path. An earlier 12% confirmation used
+an extra wait in its control and was withdrawn; all of that evidence is retained.
+
+The full megakernel performance objective remains unfinished. This runner result
+does not demonstrate a benefit from the complete persistent scheduler or a new
+async generation technique. The verified fused control and prior full-queue
+experiments are preserved. The additional work remains in its separate worktree;
+its implementation has not been merged into this branch.
 
 The new [branch-mixing ablation](experiments/north/branch_mixing/README.md)
 finds that nearly all of the fused gain survives with separate attention-output

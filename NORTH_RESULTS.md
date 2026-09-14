@@ -9,8 +9,13 @@ completed; it is not a proof of scheduler liveness on arbitrary workloads.
 
 A new [branch-mixing ablation](experiments/north/branch_mixing/README.md)
 separates the contribution of combining attention/expert work from the other
-fused calculations. A separate worktree now targets another 10% over the
-strongest fused control using fresh matched measurements.
+fused calculations. The separate
+[additional-throughput worktree](https://github.com/carsonfarmer/uzu/tree/cf/north-additional-ten-percent/experiments/north/additional)
+has now verified +10.70% on the original short Python workload and +10.92% on
+Rust over the actual prior fused runner. Most of that gain adopts MLX-VLM's
+existing async generation pattern; preparation fusion adds about 1.1–1.2% over
+fused async. Longer-context throughput remains uncertain. This scoped runner
+result does not establish the complete-megakernel performance objective.
 
 ## The retained full-queue result
 
