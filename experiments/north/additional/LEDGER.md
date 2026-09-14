@@ -3,7 +3,9 @@
 Base: `008d0282ad46cddc4dbf614a554301b7586dcb54`. Control: exact branch,
 160 front workers and 16 down rows, unchanged. Goal is candidate/control >=1.10
 in fresh matched end-to-end measurements. Historical 59.952 tok/s is context,
-not a current denominator. No success or exhaustion has been established.
+not a current denominator. The final prepared-async confirmation meets the
+target; the evidence and limits are in README.md. Remaining avenues were not
+exhausted.
 
 ## Evidence rules
 
@@ -172,3 +174,20 @@ stop handling or sliding-cache wrap beyond the recorded contexts.
 The initial pipeline pilot failed while recording a relative source path,
 before decode. Its error log is retained as `pipeline-pilot-v1.log`; v2 fixes
 that harness path. It is not counted as an arithmetic or performance result.
+
+## Final outcome
+
+`pipeline-confirmation-v1.jsonl` completed successfully: twelve AB/BA pairs per
+prompt, six of each order, 127 full-logit byte checks per path per prompt, and
+identical independently generated token sequences. Paired gains are 11.884%,
+12.005%, and 12.027% for Python, Rust, and longer Python. Bootstrap lower bounds
+are 11.122%, 11.794%, and 11.686%; separate log-ratio t intervals also clear 10%.
+No final prompt regresses. One Python pair is only +9.35% and remains included.
+Source hashes and unchanged control files were audited after the run.
+
+The selected path combines H10 with the modest H1/H2 preparation change.
+H4's tested down geometry remains unchanged, H9 settings were rejected, and
+H3's parent ablation was retained. H5/H6/H7 and broader attention work remain
+open: the task ends because the measured throughput target is reached, not
+because those ideas were systematically exhausted. No complete-megakernel
+speedup or true asynchronous Metal weight-transfer result is claimed.

@@ -1,0 +1,123 @@
+{
+  "artifact": "experiments/north/additional/results/pipeline-confirmation-v1.jsonl",
+  "sha256": "72d19ba2b5508e4be5c2326ea6ffd3661d97f95dd95c4994471615d27cbc8a80",
+  "source_hashes_match": true,
+  "results": {
+    "short": {
+      "prompt_tokens": 136,
+      "byte_gate": true,
+      "exact_steps_per_variant": 127,
+      "balanced_order_counts": {
+        "('exact_sync', 'prepared_async')": 6,
+        "('prepared_async', 'exact_sync')": 6
+      },
+      "median_tps": {
+        "exact_sync": 60.14166553928112,
+        "prepared_async": 67.1426150830267
+      },
+      "contrasts": {
+        "prepared_async_over_sync": {
+          "paired_ratios": [
+            1.1294160090993928,
+            1.1146968526244954,
+            1.1144045074122988,
+            1.0934662468211263,
+            1.1443320352610387,
+            1.1431256345057075,
+            1.12823066034873,
+            1.1100352023445479,
+            1.1142117585648321,
+            1.1105708843952267,
+            1.1126091595596561,
+            1.1120583807804993
+          ],
+          "paired_geometric_ratio": 1.1188417281741552,
+          "paired_bootstrap_95_percent": [
+            1.1112232901001655,
+            1.1270683817233131
+          ],
+          "ratio_of_medians": 1.1164076432032457
+        }
+      },
+      "conservative_prepared_pass": true
+    },
+    "rust": {
+      "prompt_tokens": 140,
+      "byte_gate": true,
+      "exact_steps_per_variant": 127,
+      "balanced_order_counts": {
+        "('exact_sync', 'prepared_async')": 6,
+        "('prepared_async', 'exact_sync')": 6
+      },
+      "median_tps": {
+        "exact_sync": 60.74554817130293,
+        "prepared_async": 68.05500588187036
+      },
+      "contrasts": {
+        "prepared_async_over_sync": {
+          "paired_ratios": [
+            1.1212937319820655,
+            1.1131855518268219,
+            1.120132661230429,
+            1.1158669240635868,
+            1.1193635992051263,
+            1.1224470655724301,
+            1.1216786696788057,
+            1.117524601987866,
+            1.1208112098917364,
+            1.1166102161632512,
+            1.1244449127222207,
+            1.1272735669710328
+          ],
+          "paired_geometric_ratio": 1.120046576226764,
+          "paired_bootstrap_95_percent": [
+            1.1179394688257496,
+            1.1221395576958726
+          ],
+          "ratio_of_medians": 1.12032910938518
+        }
+      },
+      "conservative_prepared_pass": true
+    },
+    "long": {
+      "prompt_tokens": 1672,
+      "byte_gate": true,
+      "exact_steps_per_variant": 127,
+      "balanced_order_counts": {
+        "('exact_sync', 'prepared_async')": 6,
+        "('prepared_async', 'exact_sync')": 6
+      },
+      "median_tps": {
+        "exact_sync": 55.20988051527543,
+        "prepared_async": 61.89117385903993
+      },
+      "contrasts": {
+        "prepared_async_over_sync": {
+          "paired_ratios": [
+            1.1143909461571653,
+            1.1143339869798718,
+            1.1268852700532002,
+            1.12904887180585,
+            1.1146245475838725,
+            1.1260324905104526,
+            1.1264490527981823,
+            1.1146207888670503,
+            1.1118771276802226,
+            1.1252020109583272,
+            1.1242492997881803,
+            1.1157495313000054
+          ],
+          "paired_geometric_ratio": 1.1202716714267056,
+          "paired_bootstrap_95_percent": [
+            1.1168616886108187,
+            1.1237595073747115
+          ],
+          "ratio_of_medians": 1.121016261607665
+        }
+      },
+      "conservative_prepared_pass": true
+    }
+  },
+  "all_prompts_conservative_prepared_pass": true,
+  "scope": "All rows retained. Whole-run paired bootstrap. Evaluation-boundary, host-overlap and preparation-fusion contrasts are distinct. No GPU-side duration or occupancy measurement."
+}

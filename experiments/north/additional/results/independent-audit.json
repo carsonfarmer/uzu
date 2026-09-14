@@ -1,0 +1,36 @@
+{
+  "artifact_sha256": "72d19ba2b5508e4be5c2326ea6ffd3661d97f95dd95c4994471615d27cbc8a80",
+  "method": "Independent recomputation from raw seconds, using all 12 pairs; t11 log-ratio interval and order-stratified means. No GPU use.",
+  "results": {
+    "short": {
+      "paired_geo_from_seconds": 1.1188417281741552,
+      "log_t_95_interval": [
+        1.109573034413285,
+        1.1281878469276743
+      ],
+      "AB_geo": 1.1238098999530213,
+      "BA_geo": 1.113895519834858,
+      "minimum_pair": 1.0934662468211263
+    },
+    "rust": {
+      "paired_geo_from_seconds": 1.120046576226764,
+      "log_t_95_interval": [
+        1.1175862393650815,
+        1.122512329455667
+      ],
+      "AB_geo": 1.1212863217777476,
+      "BA_geo": 1.1188082013952847,
+      "minimum_pair": 1.113185551826822
+    },
+    "long": {
+      "paired_geo_from_seconds": 1.1202716714267056,
+      "log_t_95_interval": [
+        1.1161849602550733,
+        1.1243733453588076
+      ],
+      "AB_geo": 1.1197286990702855,
+      "BA_geo": 1.1208149070781361,
+      "minimum_pair": 1.1118771276802226
+    }
+  }
+}

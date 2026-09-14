@@ -1,16 +1,30 @@
 # North Mini Code megakernel results on Apple M4 Pro
 
-## Status correction — September 13, 2026
+## Additional decode target — September 13, 2026
 
-The performance objective remains unfinished. The full queue implementation
+The additional 10% decode-throughput target is now met on the three tested
+prompts. A prepared async path improves over the unchanged synchronous exact
+fused control by **11.88% Python, 12.00% Rust, and 12.03% at 1,672 prompt
+tokens** in twelve balanced AB/BA pairs per prompt. All 127 full-logit positions
+match stock byte-for-byte, and all measured generations have identical tokens.
+Paired confidence intervals have lower bounds above +10% on all three prompts.
+
+The gain comes mainly from overlapping host submission, with about 1% more
+from exact preparation fusion. It is not an incremental complete-megakernel
+speedup. The [report and raw evidence](experiments/north/additional/README.md)
+document the controls, noisy earlier runs, fixed-length scope, and attribution.
+
+## Full-megakernel status correction
+
+The complete-megakernel performance objective remains unfinished. The full queue implementation
 below is a research checkpoint, and its completion is not evidence of a
 megakernel speedup. “Safe” in historical variant names means the retained checks
 completed; it is not a proof of scheduler liveness on arbitrary workloads.
 
 A new [branch-mixing ablation](experiments/north/branch_mixing/README.md)
 separates the contribution of combining attention/expert work from the other
-fused calculations. A separate worktree now targets another 10% over the
-strongest fused control using fresh matched measurements.
+fused calculations. The additional decode result above uses fresh matched
+measurements against that fused control.
 
 ## The retained full-queue result
 

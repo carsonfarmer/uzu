@@ -1,10 +1,19 @@
 # Apple North research status — September 13, 2026
 
-The full megakernel performance objective remains unfinished. The verified
-fused control and prior full-queue experiments are preserved. A separate
-worktree, on `cf/north-additional-ten-percent`, now has an active goal to improve
-decode throughput by another 10% over the strongest exact fused control using
-fresh matched measurements. GPU experiments use a shared exclusive lock.
+The additional 10% decode-throughput target is confirmed on
+`cf/north-additional-ten-percent`: **+11.88% Python, +12.00% Rust, and +12.03%
+at 1,672 prompt tokens**, versus fresh matched measurements of the unchanged
+synchronous exact fused control. Twelve AB/BA pairs per prompt, full-logit
+bytewise checks for all 127 decode steps, and identical free-running tokens
+support the result. The gain mainly comes from host submission overlap, plus
+about 1% from preparation fusion. See the
+[report, raw runs, and verification](experiments/north/additional/README.md).
+
+The complete megakernel remains slower than the fused control. Its historical
+results are preserved, and the new host-loop gain must not be attributed to
+that scheduler. The measured candidate is a fixed-length research path; general
+streaming-stop behavior and wider contexts remain outside its validation.
+All GPU experiments used the shared exclusive lock.
 
 The new [branch-mixing ablation](experiments/north/branch_mixing/README.md)
 finds that nearly all of the fused gain survives with separate attention-output
