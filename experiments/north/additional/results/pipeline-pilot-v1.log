@@ -1,0 +1,13 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+Traceback (most recent call last):
+  File "/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/experiments/north/additional/gpu_run.py", line 16, in <module>
+    runpy.run_path(sys.argv[0], run_name='__main__')
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "experiments/north/additional/pipeline.py", line 44, in <module>
+    sources={str(s.relative_to(ROOT)):hashlib.sha256(s.read_bytes()).hexdigest() for s in sources},
+                 ^^^^^^^^^^^^^^^^^^^
+  File "/Users/carsonfarmer/.local/share/uv/python/cpython-3.12.10-macos-aarch64-none/lib/python3.12/pathlib.py", line 682, in relative_to
+    raise ValueError(f"{str(self)!r} is not in the subpath of {str(other)!r}")
+ValueError: 'experiments/north/additional/pipeline.py' is not in the subpath of '/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab'

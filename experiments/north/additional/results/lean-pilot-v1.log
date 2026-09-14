@@ -1,0 +1,10 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+short full-logit gate passed 16
+short candidate -1 61.844
+short exact -1 61.564
+short exact 0 61.628
+short candidate 0 61.412
+short candidate 1 61.531
+short exact 1 61.211
+short exact 2 61.45
+short candidate 2 61.11

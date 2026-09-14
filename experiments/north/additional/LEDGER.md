@@ -59,8 +59,8 @@ has been imported here yet. Local MLX source is clean at
 `1f8e74e3f12f31365464a6867c6579f0e9b29d85`.
 
 `CommandEncoder::set_input_array` increments `buffer_sizes_` once per distinct
-input buffer; `needs_commit()` compares MiB with the device threshold. Local
-source selects 40 MiB for Pro and reads `MLX_MAX_MB_PER_BUFFER` and
+input buffer; `needs_commit()` compares MiB with the device threshold. The measured runtime architecture is `applegpu_g16s`; local
+source switches on the suffix `s`, selecting 50 ops / 50 MiB, and reads `MLX_MAX_MB_PER_BUFFER` and
 `MLX_MAX_OPS_PER_BUFFER` once into static values. Thus runtime environment
 changes require fresh processes. The decode harness records both variables.
 `lean.py` removes only the unused down/scales/bias inputs from the front;
@@ -106,3 +106,34 @@ not a claim of completed validation.
 The checkpoint's NORTH_RESULTS.md calls the queue safe and claims broad
 validation; the measured artifacts support only their recorded configurations.
 No finite test establishes arbitrary scheduler liveness or all-context exactness.
+
+## First GPU screening outcomes
+
+The parent release signal arrived and all runs below used the exclusive lock.
+These are screening results, not completed goal validation.
+
+- H1/H2: `prep-v1.jsonl`, layer1, 3 random BF16 inputs, all24 custom
+  configurations matched all Q/K/V/router/norm bytes. Best isolated hot wall
+  latency was220.625us (64 rows,8 router rows, local RMS) versus249.750us
+  compiled native. Full-model `prep-pilot-v1.jsonl` checked16 exact full-logit
+  steps, then2 paired63-step runs: geometric ratio1.002261. Local latency
+  did not translate into an end-to-end10% gain.
+- H4/H8: `parts-v1.jsonl` uses real layer1 weights and synthetic inputs.
+  Median hot wall times (us): front native292.334/exact268.083; down
+  native212.959/exact16-row190.125; exact8-row194.500 and32-row193.916;
+  whole branch native354.042/exact314.167; native head1306.709. All
+  constituent output bytes matched. These host-inclusive times are not
+  additive and cannot establish attention's share of decode.
+- H9: `lean-pilot-v1.jsonl` passes16 full-logit steps and3 paired127-step
+  generations. Binding-only change is approximately neutral. Setting512MiB
+  lowers control throughput to about58tok/s;128MiB gives about61tok/s
+  control but58–59tok/s lean. These are process-level screens, not a
+  counterbalanced configuration proof. No settings change is promoted.
+- H10 (new): overlap host submission of dependent token graphs using MLX
+  async evaluation, preserving exact math/full logits. `pipeline.py` compares
+  exact synchronous control, exact async, and stock async. No model-token
+  speculation; fixed-length runs reject early EOS rather than hide extra work.
+  Pilot running. Any gain belongs to host submission, not GPU fusion.
+
+Parent ablation commit55caa0ef was cherry-picked as c7674ab0, retaining
+its raw results and corrected interpretation in this worktree.
