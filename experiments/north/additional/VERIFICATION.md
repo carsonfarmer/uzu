@@ -1,16 +1,24 @@
 # Adversarial verification
 
-Status: passed with scope concerns. This is a self-audit using the
+> **Completion claim withdrawn after control audit.** The earlier final control
+> inserted `mx.eval(logits)` before reading argmax. The strongest historical
+> host-token loop directly reads `mx.argmax(logits[0, -1]).item()` and has no
+> such extra evaluation. Statements below calling that loop unchanged, or
+> declaring the target achieved, are superseded. The old data are retained as
+> measurements against the extra-evaluation control. Corrected balanced
+> experiments are in progress; the throughput goal is active again.
+
+Status: failed control audit; previous pass withdrawn. This is a self-audit using the
 adversarial-verifier skill, including a separate computation from raw seconds;
 it is not an independent reviewer or an additional GPU experiment.
 
-The final throughput claim is supported for the recorded fixed-length prompts.
+The prior target-completion claim is unsupported because its denominator added a wait.
 No claim of a complete-megakernel gain, arbitrary-context correctness, or a
 guaranteed gain on every run is supported.
 
 | Question | Direct investigation | Finding |
 |---|---|---|
-| Was the denominator weakened or replaced by history? | Diffed exact.py, patch.py, kernel.h, and reference.py against 008d0282; traced control construction and timing. | No diffs. Control uses workers=160, down rows=16, native prefill, and the established synchronous full-logit loop. Fresh control seconds supply every ratio. |
+| Was the denominator weakened or replaced by history? | Diffed exact.py, patch.py, kernel.h, and reference.py against 008d0282; traced control construction and timing. | Kernel files have no diffs, but that does not validate the host loop. The final control added a logits eval absent from the historical host-token loop. This row previously conflated unchanged kernels with an unchanged denominator; that conclusion was false. |
 | Can async omit unfinished GPU work? | Traced pending-token collection and final mx.synchronize before elapsed time is read. | All 127 dependent forwards and the final argmax complete inside timing. No extra forward is hidden outside it. |
 | Is the result only matching argmax? | Traced reference generation, retained logits, uint8 views, and assertion sites; counted final raw rows. | 127 complete logit-array byte checks for both paths on each of three prompts; all 762 unequal-byte counts are zero. |
 | Are measured generations teacher-forced? | Traced each generate call and token dependencies. | Each timing generation feeds its own previous token. All 72 measured token lists match the independently generated reference through assertions. |

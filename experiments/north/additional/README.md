@@ -1,5 +1,13 @@
 # Additional exact decode throughput: confirmed on M4 Pro
 
+> **Completion claim withdrawn after control audit.** The earlier final control
+> inserted `mx.eval(logits)` before reading argmax. The strongest historical
+> host-token loop directly reads `mx.argmax(logits[0, -1]).item()` and has no
+> such extra evaluation. Statements below calling that loop unchanged, or
+> declaring the target achieved, are superseded. The old data are retained as
+> measurements against the extra-evaluation control. Corrected balanced
+> experiments are in progress; the throughput goal is active again.
+
 The selected path exceeds the additional 10% end-to-end decode target on all
 three tested prompts. It overlaps host submission using MLX async evaluation
 and adds a small exact RMSNorm/QKV/router preparation kernel. The established

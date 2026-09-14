@@ -1,5 +1,13 @@
 # North Mini Code megakernel results on Apple M4 Pro
 
+> **Completion claim withdrawn after control audit.** The earlier final control
+> inserted `mx.eval(logits)` before reading argmax. The strongest historical
+> host-token loop directly reads `mx.argmax(logits[0, -1]).item()` and has no
+> such extra evaluation. Statements below calling that loop unchanged, or
+> declaring the target achieved, are superseded. The old data are retained as
+> measurements against the extra-evaluation control. Corrected balanced
+> experiments are in progress; the throughput goal is active again.
+
 ## Additional decode target — September 13, 2026
 
 The additional 10% decode-throughput target is now met on the three tested

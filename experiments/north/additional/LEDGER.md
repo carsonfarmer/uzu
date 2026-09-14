@@ -1,5 +1,13 @@
 # Additional ten-percent research
 
+> **Completion claim withdrawn after control audit.** The earlier final control
+> inserted `mx.eval(logits)` before reading argmax. The strongest historical
+> host-token loop directly reads `mx.argmax(logits[0, -1]).item()` and has no
+> such extra evaluation. Statements below calling that loop unchanged, or
+> declaring the target achieved, are superseded. The old data are retained as
+> measurements against the extra-evaluation control. Corrected balanced
+> experiments are in progress; the throughput goal is active again.
+
 Base: `008d0282ad46cddc4dbf614a554301b7586dcb54`. Control: exact branch,
 160 front workers and 16 down rows, unchanged. Goal is candidate/control >=1.10
 in fresh matched end-to-end measurements. Historical 59.952 tok/s is context,
