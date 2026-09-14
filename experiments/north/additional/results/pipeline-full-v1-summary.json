@@ -1,0 +1,81 @@
+{
+  "artifact": "experiments/north/additional/results/pipeline-full-v1.jsonl",
+  "sha256": "1df139c5f83486ae043981cfc85f2b4ab4627c39e1bcaeb527196303cfdafca9",
+  "source_hashes_match": true,
+  "results": {
+    "short": {
+      "prompt_tokens": 136,
+      "byte_gate": true,
+      "exact_steps_per_variant": 127,
+      "paired_ratios": [
+        1.2241149204083654,
+        1.093652006592745,
+        1.1323082172141878,
+        1.119811151835533,
+        1.1024101717934998,
+        1.1006993252616135
+      ],
+      "paired_geometric_ratio": 1.1279861940129503,
+      "paired_bootstrap_95_percent": [
+        1.1017860891266311,
+        1.167447810940148
+      ],
+      "median_exact_sync_tps": 59.28243310709457,
+      "median_exact_async_tps": 66.94100958353732,
+      "median_original_async_tps": 61.83946902103783,
+      "ratio_of_medians": 1.12918795796737,
+      "every_pair_above_ten_percent": false,
+      "conservative_pass": true
+    },
+    "rust": {
+      "prompt_tokens": 140,
+      "byte_gate": true,
+      "exact_steps_per_variant": 127,
+      "paired_ratios": [
+        1.1121812268470872,
+        1.1081476597464432,
+        1.1105659943376207,
+        1.1265485886170945,
+        1.118313803983999,
+        1.1041103478418817
+      ],
+      "paired_geometric_ratio": 1.1132873553965714,
+      "paired_bootstrap_95_percent": [
+        1.1078731228940144,
+        1.1196899422816031
+      ],
+      "median_exact_sync_tps": 60.50496384930981,
+      "median_exact_async_tps": 67.37394313422898,
+      "median_original_async_tps": 61.22364111718407,
+      "ratio_of_medians": 1.1135275330802057,
+      "every_pair_above_ten_percent": true,
+      "conservative_pass": true
+    },
+    "long": {
+      "prompt_tokens": 1672,
+      "byte_gate": true,
+      "exact_steps_per_variant": 127,
+      "paired_ratios": [
+        1.1001323769382643,
+        1.120482052488034,
+        1.1457697220073215,
+        1.1002322815731764,
+        1.1090026856021276,
+        1.096004572042287
+      ],
+      "paired_geometric_ratio": 1.111807048991561,
+      "paired_bootstrap_95_percent": [
+        1.10024296630384,
+        1.1269128533427801
+      ],
+      "median_exact_sync_tps": 54.976428110146976,
+      "median_exact_async_tps": 60.7182136032026,
+      "median_original_async_tps": 55.726717210519986,
+      "ratio_of_medians": 1.1044408611187284,
+      "every_pair_above_ten_percent": false,
+      "conservative_pass": true
+    }
+  },
+  "all_prompts_conservative_pass": true,
+  "scope": "Host submission overlap with unchanged exact Metal branch kernels. Separate full-logit gate, followed by independent greedy generations; fixed length and no early EOS. Whole-run pair bootstrap, no token-level pseudo-replication. No incremental megakernel claim."
+}

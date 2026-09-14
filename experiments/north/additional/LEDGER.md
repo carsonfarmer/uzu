@@ -137,3 +137,38 @@ These are screening results, not completed goal validation.
 
 Parent ablation commit55caa0ef was cherry-picked as c7674ab0, retaining
 its raw results and corrected interpretation in this worktree.
+
+## Host-submission evidence and confirmation plan
+
+`pipeline-full-v1.jsonl` completed 127 full-logit comparisons per variant on
+136-token Python, 140-token Rust, and 1672-token long prompts. All bytes and
+free-running generated tokens matched stock. Six whole-generation pairs per
+prompt give exact-async / exact-sync geometric ratios 1.12799, 1.11329, and
+1.11181. The paired bootstrap lower bounds are 1.10179, 1.10787, and 1.10024.
+All samples, including large stalls, are retained. The first and third margins
+are narrow; confirmation is required before closing the goal.
+
+`pipeline_prepared.py` adds the 64-row / 8-router-row / local-RMS preparation
+kernel. Its 63-step Python pilot passes full logits and adds about 1% over the
+unchanged exact async path. `pipeline_ablation.py` then compares synchronous
+separate evaluation, synchronous joint logits/argmax evaluation, exact async,
+and prepared async, with 127-step gates and eight runs per prompt. This is an
+exploratory four-way ordering protocol; it is not balanced for every pair.
+
+The final `pipeline_confirmation.py` uses exactly two paths and alternates
+AB/BA. Twelve pairs per prompt provide six of each order; its offline auditor
+checks the counts explicitly. This separates the primary candidate comparison
+from the exploratory four-way scheduling protocol. The selected candidate is
+prepared async; the denominator remains the unchanged original exact fused
+kernel path and established synchronous loop. Both use the same process,
+weights, prompt, token count, default batching settings, and GPU lock.
+
+This result concerns host submission and a small preparation fusion, not a
+complete megakernel. The single-evaluation synchronous ablation is needed to
+separate redundant evaluation-boundary cost from asynchronous host overlap.
+Fixed-length tests reject early EOS; they do not validate arbitrary streaming
+stop handling or sliding-cache wrap beyond the recorded contexts.
+
+The initial pipeline pilot failed while recording a relative source path,
+before decode. Its error log is retained as `pipeline-pilot-v1.log`; v2 fixes
+that harness path. It is not counted as an arithmetic or performance result.

@@ -1,0 +1,14 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+short full-logit pipeline gate passed 63
+short prepared_async -1 69.0
+short exact_async -1 67.909
+short exact_sync -1 61.349
+short exact_async 0 67.894
+short prepared_async 0 68.854
+short exact_sync 0 61.422
+short exact_async 1 67.682
+short exact_sync 1 61.092
+short prepared_async 1 68.298
+short exact_sync 2 60.787
+short exact_async 2 67.091
+short prepared_async 2 67.805
