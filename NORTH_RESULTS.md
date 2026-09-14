@@ -1,26 +1,18 @@
 # North Mini Code megakernel results on Apple M4 Pro
 
-> **Completion claim withdrawn after control audit.** The earlier final control
-> inserted `mx.eval(logits)` before reading argmax. The strongest historical
-> host-token loop directly reads `mx.argmax(logits[0, -1]).item()` and has no
-> such extra evaluation. Statements below calling that loop unchanged, or
-> declaring the target achieved, are superseded. The old data are retained as
-> measurements against the extra-evaluation control. Corrected balanced
-> experiments are in progress; the throughput goal is active again.
+## Additional throughput goal: corrected control, work continues
 
-## Additional decode target — September 13, 2026
+The previous completion claim is withdrawn: its host loop inserted an extra
+`mx.eval(logits)` absent from the strongest historical direct-argmax loop.
+Corrected balanced measurements show +10.70% Python, +10.92% Rust, and +10.67%
+long-context point estimates, but the longer-context interval extends below
++10%. The goal remains active. See the
+[corrected report and evidence](experiments/north/additional/README.md).
 
-The additional 10% decode-throughput target is now met on the three tested
-prompts. A prepared async path improves over the unchanged synchronous exact
-fused control by **11.88% Python, 12.00% Rust, and 12.03% at 1,672 prompt
-tokens** in twelve balanced AB/BA pairs per prompt. All 127 full-logit positions
-match stock byte-for-byte, and all measured generations have identical tokens.
-Paired confidence intervals have lower bounds above +10% on all three prompts.
-
-The gain comes mainly from overlapping host submission, with about 1% more
-from exact preparation fusion. It is not an incremental complete-megakernel
-speedup. The [report and raw evidence](experiments/north/additional/README.md)
-document the controls, noisy earlier runs, fixed-length scope, and attribution.
+Most of the observed runner gain uses the standard async submission pattern
+already present in pinned MLX-VLM. New preparation fusion adds about 1% over
+unchanged fused async. No complete-megakernel or new async-algorithm speedup is
+claimed.
 
 ## Full-megakernel status correction
 

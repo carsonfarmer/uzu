@@ -1,27 +1,17 @@
 # Apple North research status — September 13, 2026
 
-> **Completion claim withdrawn after control audit.** The earlier final control
-> inserted `mx.eval(logits)` before reading argmax. The strongest historical
-> host-token loop directly reads `mx.argmax(logits[0, -1]).item()` and has no
-> such extra evaluation. Statements below calling that loop unchanged, or
-> declaring the target achieved, are superseded. The old data are retained as
-> measurements against the extra-evaluation control. Corrected balanced
-> experiments are in progress; the throughput goal is active again.
+The additional 10% goal is active again after correcting a control mismatch.
+The prior completion claim used an unnecessary logits evaluation in the
+baseline; unchanged kernel files did not establish an unchanged runner.
+Corrected five-way measurements clear the conservative threshold on Python
+and Rust, while the long-context confidence interval still crosses +10%.
+All old data and the withdrawn claim remain preserved.
 
-The additional 10% decode-throughput target is confirmed on
-`cf/north-additional-ten-percent`: **+11.88% Python, +12.00% Rust, and +12.03%
-at 1,672 prompt tokens**, versus fresh matched measurements of the unchanged
-synchronous exact fused control. Twelve AB/BA pairs per prompt, full-logit
-bytewise checks for all 127 decode steps, and identical free-running tokens
-support the result. The gain mainly comes from host submission overlap, plus
-about 1% from preparation fusion. See the
-[report, raw runs, and verification](experiments/north/additional/README.md).
-
-The complete megakernel remains slower than the fused control. Its historical
-results are preserved, and the new host-loop gain must not be attributed to
-that scheduler. The measured candidate is a fixed-length research path; general
-streaming-stop behavior and wider contexts remain outside its validation.
-All GPU experiments used the shared exclusive lock.
+The work targets the actual historical host-token loop with direct
+`argmax.item()`, includes joint and fused-async controls, and separately
+compares stock async. Async submission is standard pinned MLX-VLM behavior.
+The new preparation fusion contributes about 1% under equal async submission.
+See [the current report](experiments/north/additional/README.md).
 
 The new [branch-mixing ablation](experiments/north/branch_mixing/README.md)
 finds that nearly all of the fused gain survives with separate attention-output

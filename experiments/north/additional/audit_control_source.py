@@ -2,11 +2,12 @@
 import ast
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 root=Path(__file__).resolve().parents[3]
 old=root/'experiments/north/full_layer/benchmark_decode.py'
-new=Path(__file__).with_name('corrected_control.py')
+new=Path(sys.argv[1]).resolve() if len(sys.argv)>1 else Path(__file__).with_name('corrected_control.py')
 a=ast.parse(old.read_text());b=ast.parse(new.read_text())
 measure=next(n for n in a.body if isinstance(n,ast.FunctionDef) and n.name=='measure')
 old_loop=next(n for n in measure.body if isinstance(n,ast.While))

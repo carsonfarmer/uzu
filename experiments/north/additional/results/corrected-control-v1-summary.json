@@ -1,0 +1,570 @@
+{
+  "artifact": "experiments/north/additional/results/corrected-control-v1.jsonl",
+  "sha256": "78aff0484e9afcc03907863e254e5c3abcd3727d57c7678f40fbe9cefd15c08f",
+  "source_hashes_match": true,
+  "results": {
+    "short": {
+      "pair_order_counts": {
+        "exact_host_before_exact_joint": 5,
+        "exact_host_before_exact_async": 5,
+        "exact_host_before_prepared_async": 5,
+        "exact_host_before_original_async": 5,
+        "exact_joint_before_exact_async": 5,
+        "exact_joint_before_prepared_async": 5,
+        "exact_joint_before_original_async": 5,
+        "exact_async_before_prepared_async": 5,
+        "exact_async_before_original_async": 5,
+        "prepared_async_before_original_async": 5
+      },
+      "prompt_tokens": 136,
+      "byte_gate": true,
+      "exact_steps_per_variant": 127,
+      "median_tps": {
+        "exact_host": 61.95186920770048,
+        "exact_joint": 61.977031054100124,
+        "exact_async": 67.79618082528663,
+        "prepared_async": 68.53860972568458,
+        "original_async": 61.77194745286855
+      },
+      "contrasts": {
+        "exact_joint_over_host": {
+          "paired_ratios": [
+            0.994383224360166,
+            0.9984381370599172,
+            1.01913874761163,
+            0.9988553407437967,
+            1.0019242852525323,
+            0.9977628938676668,
+            0.9980828351359295,
+            1.0021722005135854,
+            0.9927963267098183,
+            0.9989057393099258
+          ],
+          "paired_geometric_ratio": 1.0002226204312477,
+          "paired_bootstrap_95_percent": [
+            0.9967962037900924,
+            1.0049813236487277
+          ],
+          "ratio_of_medians": 1.000406151528944
+        },
+        "exact_async_over_host": {
+          "paired_ratios": [
+            1.090817370738483,
+            1.0928268769465739,
+            1.1140443595101135,
+            1.0914682927194244,
+            1.0899577612440436,
+            1.0953604582146979,
+            1.0913960685299404,
+            1.0919839596886485,
+            1.094369098728365,
+            1.0935761668931254
+          ],
+          "paired_geometric_ratio": 1.0945598789343824,
+          "paired_bootstrap_95_percent": [
+            1.0916428897721377,
+            1.0992272839536832
+          ],
+          "ratio_of_medians": 1.0943363241872888
+        },
+        "prepared_async_over_host": {
+          "paired_ratios": [
+            1.1045917055897656,
+            1.1040363328746767,
+            1.1178381194257405,
+            1.1080094797670188,
+            1.1066151246623381,
+            1.1103498665912845,
+            1.0996379479087877,
+            1.1042514050038208,
+            1.1089255274487078,
+            1.1056317741867776
+          ],
+          "paired_geometric_ratio": 1.1069791864347989,
+          "paired_bootstrap_95_percent": [
+            1.1043340532373649,
+            1.1100540021626195
+          ],
+          "ratio_of_medians": 1.1063202870586732
+        },
+        "original_async_over_host": {
+          "paired_ratios": [
+            0.9946477137659181,
+            0.9948341416940959,
+            1.0123676241599218,
+            0.9960721065883257,
+            0.9961786861330499,
+            0.9995026836874268,
+            0.9946940079546273,
+            0.9974030430174585,
+            0.9984073946300354,
+            0.997829024414518
+          ],
+          "paired_geometric_ratio": 0.9981813053871477,
+          "paired_bootstrap_95_percent": [
+            0.9958361976225941,
+            1.0016786481045423
+          ],
+          "ratio_of_medians": 0.9970957816586821
+        },
+        "prepared_over_async": {
+          "paired_ratios": [
+            1.0126275352967267,
+            1.0102573025650896,
+            1.0034053939443626,
+            1.01515498632249,
+            1.0152825770048945,
+            1.013684452696985,
+            1.007551685054124,
+            1.0112340892980425,
+            1.0133012059069078,
+            1.0110240216078432
+          ],
+          "paired_geometric_ratio": 1.0113463938697511,
+          "paired_bootstrap_95_percent": [
+            1.0090442634788732,
+            1.0133087995731906
+          ],
+          "ratio_of_medians": 1.0109508956309976
+        },
+        "prepared_over_joint": {
+          "paired_ratios": [
+            1.1108309940571586,
+            1.105763383724216,
+            1.0968458632795723,
+            1.1092792265013476,
+            1.104489771283884,
+            1.1128394064517597,
+            1.1017501846517852,
+            1.1018579486019695,
+            1.116971827568851,
+            1.106842948915862
+          ],
+          "paired_geometric_ratio": 1.1067328051004515,
+          "paired_bootstrap_95_percent": [
+            1.1032784692647635,
+            1.1102273349402163
+          ],
+          "ratio_of_medians": 1.1058711358060507
+        },
+        "prepared_over_original_async": {
+          "paired_ratios": [
+            1.1105356100478827,
+            1.1097692435390498,
+            1.1041820113057643,
+            1.1123787850681743,
+            1.1108600696507356,
+            1.1109023364448742,
+            1.1055037419698093,
+            1.10712656506753,
+            1.1106944253549178,
+            1.1080372961044238
+          ],
+          "paired_geometric_ratio": 1.1089961116888014,
+          "paired_bootstrap_95_percent": [
+            1.107363494948006,
+            1.1104833155088145
+          ],
+          "ratio_of_medians": 1.1095426411475684
+        },
+        "async_over_joint": {
+          "paired_ratios": [
+            1.0969788548478052,
+            1.094536392775021,
+            1.0931233476510402,
+            1.0927190837330494,
+            1.08786439982271,
+            1.0978163899929267,
+            1.0934924738799885,
+            1.0896170928798836,
+            1.102309778235345,
+            1.0947741351937779
+          ],
+          "paired_geometric_ratio": 1.0943162617762643,
+          "paired_bootstrap_95_percent": [
+            1.091967152193349,
+            1.0968394539881814
+          ],
+          "ratio_of_medians": 1.0938920382634485
+        }
+      },
+      "conservative_prepared_pass": true
+    },
+    "rust": {
+      "pair_order_counts": {
+        "exact_host_before_exact_joint": 5,
+        "exact_host_before_exact_async": 5,
+        "exact_host_before_prepared_async": 5,
+        "exact_host_before_original_async": 5,
+        "exact_joint_before_exact_async": 5,
+        "exact_joint_before_prepared_async": 5,
+        "exact_joint_before_original_async": 5,
+        "exact_async_before_prepared_async": 5,
+        "exact_async_before_original_async": 5,
+        "prepared_async_before_original_async": 5
+      },
+      "prompt_tokens": 140,
+      "byte_gate": true,
+      "exact_steps_per_variant": 127,
+      "median_tps": {
+        "exact_host": 61.68172683516025,
+        "exact_joint": 61.47595166429564,
+        "exact_async": 67.52632730063978,
+        "prepared_async": 68.40413608774091,
+        "original_async": 61.572525348900314
+      },
+      "contrasts": {
+        "exact_joint_over_host": {
+          "paired_ratios": [
+            0.9961229886001113,
+            0.9968450324105449,
+            0.9855425186010669,
+            0.9991788331021741,
+            0.995592072645183,
+            1.0070771144953277,
+            0.9930401759902441,
+            0.9920479422106252,
+            0.9994252203992192,
+            0.9960602154716388
+          ],
+          "paired_geometric_ratio": 0.9960792056783909,
+          "paired_bootstrap_95_percent": [
+            0.9928397281794621,
+            0.9993607086008294
+          ],
+          "ratio_of_medians": 0.9966639200712631
+        },
+        "exact_async_over_host": {
+          "paired_ratios": [
+            1.0923008477722014,
+            1.0944887516500454,
+            1.1110209610832569,
+            1.0932343303523087,
+            1.0932184108493121,
+            1.1011505517373807,
+            1.094586601960415,
+            1.0974065317148562,
+            1.0883818725036076,
+            1.0945554936342479
+          ],
+          "paired_geometric_ratio": 1.0960186591388956,
+          "paired_bootstrap_95_percent": [
+            1.0928502971296215,
+            1.1000544357157627
+          ],
+          "ratio_of_medians": 1.0947541640832914
+        },
+        "prepared_async_over_host": {
+          "paired_ratios": [
+            1.1033440472887208,
+            1.1059805770270958,
+            1.1252290870963362,
+            1.105987177452321,
+            1.1057386699380696,
+            1.1167544550067146,
+            1.1100859491005879,
+            1.1008540778339555,
+            1.10842250301976,
+            1.1093225255167636
+          ],
+          "paired_geometric_ratio": 1.109151629806129,
+          "paired_bootstrap_95_percent": [
+            1.105487040437449,
+            1.1137364943814132
+          ],
+          "ratio_of_medians": 1.108985425627687
+        },
+        "original_async_over_host": {
+          "paired_ratios": [
+            0.9987627984629381,
+            0.9981760347752018,
+            1.0089107553325987,
+            0.9948071431645324,
+            0.9957311539703998,
+            1.0001864472062145,
+            1.0005613580336905,
+            0.999062372814544,
+            0.9994230982158213,
+            0.9969647648284699
+          ],
+          "paired_geometric_ratio": 0.9992518764580509,
+          "paired_bootstrap_95_percent": [
+            0.9973047390046298,
+            1.0017857090093254
+          ],
+          "ratio_of_medians": 0.9982295974535251
+        },
+        "prepared_over_async": {
+          "paired_ratios": [
+            1.0101100347390948,
+            1.0104997199466192,
+            1.01278835099495,
+            1.0116652457263235,
+            1.0114526602959701,
+            1.0141705448403167,
+            1.014160000782408,
+            1.0031415396386534,
+            1.018413234382573,
+            1.0134913505696135
+          ],
+          "paired_geometric_ratio": 1.0119824334720284,
+          "paired_bootstrap_95_percent": [
+            1.0095241493978055,
+            1.0141476415782351
+          ],
+          "ratio_of_medians": 1.0129995043739453
+        },
+        "prepared_over_joint": {
+          "paired_ratios": [
+            1.1076383738912514,
+            1.1094809534764316,
+            1.141735709884489,
+            1.1068961239086064,
+            1.110634265096385,
+            1.1089065960617615,
+            1.1178661004260253,
+            1.1096783038336562,
+            1.1090599680654467,
+            1.113710304142099
+          ],
+          "paired_geometric_ratio": 1.1135175029085453,
+          "paired_bootstrap_95_percent": [
+            1.1090195054126983,
+            1.1204049361893738
+          ],
+          "ratio_of_medians": 1.1126974733352368
+        },
+        "prepared_over_original_async": {
+          "paired_ratios": [
+            1.104710797185007,
+            1.108001533292845,
+            1.1152910018541649,
+            1.1117603899928976,
+            1.1104791343818292,
+            1.1165462780725588,
+            1.1094631430521522,
+            1.1018872372629203,
+            1.1090623230526946,
+            1.112699831179716
+          ],
+          "paired_geometric_ratio": 1.1099820334965285,
+          "paired_bootstrap_95_percent": [
+            1.1073213760294924,
+            1.1125812328503335
+          ],
+          "ratio_of_medians": 1.110952258334855
+        },
+        "async_over_joint": {
+          "paired_ratios": [
+            1.096552193125522,
+            1.0979527570131749,
+            1.1273191568236964,
+            1.0941327959861982,
+            1.0980585732716275,
+            1.0934123473644772,
+            1.1022581245204006,
+            1.106203122874743,
+            1.089007811979024,
+            1.0988848632167996
+          ],
+          "paired_geometric_ratio": 1.1003328378815416,
+          "paired_bootstrap_95_percent": [
+            1.0951872976467725,
+            1.1072529186092892
+          ],
+          "ratio_of_medians": 1.098418576248867
+        }
+      },
+      "conservative_prepared_pass": true
+    },
+    "long": {
+      "pair_order_counts": {
+        "exact_host_before_exact_joint": 5,
+        "exact_host_before_exact_async": 5,
+        "exact_host_before_prepared_async": 5,
+        "exact_host_before_original_async": 5,
+        "exact_joint_before_exact_async": 5,
+        "exact_joint_before_prepared_async": 5,
+        "exact_joint_before_original_async": 5,
+        "exact_async_before_prepared_async": 5,
+        "exact_async_before_original_async": 5,
+        "prepared_async_before_original_async": 5
+      },
+      "prompt_tokens": 1672,
+      "byte_gate": true,
+      "exact_steps_per_variant": 127,
+      "median_tps": {
+        "exact_host": 55.66168061085081,
+        "exact_joint": 55.68356241857994,
+        "exact_async": 60.83480828689052,
+        "prepared_async": 61.67781152071006,
+        "original_async": 55.79699323321844
+      },
+      "contrasts": {
+        "exact_joint_over_host": {
+          "paired_ratios": [
+            0.9966041275201767,
+            0.9911815519592857,
+            0.9988929801945594,
+            0.9959017804156374,
+            0.9929270791924676,
+            1.01111530706395,
+            1.0047186883970605,
+            1.0064922069336404,
+            1.0048278401516235,
+            1.0209462505193894
+          ],
+          "paired_geometric_ratio": 1.0023234328949524,
+          "paired_bootstrap_95_percent": [
+            0.997257543660662,
+            1.0079369432392589
+          ],
+          "ratio_of_medians": 1.0003931215782382
+        },
+        "exact_async_over_host": {
+          "paired_ratios": [
+            1.0857245532682174,
+            1.0887423769575655,
+            1.0835621468752508,
+            1.1018125167718587,
+            1.0863549901783442,
+            1.102532281389583,
+            1.0899885691432805,
+            1.101301588440652,
+            1.1035090066716737,
+            1.1100982839485791
+          ],
+          "paired_geometric_ratio": 1.0953262386553795,
+          "paired_bootstrap_95_percent": [
+            1.0897927363117195,
+            1.1009828368850019
+          ],
+          "ratio_of_medians": 1.0929387618064708
+        },
+        "prepared_async_over_host": {
+          "paired_ratios": [
+            1.101339483671885,
+            1.0877376758739823,
+            1.0996842207779416,
+            1.1140813357088586,
+            1.1012531787037345,
+            1.1201964338465369,
+            1.1067877421425834,
+            1.086970734452399,
+            1.1148474918998006,
+            1.1349350608891235
+          ],
+          "paired_geometric_ratio": 1.1066952091590008,
+          "paired_bootstrap_95_percent": [
+            1.0984303961193118,
+            1.1155846025513465
+          ],
+          "ratio_of_medians": 1.1080838890208868
+        },
+        "original_async_over_host": {
+          "paired_ratios": [
+            0.9986242826709892,
+            0.9947496440630333,
+            0.9971899273100746,
+            1.0053425089748496,
+            0.9990707770188859,
+            1.0109448202176397,
+            1.0029841976362248,
+            0.9854588311324375,
+            1.0114571580163134,
+            1.0225330958336891
+          ],
+          "paired_geometric_ratio": 1.002787471385554,
+          "paired_bootstrap_95_percent": [
+            0.996891270078145,
+            1.0090250871065336
+          ],
+          "ratio_of_medians": 1.002430983414131
+        },
+        "prepared_over_async": {
+          "paired_ratios": [
+            1.0143820367299092,
+            0.9990771911658378,
+            1.0148787717891248,
+            1.011135123943723,
+            1.0137139228521834,
+            1.0160214378799781,
+            1.015412246949073,
+            0.9869873482988938,
+            1.0102749367332535,
+            1.0223734936803983
+          ],
+          "paired_geometric_ratio": 1.0103795290411173,
+          "paired_bootstrap_95_percent": [
+            1.0038967053855141,
+            1.0156406069563153
+          ],
+          "ratio_of_medians": 1.013857251424941
+        },
+        "prepared_over_joint": {
+          "paired_ratios": [
+            1.1050922359837285,
+            1.0974151745700194,
+            1.100902942138757,
+            1.1186658741024633,
+            1.1090977391807735,
+            1.107881985388327,
+            1.1015896836838628,
+            1.0799594144538316,
+            1.1094910464777488,
+            1.1116501581858442
+          ],
+          "paired_geometric_ratio": 1.1041298375740827,
+          "paired_bootstrap_95_percent": [
+            1.0974877229472682,
+            1.1097482221018076
+          ],
+          "ratio_of_medians": 1.1076484485146736
+        },
+        "prepared_over_original_async": {
+          "paired_ratios": [
+            1.1028567027492728,
+            1.0934788289354307,
+            1.1027831215106092,
+            1.1081609757503343,
+            1.1022774402327624,
+            1.1080688198247826,
+            1.1034946958795528,
+            1.1030097860133936,
+            1.1022191924433635,
+            1.1099250141764765
+          ],
+          "paired_geometric_ratio": 1.103618903046203,
+          "paired_bootstrap_95_percent": [
+            1.1007590421914974,
+            1.1061531171309038
+          ],
+          "ratio_of_medians": 1.1053966880063084
+        },
+        "async_over_joint": {
+          "paired_ratios": [
+            1.0894240985834531,
+            1.098428814383631,
+            1.0847630010015685,
+            1.106346567943698,
+            1.0940934263388808,
+            1.0904120169944684,
+            1.084869408453286,
+            1.0941978297038744,
+            1.0982070386357525,
+            1.0873229451441102
+          ],
+          "paired_geometric_ratio": 1.092787220879205,
+          "paired_bootstrap_95_percent": [
+            1.088962110361498,
+            1.0969967688579296
+          ],
+          "ratio_of_medians": 1.0925092728368933
+        }
+      },
+      "conservative_prepared_pass": false
+    }
+  },
+  "all_prompts_conservative_prepared_pass": false,
+  "scope": "All rows retained. Whole-run paired bootstrap. Historical direct-argmax host loop is the primary denominator; joint evaluation is an additional stronger-control check. Preparation is separately compared with unchanged fused async and stock async. No GPU-side duration or occupancy measurement."
+}

@@ -11,9 +11,9 @@
 Base: `008d0282ad46cddc4dbf614a554301b7586dcb54`. Control: exact branch,
 160 front workers and 16 down rows, unchanged. Goal is candidate/control >=1.10
 in fresh matched end-to-end measurements. Historical 59.952 tok/s is context,
-not a current denominator. The final prepared-async confirmation meets the
-target; the evidence and limits are in README.md. Remaining avenues were not
-exhausted.
+not a current denominator. The earlier completion was withdrawn after a host
+control mismatch. The corrected goal is active; see README.md. Remaining
+avenues were not exhausted.
 
 ## Evidence rules
 
@@ -183,7 +183,7 @@ The initial pipeline pilot failed while recording a relative source path,
 before decode. Its error log is retained as `pipeline-pilot-v1.log`; v2 fixes
 that harness path. It is not counted as an arithmetic or performance result.
 
-## Final outcome
+## Withdrawn outcome (extra-evaluation control)
 
 `pipeline-confirmation-v1.jsonl` completed successfully: twelve AB/BA pairs per
 prompt, six of each order, 127 full-logit byte checks per path per prompt, and
@@ -199,3 +199,33 @@ H3's parent ablation was retained. H5/H6/H7 and broader attention work remain
 open: the task ends because the measured throughput target is reached, not
 because those ideas were systematically exhausted. No complete-megakernel
 speedup or true asynchronous Metal weight-transfer result is claimed.
+
+## Corrected-control continuation
+
+The strongest historical full_layer runner uses mx.array([[token]]) and direct
+argmax.item(), with no separate mx.eval(logits). Unchanged kernel hashes did
+not prove an unchanged loop; the earlier audit conclusion was false. Its
+report/audit are archived under history/ with withdrawal notices.
+
+`corrected-control-v1.jsonl` uses the actual expressions, checks all five paths
+against stock for127 full-logit steps on each prompt, and measures ten fully
+balanced rounds per prompt. Prepared/host gains are10.698%,10.915%,10.670%.
+Python and Rust clear the conservative interval gate; long-context lower bounds
+are9.843% against historical host and9.749% against joint evaluation. The goal
+stays active. All150 measured generations and1905 full-array checks passed.
+
+Pinned MLX-VLM generate/ar.py already uses async evaluation before token item()
+at lines521 and546–552. This is a research-runner improvement, not a novel Metal
+or async-generation algorithm. New prep contributes1.13/1.20/1.04% against the
+unchanged fused async control in the corrected run.
+
+H11: removing the unused routed diagnostic output from exact.down passes the
+127-step long-context gate. Its six-round three-way pilot has large stalls
+across all variants and does not support promotion. Raw compact-long-pilot-v1
+artifacts are retained. Selected preparation and branch arithmetic stay frozen.
+
+Precision plan: collect24 balanced three-way rounds on long context against
+actual historical host and joint controls, with unchanged prepared async.
+This sample count was declared before the run; all prior corrected data remain
+available. Assess both the new run and pooled corrected long-context pairs,
+without dropping stalls or substituting the earlier extra-eval denominator.
