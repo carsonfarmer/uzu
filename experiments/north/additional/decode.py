@@ -4,8 +4,10 @@ import gc
 import hashlib
 import json
 import os
+import platform
 from pathlib import Path
 import sys
+import subprocess
 import time
 
 import mlx.core as mx
@@ -43,8 +45,10 @@ eos=config['eos_token_id'];eos={eos} if isinstance(eos,int) else set(eos)
 output=Path(a.output);output.parent.mkdir(parents=True,exist_ok=True)
 with output.open('w') as f:
     def save(row):f.write(json.dumps(row)+'\n');f.flush()
-    source_files=list(HERE.glob('*.py'))+list(HERE.glob('*.h'))+[HERE.parent/'quantized'/n for n in ('patch.py','exact.py','kernel.h','kernels.py')]+[HERE.parent/'reference.py',ROOT/'work/mlx-vlm/mlx_vlm/models/cohere2_moe/language.py']
+    source_files=list(HERE.glob('*.py'))+list(HERE.glob('*.h'))+[HERE.parent/'quantized'/n for n in ('patch.py','exact.py','kernel.h','kernels.py')]+[HERE.parent/'reference.py',ROOT/'work/mlx-vlm/mlx_vlm/models/cohere2_moe/language.py',modelpath/'config.json',modelpath/'chat_template.jinja']
     save(dict(kind='provenance',args=vars(a),mlx=mx.__version__,device=mx.device_info(),
+        macos=platform.mac_ver()[0],model_revision='dfbe084dfa26e241345af99ca32848f38fd865f9',
+        thermal_before=subprocess.check_output(['pmset','-g','therm'],text=True),
         batching_environment={key:os.environ.get(key) for key in ('MLX_MAX_OPS_PER_BUFFER','MLX_MAX_MB_PER_BUFFER')},
         sources={str(s.relative_to(ROOT)):hashlib.sha256(s.read_bytes()).hexdigest() for s in source_files},
         scope='One shared model; native prefill; full-logit byte checks precede separate free-running timing. Includes token submission, cache updates, full logits, eval and argmax. Excludes model load, prefill and warmup.'))
@@ -91,4 +95,5 @@ with output.open('w') as f:
                 save(dict(kind='generation',prompt=label,prompt_tokens=len(ids),variant=name,repetition=rep,warmup=rep<0,token_ids=tokens,step_seconds=steps,decode_steps=len(steps),decode_tokens_per_second=len(steps)/sum(steps)))
                 print(label,name,rep,round(len(steps)/sum(steps),3),flush=True)
                 del cache,logits;gc.collect()
+    save(dict(kind='thermal_after',text=subprocess.check_output(['pmset','-g','therm'],text=True)))
 model.model.layers=paths['original']
