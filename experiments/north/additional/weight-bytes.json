@@ -1,0 +1,18 @@
+{
+  "kind": "weight_byte_inventory",
+  "parts": {
+    "normalization": 204800,
+    "active_experts": 1019215872,
+    "router": 25165824,
+    "attention_projections": 1849688064,
+    "output_head": 301989888,
+    "dense_prefix_other": 10616832
+  },
+  "total": 3206881280,
+  "assumptions": [
+    "Each active weight and affine scale/bias read once per token; eight distinct selected experts per MoE layer.",
+    "Excludes KV reads/writes, activations, cache effects, embedding lookup reuse, repeated loads and command overhead.",
+    "Header accounting is not a measured bandwidth roofline."
+  ],
+  "source": "Pinned local safetensors headers read without loading arrays"
+}

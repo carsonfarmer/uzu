@@ -32,6 +32,41 @@ launch counts, instrumented timing, or matching argmax for these gates.
 | H7 | True weight staging can overlap current arithmetic. Prototype register/threadgroup double buffering preserving reduction order after identifying a memory-bound constituent. | Pending. Prior cache warming lost 4.79–24.85%; this does not exhaust real staging. |
 | H8 | Output head and CPU dispatch limit total speedup. Measure head constituent and decode CPU/GPU timing before choosing additional fusion. | Pending. Old traces are instrumented observations, not a current causal breakdown. |
 
+## CPU-only findings
+
+Safetensors header accounting gives 3,206,881,280 active weight bytes per token
+under a one-read assumption: 1,849,688,064 attention projection bytes,
+1,019,215,872 active expert bytes, 301,989,888 output-head bytes, and the
+remaining router/prefix/norm weights. Thus attention projections account for
+about 58% of these bytes. Quantized experts do not imply quantized QKV/O here;
+those projections are BF16. See `weight-bytes.json`. This is a lower-level work
+inventory, not measured memory traffic or a hardware bandwidth claim.
+
+Parent provisional branch ablation: mixed-versus-blocked task-ID ordering was
+approximately neutral, while mixed-versus-two-separate-front-launches improved
+about 3%. Confirmation is pending. With 160 workers and 160 front jobs,
+INTERLEAVE changes placement, not whether branches share a dispatch. The split
+contrast combines launch overhead and possible overlap; it does not isolate
+either mechanism.
+
+CPU checks: all new Python files parse; `git diff --check` passes. The GPU guard
+refused an invocation while the release signal was absent, before MLX imports.
+These checks do not validate Metal compilation or arithmetic.
+
+## Reproduction after GPU release
+
+Run from this worktree using the original runtime read-only:
+
+```sh
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/north-venv/bin/python -B experiments/north/additional/gpu_run.py experiments/north/additional/bench_prep.py --output experiments/north/additional/results/prep-v1.jsonl
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/north-venv/bin/python -B experiments/north/additional/gpu_run.py experiments/north/additional/bench_parts.py --output experiments/north/additional/results/parts-v1.jsonl
+```
+
+Select preparation geometry only from passing screening results. Run a short
+full-logit pilot first, then the full independent prompt checks and six-pair
+timing using `decode.py`. Its default geometry is a starting point, not a
+measured winner. Keep every failed and successful output under `results/`.
+
 ## Cohere grounding and limits
 
 Revisited https://cohere.com/blog/megakernels and local source pinned at
