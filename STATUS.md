@@ -1,11 +1,13 @@
 # Apple North research status — September 13, 2026
 
-The additional 10% goal is active again after correcting a control mismatch.
-The prior completion claim used an unnecessary logits evaluation in the
-baseline; unchanged kernel files did not establish an unchanged runner.
-Corrected five-way measurements clear the conservative threshold on Python
-and Rust, while the long-context confidence interval still crosses +10%.
-All old data and the withdrawn claim remain preserved.
+The additional runner goal is complete within its original short-workload scope:
+corrected balanced measurements show +10.70% Python and +10.92% Rust against
+the actual historical fused runner, with 95% paired intervals above +10%.
+Full logits and greedy tokens match. Long-context correctness passes, but
+performance precision is not established; all stalls and regressions are retained.
+The earlier approximately 12% claim used an extra baseline logits evaluation
+and remains explicitly withdrawn. Independent parent review confirms the
+corrected result. This does not complete the full-megakernel objective.
 
 The work targets the actual historical host-token loop with direct
 `argmax.item()`, includes joint and fused-async controls, and separately

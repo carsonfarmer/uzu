@@ -1,13 +1,15 @@
 # North Mini Code megakernel results on Apple M4 Pro
 
-## Additional throughput goal: corrected control, work continues
+## Additional runner throughput goal: scoped result met
 
-The previous completion claim is withdrawn: its host loop inserted an extra
-`mx.eval(logits)` absent from the strongest historical direct-argmax loop.
-Corrected balanced measurements show +10.70% Python, +10.92% Rust, and +10.67%
-long-context point estimates, but the longer-context interval extends below
-+10%. The goal remains active. See the
-[corrected report and evidence](experiments/north/additional/README.md).
+Corrected balanced measurements show **+10.70% Python and +10.92% Rust**
+over the actual historical fused host-token runner. Both 95% paired intervals
+clear +10%; full logits and greedy tokens match. This meets the original short
+Python target with Rust corroboration. Long-context correctness passes, but
+its timing remains uncertain; no all-context +10% claim is made.
+The previous approximately 12% completion claim is withdrawn because its
+baseline inserted an extra `mx.eval(logits)`. See the
+[corrected report and independently reviewed evidence](experiments/north/additional/README.md).
 
 Most of the observed runner gain uses the standard async submission pattern
 already present in pinned MLX-VLM. New preparation fusion adds about 1% over

@@ -1,0 +1,127 @@
+{
+  "reviewer": "Parent task; separate code inspection and recomputation from recorded seconds, no new GPU run",
+  "time_utc": "2026-09-14T05:36:49.124506+00:00",
+  "artifact_sha256": "78aff0484e9afcc03907863e254e5c3abcd3727d57c7678f40fbe9cefd15c08f",
+  "source_hash_checks": {
+    "experiments/north/additional/corrected_control.py": true,
+    "experiments/north/additional/gpu_run.py": true,
+    "experiments/north/additional/layers.py": true,
+    "experiments/north/additional/prep.py": true,
+    "experiments/north/additional/prep.h": true,
+    "experiments/north/reference.py": true,
+    "experiments/north/full_layer/benchmark_decode.py": true,
+    "experiments/north/quantized/patch.py": true,
+    "experiments/north/quantized/exact.py": true,
+    "experiments/north/quantized/kernel.h": true,
+    "experiments/north/quantized/kernels.py": true
+  },
+  "control_review": "Inspected corrected_control.py. Historical host path constructs mx.array([[token]]) then directly reads mx.argmax(logits[0,-1]).item(), with no added logits evaluation. All modes time the same127 dependent forwards and include a final drain. Async reads the final pending token before elapsed time.",
+  "scope_decision": "Original target: additional10% over prior short-context fused runner, with Rust/long correctness and performance checks. Short and Rust clear10% against host and joint controls. Long-context precision is not established; no all-context claim. Async is standard in pinned MLX-VLM generate/ar.py, not a novel megakernel mechanism.",
+  "results": {
+    "short": {
+      "all_635_byte_comparisons_zero": true,
+      "all_50_token_sequences_match": true,
+      "pair_order_and_position_balanced": true,
+      "contrasts": {
+        "prepared_over_exact_host": {
+          "gain_percent": 10.697918643479884,
+          "log_t9_95_interval_percent": [
+            10.352089763769026,
+            11.044831305240525
+          ]
+        },
+        "prepared_over_exact_joint": {
+          "gain_percent": 10.673280510045146,
+          "log_t9_95_interval_percent": [
+            10.249142448733785,
+            11.099050267450075
+          ]
+        },
+        "prepared_over_exact_async": {
+          "gain_percent": 1.134639386975104,
+          "log_t9_95_interval_percent": [
+            0.8736481605563314,
+            1.3963058781583586
+          ]
+        },
+        "prepared_over_original_async": {
+          "gain_percent": 10.899611168880147,
+          "log_t9_95_interval_percent": [
+            10.708596368982302,
+            11.090955542586862
+          ]
+        }
+      }
+    },
+    "rust": {
+      "all_635_byte_comparisons_zero": true,
+      "all_50_token_sequences_match": true,
+      "pair_order_and_position_balanced": true,
+      "contrasts": {
+        "prepared_over_exact_host": {
+          "gain_percent": 10.915162980612916,
+          "log_t9_95_interval_percent": [
+            10.411200921935885,
+            11.421425329065487
+          ]
+        },
+        "prepared_over_exact_joint": {
+          "gain_percent": 11.351750290854527,
+          "log_t9_95_interval_percent": [
+            10.617273347986092,
+            12.09110401619353
+          ]
+        },
+        "prepared_over_exact_async": {
+          "gain_percent": 1.1982433472028458,
+          "log_t9_95_interval_percent": [
+            0.91803664654905,
+            1.4792280633402988
+          ]
+        },
+        "prepared_over_original_async": {
+          "gain_percent": 10.998203349652847,
+          "log_t9_95_interval_percent": [
+            10.67818862467245,
+            11.319143364660817
+          ]
+        }
+      }
+    },
+    "long": {
+      "all_635_byte_comparisons_zero": true,
+      "all_50_token_sequences_match": true,
+      "pair_order_and_position_balanced": true,
+      "contrasts": {
+        "prepared_over_exact_host": {
+          "gain_percent": 10.66952091590008,
+          "log_t9_95_interval_percent": [
+            9.62216284495797,
+            11.726885712674804
+          ]
+        },
+        "prepared_over_exact_joint": {
+          "gain_percent": 10.412983757408261,
+          "log_t9_95_interval_percent": [
+            9.66435823091601,
+            11.166719788242643
+          ]
+        },
+        "prepared_over_exact_async": {
+          "gain_percent": 1.0379529041117255,
+          "log_t9_95_interval_percent": [
+            0.31101004296814017,
+            1.770163840246693
+          ]
+        },
+        "prepared_over_original_async": {
+          "gain_percent": 10.361890304620298,
+          "log_t9_95_interval_percent": [
+            10.034547439004761,
+            10.690206985770711
+          ]
+        }
+      }
+    }
+  }
+}

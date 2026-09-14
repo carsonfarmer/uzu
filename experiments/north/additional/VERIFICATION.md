@@ -20,7 +20,14 @@ Current verified claims:
 - Python and Rust intervals clear +10% against both actual historical host and
   joint controls. The longer-context intervals do not.
 
-The goal is still active. Async submission is standard pinned MLX-VLM behavior;
+The scoped short-workload goal is met, corroborated by Rust. A +10% lower
+bound on every context was an additional gate, not the original requirement.
+The [scoped audit](results/scoped-goal-v1.json) passes; the
+[independent parent review](results/parent-corrected-control-review.json)
+recomputed raw-second estimates and verified hashes, balance, and correctness.
+All 34 long-context pairs remain in the [pooled record](results/pooled-long-v1.json),
+including substantial individual regressions and broad intervals. Long-context
+precision is not established. Async submission is standard pinned MLX-VLM behavior;
 new preparation is only about 1% over unchanged fused async. General frontend
 performance, early stopping, wider contexts, and GPU-side utilization remain
 unverified. All old data, including the mismatched-control runs, are retained.

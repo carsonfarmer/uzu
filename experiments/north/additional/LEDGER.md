@@ -229,3 +229,22 @@ actual historical host and joint controls, with unchanged prepared async.
 This sample count was declared before the run; all prior corrected data remain
 available. Assess both the new run and pooled corrected long-context pairs,
 without dropping stalls or substituting the earlier extra-eval denominator.
+
+
+## Final scope and retained follow-ups
+
+Parent review clarified the original target: short Python +10%, Rust
+corroboration, longer-context validation and regression reporting. The all-context
+lower-bound gate above was an extra requirement introduced here. The scoped
+result passes, independently recomputed by the parent from raw seconds.
+
+The 24-round precision run completed with exact logits and tokens but substantial
+stalls. Pooling all 34 unchanged-candidate long pairs gives +11.01% versus host
+(CI +5.70% to +15.76%) and +9.78% versus joint (CI +2.05% to +18.39%). No pairs
+were dropped; individual regressions remain. No timing-stall cause is established.
+
+H12: async batching at 512 MiB did not clearly improve candidate throughput over
+default and weakened the host denominator. Preserved as a screen, ineligible
+for the target gate. Compact output removal remains unpromoted. No further
+GPU experiments were needed merely to narrow the long interval. The original
+approximately 12% claim remains withdrawn; corrected gains are 10.70%/10.92%.

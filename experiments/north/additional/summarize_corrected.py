@@ -12,6 +12,7 @@ p=argparse.ArgumentParser();p.add_argument('artifact',type=Path);a=p.parse_args(
 rows=[json.loads(line) for line in a.artifact.read_text().splitlines()]
 prov=rows[0];args=prov['args'];root=Path(__file__).resolve().parents[3]
 assert prov['kind']=='provenance'
+default_batching=all(prov['batching_environment'].get(k) is None for k in ('MLX_MAX_MB_PER_BUFFER','MLX_MAX_OPS_PER_BUFFER'))
 for name,digest in prov['sources'].items():
     assert hashlib.sha256((root/name).read_bytes()).hexdigest()==digest,name
 checks=defaultdict(list);runs=defaultdict(dict)
@@ -63,8 +64,8 @@ for prompt in args['prompts']:
     result[prompt]=dict(pair_order_counts=balance,prompt_tokens=pair['exact_host']['prompt_tokens'],byte_gate=byte_gate,
         exact_steps_per_variant=args['tokens']-1,
         median_tps={name:statistics.median(v) for name,v in values.items()},contrasts=contrasts,
-        conservative_prepared_pass=byte_gate and len(steps)>=10 and min(steps)>=127 and contrasts['prepared_async_over_host']['paired_bootstrap_95_percent'][0]>=1.10 and contrasts['prepared_over_joint']['paired_bootstrap_95_percent'][0]>=1.10)
+        conservative_prepared_pass=default_batching and byte_gate and len(steps)>=10 and min(steps)>=127 and contrasts['prepared_async_over_host']['paired_bootstrap_95_percent'][0]>=1.10 and contrasts['prepared_over_joint']['paired_bootstrap_95_percent'][0]>=1.10)
 print(json.dumps(dict(artifact=str(a.artifact),sha256=hashlib.sha256(a.artifact.read_bytes()).hexdigest(),
-    source_hashes_match=True,results=result,
+    source_hashes_match=True,default_batching=default_batching,results=result,
     all_prompts_conservative_prepared_pass=all(v['conservative_prepared_pass'] for v in result.values()),
     scope='All rows retained. Whole-run paired bootstrap. Historical direct-argmax host loop is the primary denominator; joint evaluation is an additional stronger-control check. Preparation is separately compared with unchanged fused async and stock async. No GPU-side duration or occupancy measurement.'),indent=2))

@@ -1,0 +1,45 @@
+{
+  "sources": [
+    {
+      "artifact": "experiments/north/additional/results/corrected-control-v1.jsonl",
+      "sha256": "78aff0484e9afcc03907863e254e5c3abcd3727d57c7678f40fbe9cefd15c08f",
+      "pairs": 10
+    },
+    {
+      "artifact": "experiments/north/additional/results/precision-long-v1.jsonl",
+      "sha256": "a68e9d32342af07e8e66bd421e2264ef3113d209c53e5d05aae7a5bf9e774008",
+      "pairs": 24
+    }
+  ],
+  "shared_sources_and_generate_function_match": true,
+  "results": {
+    "exact_host": {
+      "pairs": 34,
+      "paired_geometric_ratio": 1.1101322457630576,
+      "stratified_pair_bootstrap_95_percent": [
+        1.0570246158223446,
+        1.1576317181943847
+      ],
+      "process_geometric_ratios": [
+        1.1066952091590008,
+        1.1115674928553716
+      ],
+      "minimum_pair": 0.624988314923078
+    },
+    "exact_joint": {
+      "pairs": 34,
+      "paired_geometric_ratio": 1.0978262434886412,
+      "stratified_pair_bootstrap_95_percent": [
+        1.0204566200698804,
+        1.1838803168615295
+      ],
+      "process_geometric_ratios": [
+        1.1041298375740827,
+        1.0952103791952494
+      ],
+      "minimum_pair": 0.6115804341973394
+    }
+  },
+  "pooled_conservative_pass": false,
+  "scope": "All selected prepared-async corrected-control long pairs included. Bootstrap resamples whole pairs within each process, retaining process sample counts. Excludes withdrawn extra-eval denominators and the different compact candidate. No cross-process population guarantee."
+}
