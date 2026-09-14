@@ -1,0 +1,12 @@
+{
+  "historical_file": "experiments/north/full_layer/benchmark_decode.py",
+  "historical_sha256": "f3476340dfc1bb4ac7d188316c0a05d555fc71857f55f99dc18318d201f4556e",
+  "corrected_file": "experiments/north/additional/corrected_control.py",
+  "corrected_sha256": "db7447aacffcac404ec4068f4a6add9438ca3dafbf10de4d6e9249768e43b5b5",
+  "matched_timed_expressions": [
+    "logits = model(mx.array([[token]]), cache=cache).logits",
+    "token = int(mx.argmax(logits[0, -1]).item())"
+  ],
+  "host_branch_contains_only_direct_argmax_assignment": true,
+  "scope": "AST equality of the two historical timed model/token expressions. Prefill and final common drain are separate; this is not a claim that every timing-wrapper statement is identical."
+}
