@@ -3,6 +3,7 @@ import argparse
 import gc
 import hashlib
 import json
+import os
 from pathlib import Path
 import sys
 import time
@@ -15,6 +16,7 @@ sys.path.insert(0,str(HERE.parent/'quantized'))
 from reference import ROOT,load
 from patch import variants
 from layers import PreparedBranch
+from lean import LeanBranch
 
 p=argparse.ArgumentParser()
 p.add_argument('--output',required=True)
@@ -25,10 +27,11 @@ p.add_argument('--check-steps',type=int,default=127)
 p.add_argument('--rows',type=int,default=32)
 p.add_argument('--router-rows',type=int,default=4)
 p.add_argument('--normalize',action='store_true')
+p.add_argument('--candidate',choices=['prep','lean'],default='prep')
 a=p.parse_args()
 model,config=load()
 paths=variants(model,modes=('exact',),workers=160,rows=16)
-paths['prep']=[paths['original'][0]]+[PreparedBranch(l,a.rows,a.router_rows,a.normalize) for l in paths['original'][1:]]
+paths['candidate']=[paths['original'][0]]+[(PreparedBranch(l,a.rows,a.router_rows,a.normalize) if a.candidate=='prep' else LeanBranch(l)) for l in paths['original'][1:]]
 modelpath=ROOT/'work/models/North-Mini-Code-1.0-4bit'
 tok=AutoTokenizer.from_pretrained(str(modelpath),local_files_only=True)
 tok.chat_template=(modelpath/'chat_template.jinja').read_text()
@@ -42,6 +45,7 @@ with output.open('w') as f:
     def save(row):f.write(json.dumps(row)+'\n');f.flush()
     source_files=list(HERE.glob('*.py'))+list(HERE.glob('*.h'))+[HERE.parent/'quantized'/n for n in ('patch.py','exact.py','kernel.h','kernels.py')]+[HERE.parent/'reference.py',ROOT/'work/mlx-vlm/mlx_vlm/models/cohere2_moe/language.py']
     save(dict(kind='provenance',args=vars(a),mlx=mx.__version__,device=mx.device_info(),
+        batching_environment={key:os.environ.get(key) for key in ('MLX_MAX_OPS_PER_BUFFER','MLX_MAX_MB_PER_BUFFER')},
         sources={str(s.relative_to(ROOT)):hashlib.sha256(s.read_bytes()).hexdigest() for s in source_files},
         scope='One shared model; native prefill; full-logit byte checks precede separate free-running timing. Includes token submission, cache updates, full logits, eval and argmax. Excludes model load, prefill and warmup.'))
     def prefill(ids,name):
@@ -63,7 +67,7 @@ with output.open('w') as f:
                     model.model.layers=paths[name]
                     logits[name]=model(mx.array([[token]]),cache=states[name][0]).logits
                     mx.eval(logits[name])
-                for name in ('exact','prep'):
+                for name in ('exact','candidate'):
                     unequal=int(mx.sum(logits[name].view(mx.uint8)!=logits['original'].view(mx.uint8)).item())
                     save(dict(kind='correctness',prompt=label,prompt_tokens=len(ids),step=step,variant=name,unequal_bytes=unequal))
                     assert unequal==0,(label,step,name,unequal)
@@ -72,7 +76,7 @@ with output.open('w') as f:
             print(label,'full-logit gate passed',a.check_steps,flush=True)
         expected=None
         for rep in range(-1,a.runs):
-            order=['exact','prep'] if rep%2==0 else ['prep','exact']
+            order=['exact','candidate'] if rep%2==0 else ['candidate','exact']
             for name in order:
                 cache,logits=prefill(ids,name)
                 token=int(mx.argmax(logits[0,-1]).item());tokens=[token];steps=[]

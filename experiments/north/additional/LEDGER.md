@@ -31,6 +31,7 @@ launch counts, instrumented timing, or matching argmax for these gates.
 | H6 | Phase synchronization and giant-kernel compiler resource costs outweigh saved launches. Compare constituent costs, then selective phase cuts. | Pending; existing static scheduler hang prohibits using it as a candidate. |
 | H7 | True weight staging can overlap current arithmetic. Prototype register/threadgroup double buffering preserving reduction order after identifying a memory-bound constituent. | Pending. Prior cache warming lost 4.79–24.85%; this does not exhaust real staging. |
 | H8 | Output head and CPU dispatch limit total speedup. Measure head constituent and decode CPU/GPU timing before choosing additional fusion. | Pending. Old traces are instrumented observations, not a current causal breakdown. |
+| H9 | Unused custom-kernel bindings and MLX command-buffer byte accounting induce submission overhead. Compare unchanged exact math with unused down-weight bindings removed; independently sweep batching settings across fresh matched processes. | Lean-binding candidate implemented, not run. All up/gate expert banks still exceed the default byte threshold, so trimming alone may not change commit count. |
 
 ## CPU-only findings
 
@@ -48,6 +49,24 @@ about 3%. Confirmation is pending. With 160 workers and 160 front jobs,
 INTERLEAVE changes placement, not whether branches share a dispatch. The split
 contrast combines launch overhead and possible overlap; it does not isolate
 either mechanism.
+
+Parent follow-up: MLX `device.cpp` uses a concurrent Metal compute encoder;
+independent separate launches can overlap too. A dependency-forced serialized
+control is being added in the parent. Consequently even calling the split
+front "serial" would be unjustified. Parent uninterrupted runs also showed
+substantial system variation (all samples retained); no final ablation estimate
+has been imported here yet. Local MLX source is clean at
+`1f8e74e3f12f31365464a6867c6579f0e9b29d85`.
+
+`CommandEncoder::set_input_array` increments `buffer_sizes_` once per distinct
+input buffer; `needs_commit()` compares MiB with the device threshold. Local
+source selects 40 MiB for Pro and reads `MLX_MAX_MB_PER_BUFFER` and
+`MLX_MAX_OPS_PER_BUFFER` once into static values. Thus runtime environment
+changes require fresh processes. The decode harness records both variables.
+`lean.py` removes only the unused down/scales/bias inputs from the front;
+all arithmetic and launch geometry remain those of the exact control.
+Changing batching for both control and candidate cannot be reported as a
+candidate-only kernel gain; compare configuration effects separately.
 
 CPU checks: all new Python files parse; `git diff --check` passes. The GPU guard
 refused an invocation while the release signal was absent, before MLX imports.
