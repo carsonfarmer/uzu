@@ -1,8 +1,20 @@
 # North Mini Code megakernel results on Apple M4 Pro
 
-## The result
+## Status correction — September 13, 2026
 
-We built a safe Metal path that executes all 49 North Mini Code transformer
+The performance objective remains unfinished. The full queue implementation
+below is a research checkpoint, and its completion is not evidence of a
+megakernel speedup. “Safe” in historical variant names means the retained checks
+completed; it is not a proof of scheduler liveness on arbitrary workloads.
+
+A new [branch-mixing ablation](experiments/north/branch_mixing/README.md)
+separates the contribution of combining attention/expert work from the other
+fused calculations. A separate worktree now targets another 10% over the
+strongest fused control using fresh matched measurements.
+
+## The retained full-queue result
+
+We built a Metal path that executes all 49 North Mini Code transformer
 layers, every K/V update, final RMSNorm, and the entire 262,144-entry output
 head in one custom GPU dispatch for each generated token.
 
@@ -18,9 +30,10 @@ each phase boundary before any could continue. That version completed long
 exact runs and measured 57.472 tok/s, 6.75% above its adjacent stock result.
 
 When the exact test was rerun adversarially, the kernel produced two correct
-steps and then hung. Metal can schedule fewer threadgroups than were dispatched.
-A resident group can wait for a group that has not been scheduled, creating a
-deadlock. Correct output on completed steps does not fix a liveness failure.
+steps and then hung. A residency-related global-barrier deadlock is a suspected
+cause; we did not conclusively diagnose it. The failure belongs to this
+implementation and does not establish a general limitation of Metal. Correct
+output on completed steps does not fix a liveness failure.
 
 We retained the benchmark and partial stalled artifact under
 [whole-pass history](experiments/north/whole_pass/history/STATIC_SCHEDULER_FAILURE.md),
@@ -69,8 +82,9 @@ clock and system conditions.
 | Tuned plus one next-weight cache-warming stage | 48.098 | -4.79% |
 | Tuned plus ten cache-warming stages | 37.964 | -24.85% |
 
-The 3.31% tuned-over-coarse result supports Cohere's argument that smaller tasks
-fill the final partial GPU wave more effectively. The cache-warming experiment
+The tuned configuration was 3.31% faster than the coarse configuration. That
+result is consistent with a task-placement benefit, but does not isolate
+partial-wave utilization from other effects of the tile-size change. The cache-warming experiment
 does not reproduce H100 TMA: it performs extra reads of next-layer QKV/router
 weights to warm cache. Those reads cost bandwidth on this path.
 
@@ -119,8 +133,9 @@ the queue itself or the math kernels dominate the remaining 10.89% gap.
 
 ## Scope
 
-This validates the core complete-decode megakernel idea for this 4-bit model,
-batch-one generation, short context, and one M4 Pro. It does not validate
+These tests establish observed correctness and throughput for this implementation
+on a 4-bit model, batch-one generation, short context, and one M4 Pro. They do
+not establish a performance advantage for the complete megakernel, nor validate
 Cohere's full serving system, continuous batching, paged attention, ragged
 sequences, 256K contexts, or a true asynchronous Metal weight-transfer
 pipeline.
