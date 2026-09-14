@@ -1,0 +1,436 @@
+{
+  "files": [
+    {
+      "path": "experiments/north/branch_mixing/step-v1.jsonl",
+      "sha256": "44e9a5893bd3ead01415841ced4d33973fd1b36ca9b6d6344680e2a6b7b5cc4e",
+      "timing": "step",
+      "runs_per_prompt_variant": 4,
+      "correctness": {
+        "short": {
+          "kind": "correctness",
+          "prompt": "short",
+          "prompt_tokens": 136,
+          "decode_steps_per_variant": 127,
+          "variants": [
+            "mixed",
+            "blocked",
+            "separate"
+          ],
+          "full_logits_bitwise_equal": true,
+          "logit_shape": [
+            1,
+            1,
+            262144
+          ],
+          "logit_dtype": "mlx.core.bfloat16",
+          "token_ids": [
+            255012,
+            3080,
+            14487,
+            203,
+            3161,
+            23225,
+            1250,
+            3914,
+            16,
+            6064,
+            9096,
+            300,
+            56,
+            351,
+            6064,
+            9096,
+            711,
+            56,
+            10745,
+            1847,
+            21490,
+            119010,
+            108391,
+            21437,
+            21,
+            30,
+            3914,
+            32092,
+            2315,
+            1568,
+            22,
+            30,
+            3914,
+            32092,
+            6577,
+            2649,
+            3914,
+            32092,
+            25306,
+            298,
+            8340,
+            298,
+            59765,
+            1217,
+            19842,
+            14215,
+            983,
+            265,
+            3225,
+            19842,
+            1568,
+            382,
+            298,
+            35685,
+            638,
+            348,
+            1568,
+            21,
+            30,
+            6010,
+            19842,
+            1568,
+            388,
+            348,
+            1568,
+            22,
+            30,
+            10104,
+            19842,
+            1568,
+            382,
+            298,
+            11341,
+            638,
+            348,
+            340,
+            699,
+            1568,
+            7824,
+            616,
+            5015,
+            499,
+            1568,
+            21,
+            306,
+            1568,
+            22,
+            297,
+            19842,
+            1991,
+            382,
+            298,
+            119451,
+            638,
+            348,
+            6064,
+            2466,
+            30,
+            1437,
+            3673,
+            2740,
+            341,
+            516,
+            265,
+            1568,
+            388,
+            298,
+            8340,
+            298,
+            592,
+            516,
+            26821,
+            21437,
+            21,
+            16,
+            1568,
+            13,
+            420,
+            516,
+            26821,
+            21437,
+            22,
+            16,
+            1568,
+            2407,
+            348,
+            8477,
+            6064
+          ]
+        },
+        "rust": {
+          "kind": "correctness",
+          "prompt": "rust",
+          "prompt_tokens": 140,
+          "decode_steps_per_variant": 127,
+          "variants": [
+            "mixed",
+            "blocked",
+            "separate"
+          ],
+          "full_logits_bitwise_equal": true,
+          "logit_shape": [
+            1,
+            1,
+            262144
+          ],
+          "logit_dtype": "mlx.core.bfloat16",
+          "token_ids": [
+            255012,
+            3080,
+            27019,
+            203,
+            7226,
+            109183,
+            277,
+            1058,
+            31579,
+            2479,
+            297,
+            265,
+            24433,
+            302,
+            1411,
+            89,
+            1028,
+            68,
+            2911,
+            84757,
+            461,
+            1154,
+            163704,
+            1257,
+            277,
+            24433,
+            306,
+            6714,
+            277,
+            1058,
+            2479,
+            386,
+            8615,
+            717,
+            936,
+            3984,
+            76940,
+            1437,
+            840,
+            69488,
+            436,
+            1724,
+            420,
+            277,
+            24433,
+            341,
+            8295,
+            16,
+            411,
+            6714,
+            1411,
+            9055,
+            27994,
+            47279,
+            905,
+            53482,
+            203,
+            7226,
+            535,
+            1411,
+            47233,
+            68,
+            1137,
+            340,
+            24433,
+            302,
+            1411,
+            89,
+            1028,
+            68,
+            2911,
+            304,
+            3612,
+            352,
+            69488,
+            84757,
+            905,
+            11341,
+            203,
+            7226,
+            535,
+            1411,
+            8265,
+            47684,
+            1028,
+            38452,
+            1137,
+            1411,
+            9304,
+            12,
+            106983,
+            7325,
+            71316,
+            592,
+            265,
+            31579,
+            341,
+            1724,
+            16,
+            7494,
+            1411,
+            9055,
+            27994,
+            7623,
+            6383,
+            1058,
+            209213,
+            160384,
+            30,
+            47476,
+            89,
+            1028,
+            6577,
+            2649,
+            9243,
+            47684,
+            1028,
+            34,
+            449,
+            298,
+            1529,
+            4672,
+            4156,
+            351,
+            3619,
+            736,
+            60088,
+            736
+          ]
+        }
+      }
+    }
+  ],
+  "comparisons": {
+    "step/short": {
+      "median_tokens_per_second": {
+        "original": 47.53853490557451,
+        "mixed": 54.027829757710876,
+        "blocked": 53.98952164558121,
+        "separate": 52.341035504984134
+      },
+      "samples_per_variant": 4,
+      "contrasts": {
+        "mixed_over_original": {
+          "ratio_of_median_rates_percent": 13.650599171863442,
+          "paired_geomean_percent": 13.43660321442921,
+          "paired_percent": [
+            12.936279536842177,
+            13.601408996846764,
+            13.39396186697619,
+            13.816631852345097
+          ],
+          "per_process_paired_geomean_percent": {
+            "step-v1.jsonl": 13.43660321442921
+          }
+        },
+        "separate_over_original": {
+          "ratio_of_median_rates_percent": 10.102331948068667,
+          "paired_geomean_percent": 10.476604903586129,
+          "paired_percent": [
+            12.269127158009962,
+            10.038275188912005,
+            9.870036560084227,
+            9.748321709330131
+          ],
+          "per_process_paired_geomean_percent": {
+            "step-v1.jsonl": 10.476604903586129
+          }
+        },
+        "mixed_over_separate": {
+          "ratio_of_median_rates_percent": 3.2226994297163136,
+          "paired_geomean_percent": 2.6792987650428923,
+          "paired_percent": [
+            0.5942438457664956,
+            3.2380858404201796,
+            3.2073579086913773,
+            3.706945199389877
+          ],
+          "per_process_paired_geomean_percent": {
+            "step-v1.jsonl": 2.6792987650428923
+          }
+        },
+        "mixed_over_blocked": {
+          "ratio_of_median_rates_percent": 0.07095471669695819,
+          "paired_geomean_percent": -0.2385542699358978,
+          "paired_percent": [
+            -0.9474227121736956,
+            0.17136634500127812,
+            0.08822125797389724,
+            -0.2624747220236534
+          ],
+          "per_process_paired_geomean_percent": {
+            "step-v1.jsonl": -0.2385542699358978
+          }
+        }
+      }
+    },
+    "step/rust": {
+      "median_tokens_per_second": {
+        "original": 47.31915482394824,
+        "mixed": 53.84387050943788,
+        "blocked": 53.79989886205023,
+        "separate": 51.80958777762231
+      },
+      "samples_per_variant": 4,
+      "contrasts": {
+        "mixed_over_original": {
+          "ratio_of_median_rates_percent": 13.788740964974888,
+          "paired_geomean_percent": 13.438047647733264,
+          "paired_percent": [
+            13.562188388189277,
+            14.78850823210982,
+            13.374266389229472,
+            12.04392618380361
+          ],
+          "per_process_paired_geomean_percent": {
+            "step-v1.jsonl": 13.438047647733264
+          }
+        },
+        "separate_over_original": {
+          "ratio_of_median_rates_percent": 9.489672777083214,
+          "paired_geomean_percent": 9.587986397463721,
+          "paired_percent": [
+            10.040321704943711,
+            9.83607918422036,
+            8.395894115571245,
+            10.088532781719927
+          ],
+          "per_process_paired_geomean_percent": {
+            "step-v1.jsonl": 9.587986397463721
+          }
+        },
+        "mixed_over_separate": {
+          "ratio_of_median_rates_percent": 3.9264599837140812,
+          "paired_geomean_percent": 3.5132147024818927,
+          "paired_percent": [
+            3.200523797712007,
+            4.508927380394834,
+            4.5927683094253435,
+            1.7762008019134745
+          ],
+          "per_process_paired_geomean_percent": {
+            "step-v1.jsonl": 3.5132147024818927
+          }
+        },
+        "mixed_over_blocked": {
+          "ratio_of_median_rates_percent": 0.08173184024080626,
+          "paired_geomean_percent": -0.004983168316829989,
+          "paired_percent": [
+            -0.49747403655325817,
+            1.3475797584423077,
+            0.007368125138929038,
+            -0.8634170839408428
+          ],
+          "per_process_paired_geomean_percent": {
+            "step-v1.jsonl": -0.004983168316829989
+          }
+        }
+      }
+    }
+  }
+}
