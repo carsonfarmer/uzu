@@ -1,0 +1,53 @@
+{
+  "scope": "CPU compile only; no numerical, runtime, or overlap validation",
+  "variants": [
+    {
+      "rows": 32,
+      "prefix": 128,
+      "early": false,
+      "returncode": 0,
+      "diagnostics": "",
+      "sha256": "b003fdaf9f47e02c71ab9a613f38de1f4219d047ea08ab8fadb640a718dcea29"
+    },
+    {
+      "rows": 32,
+      "prefix": 128,
+      "early": true,
+      "returncode": 0,
+      "diagnostics": "",
+      "sha256": "7325034183a99c7cc0d42f5d752160a633a35bde1a438392ab63515eda18ee77"
+    },
+    {
+      "rows": 32,
+      "prefix": 256,
+      "early": false,
+      "returncode": 0,
+      "diagnostics": "",
+      "sha256": "70707aaadf0c3e175a1d317d012af44fa73666bd9c1a024fd9a222b13d1ff897"
+    },
+    {
+      "rows": 32,
+      "prefix": 256,
+      "early": true,
+      "returncode": 0,
+      "diagnostics": "",
+      "sha256": "4c1e943f9990f5abe9c407977653850fec499dcbf4cc0fd4cf013dc139aceeaf"
+    },
+    {
+      "rows": 64,
+      "prefix": 128,
+      "early": false,
+      "returncode": 0,
+      "diagnostics": "",
+      "sha256": "078d203b6ffb97dcf42be68ef1ad683e9b1a4f9312f2a3e139fa33d8614b9418"
+    },
+    {
+      "rows": 64,
+      "prefix": 128,
+      "early": true,
+      "returncode": 0,
+      "diagnostics": "",
+      "sha256": "5397523c38ff0fc0e319f8ae7206467cc3d9b9cd6fa60546f2fd13af7cb7a6b0"
+    }
+  ]
+}

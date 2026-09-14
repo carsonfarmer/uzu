@@ -26,9 +26,10 @@ completion record. Its SHA-256 is
 The stalled process was terminated manually. A 20-group rerun also stopped
 after one exact step; that partial file was not retained.
 
-The cause is the barrier design: a resident threadgroup can wait for a group
-that Metal has not scheduled yet. Metal does not promise that every dispatched
-threadgroup is resident concurrently. The successful timing therefore shows
+The cause was not conclusively diagnosed. One plausible failure mechanism is
+that a resident threadgroup waits for a group that has not been scheduled.
+The retained artifact does not distinguish residency from publication/visibility
+or other implementation errors. This failure does not prove a Metal limitation. The successful timing therefore shows
 performance potential only. It cannot support a deployable-result claim.
 
 The replacement queue gives resident groups only ready work. The group that
