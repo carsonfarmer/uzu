@@ -24,6 +24,8 @@ the historical pilots before that hardening.
 | Guarded unit-stride overlap, 48 workers | -7.95% | -7.79% | -19.74% |
 | Retained 640-column prefix, early copy on ordinary stream | -10.40% | -10.23% | -10.71% |
 | Native MLX attention with expert-first dispatch, first adapter pilot | -1.52% | -1.55% | -1.80% |
+| Native dispatch after compiled-function lifetime fix | -1.62% | -1.49% | -1.78% |
+| Exact router fusion added to prepared, six measured runs per mode/prompt | +1.09% | +1.21% | +0.38% |
 
 The first three scheduler pilots retained four measured runs per mode and
 prompt plus two warmups. Each compared two candidate worker counts with the
@@ -92,8 +94,11 @@ Subsequent host diagnostics found that re-enabling the adapter recreated its
 compiled function. A bounded cache of pure compiled functions now preserves
 that lifecycle across mode changes while all weights remain explicit live
 inputs. Nine contract tests and another 1,698 full-logit comparisons passed.
-The repeated throughput pilot is not included in this snapshot; the lifecycle
-fix is not credited with a performance gain.
+The repeated throughput pilot retained 72 exact generations and remained
+slower on all prompts: prepared/native-up-first medians were 68.848/67.730,
+68.407/67.386, and 61.660/60.564 tokens/s. The lifecycle fix did not recover a
+performance gain. Moving dynamic attention outside the compiled function also
+failed to recover it in a separate exact short-prompt screen.
 
 Five further constituent screens tested actual retained future-weight values
 inside workers, without a global staging copy. Shared-memory tiles retain
@@ -118,6 +123,31 @@ queue-free attention/expert backfill attempt, native-equivalent attention tasks
 through 65,537 KV tokens, and a weight-byte/host-cost analysis. These are tests
 and measurements, not reasons to claim the 10% goal complete or options exhausted.
 
+The native router is now an exact reusable task. Exhaustive BF16 checks found
+that default JIT float32 exponential differs from the shipped native MLX unary
+pipeline on 628 finite inputs. A local `metal::precise::exp` fixes every BF16
+input pattern while preserving MLX's stable expert selection after sigmoid.
+This precision change is confined to routing; previously exact expert math is
+unchanged. Primary-source compiler details and rejected variants are retained.
+
+The opt-in `routed` fusion mode replaces only sigmoid/top-eight/score gathering
+inside the real prepared decoder. It passed 1,132 complete-vocabulary logit
+comparisons across ten generation cases, including cache rotation and EOS, plus
+48 exact timing generations. It improved native decode throughput by only
+0.38–1.21% beyond prepared. This is a useful control for the next experiment,
+not the additional 10% goal or a whole-model megakernel.
+
+A router-ready scheduler now allows expert-up tasks to start while QKV work
+remains unfinished. Its expanded constituent screen passed all 7,056 sampled
+output sets, 84 initial gates and six incomplete-work poison gates. Across
+three real layers and two prompts, early release reduced this section's median
+time by 3.6–5.4% against the same scheduler holding routing until QKV completion.
+All late-control runs started zero expert tasks before QKV completion; the
+expert-priority early variant started all 96. These counters show program
+ordering, not physical GPU overlap. Absolute timing drift and the initial
+attempt's mixed source provenance are explicitly documented. Actual-engine
+integration and throughput testing of early release remain underway.
+
 Reference: [Cohere's article](https://cohere.com/blog/megakernels) and source
 `cohere-ai/cohere-megakernel@67d0b9ca22ea3652796b715d1d1863459e0e2c3c`.
 The experiments are explicitly testing its smaller task dependencies, attention
@@ -125,7 +155,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`57e0bb6d8fd597a82eb5947da5a8636f5d649ff6` are backed up in
+`033fa8f8abee31541bee927bab02cb6084d7716c` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:
