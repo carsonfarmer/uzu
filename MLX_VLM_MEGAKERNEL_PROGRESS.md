@@ -239,6 +239,30 @@ release took 496.58. All 260 samples, ten gates and nine poison checks passed.
 This removes some overhead introduced by the attention port; it does not
 improve the actual engine and has not been integrated for long context.
 
+Actual short-generation ablations now identify two costs introduced by the
+combined path. Joining native cache dependencies once at the model output
+raised grouped decode from 65.396 to 67.400 tokens/s; simplifying append loads
+raised it to 66.647; together they reached 68.722. Early release was 70.876.
+All 35 generations and 1,698 full-logit comparisons matched stock. The changes
+recover part of the regression, and remain benchmark-only. A subsequent
+worker-count screen kept all 42 generations: the best combined configuration,
+40 workers, reached 68.923 versus early release at 70.816. No new winner.
+
+A 64-worker warmup in an earlier screen exceeded 90 seconds and was terminated.
+Its numerical/audit micro-gates had passed, but actual generation did not finish;
+this is recorded as a timeout, not a performance measurement or proven deadlock.
+A fresh native GPU recovery check passed. Subsequent generation screens have an
+explicit per-call deadline. The failed screen and stack evidence are preserved.
+
+Static task assignment did not improve early release across 3,120 exact
+component samples. Per-expert down readiness in the newer combined graph also
+failed to produce a consistent gain at 128/256/512 rows per task. The latter
+extends an earlier boundary prototype; it is not the first per-expert test.
+One task-number substitution corrupted a workspace offset in its initial
+256-row source. That rejected gate and source are retained; the corrected
+six-case run passed all 780 samples. This identified/fixed bug is separate from
+the older unresolved changed-weight unit observation.
+
 Reference: [Cohere's article](https://cohere.com/blog/megakernels) and source
 `cohere-ai/cohere-megakernel@67d0b9ca22ea3652796b715d1d1863459e0e2c3c`.
 The experiments are explicitly testing its smaller task dependencies, attention
@@ -246,7 +270,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`f57744b` are backed up in
+`2f52977` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:
