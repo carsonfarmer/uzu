@@ -292,9 +292,46 @@ MTLArgumentEncoder to reference live MLX arrays. It passed72 resource cases up
 to931 inputs and an80-call lazy native/indirect chain. The original published
 metallib is unchanged; the rebuilt prepared and early-release engines separately
 matched1,132 full-logit arrays across all five test prompts. The additive patch,
-build manifests and resource sources are preserved. The persistent multi-layer
-kernel is being tested; this is a capability milestone, not a new throughput
-result or completion of the whole-model goal.
+build manifests and resource sources are preserved. The indirect kernel now executes all 48 MoE layers in one dispatch during
+normal MLX-VLM generation. Dense layer 0, final normalization, the vocabulary
+projection and native cache commits remain outside that dispatch. All 566
+full-vocabulary arrays match stock over the five-case gate; counters confirm
+308 executed spans (14,784 layer calls) in short/Rust/EOS cases, while long and
+rotating-cache cases use the established fallback.
+
+A balanced six-mode short pilot recorded 36 measured and 12 warmup generations,
+all stock-exact. Prepared reached 68.938 tokens/s, early router release 70.696,
+four-layer persistence 70.716, eight-layer 70.696, sixteen-layer 70.138 and
+48-layer 67.786. The full span is 4.12% slower than early release and 1.67% slower
+than prepared. Four/eight-layer differences are effectively zero. Reducing
+launches alone has not produced an additional gain.
+
+A separate long-context component gate covers 4/8/16/48 persistent layers
+using native 128-partition attention arithmetic. All 608 returned arrays and
+eight abort-poison checks passed. The actual generation adapter then matched
+566 full-vocabulary arrays across five prompts, executing 129 long-context spans.
+Its balanced 24-generation pilot was strongly negative: 43.408 tokens/s versus
+64.267 for early release and 62.457 for prepared. This path remains experimental.
+
+Moving the final cache-dependency join from normalized hidden states to public
+logits also passed 1,132 full-logit arrays and 24 timed generations. It reached
+67.784 tokens/s versus67.805 for the matched scoped-hidden control and70.892
+for early release. It provided no useful gain.
+
+Retained future QKV/router weights now run inside the multi-layer dispatch.
+Four tile sizes (8/12/16/24 KiB) and separate compiled retained/non-retained
+preparation paths passed the checkpoint screens. Deliberately corrupting the
+retained copy proves that later layers consume it; the normal variants remain
+exact. Early loading sometimes beats the matched late control, but no screened
+variant consistently beats original persistence on both short and Rust inputs.
+
+The selected 12 KiB specialized early and late paths each passed another 832
+native-array checks, eight abort checks and four consumption proofs. Their
+actual MLX-VLM generation/cache integration is now being validated before a
+balanced five-mode comparison. At most 32 tiles are retained per transition:
+384 KiB, about 1.83% of the next QKV/router matrices. This is a much smaller
+prefetch window than Cohere's Hopper implementation, and no new throughput gain
+has been established.
 
 Reference: [Cohere's article](https://cohere.com/blog/megakernels) and source
 `cohere-ai/cohere-megakernel@67d0b9ca22ea3652796b715d1d1863459e0e2c3c`.
@@ -303,7 +340,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`9a09638` are backed up in
+`b56e534` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:
