@@ -1,0 +1,12 @@
+{
+  "date": "2026-09-14",
+  "hardware": "Apple M4 Pro, 20 GPU cores, 48 GB unified memory",
+  "macos": {
+    "version": "27.0",
+    "build": "26A428"
+  },
+  "python": "Python 3.12.10",
+  "power_thermal_report": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded",
+  "conditions": "Interactive desktop with ordinary app activity, CPU-only research and a fresh-environment package install during part of the run. No cooperating research GPU process ran concurrently. Default MLX command-buffer limits; no explicit tuning. All measured repetitions retained. Paired counterbalanced order mitigates drift; this is not a lab-isolated cross-device measurement.",
+  "power": "AC power, charged, default powermode 0"
+}

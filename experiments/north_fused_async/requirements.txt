@@ -1,0 +1,9 @@
+mlx==0.32.2
+mlx-metal==0.32.2
+numpy==2.5.3
+pillow==12.3.0
+transformers==5.17.0
+tokenizers==0.23.2
+huggingface_hub==1.31.0
+Jinja2==3.1.6
+safetensors==0.8.0

@@ -1,0 +1,18 @@
+{
+  "repository": "https://github.com/Blaizzy/mlx-vlm",
+  "revision": "cdc745ad8a32d162f6d8e9d08be256910d663ac2",
+  "sha256": {
+    "LICENSE": "f74c448746be3376e27dee43e2be9ec9d55f4820cd7466c603a6c7d1fd2d25b8",
+    "mlx_vlm/models/base.py": "4f915923c591faf4b25603b5b5cab4511296a37c7d141553506e6b0760a03a41",
+    "mlx_vlm/models/cache.py": "f7277421869ffe88a0fd5050ad307bf6a9a2a6c41ff1ce88de30f4b603ae10b6",
+    "mlx_vlm/models/mlp.py": "e5413aa08a61ee26ab3bf70fac9aeef2ac9c13342e2a4507c2e7cc908a3273e7",
+    "mlx_vlm/models/switch_layers.py": "ace00152d1d004e52292d8265af640d8dd69ffa67b8906886b53a99eb21951de",
+    "mlx_vlm/models/activations.py": "2ce04422f5670d8c3507f723d33253632e14121f45f2aa8070b08544ea92dfc9",
+    "mlx_vlm/models/cohere2_moe/config.py": "92588adb36149572573c42ec8772616d28e33b974fe10fa60e6a2b19203f4098",
+    "mlx_vlm/models/cohere2_moe/language.py": "676cf6b304ab057e0ba73afd89b8a8aba11fc278016e5e350a42c97e02122269",
+    "mlx_vlm/turboquant.py": "301c73808e3ca41a28bbd5f77c5670b1048a522d9ae796cae5202b7724592afe",
+    "mlx_vlm/generate/ar.py": "12453198a262669ccdeaa7e1a7944c8a6958e116487f72f8c9da8506424179d9",
+    "mlx_vlm/models/linear.py": "148a56193feaf170097ff1c5edccca8165c1b5df878f1605778c4d3642a4d2fa"
+  },
+  "scope": "Text model dependency files and async generation reference; full source archive pinned by revision."
+}

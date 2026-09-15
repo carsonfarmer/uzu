@@ -1,0 +1,65 @@
+#include <metal_stdlib>
+using namespace metal;
+constant uint ND=2048,NH=768,NA=4096,NE=8,NC=768/NCHUNK,NT=256;
+inline void north_hidden(uint job,uint sg,uint lane,
+ device const bfloat* x,device const uint* ids,
+ device const uint* up,device const bfloat* us,device const bfloat* ub,
+ device const uint* gate,device const bfloat* gs,device const bfloat* gb,
+ device bfloat* hidden,threadgroup float* tile) {
+ uint slot=job/NC,expert=ids[slot],chunk=job%NC;
+ // Match MLX's affine-qmv grouping, including BF16 input-sum rounding.
+ // Algorithm adapted from Apple's MLX quantized.h (MIT); see NOTICE.md.
+ for(uint rr=sg*4;rr<NCHUNK;rr+=32) {
+  float uu[4]={0},gg[4]={0};
+  for(uint k=lane*16;k<ND;k+=512) {
+   float v[16],xsum=0;
+   for(uint j=0;j<16;j+=4) {
+    xsum+=float(x[k+j]+x[k+j+1]+x[k+j+2]+x[k+j+3]);
+    v[j]=float(x[k+j]);v[j+1]=float(x[k+j+1])/16.0f;
+    v[j+2]=float(x[k+j+2])/256.0f;v[j+3]=float(x[k+j+3])/4096.0f;
+   }
+   for(uint rowoff=0;rowoff<4;rowoff++) {
+    uint row=expert*NH+chunk*NCHUNK+rr+rowoff;
+    uint si=row*(ND/64)+k/64;
+    device const ushort* uw=(device const ushort*)(up+row*(ND/8)+k/8);
+    device const ushort* gw=(device const ushort*)(gate+row*(ND/8)+k/8);
+    float ud=0,gd=0;
+    for(uint j=0;j<4;j++) {
+     ud+=(v[j*4]*(uw[j]&15)+v[j*4+1]*(uw[j]&240)+v[j*4+2]*(uw[j]&3840)+v[j*4+3]*(uw[j]&61440));
+     gd+=(v[j*4]*(gw[j]&15)+v[j*4+1]*(gw[j]&240)+v[j*4+2]*(gw[j]&3840)+v[j*4+3]*(gw[j]&61440));
+    }
+    uu[rowoff]+=float(us[si])*ud+float(ub[si])*xsum;
+    gg[rowoff]+=float(gs[si])*gd+float(gb[si])*xsum;
+   }
+  }
+  for(uint rowoff=0;rowoff<4;rowoff++) {
+   float u=simd_sum(uu[rowoff]),g=simd_sum(gg[rowoff]);
+   if(lane==0) {
+    bfloat u16=bfloat(u),g16=bfloat(g);
+    auto z=1/(1+exp(abs(g16)));
+    bfloat sigmoid16=(g16<0)?z:1-z;
+    bfloat a16=g16*sigmoid16;
+    bfloat h=bfloat(float(u16)*float(a16));
+    hidden[slot*NH+chunk*NCHUNK+rr+rowoff]=h;tile[rr+rowoff]=float(h);
+   }
+  }
+ }
+}
+inline void north_attention(uint block,uint sg,uint lane,
+ device const bfloat* ax,device const bfloat* aw,device bfloat* attention) {
+ // Same per-lane K ordering and shuffle tree as MLX GEMV (TN=4).
+ // Eight SIMD groups own four rows each; grouping rows into a larger task
+ // changes placement only, not accumulation order.
+ uint row=block*32+sg*4;
+ float acc[4]={0};
+ for(uint k=lane*4;k<NA;k+=128) {
+  float v[4];for(uint j=0;j<4;j++)v[j]=float(ax[k+j]);
+  for(uint rr=0;rr<4;rr++)
+   for(uint j=0;j<4;j++)acc[rr]+=float(aw[(row+rr)*NA+k+j])*v[j];
+ }
+ for(uint rr=0;rr<4;rr++) {
+  for(ushort offset=16;offset>=1;offset>>=1)
+   acc[rr]+=simd_shuffle_down(acc[rr],offset);
+  if(lane==0)attention[row+rr]=bfloat(acc[rr]);
+ }
+}

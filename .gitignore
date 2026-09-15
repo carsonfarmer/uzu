@@ -35,3 +35,6 @@ tools/gpu_trace/*.json
 .swiftpm/
 Package.resolved
 .dinghy.toml
+
+# Local model weights, pinned runtime sources, and virtual environment
+/work

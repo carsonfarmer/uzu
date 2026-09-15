@@ -1,0 +1,52 @@
+{
+  "method": "Independent geometric product/root recomputation from raw decode_seconds; compare all21 reported paired mean gains. All source fingerprints rechecked against final files. All35 clean-install logit checks and five identical smoke continuations checked. Pair-order and recorded-rate checks also run before GPU release.",
+  "comparisons": {
+    "short": {
+      "fused_async/original_host": 22.389428213054117,
+      "prepared_async/original_host": 24.369675612454067,
+      "fused_host/original_host": 11.491835152481645,
+      "fused_async/fused_host": 9.774341812266707,
+      "fused_async/original_async": 8.892053321207726,
+      "prepared_async/original_async": 10.653914689080679,
+      "prepared_async/fused_async": 1.6179889295280692
+    },
+    "rust": {
+      "fused_async/original_host": 22.71153504745884,
+      "prepared_async/original_host": 24.4731548685575,
+      "fused_host/original_host": 10.848977825049943,
+      "fused_async/fused_host": 10.701548589046283,
+      "fused_async/original_async": 9.828205785697119,
+      "prepared_async/original_async": 11.404875364094625,
+      "prepared_async/fused_async": 1.4355780167018217
+    },
+    "long": {
+      "fused_async/original_host": 19.365416408950974,
+      "prepared_async/original_host": 22.01656779657273,
+      "fused_host/original_host": 6.964333551906532,
+      "fused_async/fused_host": 11.593661592839787,
+      "fused_async/original_async": 7.124699697675307,
+      "prepared_async/original_async": 9.503980102303133,
+      "prepared_async/fused_async": 2.221038109177953
+    }
+  },
+  "source_hashes_match": {
+    "benchmark.py": true,
+    "decode.py": true,
+    "fusion.py": true,
+    "inputs.py": true,
+    "layers.py": true,
+    "prep.py": true,
+    "prepare.py": true,
+    "reference.py": true,
+    "summarize.py": true,
+    "kernel.h": true,
+    "prep.h": true,
+    "provenance/model.json": true,
+    "provenance/source.json": true
+  },
+  "main_correctness_arrays": 1905,
+  "main_measured_generations": 150,
+  "clean_install_correctness_arrays": 35,
+  "clean_install_matching_generations": 5,
+  "raw_sha256": "e1c8bdc86ac652bc822a8a7ecc08d9f3e393780d68c43fe317b504de828b0bce"
+}

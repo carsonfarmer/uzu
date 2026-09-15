@@ -1,0 +1,19 @@
+{
+  "base": "7096cf32e70400c377b7341f75949d52c36f8f4d",
+  "fusion_checkpoint": "6301f36ef7c63614ba5b09b15e5e10c0b77aca29",
+  "async_preparation_checkpoint": "1ebab5ff63022ca06e6b0a935b300b9bf1832e1d",
+  "verified_extraction": [
+    "front/down Metal kernel construction and run_exact AST unchanged",
+    "input validation AST unchanged",
+    "only unused split-K north_down helper removed from kernel.h",
+    "preparation source unchanged apart from NOTICE path",
+    "FusedLayer and PreparedLayer forward method AST unchanged",
+    "historical experimental mode imports and dispatch choices removed; selected workers=160 rows=16 retained"
+  ],
+  "original_file_sha256": {
+    "quantized/exact.py": "bc2b47cd4fee23559c04dbadb0b3feeb16ac5cdfbc8a115a29f2da1ad464ecf7",
+    "quantized/kernel.h": "b5a11042ad903b21326a9dc62711900e6cdd7f47f3306ff14f80d9a4def7fc66",
+    "quantized/kernels.py": "1d825d58db931a7c079c917beadd20af6f097b950c9f7f9c033147af51d3e041",
+    "quantized/patch.py": "fcb55c2437c125550b1f04f9cdaa0d00dcd56a16e4d419003c7d6c05d259f3c1"
+  }
+}

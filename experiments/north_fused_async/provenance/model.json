@@ -1,0 +1,66 @@
+{
+  "repo": "mlx-community/North-Mini-Code-1.0-4bit",
+  "revision": "dfbe084dfa26e241345af99ca32848f38fd865f9",
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 752,
+      "sha256": "a0301301c8d0e03a8527f01ac9e7d8cc14ea1ce967cb1b839dae13faa85a4564"
+    },
+    {
+      "file": "chat_template.jinja",
+      "bytes": 12397,
+      "sha256": "d8366efb9f07c571da620ce6a924594fc52c80273a0fbb46a38b643972df95fd"
+    },
+    {
+      "file": "config.json",
+      "bytes": 2855,
+      "sha256": "f79ab5092a0c54581c71b5154dda975c20a618b05878d173752ff621ce07f7ba"
+    },
+    {
+      "file": "generation_config.json",
+      "bytes": 136,
+      "sha256": "1bbfc76080a70d5c23066597a3c7b5bb4504c9eea1f61b9950856f174318117f"
+    },
+    {
+      "file": "model-00001-of-00004.safetensors",
+      "bytes": 5302866570,
+      "sha256": "6a55600789be6d9e084058c1f3762212055e0203b2cf5cc65e5de960f571f2c8"
+    },
+    {
+      "file": "model-00002-of-00004.safetensors",
+      "bytes": 5292249124,
+      "sha256": "08c0824a4a047216ec53c51ce7dac668276ce2e5024b910f2663613a86a0ad5f"
+    },
+    {
+      "file": "model-00003-of-00004.safetensors",
+      "bytes": 5292249128,
+      "sha256": "b1df75197af4b7e34f2ccddde346f90ae38b0e8e49b32232ccd644f54e1f5abc"
+    },
+    {
+      "file": "model-00004-of-00004.safetensors",
+      "bytes": 2607855053,
+      "sha256": "6398418cbccfcd7ecce56c612a2886d420d7e7e86f97e319dac73215690d344e"
+    },
+    {
+      "file": "model.safetensors.index.json",
+      "bytes": 77852,
+      "sha256": "f66f40132ee1ed36b85c072e3ae209a8d3dfb40d76580e9de0a3c819a8a47c6f"
+    },
+    {
+      "file": "special_tokens_map.json",
+      "bytes": 672,
+      "sha256": "82b62b61b9cc2a211ce8a4a504cea35e367195af1665add7f86d1d284c741ae5"
+    },
+    {
+      "file": "tokenizer.json",
+      "bytes": 19551410,
+      "sha256": "e7edbc26b2d1ab947f099b201892d2c0cb873a9ca8d4d3ffde2d82f912e44514"
+    },
+    {
+      "file": "tokenizer_config.json",
+      "bytes": 487,
+      "sha256": "9b2abb34786bd233281aa7f6f2e39e553dfa9366ed7390c1fa966a66ce12ecdc"
+    }
+  ]
+}
