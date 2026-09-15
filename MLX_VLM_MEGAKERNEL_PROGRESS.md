@@ -10,12 +10,19 @@ Research now lives in a separate actual MLX-VLM worktree:
 sampling, stopping and cache ownership remain in use. This work does not use
 Uzu's inference engine or the withdrawn custom decode runner.
 
-The first two integrated scheduling candidates are correct but slower:
+The integrated scheduling candidates matched stock in their full-generation
+test cases, but are slower. Later stress tests exposed synchronization defects
+in the experimental schedulers; the hardened versions subsequently passed all
+15 generation cases and 1,698 full-logit comparisons against stock. The
+preserved prepared control is unaffected. The scheduler timing rows below are
+the historical pilots before that hardening.
 
 | Actual-engine experiment | Short | Rust | Long |
 |---|---:|---:|---:|
 | Boundary scheduler, 32 workers, relative to matched prepared control | -7.24% | -7.00% | -5.70% |
 | Attention/expert overlap scheduler, 48 workers, relative to matched prepared control | -7.25% | -7.24% | -24.74% |
+| Guarded unit-stride overlap, 48 workers | -7.95% | -7.79% | -19.74% |
+| Retained 640-column prefix, early copy on ordinary stream | -10.40% | -10.23% | -10.71% |
 
 Each pilot retained four measured runs per mode and prompt plus two warmups.
 Both compared two candidate worker counts with the prepared control, so each
@@ -29,16 +36,48 @@ projection independently, then computes the next layer's normalization and
 QKV/router projections. The overlap scheduler additionally runs attention tasks
 alongside expert work. Native cache updates occur exactly once per layer, and
 fallback uses the already prepared native views. Neither is a whole-model
-megakernel, and neither yet loads next-layer weights before their activation
-dependency is ready.
+megakernel. The later retained-prefix experiment tests future-weight loading
+separately.
 
 An isolated access-pattern experiment identified a concrete problem in the
 first attention port: arbitrary inner strides caused much of its long-context
 primitive slowdown. At length 1,672, a guarded unit-stride version reduced
 diagnostic wall time from about 259 to 193 microseconds, against 184 for native
 MLX. All 25 numerical comparisons passed. Removing device-coherent qualifiers
-had little effect in this test. The integrated stride fix is the next measured
-experiment; it has not yet established an engine speedup.
+had little effect in this test. The integrated stride fix reduced the long
+prompt regression, but still lost 19.74% to the matched prepared control.
+
+The retained-prefix experiment copies the first 640 columns across every
+Q/K/V/router row of the next layer: 6,717,440 bytes, or 31.25% of those weights.
+The consumer actually uses the retained values; an isolated check zeroes the
+original prefix after copying to prove that. Both early and late copies passed
+1,698 stock full-logit comparisons, and all 54 timing generations were exact.
+Both ordinary-stream variants lost roughly 10–11%, with every copy included.
+This uses a global GPU buffer, unlike Cohere's retained shared-memory tiles.
+
+A dedicated MLX stream also passed all 1,698 full-logit comparisons. Its matched
+short-prompt screen was much slower: prepared 68.801 tokens/s, early copy 50.875
+(-26.05%), late copy 34.321 (-50.12%). All 24 generations were exact. This large
+loss did not warrant expanding that screen to the other prompts. Neither copy
+implementation establishes useful physical prefetch overlap.
+
+Wider scheduler grids were rejected before performance promotion. At 96 workers,
+the original primitive produced different output bytes even though every task
+was counted complete. Repeated checks located expert-down corruption and
+frequent idle-limit failures at larger grids. Review found shared task/finalizer
+slot races and incomplete publication handoffs. The hardened code passed all
+192 repeated primitive checks at 32, 48 and 64 workers. At 80 workers, 63 of 64
+passed and one hit the idle limit; the public cap remains 64. Those are
+constituent checks, and oversized-grid behavior is not considered resolved.
+
+A separate direct-Metal diagnostic tested whether narrowing a barrier to one
+resource removes its execution wait. All 240 output checks were exact. At low
+occupancy, both the broad and resource-specific barrier took about 50.7 ms;
+a legally reordered control took about 25.4 ms. That control demonstrates
+overlap for this synthetic workload, while changing barrier resource scope
+alone did not unlock it. This does not establish model throughput. The next
+engine-extension assessment focuses on native command ordering and reuse of
+MLX's competitive kernels rather than assuming resource barriers are enough.
 
 Additional preserved controls include producer-first task ordering, a simpler
 queue-free attention/expert backfill attempt, native-equivalent attention tasks
@@ -48,10 +87,11 @@ and measurements, not reasons to claim the 10% goal complete or options exhauste
 Reference: [Cohere's article](https://cohere.com/blog/megakernels) and source
 `cohere-ai/cohere-megakernel@67d0b9ca22ea3652796b715d1d1863459e0e2c3c`.
 The experiments are explicitly testing its smaller task dependencies, attention
-backfilling and future-weight loading ideas. Retained prefetch remains open.
+backfilling and future-weight loading ideas. The additional 10% goal and
+whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`878c0101d87a52255c8de400b77ff65e35fc5807` are backed up in
+`0c2b2d64e669211014401ae82def40c60e3cde4e` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:
