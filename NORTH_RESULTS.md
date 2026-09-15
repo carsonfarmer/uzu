@@ -1,5 +1,19 @@
 # North Mini Code megakernel results on Apple M4 Pro
 
+## Acceptance correction — existing-engine result still missing
+
+**The reported custom-runner gains do not satisfy the requested engine-level
+optimization goal.** North ran in a standalone MLX program inside this repository,
+not Uzu's engine or MLX-VLM's normal generation path. The original runner omitted
+async behavior already provided by MLX-VLM. Its combined improvement must not be
+presented as a speedup over either standard engine.
+
+See [BASELINE_CORRECTION.md](BASELINE_CORRECTION.md) for the verified support gaps,
+the failure in scope, and the required existing-engine comparison. Further GPU
+optimization against that substitute baseline has been stopped. The evidence
+below is retained as historical internal experimentation; earlier completion
+and shareable-result framing is superseded.
+
 ## Clean fusion + async result — September 14, 2026
 
 The combined improvement is now directly measured and preserved on

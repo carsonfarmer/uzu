@@ -1,5 +1,19 @@
 # Apple North research status — September 14, 2026
 
+## Acceptance correction — existing-engine result still missing
+
+**The reported custom-runner gains do not satisfy the requested engine-level
+optimization goal.** North ran in a standalone MLX program inside this repository,
+not Uzu's engine or MLX-VLM's normal generation path. The original runner omitted
+async behavior already provided by MLX-VLM. Its combined improvement must not be
+presented as a speedup over either standard engine.
+
+See [BASELINE_CORRECTION.md](BASELINE_CORRECTION.md) for the verified support gaps,
+the failure in scope, and the required existing-engine comparison. Further GPU
+optimization against that substitute baseline has been stopped. The evidence
+below is retained as historical internal experimentation; earlier completion
+and shareable-result framing is superseded.
+
 Fresh matched tests confirm the useful combined result: targeted fusion plus
 async decode is **22.4% faster on Python, 22.7% on Rust and 19.4% on the longer
 prompt** than the original synchronous research runner. Optional preparation
@@ -19,13 +33,11 @@ code untouched. See the [matched results](https://github.com/carsonfarmer/uzu/tr
 [reproduction instructions](https://github.com/carsonfarmer/uzu/tree/cf/north-fused-async/experiments/north_fused_async/README.md). The older research branches
 remain preserved.
 
-The full megakernel investigation is active separately on
+The preserved megakernel investigation is located on
 [cf/north-megakernel-fullest](https://github.com/carsonfarmer/uzu/tree/cf/north-megakernel-fullest).
-Its new goal targets at least another 10% over the strongest exact
-fusion+preparation+async control through faithful Cohere scheduling and real
-future-weight overlap, or evidence exhausting the plausible mechanisms.
-The clean baseline has released its GPU reservation for the task's numerical
-and performance tests. No megakernel performance success is claimed yet.
+Its earlier custom-runner throughput target has been superseded by the
+existing-engine acceptance criteria above. The task has been instructed to stop
+new GPU experiments and inventory integration requirements on CPU only.
 
 ## September 13 checkpoint and earlier ablations
 

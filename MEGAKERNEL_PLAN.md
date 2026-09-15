@@ -1,5 +1,19 @@
 # Apple North megakernel: objective and result
 
+## Acceptance correction — existing-engine result still missing
+
+**The reported custom-runner gains do not satisfy the requested engine-level
+optimization goal.** North ran in a standalone MLX program inside this repository,
+not Uzu's engine or MLX-VLM's normal generation path. The original runner omitted
+async behavior already provided by MLX-VLM. Its combined improvement must not be
+presented as a speedup over either standard engine.
+
+See [BASELINE_CORRECTION.md](BASELINE_CORRECTION.md) for the verified support gaps,
+the failure in scope, and the required existing-engine comparison. Further GPU
+optimization against that substitute baseline has been stopped. The evidence
+below is retained as historical internal experimentation; earlier completion
+and shareable-result framing is superseded.
+
 ## Objective
 
 Test whether the central ideas in Cohere's North Mini Code decode megakernel can
@@ -16,7 +30,7 @@ References:
 
 ## Result
 
-The gate is met for the tested M4 Pro workload.
+The earlier gate was too narrow and did not satisfy the requested existing-engine goal. The following table records individual prototype observations only.
 
 | Question | Evidence |
 |---|---|
@@ -67,6 +81,6 @@ next useful work is:
 3. measure longer contexts and additional Apple GPU generations;
 4. add continuous batching, paged caches, ragged attention, and sampling.
 
-These are extensions to the validated experiment. The current evidence and its
+These are uncompleted research items, not proof that the requested goal was achieved. The current evidence and its
 limits are recorded in
 [the whole-pass report](experiments/north/whole_pass/README.md).

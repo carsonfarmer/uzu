@@ -1,5 +1,9 @@
 # North Mini Code: real baseline and Metal branch experiment
 
+**Scope correction:** this is a custom MLX runner, not Uzu engine integration.
+Its timings do not establish an improvement over the normal generation path of
+Uzu or MLX-VLM. See [the baseline correction](../../BASELINE_CORRECTION.md).
+
 This directory establishes a real quantized North reference and now includes a
 complete batch-one decode graph in one Metal dispatch. The safe M4 Pro path
 runs all 49 transformer layers, K/V updates, final normalization, and the full
