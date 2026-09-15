@@ -263,6 +263,39 @@ One task-number substitution corrupted a workspace offset in its initial
 six-case run passed all 780 samples. This identified/fixed bug is separate from
 the older unresolved changed-weight unit observation.
 
+A follow-up 64-worker replay also returned the wrong first token during ordinary
+generation. An instrumented run found an idle-limit failure and NaNs at layer42,
+but it forced per-layer evaluation and changed array lifetimes. Final counters
+cannot establish producer readiness at the moment of the first timeout. Saved
+real inputs then passed18 isolated replays. The actual-generation failure is
+preserved and unresolved;64 workers are rejected for further promotion.
+
+Splitting the combined tail into separate output projection, per-expert down
+projection and ordered join did not help actual short generation. Late down
+release reached66.725 tokens/s and early down63.982, versus70.909 for early
+router release. All24 generations were stock-exact, and10 correctness generations
+matched1,132 full-logit arrays with29,568 observed candidate layer calls. The
+slower component was not expanded into another three-prompt performance claim.
+
+Per-KV-group output projection also lost in a separate component screen. It
+carried each lane's FP32 sum through four ordered groups to preserve the native
+reduction order. All780 samples,30 output/cache gates and24 poison checks
+passed. Counters recorded128 or192 output tasks starting before all attention
+finished, versus zero in the matched late control. Early release still lost to
+the separate early decoder in all six input cases. This establishes an executed
+dependency change, not useful physical overlap or an engine speedup.
+
+The larger multi-layer experiment now has an actual backend path. An isolated
+MLX0.32.2 worktree adds indirect input/output resource registration while keeping
+the existing hazard, size, encoder and lifetime rules. A native extension uses
+MTLArgumentEncoder to reference live MLX arrays. It passed72 resource cases up
+to931 inputs and an80-call lazy native/indirect chain. The original published
+metallib is unchanged; the rebuilt prepared and early-release engines separately
+matched1,132 full-logit arrays across all five test prompts. The additive patch,
+build manifests and resource sources are preserved. The persistent multi-layer
+kernel is being tested; this is a capability milestone, not a new throughput
+result or completion of the whole-model goal.
+
 Reference: [Cohere's article](https://cohere.com/blog/megakernels) and source
 `cohere-ai/cohere-megakernel@67d0b9ca22ea3652796b715d1d1863459e0e2c3c`.
 The experiments are explicitly testing its smaller task dependencies, attention
@@ -270,7 +303,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`2f52977` are backed up in
+`9a09638` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:
