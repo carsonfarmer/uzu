@@ -23,10 +23,11 @@ the historical pilots before that hardening.
 | Attention/expert overlap scheduler, 48 workers, relative to matched prepared control | -7.25% | -7.24% | -24.74% |
 | Guarded unit-stride overlap, 48 workers | -7.95% | -7.79% | -19.74% |
 | Retained 640-column prefix, early copy on ordinary stream | -10.40% | -10.23% | -10.71% |
+| Native MLX attention with expert-first dispatch, first adapter pilot | -1.52% | -1.55% | -1.80% |
 
-Each pilot retained four measured runs per mode and prompt plus two warmups.
-Both compared two candidate worker counts with the prepared control, so each
-pilot contains 36 measured and 18 warmup generations. Every output matched.
+The first three scheduler pilots retained four measured runs per mode and
+prompt plus two warmups. Each compared two candidate worker counts with the
+prepared control, yielding 36 measured and 18 warmup generations. Every output matched.
 The overlap candidate also passed all five full-model correctness cases,
 including cache rotation and natural EOS: 566 byte-exact full-vocabulary logit
 arrays per mode, 1,698 comparisons including the control.
@@ -75,9 +76,42 @@ resource removes its execution wait. All 240 output checks were exact. At low
 occupancy, both the broad and resource-specific barrier took about 50.7 ms;
 a legally reordered control took about 25.4 ms. That control demonstrates
 overlap for this synthetic workload, while changing barrier resource scope
-alone did not unlock it. This does not establish model throughput. The next
-engine-extension assessment focuses on native command ordering and reuse of
-MLX's competitive kernels rather than assuming resource barriers are enough.
+alone did not unlock it. This does not establish model throughput. It motivated
+the native command-ordering experiment below.
+
+A native MLX extension now reuses MLX's shipped SDPA metallib unchanged and
+places expert-up work first, followed by an exact combined output/down tail.
+Its real engine adapter passed 15 full-generation cases, 1,698 byte-exact
+full-logit comparisons and 54,336 observed candidate branch calls, including
+rotation and EOS. The first balanced pilot retained 54 measured generations
+and 18 warmups, all exact. Prepared/native-up-first medians were
+68.898/67.854 tokens/s (short), 68.823/67.754 (Rust), and 61.843/60.730 (long).
+The constituent layer gain did not translate into an engine gain.
+
+Subsequent host diagnostics found that re-enabling the adapter recreated its
+compiled function. A bounded cache of pure compiled functions now preserves
+that lifecycle across mode changes while all weights remain explicit live
+inputs. Nine contract tests and another 1,698 full-logit comparisons passed.
+The repeated throughput pilot is not included in this snapshot; the lifecycle
+fix is not credited with a performance gain.
+
+Five further constituent screens tested actual retained future-weight values
+inside workers, without a global staging copy. Shared-memory tiles retain
+128 or 192 columns; per-thread storage variants extend through 640 columns.
+A productive version resumes current tasks while holding its future tile.
+All 1,928 sampled output triples, 100 initial gates and 72 retention gates were
+exact. In the retention gates the ordinary consumer prefix is zeroed, proving
+that the staged values are used. No variant beat prepared. Per-thread storage
+does not by itself prove physical register residency, and completion counters
+are not a measured GPU overlap timeline. Sources, raw runs and detailed limits
+are preserved under the retained-prefix result folders in the research bundle.
+
+A reusable indirect compute-command test passed 336 exact dependent-chain
+runs. Reuse lowered CPU encoding cost but increased GPU and drained wall time
+in every synthetic case. It establishes API feasibility on M4 Pro, not a model
+speedup. Actual integration would also need ICB-compatible pipelines and
+supported indirect-resource/hazard APIs in MLX; its existing ordinary pipeline
+objects reported no ICB support.
 
 Additional preserved controls include producer-first task ordering, a simpler
 queue-free attention/expert backfill attempt, native-equivalent attention tasks
@@ -91,7 +125,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`0c2b2d64e669211014401ae82def40c60e3cde4e` are backed up in
+`57e0bb6d8fd597a82eb5947da5a8636f5d649ff6` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:
