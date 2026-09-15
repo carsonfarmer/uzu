@@ -1,3 +1,7 @@
+**Stopped on user direction, September 14, 2026.** No further GPU experiments are authorized in this custom-runner investigation. The goal is incomplete and the mechanism matrix is not exhausted. These measurements do not establish an improvement to Uzu or stock MLX-VLM generation. See [engine integration inventory](ENGINE_INTEGRATION.md).
+
+Historical investigation scope follows.
+
 # Fullest megakernel investigation
 
 Active research, with no new performance result yet. The preserved minimal

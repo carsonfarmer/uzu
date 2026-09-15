@@ -238,3 +238,9 @@ layers1/7/47. Its first balanced constituent screen is very slow (2.7–3.5ms ve
 0.21–0.24ms controls). Every-lane polling is avoidable; leader-only polling is the
 next bounded fix before assessing this route. This ring is a primitive prototype,
 not yet a whole-model producer/consumer implementation.
+
+## Stop checkpoint: engine acceptance criterion rejected
+
+User directed no further GPU experiments or custom-baseline optimization. The last dispatch-cut pilot completed155 full-array checks and50 measured32-token generations with all gates passing. Raw records, all stalls and balanced summary are retained; these are custom-runner measurements, not engine improvement evidence.
+
+Leader-only producer polling passed primitive gates but remained much slower than its primitive controls (roughly2.7–4.1ms). The final measured sources are preserved unchanged. No remaining matrix route was completed after the stop. Goal remains incomplete, matrix unexhausted, and acceptance must be reassessed against actual standard engine generation. See ENGINE_INTEGRATION.md.

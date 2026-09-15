@@ -6,7 +6,7 @@ import mlx.core as mx
 from reference import load,ROOT
 from prep import run as baseline
 from producer_prep import run
-p=argparse.ArgumentParser();p.add_argument('--output',required=True);p.add_argument('--layers',type=int,nargs='+',default=[1,7,47]);p.add_argument('--runs',type=int,default=16);a=p.parse_args();assert a.runs%8==0
+p=argparse.ArgumentParser();p.add_argument('--output',required=True);p.add_argument('--layers',type=int,nargs='+',default=[1,7,47]);p.add_argument('--runs',type=int,default=16);p.add_argument("--leader",action="store_true");a=p.parse_args();assert a.runs%8==0
 model,_=load();out=Path(a.output);out.parent.mkdir(parents=True,exist_ok=True)
 with out.open('w') as f:
  def save(r):f.write(json.dumps(r)+'\n');f.flush()
@@ -19,8 +19,8 @@ with out.open('w') as f:
     p,h=baseline(x,weights,rows,rr,nw);return [p[...,:4096],p[...,4096:4608],p[...,4608:5120],p[...,5120:],h]
    choices[f'prepared_{rows}_{rr}']=mx.compile(b)
   for depth in (1,2):
-   def candidate(x,depth=depth):
-    results=[run(x,w,nw,router=i==3,depth=depth) for i,w in enumerate(weights)]
+   def candidate(x,depth=depth,leader=a.leader):
+    results=[run(x,w,nw,router=i==3,depth=depth,leader=a.leader) for i,w in enumerate(weights)]
     return [r[0] for r in results]+[results[0][1]]+[r[2] for r in results]
    choices[f'producer_depth{depth}']=mx.compile(candidate)
   mx.random.seed(1521+index);xs=[mx.random.normal((1,1,2048)).astype(mx.bfloat16) for _ in range(3)];mx.eval(xs)

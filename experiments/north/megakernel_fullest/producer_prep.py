@@ -31,7 +31,7 @@ inline bool consumer_barrier(threadgroup atomic_uint* arrivals,threadgroup atomi
 }
 '''
 
-def build_source():
+def build_source(leader=False):
     tree=ast.parse((BASE/'prep.py').read_text())
     norm=next(ast.literal_eval(n.value) for n in tree.body if isinstance(n,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='NORM' for t in n.targets))
     # Consumer-only synchronization; producer must not participate in these barriers.
@@ -92,15 +92,43 @@ if(ROUTER) {
 }
 if(tid==0)errors[job]=atomic_load_explicit(&error,memory_order_relaxed);
 '''
-    return HEADER,body
+    h=HEADER
+    if leader:
+        h=h.replace('uint observed=atomic_load_explicit(epoch,memory_order_relaxed);','uint observed=0;if(simd_is_first())observed=atomic_load_explicit(epoch,memory_order_relaxed);')
+        start=body.index('  uint spins=0;')
+        end=body.index('  atomic_thread_fence',start)
+        body=body[:start]+'''  if(lane==0) {
+   uint spins=0;
+   while(atomic_load_explicit(empty+slot,memory_order_relaxed)!=generation) {
+    if(atomic_load_explicit(&error,memory_order_relaxed)!=0)break;
+    if(++spins>1000000){atomic_store_explicit(&error,1u,memory_order_relaxed);break;}
+   }
+  }
+  simdgroup_barrier(mem_flags::mem_threadgroup);
+  if(atomic_load_explicit(&error,memory_order_relaxed)!=0)return;
+'''+body[end:]
+        start=body.index(' uint spins=0;')
+        # Locate the consumer wait explicitly; producer's differently indented declaration is earlier.
+        start=body.index(' uint spins=0;',body.index('float acc[4]={0};'))
+        end=body.index(' atomic_thread_fence',start)
+        body=body[:start]+''' if(lane==0) {
+  uint spins=0;
+  while(atomic_load_explicit(ready+slot,memory_order_relaxed)!=generation+1) {
+   if(atomic_load_explicit(&error,memory_order_relaxed)!=0)break;
+   if(++spins>1000000){atomic_store_explicit(&error,1u,memory_order_relaxed);break;}
+  }
+ }
+ simdgroup_barrier(mem_flags::mem_threadgroup);
+ if(atomic_load_explicit(&error,memory_order_relaxed)!=0){if(tid==0)errors[job]=1;return;}
+'''+body[end:]
+    return h,body
 
-_KERNEL=None
+_KERNELS={}
 
-def run(x,w,nw,router=False,depth=2):
-    global _KERNEL
+def run(x,w,nw,router=False,depth=2,leader=False):
     import mlx.core as mx
     assert depth in (1,2)
-    if _KERNEL is None:
-        h,s=build_source();_KERNEL=mx.fast.metal_kernel(name='north_producer_ring_prep',input_names=['x','w','nw'],output_names=['y','norm','errors'],header=h,source=s)
+    if leader not in _KERNELS:
+        h,s=build_source(leader);_KERNELS[leader]=mx.fast.metal_kernel(name='north_producer_ring_prep_'+str(int(leader)),input_names=['x','w','nw'],output_names=['y','norm','errors'],header=h,source=s)
     count=w.shape[0]//(4 if router else 32)
-    return _KERNEL(inputs=[x,w,nw],template=[('ROUTER',router),('DEPTH',depth)],grid=(count*288,1,1),threadgroup=(288,1,1),output_shapes=[(1,1,w.shape[0]),(1,1,2048),(count,)],output_dtypes=[mx.bfloat16,mx.bfloat16,mx.uint32],init_value=0)
+    return _KERNELS[leader](inputs=[x,w,nw],template=[('ROUTER',router),('DEPTH',depth)],grid=(count*288,1,1),threadgroup=(288,1,1),output_shapes=[(1,1,w.shape[0]),(1,1,2048),(count,)],output_dtypes=[mx.bfloat16,mx.bfloat16,mx.uint32],init_value=0)
