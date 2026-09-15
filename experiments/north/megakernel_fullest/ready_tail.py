@@ -32,7 +32,7 @@ def build_source():
         s=s.replace(old,new)
     start=s.index('threadgroup bfloat prefetched_q[8192];')
     end=s.index('while(true)',start)
-    s=s[:start]+'''threadgroup bfloat staged[ROWS*PREFIX];
+    s=s[:start]+'''threadgroup bfloat staged[(ROWS*PREFIX)>0?ROWS*PREFIX:1];
 threadgroup uint task,owned,loaded;
 uint rotation=group%8,idle=0,ready_mask=0;
 bool norm_seen=false;
@@ -107,7 +107,7 @@ _KERNEL=None
 def run(data,scores,residual,next_layer,workers=32,rows=32,prefix=128,prefetch=False,audit=False):
     global _KERNEL
     import mlx.core as mx
-    assert rows in (32,64) and prefix in (128,256) and rows*prefix<=8192
+    assert rows in (32,64) and prefix in (0,128,256) and rows*prefix<=8192
     assert 1<=workers<=256
     rr=8;prep_tasks=5120//rows+128//rr
     if _KERNEL is None:

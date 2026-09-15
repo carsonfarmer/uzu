@@ -1,0 +1,10 @@
+{
+  "scope": "CPU source audit; no GPU validation",
+  "matched_async_body": true,
+  "compiled_variants": 8,
+  "sources": {
+    "experiments/north/additional/corrected_control.py": "db7447aacffcac404ec4068f4a6add9438ca3dafbf10de4d6e9249768e43b5b5",
+    "experiments/north/megakernel_fullest/bench_decode.py": "8994b92f79b7c77f74b8351304cab123935ef1bd28ee2067ae86ca148ec3540c",
+    "experiments/north/megakernel_fullest/ready_tail.py": "864fa97693b31c7b4eb06655cbb529aa25155ed960ced87aad738d19e88d7a4b"
+  }
+}

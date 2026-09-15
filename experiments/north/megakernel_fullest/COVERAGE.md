@@ -87,3 +87,20 @@ used. `check_tail.py` prepares a bitwise/intermediate/visit/progress gate at1,
 primitive command-buffer GPU duration plus workspace fill, and a fill-only
 control, with pipeline threadgroup memory/resource metadata. Its measurements
 will be explicitly distinct from Python wall time and end-to-end decode.
+
+## CPU checkpoint 3
+
+Added a direct/no-staging control to the same ready engine, plus same-copy late
+and early stages. All eight Metal compile configurations pass. `native_tail.py`
+exports real weights and synthetic inputs for balanced native command-buffer
+measurements of direct/late/early/fill-only. `cross_layer.py` carries actual
+preparation into the next layer; `bench_decode.py` compares all paths with the
+frozen prepared baseline under identical async submission. An AST audit matches
+the prior async body exactly. All numerical and timing gates remain pending.
+
+Source-derived cache accounting (not measured traffic) finds53–104MB extra
+clear/copy traffic per short-context step, ~1.7–3.2% of prior3.206GB active-weight
+accounting. At the long workload it rises to541–567MB, ~17%. This does not justify
+assuming cache copies dominate the short-context deficit. Measure before native
+cache ownership redesign. The GPU wrapper was exercised before release and
+correctly refused to enter the target script.

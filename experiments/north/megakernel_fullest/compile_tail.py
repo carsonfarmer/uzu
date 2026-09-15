@@ -12,7 +12,7 @@ args=','.join('device const '+('uint' if n in ('ids','up','gate','down') else 'f
 args+=',device uint* workspace,uint3 thread_position_in_threadgroup [[thread_position_in_threadgroup]],uint3 threadgroup_position_in_grid [[threadgroup_position_in_grid]],uint simdgroup_index_in_threadgroup [[simdgroup_index_in_threadgroup]],uint thread_index_in_simdgroup [[thread_index_in_simdgroup]]'
 results=[]
 with tempfile.TemporaryDirectory(prefix='north-tail-compile-') as d:
-    for rows,prefix in ((32,128),(32,256),(64,128)):
+    for rows,prefix in ((32,0),(32,128),(32,256),(64,128)):
         for prefetch in (False,True):
             defines=dict(ROWS=rows,PREFIX=prefix,ROUTER_ROWS=8,PREP_TASKS=5120//rows+16,INTERLEAVE='true',PREFETCH=str(prefetch).lower(),AUDIT='true')
             src=h+'\n'+'\n'.join(f'#define {k} {v}' for k,v in defines.items())+f'\nkernel void check({args}){{\n{s}\n}}'

@@ -1,0 +1,37 @@
+{
+  "scope": "Source-derived traffic accounting only, not measured GPU traffic or time; caches assume49 layers4 KV heads128 dims BF16",
+  "rows": [
+    {
+      "position": 136,
+      "capacity": 256,
+      "kv_output_clear_bytes": 25690112,
+      "used_kv_copy_read_write_bytes": 27295744,
+      "total_extra_kv_bytes": 52985856,
+      "fraction_of_prior_3_206_GB_weight_accounting": 0.01652709170305677
+    },
+    {
+      "position": 263,
+      "capacity": 512,
+      "kv_output_clear_bytes": 51380224,
+      "used_kv_copy_read_write_bytes": 52785152,
+      "total_extra_kv_bytes": 104165376,
+      "fraction_of_prior_3_206_GB_weight_accounting": 0.03249075982532751
+    },
+    {
+      "position": 1672,
+      "capacity": 2048,
+      "kv_output_clear_bytes": 205520896,
+      "used_kv_copy_read_write_bytes": 335577088,
+      "total_extra_kv_bytes": 541097984,
+      "fraction_of_prior_3_206_GB_weight_accounting": 0.16877666375545852
+    },
+    {
+      "position": 1799,
+      "capacity": 2048,
+      "kv_output_clear_bytes": 205520896,
+      "used_kv_copy_read_write_bytes": 361066496,
+      "total_extra_kv_bytes": 566587392,
+      "fraction_of_prior_3_206_GB_weight_accounting": 0.17672719650655022
+    }
+  ]
+}
