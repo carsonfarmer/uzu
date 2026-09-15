@@ -1,0 +1,85 @@
+{
+  "raw_sha256": "dd4ca9c14a0c9a0752fcc0457cf16aa520521ebb359a3591a7f0e4e4b630bf90",
+  "eligible": true,
+  "correctness": [
+    {
+      "kind": "native_correctness",
+      "variant": "direct",
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "errors": 0,
+      "prep_completed": 176
+    },
+    {
+      "kind": "native_correctness",
+      "variant": "late",
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "errors": 0,
+      "prep_completed": 176
+    },
+    {
+      "kind": "native_correctness",
+      "variant": "early",
+      "unequal_bytes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "errors": 0,
+      "prep_completed": 176
+    }
+  ],
+  "paired_balanced": true,
+  "median_gpu_us": {
+    "direct": 346.79166856221855,
+    "late": 366.4999967440963,
+    "early": 373.93750972114503,
+    "fill_only": 3.354158252477646
+  },
+  "contrasts": {
+    "early_over_direct": {
+      "speed_ratio": 1.1046982279984574,
+      "bootstrap95": [
+        0.9547357052540579,
+        1.30422816851895
+      ],
+      "min_pair": 0.6461135686227834,
+      "max_pair": 4.010809180961155
+    },
+    "late_over_direct": {
+      "speed_ratio": 1.022621810718449,
+      "bootstrap95": [
+        0.8906976590547964,
+        1.188280614587643
+      ],
+      "min_pair": 0.43263095525618095,
+      "max_pair": 3.690092176324125
+    },
+    "early_over_late": {
+      "speed_ratio": 1.080260773259222,
+      "bootstrap95": [
+        0.929673506249392,
+        1.2683404049511489
+      ],
+      "min_pair": 0.38788865008456275,
+      "max_pair": 3.9749143767251267
+    }
+  },
+  "scope": "Native real-weight constituent command duration only; no end-to-end or physical overlap inference"
+}

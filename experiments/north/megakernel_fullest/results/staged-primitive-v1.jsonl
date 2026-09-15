@@ -1,0 +1,358 @@
+{"kind": "provenance", "args": {"output": "experiments/north/megakernel_fullest/results/staged-primitive-v1.jsonl", "layers": [1, 7, 47], "runs": 14}, "mlx": "0.32.2", "device": {"device_name": "Apple M4 Pro", "max_recommended_working_set_size": 40200896512, "memory_size": 51539607552, "architecture": "applegpu_g16s", "max_buffer_length": 30150672384, "resource_limit": 499000}, "sources": {"experiments/north/megakernel_fullest/bench_staged.py": "429ffa53917a3cdbc00b893d43c09c619174cae1417013cd9062be7dbb4d261e", "experiments/north/megakernel_fullest/staged_prep.py": "d545df8da97077f0bdf958d46e26dcfd75d87513448fcb2c8fa2de6e6e17646c", "experiments/north/megakernel_fullest/gpu_run.py": "ccbfa13a65294617e98259d0cf0efc4c30e6dc8f39d7463aa029028badb29960", "experiments/north/additional/prep.py": "ad1be6e3bfc53c2edb6a4436847fc596939cd070aa2605ba8bbd33108c1fe722", "experiments/north/additional/prep.h": "a643f632566ad29dddae02bc179d76d6ee3157665fe93bef0daae4235507885e", "experiments/north/reference.py": "2a3d6f4d3769561d0da5b8cefa62aa4ae23af7bdef7c498917f512234fe0ebe2"}, "scope": "Hot primitive wall latency including host submission/eval. Real model weights and synthetic BF16 inputs. No physical or cross-layer overlap claim."}
+{"kind": "correctness", "layer": 1, "variant": "prepared", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "prepared", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "prepared", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "r32_p128_early0", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "r32_p128_early0", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "r32_p128_early0", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "r32_p128_early1", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "r32_p128_early1", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "r32_p128_early1", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "r32_p256_early0", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "r32_p256_early0", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "r32_p256_early0", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "r32_p256_early1", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "r32_p256_early1", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "r32_p256_early1", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "r64_p128_early0", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "r64_p128_early0", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "r64_p128_early0", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "r64_p128_early1", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "r64_p128_early1", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 1, "variant": "r64_p128_early1", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "timing", "layer": 1, "variant": "prepared", "repetition": 0, "order": 0, "wall_seconds": 0.00022849999368190765}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early0", "repetition": 0, "order": 1, "wall_seconds": 0.0006772909837309271}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early1", "repetition": 0, "order": 2, "wall_seconds": 0.00029658302082680166}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early0", "repetition": 0, "order": 3, "wall_seconds": 0.00025183300022035837}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early1", "repetition": 0, "order": 4, "wall_seconds": 0.00025283300783485174}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early0", "repetition": 0, "order": 5, "wall_seconds": 0.0002285000227857381}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early1", "repetition": 0, "order": 6, "wall_seconds": 0.000247209012741223}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early0", "repetition": 1, "order": 0, "wall_seconds": 0.00022183399414643645}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early1", "repetition": 1, "order": 1, "wall_seconds": 0.00022304101730696857}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early0", "repetition": 1, "order": 2, "wall_seconds": 0.00024537500576116145}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early1", "repetition": 1, "order": 3, "wall_seconds": 0.00024829202448017895}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early0", "repetition": 1, "order": 4, "wall_seconds": 0.00023029098520055413}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early1", "repetition": 1, "order": 5, "wall_seconds": 0.00023937498917803168}
+{"kind": "timing", "layer": 1, "variant": "prepared", "repetition": 1, "order": 6, "wall_seconds": 0.00020704098278656602}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early1", "repetition": 2, "order": 0, "wall_seconds": 0.00020658300491049886}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early0", "repetition": 2, "order": 1, "wall_seconds": 0.0002451250038575381}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early1", "repetition": 2, "order": 2, "wall_seconds": 0.0002485829754732549}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early0", "repetition": 2, "order": 3, "wall_seconds": 0.00023166599567048252}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early1", "repetition": 2, "order": 4, "wall_seconds": 0.00023724997299723327}
+{"kind": "timing", "layer": 1, "variant": "prepared", "repetition": 2, "order": 5, "wall_seconds": 0.00021525000920519233}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early0", "repetition": 2, "order": 6, "wall_seconds": 0.000207042001420632}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early0", "repetition": 3, "order": 0, "wall_seconds": 0.0002500420087017119}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early1", "repetition": 3, "order": 1, "wall_seconds": 0.0004964999970979989}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early0", "repetition": 3, "order": 2, "wall_seconds": 0.00087704200996086}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early1", "repetition": 3, "order": 3, "wall_seconds": 0.0017530420154798776}
+{"kind": "timing", "layer": 1, "variant": "prepared", "repetition": 3, "order": 4, "wall_seconds": 0.0003475419944152236}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early0", "repetition": 3, "order": 5, "wall_seconds": 0.000246832991251722}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early1", "repetition": 3, "order": 6, "wall_seconds": 0.0002172499953303486}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early1", "repetition": 4, "order": 0, "wall_seconds": 0.00030054099624976516}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early0", "repetition": 4, "order": 1, "wall_seconds": 0.00023654202232137322}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early1", "repetition": 4, "order": 2, "wall_seconds": 0.000229124998440966}
+{"kind": "timing", "layer": 1, "variant": "prepared", "repetition": 4, "order": 3, "wall_seconds": 0.0001946660049725324}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early0", "repetition": 4, "order": 4, "wall_seconds": 0.00020158299594186246}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early1", "repetition": 4, "order": 5, "wall_seconds": 0.0005512920033652335}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early0", "repetition": 4, "order": 6, "wall_seconds": 0.0002240000176243484}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early0", "repetition": 5, "order": 0, "wall_seconds": 0.0007983329996932298}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early1", "repetition": 5, "order": 1, "wall_seconds": 0.00031958299223333597}
+{"kind": "timing", "layer": 1, "variant": "prepared", "repetition": 5, "order": 2, "wall_seconds": 0.0002739169867709279}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early0", "repetition": 5, "order": 3, "wall_seconds": 0.0001972499885596335}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early1", "repetition": 5, "order": 4, "wall_seconds": 0.0002050829934887588}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early0", "repetition": 5, "order": 5, "wall_seconds": 0.000225499999942258}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early1", "repetition": 5, "order": 6, "wall_seconds": 0.0002257089945487678}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early1", "repetition": 6, "order": 0, "wall_seconds": 0.00020637499983422458}
+{"kind": "timing", "layer": 1, "variant": "prepared", "repetition": 6, "order": 1, "wall_seconds": 0.00019133399473503232}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early0", "repetition": 6, "order": 2, "wall_seconds": 0.00019370901281945407}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early1", "repetition": 6, "order": 3, "wall_seconds": 0.0002044999855570495}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early0", "repetition": 6, "order": 4, "wall_seconds": 0.0002224589989054948}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early1", "repetition": 6, "order": 5, "wall_seconds": 0.0002271659905090928}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early0", "repetition": 6, "order": 6, "wall_seconds": 0.00020504099666140974}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early1", "repetition": 7, "order": 0, "wall_seconds": 0.00021224998636171222}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early0", "repetition": 7, "order": 1, "wall_seconds": 0.0003597080067265779}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early1", "repetition": 7, "order": 2, "wall_seconds": 0.0002453330089338124}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early0", "repetition": 7, "order": 3, "wall_seconds": 0.0002314999874215573}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early1", "repetition": 7, "order": 4, "wall_seconds": 0.00019658400560729206}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early0", "repetition": 7, "order": 5, "wall_seconds": 0.00020370798301883042}
+{"kind": "timing", "layer": 1, "variant": "prepared", "repetition": 7, "order": 6, "wall_seconds": 0.00018474998068995774}
+{"kind": "timing", "layer": 1, "variant": "prepared", "repetition": 8, "order": 0, "wall_seconds": 0.00019550000433810055}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early1", "repetition": 8, "order": 1, "wall_seconds": 0.00022112499573267996}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early0", "repetition": 8, "order": 2, "wall_seconds": 0.00021983400802128017}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early1", "repetition": 8, "order": 3, "wall_seconds": 0.00022749998606741428}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early0", "repetition": 8, "order": 4, "wall_seconds": 0.0002344579843338579}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early1", "repetition": 8, "order": 5, "wall_seconds": 0.0002029169991146773}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early0", "repetition": 8, "order": 6, "wall_seconds": 0.00020795801538042724}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early0", "repetition": 9, "order": 0, "wall_seconds": 0.00020829201093874872}
+{"kind": "timing", "layer": 1, "variant": "prepared", "repetition": 9, "order": 1, "wall_seconds": 0.00018645802629180253}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early1", "repetition": 9, "order": 2, "wall_seconds": 0.0002121669822372496}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early0", "repetition": 9, "order": 3, "wall_seconds": 0.000233791972277686}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early1", "repetition": 9, "order": 4, "wall_seconds": 0.0005667500081472099}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early0", "repetition": 9, "order": 5, "wall_seconds": 0.0008702079940121621}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early1", "repetition": 9, "order": 6, "wall_seconds": 0.0010197919909842312}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early1", "repetition": 10, "order": 0, "wall_seconds": 0.0009139169997069985}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early0", "repetition": 10, "order": 1, "wall_seconds": 0.0002751670253928751}
+{"kind": "timing", "layer": 1, "variant": "prepared", "repetition": 10, "order": 2, "wall_seconds": 0.00019195800996385515}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early1", "repetition": 10, "order": 3, "wall_seconds": 0.00022033299319446087}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early0", "repetition": 10, "order": 4, "wall_seconds": 0.00022604200057685375}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early1", "repetition": 10, "order": 5, "wall_seconds": 0.0002668750239536166}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early0", "repetition": 10, "order": 6, "wall_seconds": 0.00022658301168121397}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early0", "repetition": 11, "order": 0, "wall_seconds": 0.00022441698820330203}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early1", "repetition": 11, "order": 1, "wall_seconds": 0.00019762502051889896}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early0", "repetition": 11, "order": 2, "wall_seconds": 0.00021275001927278936}
+{"kind": "timing", "layer": 1, "variant": "prepared", "repetition": 11, "order": 3, "wall_seconds": 0.0002733340079430491}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early1", "repetition": 11, "order": 4, "wall_seconds": 0.000237083004321903}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early0", "repetition": 11, "order": 5, "wall_seconds": 0.00023883298854343593}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early1", "repetition": 11, "order": 6, "wall_seconds": 0.0002593749959487468}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early1", "repetition": 12, "order": 0, "wall_seconds": 0.00030250000418163836}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early0", "repetition": 12, "order": 1, "wall_seconds": 0.00022975000320002437}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early1", "repetition": 12, "order": 2, "wall_seconds": 0.00021170798572711647}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early0", "repetition": 12, "order": 3, "wall_seconds": 0.00021629102411679924}
+{"kind": "timing", "layer": 1, "variant": "prepared", "repetition": 12, "order": 4, "wall_seconds": 0.00018970799283124506}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early1", "repetition": 12, "order": 5, "wall_seconds": 0.0002125409955624491}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early0", "repetition": 12, "order": 6, "wall_seconds": 0.000215375010157004}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early0", "repetition": 13, "order": 0, "wall_seconds": 0.0002163330209441483}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early1", "repetition": 13, "order": 1, "wall_seconds": 0.00022733298828825355}
+{"kind": "timing", "layer": 1, "variant": "r32_p256_early0", "repetition": 13, "order": 2, "wall_seconds": 0.00022516699391417205}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early1", "repetition": 13, "order": 3, "wall_seconds": 0.00020187499467283487}
+{"kind": "timing", "layer": 1, "variant": "r32_p128_early0", "repetition": 13, "order": 4, "wall_seconds": 0.0002078329853247851}
+{"kind": "timing", "layer": 1, "variant": "prepared", "repetition": 13, "order": 5, "wall_seconds": 0.00018716699560172856}
+{"kind": "timing", "layer": 1, "variant": "r64_p128_early1", "repetition": 13, "order": 6, "wall_seconds": 0.00021108301007188857}
+{"kind": "correctness", "layer": 7, "variant": "prepared", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "prepared", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "prepared", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "r32_p128_early0", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "r32_p128_early0", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "r32_p128_early0", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "r32_p128_early1", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "r32_p128_early1", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "r32_p128_early1", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "r32_p256_early0", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "r32_p256_early0", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "r32_p256_early0", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "r32_p256_early1", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "r32_p256_early1", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "r32_p256_early1", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "r64_p128_early0", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "r64_p128_early0", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "r64_p128_early0", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "r64_p128_early1", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "r64_p128_early1", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 7, "variant": "r64_p128_early1", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "timing", "layer": 7, "variant": "prepared", "repetition": 0, "order": 0, "wall_seconds": 0.00022024998906999826}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early0", "repetition": 0, "order": 1, "wall_seconds": 0.0002469169849064201}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early1", "repetition": 0, "order": 2, "wall_seconds": 0.0005427919968497008}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early0", "repetition": 0, "order": 3, "wall_seconds": 0.0007835840224288404}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early1", "repetition": 0, "order": 4, "wall_seconds": 0.0016197499935515225}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early0", "repetition": 0, "order": 5, "wall_seconds": 0.0005494169890880585}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early1", "repetition": 0, "order": 6, "wall_seconds": 0.00023308300296775997}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early0", "repetition": 1, "order": 0, "wall_seconds": 0.00031533301807940006}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early1", "repetition": 1, "order": 1, "wall_seconds": 0.00032841702341102064}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early0", "repetition": 1, "order": 2, "wall_seconds": 0.0006235420005396008}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early1", "repetition": 1, "order": 3, "wall_seconds": 0.00032545800786465406}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early0", "repetition": 1, "order": 4, "wall_seconds": 0.00027195800794288516}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early1", "repetition": 1, "order": 5, "wall_seconds": 0.0002655829885043204}
+{"kind": "timing", "layer": 7, "variant": "prepared", "repetition": 1, "order": 6, "wall_seconds": 0.00025262500275857747}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early1", "repetition": 2, "order": 0, "wall_seconds": 0.00021358401863835752}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early0", "repetition": 2, "order": 1, "wall_seconds": 0.0002789169957395643}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early1", "repetition": 2, "order": 2, "wall_seconds": 0.0002464170102030039}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early0", "repetition": 2, "order": 3, "wall_seconds": 0.00021462500444613397}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early1", "repetition": 2, "order": 4, "wall_seconds": 0.00022754099336452782}
+{"kind": "timing", "layer": 7, "variant": "prepared", "repetition": 2, "order": 5, "wall_seconds": 0.00024958301219157875}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early0", "repetition": 2, "order": 6, "wall_seconds": 0.0002457090013194829}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early0", "repetition": 3, "order": 0, "wall_seconds": 0.0002450419997330755}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early1", "repetition": 3, "order": 1, "wall_seconds": 0.0002471670159138739}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early0", "repetition": 3, "order": 2, "wall_seconds": 0.00024724999093450606}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early1", "repetition": 3, "order": 3, "wall_seconds": 0.0002317500184290111}
+{"kind": "timing", "layer": 7, "variant": "prepared", "repetition": 3, "order": 4, "wall_seconds": 0.00021608301904052496}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early0", "repetition": 3, "order": 5, "wall_seconds": 0.0002038750099018216}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early1", "repetition": 3, "order": 6, "wall_seconds": 0.00021070899674668908}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early1", "repetition": 4, "order": 0, "wall_seconds": 0.00024029100313782692}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early0", "repetition": 4, "order": 1, "wall_seconds": 0.00022625000565312803}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early1", "repetition": 4, "order": 2, "wall_seconds": 0.00023958299425430596}
+{"kind": "timing", "layer": 7, "variant": "prepared", "repetition": 4, "order": 3, "wall_seconds": 0.00022741701104678214}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early0", "repetition": 4, "order": 4, "wall_seconds": 0.00030250000418163836}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early1", "repetition": 4, "order": 5, "wall_seconds": 0.00024733299505896866}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early0", "repetition": 4, "order": 6, "wall_seconds": 0.00025608300347812474}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early0", "repetition": 5, "order": 0, "wall_seconds": 0.00020591702195815742}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early1", "repetition": 5, "order": 1, "wall_seconds": 0.00020450001466087997}
+{"kind": "timing", "layer": 7, "variant": "prepared", "repetition": 5, "order": 2, "wall_seconds": 0.00019362499006092548}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early0", "repetition": 5, "order": 3, "wall_seconds": 0.00020000000949949026}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early1", "repetition": 5, "order": 4, "wall_seconds": 0.0002399160002823919}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early0", "repetition": 5, "order": 5, "wall_seconds": 0.0002502499846741557}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early1", "repetition": 5, "order": 6, "wall_seconds": 0.00026754202554002404}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early1", "repetition": 6, "order": 0, "wall_seconds": 0.00022329099010676146}
+{"kind": "timing", "layer": 7, "variant": "prepared", "repetition": 6, "order": 1, "wall_seconds": 0.00021316698985174298}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early0", "repetition": 6, "order": 2, "wall_seconds": 0.00023125001462176442}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early1", "repetition": 6, "order": 3, "wall_seconds": 0.00023433301248587668}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early0", "repetition": 6, "order": 4, "wall_seconds": 0.00022291700588539243}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early1", "repetition": 6, "order": 5, "wall_seconds": 0.0002364999963901937}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early0", "repetition": 6, "order": 6, "wall_seconds": 0.00024049999774433672}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early1", "repetition": 7, "order": 0, "wall_seconds": 0.00021304099936969578}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early0", "repetition": 7, "order": 1, "wall_seconds": 0.0004721670120488852}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early1", "repetition": 7, "order": 2, "wall_seconds": 0.0012866249890066683}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early0", "repetition": 7, "order": 3, "wall_seconds": 0.0017637500131968409}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early1", "repetition": 7, "order": 4, "wall_seconds": 0.00033325000549666584}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early0", "repetition": 7, "order": 5, "wall_seconds": 0.00020029200823046267}
+{"kind": "timing", "layer": 7, "variant": "prepared", "repetition": 7, "order": 6, "wall_seconds": 0.00019558300846256316}
+{"kind": "timing", "layer": 7, "variant": "prepared", "repetition": 8, "order": 0, "wall_seconds": 0.00020516602671705186}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early1", "repetition": 8, "order": 1, "wall_seconds": 0.00023366700042970479}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early0", "repetition": 8, "order": 2, "wall_seconds": 0.00024487500195391476}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early1", "repetition": 8, "order": 3, "wall_seconds": 0.00028212499455548823}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early0", "repetition": 8, "order": 4, "wall_seconds": 0.00030329200671985745}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early1", "repetition": 8, "order": 5, "wall_seconds": 0.00022141600493341684}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early0", "repetition": 8, "order": 6, "wall_seconds": 0.000495915999636054}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early0", "repetition": 9, "order": 0, "wall_seconds": 0.0002579169813543558}
+{"kind": "timing", "layer": 7, "variant": "prepared", "repetition": 9, "order": 1, "wall_seconds": 0.0001994580088648945}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early1", "repetition": 9, "order": 2, "wall_seconds": 0.00022362498566508293}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early0", "repetition": 9, "order": 3, "wall_seconds": 0.00022741701104678214}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early1", "repetition": 9, "order": 4, "wall_seconds": 0.00023608299670740962}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early0", "repetition": 9, "order": 5, "wall_seconds": 0.00024604200734756887}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early1", "repetition": 9, "order": 6, "wall_seconds": 0.00021054199896752834}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early1", "repetition": 10, "order": 0, "wall_seconds": 0.0002644159831106663}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early0", "repetition": 10, "order": 1, "wall_seconds": 0.0002152920060325414}
+{"kind": "timing", "layer": 7, "variant": "prepared", "repetition": 10, "order": 2, "wall_seconds": 0.0001991249737329781}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early1", "repetition": 10, "order": 3, "wall_seconds": 0.00022545800311490893}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early0", "repetition": 10, "order": 4, "wall_seconds": 0.00023366700042970479}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early1", "repetition": 10, "order": 5, "wall_seconds": 0.0002405419945716858}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early0", "repetition": 10, "order": 6, "wall_seconds": 0.00023995799710974097}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early0", "repetition": 11, "order": 0, "wall_seconds": 0.0002346669789403677}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early1", "repetition": 11, "order": 1, "wall_seconds": 0.00020891698659397662}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early0", "repetition": 11, "order": 2, "wall_seconds": 0.00022300001000985503}
+{"kind": "timing", "layer": 7, "variant": "prepared", "repetition": 11, "order": 3, "wall_seconds": 0.00020662500173784792}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early1", "repetition": 11, "order": 4, "wall_seconds": 0.0002273749851156026}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early0", "repetition": 11, "order": 5, "wall_seconds": 0.00023733399575576186}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early1", "repetition": 11, "order": 6, "wall_seconds": 0.00024245900567620993}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early1", "repetition": 12, "order": 0, "wall_seconds": 0.0002506250166334212}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early0", "repetition": 12, "order": 1, "wall_seconds": 0.00025037501472979784}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early1", "repetition": 12, "order": 2, "wall_seconds": 0.00032362499041482806}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early0", "repetition": 12, "order": 3, "wall_seconds": 0.00022683301358483732}
+{"kind": "timing", "layer": 7, "variant": "prepared", "repetition": 12, "order": 4, "wall_seconds": 0.00020079201203770936}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early1", "repetition": 12, "order": 5, "wall_seconds": 0.00023441601661033928}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early0", "repetition": 12, "order": 6, "wall_seconds": 0.00023750000400468707}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early0", "repetition": 13, "order": 0, "wall_seconds": 0.00023645799956284463}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early1", "repetition": 13, "order": 1, "wall_seconds": 0.00024083300377242267}
+{"kind": "timing", "layer": 7, "variant": "r32_p256_early0", "repetition": 13, "order": 2, "wall_seconds": 0.0002470410254318267}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early1", "repetition": 13, "order": 3, "wall_seconds": 0.00022183399414643645}
+{"kind": "timing", "layer": 7, "variant": "r32_p128_early0", "repetition": 13, "order": 4, "wall_seconds": 0.00022079198970459402}
+{"kind": "timing", "layer": 7, "variant": "prepared", "repetition": 13, "order": 5, "wall_seconds": 0.00019649998284876347}
+{"kind": "timing", "layer": 7, "variant": "r64_p128_early1", "repetition": 13, "order": 6, "wall_seconds": 0.00023700000019744039}
+{"kind": "correctness", "layer": 47, "variant": "prepared", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "prepared", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "prepared", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "r32_p128_early0", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "r32_p128_early0", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "r32_p128_early0", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "r32_p128_early1", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "r32_p128_early1", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "r32_p128_early1", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "r32_p256_early0", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "r32_p256_early0", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "r32_p256_early0", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "r32_p256_early1", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "r32_p256_early1", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "r32_p256_early1", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "r64_p128_early0", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "r64_p128_early0", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "r64_p128_early0", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "r64_p128_early1", "sample": 0, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "r64_p128_early1", "sample": 1, "unequal_bytes": [0, 0]}
+{"kind": "correctness", "layer": 47, "variant": "r64_p128_early1", "sample": 2, "unequal_bytes": [0, 0]}
+{"kind": "timing", "layer": 47, "variant": "prepared", "repetition": 0, "order": 0, "wall_seconds": 0.00021462500444613397}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early0", "repetition": 0, "order": 1, "wall_seconds": 0.0002244589850306511}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early1", "repetition": 0, "order": 2, "wall_seconds": 0.0002430829918012023}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early0", "repetition": 0, "order": 3, "wall_seconds": 0.00026274999254383147}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early1", "repetition": 0, "order": 4, "wall_seconds": 0.00026058399816975}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early0", "repetition": 0, "order": 5, "wall_seconds": 0.000244333001319319}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early1", "repetition": 0, "order": 6, "wall_seconds": 0.0002507080207578838}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early0", "repetition": 1, "order": 0, "wall_seconds": 0.0002313339791726321}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early1", "repetition": 1, "order": 1, "wall_seconds": 0.0002381659869570285}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early0", "repetition": 1, "order": 2, "wall_seconds": 0.0002616249839775264}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early1", "repetition": 1, "order": 3, "wall_seconds": 0.0002575840044301003}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early0", "repetition": 1, "order": 4, "wall_seconds": 0.00023875001352280378}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early1", "repetition": 1, "order": 5, "wall_seconds": 0.00024820800172165036}
+{"kind": "timing", "layer": 47, "variant": "prepared", "repetition": 1, "order": 6, "wall_seconds": 0.0002231250109616667}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early1", "repetition": 2, "order": 0, "wall_seconds": 0.00021562501206062734}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early0", "repetition": 2, "order": 1, "wall_seconds": 0.0002522919967304915}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early1", "repetition": 2, "order": 2, "wall_seconds": 0.0002557090192567557}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early0", "repetition": 2, "order": 3, "wall_seconds": 0.0002299170009791851}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early1", "repetition": 2, "order": 4, "wall_seconds": 0.00023891698219813406}
+{"kind": "timing", "layer": 47, "variant": "prepared", "repetition": 2, "order": 5, "wall_seconds": 0.00021470797946676612}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early0", "repetition": 2, "order": 6, "wall_seconds": 0.00022525002714246511}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early0", "repetition": 3, "order": 0, "wall_seconds": 0.00025649997405707836}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early1", "repetition": 3, "order": 1, "wall_seconds": 0.0002708329993765801}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early0", "repetition": 3, "order": 2, "wall_seconds": 0.00038675000541843474}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early1", "repetition": 3, "order": 3, "wall_seconds": 0.00022429099772125483}
+{"kind": "timing", "layer": 47, "variant": "prepared", "repetition": 3, "order": 4, "wall_seconds": 0.0002137910050805658}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early0", "repetition": 3, "order": 5, "wall_seconds": 0.00021545900381170213}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early1", "repetition": 3, "order": 6, "wall_seconds": 0.00022220800747163594}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early1", "repetition": 4, "order": 0, "wall_seconds": 0.0002497500099707395}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early0", "repetition": 4, "order": 1, "wall_seconds": 0.00023425000836141407}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early1", "repetition": 4, "order": 2, "wall_seconds": 0.0002353329909965396}
+{"kind": "timing", "layer": 47, "variant": "prepared", "repetition": 4, "order": 3, "wall_seconds": 0.00021699999342672527}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early0", "repetition": 4, "order": 4, "wall_seconds": 0.00022091701976023614}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early1", "repetition": 4, "order": 5, "wall_seconds": 0.00022779201390221715}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early0", "repetition": 4, "order": 6, "wall_seconds": 0.00024920800933614373}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early0", "repetition": 5, "order": 0, "wall_seconds": 0.00022950000129640102}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early1", "repetition": 5, "order": 1, "wall_seconds": 0.00024291701265610754}
+{"kind": "timing", "layer": 47, "variant": "prepared", "repetition": 5, "order": 2, "wall_seconds": 0.0002119579876307398}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early0", "repetition": 5, "order": 3, "wall_seconds": 0.00021937498240731657}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early1", "repetition": 5, "order": 4, "wall_seconds": 0.0002270840050186962}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early0", "repetition": 5, "order": 5, "wall_seconds": 0.0002505420125089586}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early1", "repetition": 5, "order": 6, "wall_seconds": 0.00024850000045262277}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early1", "repetition": 6, "order": 0, "wall_seconds": 0.00022887499653734267}
+{"kind": "timing", "layer": 47, "variant": "prepared", "repetition": 6, "order": 1, "wall_seconds": 0.00020620899158529937}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early0", "repetition": 6, "order": 2, "wall_seconds": 0.0002085419837385416}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early1", "repetition": 6, "order": 3, "wall_seconds": 0.00021295799524523318}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early0", "repetition": 6, "order": 4, "wall_seconds": 0.0002367089909967035}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early1", "repetition": 6, "order": 5, "wall_seconds": 0.00024625001242384315}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early0", "repetition": 6, "order": 6, "wall_seconds": 0.0005062499840278178}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early1", "repetition": 7, "order": 0, "wall_seconds": 0.0008311670098919421}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early0", "repetition": 7, "order": 1, "wall_seconds": 0.0010462499922141433}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early1", "repetition": 7, "order": 2, "wall_seconds": 0.00122412497876212}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early0", "repetition": 7, "order": 3, "wall_seconds": 0.0002880409883800894}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early1", "repetition": 7, "order": 4, "wall_seconds": 0.0003546249936334789}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early0", "repetition": 7, "order": 5, "wall_seconds": 0.00028604199178516865}
+{"kind": "timing", "layer": 47, "variant": "prepared", "repetition": 7, "order": 6, "wall_seconds": 0.00022533300216309726}
+{"kind": "timing", "layer": 47, "variant": "prepared", "repetition": 8, "order": 0, "wall_seconds": 0.00022020898177288473}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early1", "repetition": 8, "order": 1, "wall_seconds": 0.00022858299780637026}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early0", "repetition": 8, "order": 2, "wall_seconds": 0.00024508300703018904}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early1", "repetition": 8, "order": 3, "wall_seconds": 0.00025370801449753344}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early0", "repetition": 8, "order": 4, "wall_seconds": 0.0002625419874675572}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early1", "repetition": 8, "order": 5, "wall_seconds": 0.00023408400011248887}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early0", "repetition": 8, "order": 6, "wall_seconds": 0.00022766701295040548}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early0", "repetition": 9, "order": 0, "wall_seconds": 0.0002347910194657743}
+{"kind": "timing", "layer": 47, "variant": "prepared", "repetition": 9, "order": 1, "wall_seconds": 0.00021291698794811964}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early1", "repetition": 9, "order": 2, "wall_seconds": 0.00023837501066736877}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early0", "repetition": 9, "order": 3, "wall_seconds": 0.0002517910033930093}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early1", "repetition": 9, "order": 4, "wall_seconds": 0.00025116599863395095}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early0", "repetition": 9, "order": 5, "wall_seconds": 0.00025262500275857747}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early1", "repetition": 9, "order": 6, "wall_seconds": 0.00022683400311507285}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early1", "repetition": 10, "order": 0, "wall_seconds": 0.0002236250147689134}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early0", "repetition": 10, "order": 1, "wall_seconds": 0.0002309159899596125}
+{"kind": "timing", "layer": 47, "variant": "prepared", "repetition": 10, "order": 2, "wall_seconds": 0.00021233398001641035}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early1", "repetition": 10, "order": 3, "wall_seconds": 0.00023958401288837194}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early0", "repetition": 10, "order": 4, "wall_seconds": 0.00024683400988578796}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early1", "repetition": 10, "order": 5, "wall_seconds": 0.0002416249772068113}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early0", "repetition": 10, "order": 6, "wall_seconds": 0.00025779198040254414}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early0", "repetition": 11, "order": 0, "wall_seconds": 0.00026070798048749566}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early1", "repetition": 11, "order": 1, "wall_seconds": 0.0002246249932795763}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early0", "repetition": 11, "order": 2, "wall_seconds": 0.0002604580076877028}
+{"kind": "timing", "layer": 47, "variant": "prepared", "repetition": 11, "order": 3, "wall_seconds": 0.00022720900597050786}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early1", "repetition": 11, "order": 4, "wall_seconds": 0.00023654097458347678}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early0", "repetition": 11, "order": 5, "wall_seconds": 0.0002452910121064633}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early1", "repetition": 11, "order": 6, "wall_seconds": 0.0002465000143274665}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early1", "repetition": 12, "order": 0, "wall_seconds": 0.0002667079970706254}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early0", "repetition": 12, "order": 1, "wall_seconds": 0.00025312500656582415}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early1", "repetition": 12, "order": 2, "wall_seconds": 0.00022704098955728114}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early0", "repetition": 12, "order": 3, "wall_seconds": 0.00022895800066180527}
+{"kind": "timing", "layer": 47, "variant": "prepared", "repetition": 12, "order": 4, "wall_seconds": 0.00021200001356191933}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early1", "repetition": 12, "order": 5, "wall_seconds": 0.0002396669879090041}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early0", "repetition": 12, "order": 6, "wall_seconds": 0.0002472919877618551}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early0", "repetition": 13, "order": 0, "wall_seconds": 0.0002462079864926636}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early1", "repetition": 13, "order": 1, "wall_seconds": 0.0002598749997559935}
+{"kind": "timing", "layer": 47, "variant": "r32_p256_early0", "repetition": 13, "order": 2, "wall_seconds": 0.00025512499269098043}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early1", "repetition": 13, "order": 3, "wall_seconds": 0.00024537500576116145}
+{"kind": "timing", "layer": 47, "variant": "r32_p128_early0", "repetition": 13, "order": 4, "wall_seconds": 0.00023112501366995275}
+{"kind": "timing", "layer": 47, "variant": "prepared", "repetition": 13, "order": 5, "wall_seconds": 0.0002152090019080788}
+{"kind": "timing", "layer": 47, "variant": "r64_p128_early1", "repetition": 13, "order": 6, "wall_seconds": 0.00023741601034998894}

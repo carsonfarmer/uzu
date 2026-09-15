@@ -1,0 +1,128 @@
+In file included from /Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-threadgroup/direct.metal:1:
+In file included from /Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/utils.h:9:
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/complex.h:157:54: warning: 'static_assert' with no message is a C++17 extension [-Wc++17-extensions]
+static_assert(sizeof(complex32_t) == 2 * sizeof(half));
+                                                     ^
+                                                     , ""
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/complex.h:158:55: warning: 'static_assert' with no message is a C++17 extension [-Wc++17-extensions]
+static_assert(sizeof(complex64_t) == 2 * sizeof(float));
+                                                      ^
+                                                      , ""
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/complex.h:159:70: warning: 'static_assert' with no message is a C++17 extension [-Wc++17-extensions]
+static_assert(sizeof(complex_t<bfloat16_t>) == 2 * sizeof(bfloat16_t));
+                                                                     ^
+                                                                     , ""
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/complex.h:299:78: warning: 'static_assert' with no message is a C++17 extension [-Wc++17-extensions]
+    (complex_t<half>{1.0h, 2.0h} * complex_t<half>{3.0h, 4.0h}).real == -5.0h);
+                                                                             ^
+                                                                             , ""
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/complex.h:303:35: warning: 'static_assert' with no message is a C++17 extension [-Wc++17-extensions]
+        .real == bfloat16_t(-5.0f));
+                                  ^
+                                  , ""
+In file included from /Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-threadgroup/direct.metal:1:
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/utils.h:80:3: warning: inline variables are a C++17 extension [-Wc++17-extensions]
+  inline static constexpr constant complex_t<T> max = complex_t<T>(
+  ^
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/utils.h:83:3: warning: inline variables are a C++17 extension [-Wc++17-extensions]
+  inline static constexpr constant complex_t<T> min = complex_t<T>(
+  ^
+/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-threadgroup/direct.metal:422:8: warning: unused variable 'job' [-Wunused-variable]
+  uint job=task-257;
+       ^
+/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-threadgroup/direct.metal:5:38: warning: unused variable 'NE' [-Wunused-const-variable]
+constant uint ND=2048,NH=768,NA=4096,NE=8,NC=768/NCHUNK,NT=256;
+                                     ^
+/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-threadgroup/direct.metal:5:57: warning: unused variable 'NT' [-Wunused-const-variable]
+constant uint ND=2048,NH=768,NA=4096,NE=8,NC=768/NCHUNK,NT=256;
+                                                        ^
+10 warnings generated.
+In file included from /Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-threadgroup/late.metal:1:
+In file included from /Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/utils.h:9:
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/complex.h:157:54: warning: 'static_assert' with no message is a C++17 extension [-Wc++17-extensions]
+static_assert(sizeof(complex32_t) == 2 * sizeof(half));
+                                                     ^
+                                                     , ""
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/complex.h:158:55: warning: 'static_assert' with no message is a C++17 extension [-Wc++17-extensions]
+static_assert(sizeof(complex64_t) == 2 * sizeof(float));
+                                                      ^
+                                                      , ""
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/complex.h:159:70: warning: 'static_assert' with no message is a C++17 extension [-Wc++17-extensions]
+static_assert(sizeof(complex_t<bfloat16_t>) == 2 * sizeof(bfloat16_t));
+                                                                     ^
+                                                                     , ""
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/complex.h:299:78: warning: 'static_assert' with no message is a C++17 extension [-Wc++17-extensions]
+    (complex_t<half>{1.0h, 2.0h} * complex_t<half>{3.0h, 4.0h}).real == -5.0h);
+                                                                             ^
+                                                                             , ""
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/complex.h:303:35: warning: 'static_assert' with no message is a C++17 extension [-Wc++17-extensions]
+        .real == bfloat16_t(-5.0f));
+                                  ^
+                                  , ""
+In file included from /Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-threadgroup/late.metal:1:
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/utils.h:80:3: warning: inline variables are a C++17 extension [-Wc++17-extensions]
+  inline static constexpr constant complex_t<T> max = complex_t<T>(
+  ^
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/utils.h:83:3: warning: inline variables are a C++17 extension [-Wc++17-extensions]
+  inline static constexpr constant complex_t<T> min = complex_t<T>(
+  ^
+/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-threadgroup/late.metal:422:8: warning: unused variable 'job' [-Wunused-variable]
+  uint job=task-257;
+       ^
+/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-threadgroup/late.metal:5:38: warning: unused variable 'NE' [-Wunused-const-variable]
+constant uint ND=2048,NH=768,NA=4096,NE=8,NC=768/NCHUNK,NT=256;
+                                     ^
+/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-threadgroup/late.metal:5:57: warning: unused variable 'NT' [-Wunused-const-variable]
+constant uint ND=2048,NH=768,NA=4096,NE=8,NC=768/NCHUNK,NT=256;
+                                                        ^
+10 warnings generated.
+In file included from /Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-threadgroup/early.metal:1:
+In file included from /Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/utils.h:9:
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/complex.h:157:54: warning: 'static_assert' with no message is a C++17 extension [-Wc++17-extensions]
+static_assert(sizeof(complex32_t) == 2 * sizeof(half));
+                                                     ^
+                                                     , ""
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/complex.h:158:55: warning: 'static_assert' with no message is a C++17 extension [-Wc++17-extensions]
+static_assert(sizeof(complex64_t) == 2 * sizeof(float));
+                                                      ^
+                                                      , ""
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/complex.h:159:70: warning: 'static_assert' with no message is a C++17 extension [-Wc++17-extensions]
+static_assert(sizeof(complex_t<bfloat16_t>) == 2 * sizeof(bfloat16_t));
+                                                                     ^
+                                                                     , ""
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/complex.h:299:78: warning: 'static_assert' with no message is a C++17 extension [-Wc++17-extensions]
+    (complex_t<half>{1.0h, 2.0h} * complex_t<half>{3.0h, 4.0h}).real == -5.0h);
+                                                                             ^
+                                                                             , ""
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/complex.h:303:35: warning: 'static_assert' with no message is a C++17 extension [-Wc++17-extensions]
+        .real == bfloat16_t(-5.0f));
+                                  ^
+                                  , ""
+In file included from /Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-threadgroup/early.metal:1:
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/utils.h:80:3: warning: inline variables are a C++17 extension [-Wc++17-extensions]
+  inline static constexpr constant complex_t<T> max = complex_t<T>(
+  ^
+/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/utils.h:83:3: warning: inline variables are a C++17 extension [-Wc++17-extensions]
+  inline static constexpr constant complex_t<T> min = complex_t<T>(
+  ^
+/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-threadgroup/early.metal:422:8: warning: unused variable 'job' [-Wunused-variable]
+  uint job=task-257;
+       ^
+/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-threadgroup/early.metal:5:38: warning: unused variable 'NE' [-Wunused-const-variable]
+constant uint ND=2048,NH=768,NA=4096,NE=8,NC=768/NCHUNK,NT=256;
+                                     ^
+/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-threadgroup/early.metal:5:57: warning: unused variable 'NT' [-Wunused-const-variable]
+constant uint ND=2048,NH=768,NA=4096,NE=8,NC=768/NCHUNK,NT=256;
+                                                        ^
+10 warnings generated.
+{'kind': 'native_correctness', 'variant': 'direct', 'unequal_bytes': [896, 883, 2630, 333, 323, 86], 'errors': 0, 'prep_completed': 176}
+Traceback (most recent call last):
+  File "/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/experiments/north/megakernel_fullest/gpu_run.py", line 16, in <module>
+    runpy.run_path(sys.argv[0], run_name='__main__')
+  File "<frozen runpy>", line 287, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "experiments/north/megakernel_fullest/native_tail.py", line 76, in <module>
+    assert not any(unequal) and not row['errors'] and row['prep_completed']==176,row
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'kind': 'native_correctness', 'variant': 'direct', 'unequal_bytes': [896, 883, 2630, 333, 323, 86], 'errors': 0, 'prep_completed': 176}

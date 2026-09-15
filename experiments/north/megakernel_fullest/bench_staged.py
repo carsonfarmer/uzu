@@ -21,7 +21,7 @@ model,_=load()
 out=Path(a.output);out.parent.mkdir(parents=True,exist_ok=True)
 with out.open('w') as f:
     def save(row):f.write(json.dumps(row)+'\n');f.flush()
-    sources=[Path(__file__),HERE/'staged_prep.py',HERE/'gpu_run.py',HERE.parent/'additional/prep.py',HERE.parent/'additional/prep.h',HERE.parent/'reference.py']
+    sources=[Path(__file__).resolve(),HERE/'staged_prep.py',HERE/'gpu_run.py',HERE.parent/'additional/prep.py',HERE.parent/'additional/prep.h',HERE.parent/'reference.py']
     save(dict(kind='provenance',args=vars(a),mlx=mx.__version__,device=mx.device_info(),
         sources={str(s.relative_to(ROOT)):hashlib.sha256(s.read_bytes()).hexdigest() for s in sources},
         scope='Hot primitive wall latency including host submission/eval. Real model weights and synthetic BF16 inputs. No physical or cross-layer overlap claim.'))

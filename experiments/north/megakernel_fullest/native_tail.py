@@ -52,7 +52,7 @@ for name,prefix,early in [('direct',0,False),('late',128,False),('early',128,Tru
     defines=dict(ROWS=32,PREFIX=prefix,ROUTER_ROWS=8,PREP_TASKS=176,INTERLEAVE='true',PREFETCH=str(early).lower(),AUDIT='false')
     src=h+'\n'+'\n'.join(f'#define {k} {v}' for k,v in defines.items())+f'\nkernel void check({args}){{\n{s}\n}}'
     metal=work/(name+'.metal');metal.write_text(src);air=work/(name+'.air');lib=work/(name+'.metallib')
-    subprocess.run(['xcrun','metal','-std=metal3.2','-I',str(mlxsrc/'mlx/backend/metal/kernels'),'-I',str(mlxsrc),'-c',str(metal),'-o',str(air)],check=True)
+    subprocess.run(['xcrun','metal','-std=metal4.1','-fmetal-math-mode=safe','-I',str(mlxsrc/'mlx/backend/metal/kernels'),'-I',str(mlxsrc),'-c',str(metal),'-o',str(air)],check=True)
     subprocess.run(['xcrun','metallib',str(air),'-o',str(lib)],check=True)
     variants.append(dict(name=name,library=str(lib),workers=a.workers,source_sha256=hashlib.sha256(src.encode()).hexdigest()))
 exe=work/'native_runner'
@@ -60,7 +60,7 @@ subprocess.run(['swiftc',str(HERE/'native_runner.swift'),'-o',str(exe)],check=Tr
 manifest=dict(variants=variants,inputs=entries,outputBytes=U['SIZE']*4,repetitions=a.runs,output=str(work/'result'))
 manifest_path=work/'manifest.json';manifest_path.write_text(json.dumps(manifest,indent=2))
 with output.open('w') as f:
-    f.write(json.dumps(dict(kind='export_provenance',args=vars(a),manifest=manifest,scope='Native exported real-weight primitive, synthetic activations. Includes zero-fill. No model throughput claim.'))+'\n');f.flush()
+    f.write(json.dumps(dict(kind='export_provenance',args=vars(a),manifest=manifest,sources={str(q.relative_to(ROOT)):hashlib.sha256(q.read_bytes()).hexdigest() for q in HERE.iterdir() if q.suffix in ('.py','.swift')},scope='Native exported real-weight primitive, synthetic activations. Includes zero-fill. No model throughput claim.'))+'\n');f.flush()
     subprocess.run([str(exe),str(manifest_path)],stdout=f,check=True)
     for variant in variants:
         blob=(work/('result-'+variant['name']+'.bin')).read_bytes()

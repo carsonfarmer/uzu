@@ -1,0 +1,33 @@
+/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-register-safe/direct.metal:432:8: warning: unused variable 'job' [-Wunused-variable]
+  uint job=task-257;
+       ^
+/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-register-safe/direct.metal:5:38: warning: unused variable 'NE' [-Wunused-const-variable]
+constant uint ND=2048,NH=768,NA=4096,NE=8,NC=768/NCHUNK,NT=256;
+                                     ^
+/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-register-safe/direct.metal:5:57: warning: unused variable 'NT' [-Wunused-const-variable]
+constant uint ND=2048,NH=768,NA=4096,NE=8,NC=768/NCHUNK,NT=256;
+                                                        ^
+3 warnings generated.
+/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-register-safe/late.metal:432:8: warning: unused variable 'job' [-Wunused-variable]
+  uint job=task-257;
+       ^
+/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-register-safe/late.metal:5:38: warning: unused variable 'NE' [-Wunused-const-variable]
+constant uint ND=2048,NH=768,NA=4096,NE=8,NC=768/NCHUNK,NT=256;
+                                     ^
+/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-register-safe/late.metal:5:57: warning: unused variable 'NT' [-Wunused-const-variable]
+constant uint ND=2048,NH=768,NA=4096,NE=8,NC=768/NCHUNK,NT=256;
+                                                        ^
+3 warnings generated.
+/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-register-safe/early.metal:432:8: warning: unused variable 'job' [-Wunused-variable]
+  uint job=task-257;
+       ^
+/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-register-safe/early.metal:5:38: warning: unused variable 'NE' [-Wunused-const-variable]
+constant uint ND=2048,NH=768,NA=4096,NE=8,NC=768/NCHUNK,NT=256;
+                                     ^
+/Users/carsonfarmer/.codex/worktrees/0ff9/uzu-metal-lab/work/native-tail-register-safe/early.metal:5:57: warning: unused variable 'NT' [-Wunused-const-variable]
+constant uint ND=2048,NH=768,NA=4096,NE=8,NC=768/NCHUNK,NT=256;
+                                                        ^
+3 warnings generated.
+{'kind': 'native_correctness', 'variant': 'direct', 'unequal_bytes': [0, 0, 0, 0, 0, 0], 'errors': 0, 'prep_completed': 176}
+{'kind': 'native_correctness', 'variant': 'late', 'unequal_bytes': [0, 0, 0, 0, 0, 0], 'errors': 0, 'prep_completed': 176}
+{'kind': 'native_correctness', 'variant': 'early', 'unequal_bytes': [0, 0, 0, 0, 0, 0], 'errors': 0, 'prep_completed': 176}

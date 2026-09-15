@@ -1,0 +1,48 @@
+{
+  "raw_sha256": "bc7adf22d6da10a7158b3ef1e857053896a8df17c2f4548471c40580880a8bb0",
+  "results": {
+    "short": {
+      "full_array_checks": 124,
+      "measured_generations": 32,
+      "tokens_per_generation": 32,
+      "balanced_pairs": true,
+      "all_tokens_identical": true,
+      "median_tps": {
+        "prepared": 56.956698971896365,
+        "ready_direct": 52.48595083486757,
+        "ready_late": 51.842518391738665,
+        "ready_early": 51.45258341474944
+      },
+      "contrasts_over_prepared": {
+        "ready_direct": {
+          "speed_ratio": 0.9206970263566582,
+          "bootstrap95": [
+            0.9144990371369126,
+            0.9256232540813272
+          ],
+          "min_pair": 0.9024399060867144,
+          "max_pair": 0.9299017929924209
+        },
+        "ready_late": {
+          "speed_ratio": 0.9093386934778542,
+          "bootstrap95": [
+            0.9053806030224815,
+            0.9127067457230711
+          ],
+          "min_pair": 0.8995696302952603,
+          "max_pair": 0.9166876695597532
+        },
+        "ready_early": {
+          "speed_ratio": 0.9037043953381088,
+          "bootstrap95": [
+            0.9008136042654241,
+            0.9071788052149071
+          ],
+          "min_pair": 0.8987627184765971,
+          "max_pair": 0.9135630333979347
+        }
+      }
+    }
+  },
+  "scope": "Fresh paired prepared+async denominator; pilot length retained, not extrapolated to longer contexts"
+}

@@ -131,3 +131,32 @@ checks per-thread slot bounds. Native, intermediate, and decode harnesses accept
 `--storage register`. Register allocation/spilling, numerical exactness, and GPU
 performance remain unverified. This is a single retained prefix per worker;
 producer/consumer double buffering and full-model fine scheduling remain open.
+
+## GPU checkpoint 1: real staging exact, initial route loses
+
+Parent released `/tmp/north-minimal-baseline-20260914.done`; every run below used
+the locked wrapper. `tail-gate-v1` failed before the gate due a relative source
+path in provenance; v2 fixes it and passes all six intermediate arrays at1/20/32/64
+workers, early/late, layer7. Register gate v1 passes the same checks on three
+inputs at layers1/7/47 (72 cases), with exactly-once tasks and no progress errors.
+
+Native v1 defaulted to standalone fast math and failed exactness. It is rejected
+for performance inference and retained. MLX custom kernels default to Safe math;
+matching safe math and this system's Metal4.1 language makes all native direct,
+late, and early outputs bitwise exact. Native threadgroup v2 and register v1
+show large timing stalls and broad paired intervals; they do not establish an
+early-staging gain. Typical clear-only median is3–4us versus350–470us for the
+tail, so workspace clearing is a small constituent cost here. This is GPU command
+duration, not Python wall time, physical overlap proof, or decode throughput.
+
+`staged-primitive-v1` passes all byte gates. All six explicit threadgroup-stage
+variants lose in median wall latency against prepared across layers1/7/47:
+prepared195/206/215us; staged208–251/229–250/227–256us. This standalone screen
+stages before local norm only; cross-layer findings come from the next record.
+
+`ready-register-decode-pilot-v1` passes124 full-logit array comparisons and all32
+measured32-token generations. Fresh prepared+async denominator; eight balanced
+rounds. Paired geometric ratios: direct0.9207 (95%0.9145–0.9256), late0.9093
+(0.9054–0.9127), early0.9037 (0.9008–0.9072). This actual cross-layer consumed-prefix
+implementation loses; no promotion. It does not exhaust task placement, ready
+scanning reductions, double buffering, or whole-model fine dependency scheduling.

@@ -20,7 +20,7 @@ p.add_argument('--samples',type=int,default=3);a=p.parse_args()
 model,_=load();out=Path(a.output);out.parent.mkdir(parents=True,exist_ok=True)
 with out.open('w') as f:
     def save(row):f.write(json.dumps(row)+'\n');f.flush()
-    sources=[Path(__file__),HERE/'ready_tail.py',HERE/'staged_prep.py',HERE/'gpu_run.py',HERE.parent/'full_layer/tail_prep.py',HERE.parent/'persistent/down.h',HERE.parent/'quantized/kernel.h',HERE.parent/'additional/prep.h']
+    sources=[Path(__file__).resolve(),HERE/'ready_tail.py',HERE/'staged_prep.py',HERE/'gpu_run.py',HERE.parent/'full_layer/tail_prep.py',HERE.parent/'persistent/down.h',HERE.parent/'quantized/kernel.h',HERE.parent/'additional/prep.h']
     save(dict(kind='provenance',args=vars(a),device=mx.device_info(),mlx=mx.__version__,sources={str(s.relative_to(ROOT)):hashlib.sha256(s.read_bytes()).hexdigest() for s in sources},scope='Real weights; synthetic branch inputs; exact intermediate bytes and visit/progress gate, not decode timing'))
     for index in a.layers:
         layer=model.layers[index];next_layer=model.layers[index+1]
