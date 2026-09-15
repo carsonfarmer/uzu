@@ -3,6 +3,8 @@
 The preserved actual MLX-VLM improvement remains **10.25–11.62% over the untouched
 published package**, documented in [MLX_VLM_INTEGRATION.md](MLX_VLM_INTEGRATION.md).
 The active goal is another 10% beyond that optimized `prepared` control.
+The first router-ready scheduling pilot now improves that control by
+**3.11–3.48% in actual generation**, with exact stock logits. The goal remains open.
 
 Research now lives in a separate actual MLX-VLM worktree:
 `/Users/carsonfarmer/Developer/Personal/mlx-vlm-megakernel`, branch
@@ -10,8 +12,8 @@ Research now lives in a separate actual MLX-VLM worktree:
 sampling, stopping and cache ownership remain in use. This work does not use
 Uzu's inference engine or the withdrawn custom decode runner.
 
-The integrated scheduling candidates matched stock in their full-generation
-test cases, but are slower. Later stress tests exposed synchronization defects
+Earlier integrated scheduling candidates matched stock in their full-generation
+test cases, but were slower. Later stress tests exposed synchronization defects
 in the experimental schedulers; the hardened versions subsequently passed all
 15 generation cases and 1,698 full-logit comparisons against stock. The
 preserved prepared control is unaffected. The scheduler timing rows below are
@@ -26,6 +28,7 @@ the historical pilots before that hardening.
 | Native MLX attention with expert-first dispatch, first adapter pilot | -1.52% | -1.55% | -1.80% |
 | Native dispatch after compiled-function lifetime fix | -1.62% | -1.49% | -1.78% |
 | Exact router fusion added to prepared, six measured runs per mode/prompt | +1.09% | +1.21% | +0.38% |
+| Router-ready expert release, matched actual-engine pilot | +3.32% | +3.48% | +3.11% |
 
 The first three scheduler pilots retained four measured runs per mode and
 prompt plus two warmups. Each compared two candidate worker counts with the
@@ -145,8 +148,28 @@ time by 3.6–5.4% against the same scheduler holding routing until QKV completi
 All late-control runs started zero expert tasks before QKV completion; the
 expert-priority early variant started all 96. These counters show program
 ordering, not physical GPU overlap. Absolute timing drift and the initial
-attempt's mixed source provenance are explicitly documented. Actual-engine
-integration and throughput testing of early release remain underway.
+attempt's mixed source provenance are explicitly documented.
+
+Early release is now integrated into ordinary MLX-VLM generation. The balanced
+four-mode pilot retained 72 measured generations and 24 warmups, all stock-exact.
+Prepared/early medians were 68.276/70.544 tokens/s (short), 68.283/70.659 (Rust),
+and 61.788/63.709 (long). Early release beat the identical late scheduler by
+5.57%, 5.70% and 5.03%; all 18 paired comparisons improved against both prepared
+and late controls. Twenty full-generation correctness cases matched all 2,264
+complete-vocabulary arrays, including cache rotation and EOS. Observed branch
+calls rule out silently falling back for the entire run.
+
+This establishes a useful earlier-dependency result in the actual engine.
+It does not establish physical GPU overlap or a full-model megakernel: native
+attention still starts after the combined preparation/expert primitive.
+The all-router-tiles-first Apple queue adapts Cohere's independent router
+dependency; it does not copy their QKV-then-router wave placement verbatim.
+
+A 6,084-sample router tile-size ablation found no consistent improvement over
+the original eight-row choice; all numerical and failure gates passed and the
+runtime geometry remains unchanged. Diagnostic-counter removal and a bridge
+from the current layer's final operations into the next early-release front
+are the next separately gated experiments.
 
 Reference: [Cohere's article](https://cohere.com/blog/megakernels) and source
 `cohere-ai/cohere-megakernel@67d0b9ca22ea3652796b715d1d1863459e0e2c3c`.
@@ -155,7 +178,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`033fa8f8abee31541bee927bab02cb6084d7716c` are backed up in
+`226545307e8f51daf75dcbe63e5480bac205b608` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:
