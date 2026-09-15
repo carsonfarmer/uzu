@@ -109,11 +109,14 @@ def run(data,scores,residual,next_layer,workers=32,rows=32,prefix=128,prefetch=F
     assert rows in (32,64) and prefix in (0,128,256) and rows*prefix<=8192
     assert 1<=workers<=256
     rr=8;prep_tasks=5120//rows+128//rr
-    assert storage in ("threadgroup","register")
+    assert storage in ("threadgroup","register","tuned_threadgroup","tuned_register")
     if storage not in _KERNELS:
         builder=build_source
         if storage=="register":
             from register_tail import build_source as builder
+        if storage.startswith("tuned_"):
+            from tuned_tail import build_source as tuned_builder
+            builder=lambda:tuned_builder(register=storage.endswith("register"))
         h,s=builder()
         _KERNELS[storage]=mx.fast.metal_kernel(name='north_ready_consumed_future_prefix_'+storage,input_names=U['NAMES']+['scores','residual']+U['NEXT_NAMES'],output_names=['workspace'],header=h,source=s)
     att=next_layer.self_attn

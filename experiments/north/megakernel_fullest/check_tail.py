@@ -15,7 +15,7 @@ from ready_tail import run,U
 p=argparse.ArgumentParser();p.add_argument('--output',required=True)
 p.add_argument('--layers',type=int,nargs='+',default=[1,7,47])
 p.add_argument('--workers',type=int,nargs='+',default=[1,20,32,64])
-p.add_argument('--storage',choices=['threadgroup','register'],default='threadgroup')
+p.add_argument('--storage',choices=['threadgroup','register','tuned_threadgroup','tuned_register'],default='threadgroup')
 p.add_argument('--samples',type=int,default=3);a=p.parse_args()
 model,_=load();out=Path(a.output);out.parent.mkdir(parents=True,exist_ok=True)
 with out.open('w') as f:

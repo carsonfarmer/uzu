@@ -8,6 +8,9 @@ from ready_tail import build_source,U
 import os
 if os.environ.get("NORTH_REGISTER_SCREEN")=="1":
     from register_tail import build_source
+if os.environ.get("NORTH_TUNED_SCREEN")=="1":
+    from tuned_tail import build_source as tuned_builder
+    build_source=lambda:tuned_builder(register=os.environ.get("NORTH_REGISTER_SCREEN")=="1")
 h,s=build_source()
 h='#include "utils.h"\n'+h
 names=U['NAMES']+['scores','residual']+U['NEXT_NAMES']

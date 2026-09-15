@@ -160,3 +160,19 @@ rounds. Paired geometric ratios: direct0.9207 (95%0.9145–0.9256), late0.9093
 (0.9054–0.9127), early0.9037 (0.9008–0.9072). This actual cross-layer consumed-prefix
 implementation loses; no promotion. It does not exhaust task placement, ready
 scanning reductions, double buffering, or whole-model fine dependency scheduling.
+
+## GPU checkpoint 2: readiness scanning
+
+`tuned_tail.py` claims available producers before scanning dependency bits and
+avoids atomic increments on exhausted front/prep queues. It passes the layer7
+intermediate/progress gate at1/20/32/64 workers. The tuned register32-token decode
+pilot remains slower than its fresh prepared+async control; all full logits and
+tokens match. See retained summary for paired intervals. No speedup promotion.
+
+A source review found a coverage limit in the initial reservation order: resident
+workers mostly reserve Q tiles first, so K/V/router support in the helper did
+not imply early loads of all four operations. `interleaved_tail.py` adds a
+bijective round-robin Q/K/V/router reservation order and per-operation audit
+counters. Its CPU permutation check passes; GPU early-operation counts and
+performance are pending. This is explicitly still a partial-layer task engine,
+not the final full-model persistent scheduler.
