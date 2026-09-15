@@ -370,6 +370,48 @@ they are not gains over native generation. The numeric 128-partition attention
 and reduction order remain unchanged. Small-span raw times varied substantially
 and are retained without exclusions.
 
+A guard-collection experiment also removed repeated host-side validation work
+without reusing stale weight or cache references. Its 219 guard/lifecycle records,
+566 stock-logit arrays and 72 generation comparisons were exact. It did not
+improve throughput over the cached compiled adapter.
+
+The shared-scratch attention path now supports native rotating-cache positions.
+A component gate passed 1,696 arrays and 20 abort checks; actual generation passed
+566 complete stock-logit arrays, with 129 persistent 48-layer spans each for long
+and rotation. Native cache methods still own all updates. The 48-generation pilot
+measured 51.807 tokens/s on long, versus 64.111 for early release, and 30.951 on
+rotation, versus 57.884. This closes a correctness/integration gap, while remaining
+slower than the real engine control.
+
+A matched follow-up applies ordinary native cache loads to partitions that cannot
+contain the replaced slot. Only its owning partition uses virtual replacement;
+append behavior and arithmetic order remain unchanged. Another 1,696 component
+arrays, 53 lifecycle records, 566 stock-logit arrays and 48 actual generations
+passed. Long remained effectively unchanged (51.723 versus 51.763 tokens/s).
+Rotation improved from 30.809 to 37.095, but still trailed early release at 57.872
+by 35.90%. The 20.40% increase is relative to the slow ring prototype and must not
+be reported as a gain over MLX-VLM.
+
+A separately rebuilt diagnostic backend then observed native cache-buffer reuse
+inside nine normal, fresh-process generations. Four calibration cases established
+that it distinguishes native donation from copying while preserving independent
+old views. Every model generation matched stock tokens, text and stopping; source
+and binary hashes stayed fixed. Prepared and early-release controls reused all
+12,642 observed buffers on every prompt. Persistent mode instead scheduled copies
+of 4.609 GB of logical cache contents on short, 24.333 GB on long and 54.453 GB on
+rotation during each 128-token generation. These are logical copy payloads in
+instrumented runs, not measured HBM traffic or an attribution of the timing gap.
+
+The MLX source provides a concrete explanation to test: GPU evaluation holds its
+input buffers until completion, while native SliceUpdate requires exclusive
+ownership to reuse a buffer. Our persistent span reads old caches before the
+native update, creating a lifetime/ownership cost that the ordinary model's
+update-before-attention order avoids. A separate candidate is now testing safe
+reuse when the update itself depends on that completed read. It must preserve
+external aliases, unrelated readers, stream ordering and every GPU lifetime hold.
+No reuse-candidate performance or correctness claim has been established yet.
+The raw observations are in `results/cache-copy-audit-v1` in the research branch.
+
 Reference: [Cohere's article](https://cohere.com/blog/megakernels) and source
 `cohere-ai/cohere-megakernel@67d0b9ca22ea3652796b715d1d1863459e0e2c3c`.
 The experiments are explicitly testing its smaller task dependencies, attention
@@ -377,7 +419,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`08386b5808721e9445921270d5b718730d87637f` are backed up in
+`b19ac380571370bc04dac186741f9656d748fe0e` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:

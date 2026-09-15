@@ -56,6 +56,26 @@ partial storage after each completed layer reduced it to 17.42 ms. Native
 numerical partitions and order remain exact. This identifies useful changes
 within a slow prototype; the actual engine must still establish any benefit
 over its control.
+
+6. **The persistent integration adds native cache copies.** A calibrated backend
+   observer found that prepared and early release reused every cache buffer on
+   all three prompts. Persistent generation scheduled 4.609 GB, 24.333 GB and
+   54.453 GB of logical cache copies on short, long and rotating contexts,
+   respectively, over 128 generated tokens. All nine normal generations matched
+   stock. This is a measured integration cost; its share of the throughput loss
+   remains a hypothesis. It does not show an inherent Apple megakernel limit.
+   MLX retains input buffers for GPU completion and requires unique ownership
+   for native updates. Reading caches before updating them can therefore force
+   copies. A dependency-aware reuse candidate is under separate correctness
+   review; no benefit from that candidate has been established yet.
+
+The rotation attention-load ablation separately improved its prototype from
+30.809 to 37.095 tokens/s, while early release reached 57.872. Only the partition
+containing the replaced slot needs conditional loads; other partitions now use
+ordinary native loads. The 20.40% relative improvement remains 35.90% behind the
+proper engine control. This result isolates a useful implementation change,
+not the hardware cause of every remaining cost.
+
 The additional 10% goal remains open; these hypotheses do not establish that it
 is impossible.
 
