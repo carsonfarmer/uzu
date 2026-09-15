@@ -17,3 +17,7 @@ Source inspection does not establish out-of-box North support. There are concret
 A native Uzu implementation needs architecture/config and weight conversion, parallel residual branch encoding, and sigmoid top-k without normalization. It must also audit affine4-bit group64 weights, mixed full/sliding attention, RoPE, prefix dense layer, tied readout and tokenizer handling. This is an audit list, not a claim that all these facilities are absent. Metal kernels need Uzu buffer, pipeline, encoder and resource-lifetime integration. A Rust host for the MLX experiment is not a Uzu engine benchmark.
 
 Existing results are preserved as kernel research. No Uzu or stock-generation speedup can be inferred from them.
+
+## Corrected acceptance and hold
+
+Read and accepted `BASELINE_CORRECTION.md` from commit16da4041 on cf/decode-fusion. The prior custom-runner objective is superseded, not achieved. Uzu is the existing project context; stock MLX-VLM is a correctness/reference capability, not a substitute for native integration. Further implementation and performance work is on hold pending the corrected engine plan. Native support must be verified before a same-engine enabled/disabled optimization comparison through normal loading, caches, generation and sampling. The correction also identifies Uzu MoE bias requirements and model-data-type expert loading as concrete conversion/quantized-expert prerequisites to address. No new GPU work or performance claim is authorized by this inventory.
