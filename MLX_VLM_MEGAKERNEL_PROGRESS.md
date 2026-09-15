@@ -424,11 +424,31 @@ until completion. This explains an additional lifetime hold that the initial
 policy conservatively refused to discount. A narrower follow-up now accounts
 for the exact native `Depends` type, excluding forwarded cache outputs and
 requiring a matching real producer. It keeps all original lifetime references.
-This follow-up is undergoing separate safety and model validation.
+The follow-up passed 52 synthetic cases (690 cache updates), 160 lifecycle
+checks and 20 full-model generations with 2,264 exact full-vocabulary arrays.
+Six matched model audits then reduced logical copied cache payload by 50.14%
+on short, 49.24% on long and 70.75% on rotation. Every output was exact.
 
-These source/diagnostic results identify an MLX integration cost. They do not
-establish a throughput improvement or a limitation of Apple's GPU architecture.
-The raw observations are in `results/cache-copy-audit-v1` in the research branch.
+An uninstrumented causal screen ran 12 balanced fresh processes: 72 actual
+generations, 36 measured, two observations per setting/mode/prompt. Enabled reuse
+improved the persistent prototype by 1.83%, 4.14% and 10.71%, respectively. It
+still trailed early release with reuse disabled by 2.69%, 15.74% and 28.98%.
+Control on/off differences were below 0.24%; this small sample does not establish
+zero tracking overhead. All generation outputs and source/binary hashes matched.
+These are gains within the slower prototype, not new wins over the real engine.
+
+This screen attributes part of the integration regression to added cache copies,
+while leaving a substantial gap. It does not establish an inherent Apple GPU
+limitation. Detailed observations and timings are in `results/cache-copy-audit-v1`,
+`results/cache-reuse-model-audit-v2` and `results/cache-reuse-v2-screen`.
+
+The next bounded experiment removes the adapter's extra output dependency marker
+while keeping native cache updates. The pinned public generator permits lazy
+cache roots; the next forward or explicit cache evaluation submits them. The
+experiment therefore needs explicit final-cache correctness/drain timings,
+including EOS, early close and continuation, so deferred work cannot inflate a
+throughput claim. This is being tested on the original additive backend before
+adding more ownership-policy machinery.
 
 Reference: [Cohere's article](https://cohere.com/blog/megakernels) and source
 `cohere-ai/cohere-megakernel@67d0b9ca22ea3652796b715d1d1863459e0e2c3c`.
@@ -437,7 +457,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`42c0a9c4e2a235ba52826059d0ce6bacabdd5c04` are backed up in
+`fa1fec98b49bea7bd8ebf52af19f7201048e7843` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:

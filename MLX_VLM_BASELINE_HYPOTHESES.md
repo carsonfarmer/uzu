@@ -70,8 +70,12 @@ over its control.
    real-engine correctness gates but removed only 0.90–3.26% of copy payload.
    A diagnostic identified an additional native `Depends` lifetime hold: it
    retains cache dependencies despite performing no GPU read of them. A narrow
-   follow-up accounts for those holds while preserving all buffer lifetimes;
-   no throughput benefit from that candidate has been established yet.
+   follow-up accounts for those holds while preserving all buffer lifetimes.
+   It cut logical copy payload by 49–71% and improved its prototype by
+   1.83%/4.14%/10.71% on short/long/rotation in a balanced 72-generation screen.
+   It remained 2.69%/15.74%/28.98% behind early release, so the copies explain
+   only part of the regression. A simpler lazy-cache integration experiment
+   must now measure explicit final-cache completion as well as public generation.
 
 The rotation attention-load ablation separately improved its prototype from
 30.809 to 37.095 tokens/s, while early release reached 57.872. Only the partition
