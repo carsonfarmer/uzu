@@ -583,7 +583,26 @@ that it limits throughput, since it overlaps GPU execution. Smaller 20/24-group
 variants pass native short/long/rotation correctness and complete cache reuse,
 then lose 18.87%/10.80% to early in a balanced 30-generation short screen. All
 negative results and original logs are preserved; no observations are excluded.
-The next work examines synchronization costs and more detailed GPU traces.
+The synchronization follow-up found a missing acquire edge after finalizer
+election. Two experimental repairs pass all component and public-generation
+checks. Neither improves short throughput: keeping sequentially consistent
+fences is 1.94% below early release; changing the intermediate fences to
+acquire/release is 2.41% below. The original measurements are preserved.
+
+A new trace explicitly enables Apple's shader profiler and confirms execution
+of the combined layer shader. It records fewer encoder intervals, but short
+shaders are undersampled; summing those samples cannot establish exact GPU
+time, memory bandwidth, occupancy or physical overlap. No bottleneck claim is
+made from that trace.
+
+An independent Apple storage experiment packs selected attention/router BF16
+weights without changing any bits. This is not a compression technique claimed
+by Cohere. The checkpoint survey finds 21.655% fewer bytes for those selected
+matrices, not for the whole model. The GPU reader passes 16.9 million exact-word
+checks and the packed decoder passes 294 layer gates, including long context,
+rotation and intentional aborts. The first component run also reveals repeated
+packing because native MLX creates fresh contiguous wrappers. Fixing that reuse
+is required before full generation or throughput testing; no speedup is claimed.
 
 A source-inventory review also found that older copy audits captured their
 manifest before several shader builders were lazily imported. Their observer
@@ -602,7 +621,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`c9a8e05e3ff2a57cd82ee26ddba3bff2a30a2c81` are backed up in
+`9ff77a4f268642fa5c83ed2972896d3122106d70` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:
