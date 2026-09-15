@@ -82,19 +82,27 @@ def build(header,source,size):
     s=s.replace('  if(queue_stage>=total_stages)break;','  if(queue_stage>=total_stages || atomic_load_explicit(state+3,memory_order_relaxed)!=0)break;',1)
     return header+HEADER,s
 
-_KERNEL=None
+_KERNELS={}
 
-def run(weights,x,key_cache,value_cache,position,workers=32,do_head=True,do_prefix=True):
-    global _KERNEL
+def run(weights,x,key_cache,value_cache,position,workers=32,do_head=True,do_prefix=True,scheduler="scan"):
     import mlx.core as mx
     from whole_pass import kernel as old
     from whole_pass.pack import WEIGHT_NAMES,HEAD_NAMES,PREFIX_NAMES
     layers=weights['norm_w'].shape[0];capacity=key_cache.shape[2]
     assert key_cache.shape==value_cache.shape and key_cache.shape[0]==layers+int(do_prefix)
-    if _KERNEL is None:
-        h,s=build(old.header,old.source,old.SIZE)
-        _KERNEL=mx.fast.metal_kernel(name='north_whole_ready_dag',input_names=['x_in','key_cache','value_cache','params',*WEIGHT_NAMES,*HEAD_NAMES,*PREFIX_NAMES,'sigmoid_table'],output_names=['key_out','value_out','workspace','logits'],header=h,source=s)
-    outputs=_KERNEL(inputs=[x,key_cache,value_cache,mx.array([position,capacity],mx.uint32),*[weights[n] for n in WEIGHT_NAMES],*[weights[n] for n in HEAD_NAMES],*[weights[n] for n in PREFIX_NAMES],old.sigmoid_lut()],
+    assert scheduler in ("scan","affinity","progress","prefetch_early","prefetch_late")
+    if scheduler not in _KERNELS:
+        builder=build
+        if scheduler=="affinity":
+            from affinity_whole import build as builder
+        if scheduler=="progress":
+            from progress_whole import build as builder
+        if scheduler.startswith("prefetch_"):
+            from prefetch_whole import build as prefetch_builder
+            builder=lambda h,s,z:prefetch_builder(h,s,z,early=scheduler=="prefetch_early")
+        h,s=builder(old.header,old.source,old.SIZE)
+        _KERNELS[scheduler]=mx.fast.metal_kernel(name='north_whole_ready_dag_'+scheduler,input_names=['x_in','key_cache','value_cache','params',*WEIGHT_NAMES,*HEAD_NAMES,*PREFIX_NAMES,'sigmoid_table'],output_names=['key_out','value_out','workspace','logits'],header=h,source=s)
+    outputs=_KERNELS[scheduler](inputs=[x,key_cache,value_cache,mx.array([position,capacity],mx.uint32),*[weights[n] for n in WEIGHT_NAMES],*[weights[n] for n in HEAD_NAMES],*[weights[n] for n in PREFIX_NAMES],old.sigmoid_lut()],
         template=[('NLAYERS',layers),('WORKERS',workers),('FINE',False),('SAFE_QUEUE',True),('PREFETCH_STAGES',0),('PREP_ROWS',64),('OPROJ_ROWS',64),('ROUTER_ROWS',8),('DO_HEAD',do_head),('LM_ROWS',512),('DO_PREFIX',do_prefix)],
         grid=(workers*256,1,1),threadgroup=(256,1,1),output_shapes=[key_cache.shape,value_cache.shape,(old.SIZE+layers*512,),(1,1,262144)],output_dtypes=[mx.bfloat16,mx.bfloat16,mx.uint32,mx.bfloat16],init_value=0)
     raw=outputs[2].view(mx.bfloat16);out=raw[old.X*2:old.NORM*2].reshape(1,1,2048)

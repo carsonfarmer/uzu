@@ -20,7 +20,8 @@ from fine_whole import run as fine
 
 p=argparse.ArgumentParser();p.add_argument('--output',required=True)
 p.add_argument('--tokens',type=int,default=32);p.add_argument('--runs',type=int,default=6)
-p.add_argument('--workers',type=int,default=32);a=p.parse_args();assert a.runs%6==0
+p.add_argument('--workers',type=int,default=32);p.add_argument("--scheduler",choices=["scan","affinity","progress","prefetch_early","prefetch_late"],default="scan")
+a=p.parse_args();assert a.runs%6==0
 model,config=load();original=list(model.layers)
 print('Packing shared model weights',flush=True);weights=pack_shared(model)
 prepared=[original[0]]+[PreparedBranch(l,64,8,True) for l in original[1:]]
@@ -48,7 +49,7 @@ with output.open('w') as f:
                     keys=mx.concatenate([keys,mx.zeros((49,4,extra,128),mx.bfloat16)],axis=2)
                     values=mx.concatenate([values,mx.zeros((49,4,extra,128),mx.bfloat16)],axis=2)
                 h=model.model.embed_tokens(current.reshape(1,1))
-                if mode=='fine':got=fine(weights,h,keys,values,position,workers=a.workers)
+                if mode=='fine':got=fine(weights,h,keys,values,position,workers=a.workers,scheduler=a.scheduler)
                 else:got=run_whole_pass(weights,h,keys,values,position,workers=a.workers,schedule='queue',do_head=True,do_prefix=True)
                 _,keys,values,state,logits=got;position+=1
                 if retain and mode=='fine':states.append(state)

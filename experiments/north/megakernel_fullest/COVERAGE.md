@@ -194,3 +194,18 @@ and fresh prepared+async (~61t/s). Scanning costs are a hypothesis, not isolated
 proof. `affinity_whole.py` adds continuous RR preferred lists with ready stealing;
 that new scheduler is not yet GPU tested. Long-context SDPA algorithm compatibility
 remains explicitly unimplemented, and the harness rejects that unsupported range.
+
+## GPU checkpoint 4: preferred task lists and real whole-pass future weights
+
+The affinity dispatcher passes two-layer1/20/32/64-worker gates and the complete
+32-token repeated decode gate. Its fresh matched pilot reaches roughly36t/s,
+still well below phase/prepared controls. `progress_whole.py` now avoids rescanning
+when no completion has changed the ready set; this optimization is untested.
+
+`prefetch_whole.py` integrates real consumed next-layer register prefixes into
+the complete task engine. Early/late variants share future-task reservations;
+workers holding a future task continue current ready work. Reservations are
+interleaved across Q/K/V/router. Early implementation passes two-layer byte/cache
+and all440-task completion gates at1/20/32/64 workers. Full-model validation,
+per-operation early-load counters, and matched performance remain pending. It
+retains one prefix, not a producer/consumer double buffer; that gap remains open.

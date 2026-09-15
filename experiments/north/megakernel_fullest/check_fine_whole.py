@@ -18,7 +18,7 @@ from mlx_vlm.models.base import create_attention_mask
 from fine_whole import run as fine_run
 from whole_pass.kernel import SIZE
 def run_whole_pass(weights,x,k,v,position,**kwargs):
-    return fine_run(weights,x,k,v,position,workers=kwargs["workers"],do_head=kwargs["do_head"],do_prefix=kwargs["do_prefix"])
+    return fine_run(weights,x,k,v,position,workers=kwargs["workers"],do_head=kwargs["do_head"],do_prefix=kwargs["do_prefix"],scheduler=a.scheduler)
 from whole_pass.pack import pack_caches, pack_weights
 
 
@@ -34,6 +34,7 @@ p.add_argument("--head", action="store_true")
 p.add_argument("--lm-rows", type=int, choices=(32, 64, 128, 256, 512, 1024), default=512)
 p.add_argument("--prefix", action="store_true")
 p.add_argument("--output", default="experiments/north/whole_pass/check-whole-pass-v1.json")
+p.add_argument("--scheduler",choices=["scan","affinity","progress","prefetch_early","prefetch_late"],default="scan")
 a = p.parse_args()
 assert 1 <= a.layers <= 48
 
@@ -143,6 +144,7 @@ for workers in a.workers:
         "position": position,
         "workers": workers,
         "schedule": a.schedule,
+        "dag_scheduler": a.scheduler,
         "prefetch_stages": a.prefetch_stages,
         "prep_rows": a.prep_rows,
         "oproj_rows": a.oproj_rows,

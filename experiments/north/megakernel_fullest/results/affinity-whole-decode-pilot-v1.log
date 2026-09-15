@@ -1,0 +1,26 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+Packing shared model weights
+prepared gate passed
+phase gate passed
+fine gate passed
+prepared -1 65.807
+phase -1 37.5
+fine -1 53.466
+prepared 0 61.084
+phase 0 37.557
+fine 0 53.326
+phase 1 56.106
+fine 1 51.826
+prepared 1 61.263
+fine 2 34.878
+prepared 2 61.597
+phase 2 38.452
+fine 3 53.39
+phase 3 56.62
+prepared 3 61.023
+prepared 4 69.054
+fine 4 36.82
+phase 4 56.609
+phase 5 56.55
+prepared 5 61.616
+fine 5 36.508
