@@ -20,8 +20,8 @@ from fine_whole import run as fine
 
 p=argparse.ArgumentParser();p.add_argument('--output',required=True)
 p.add_argument('--tokens',type=int,default=32);p.add_argument('--runs',type=int,default=6)
-p.add_argument('--workers',type=int,default=32);p.add_argument("--scheduler",choices=["scan","affinity","progress","prefetch_early","prefetch_late","window_early","window_late"],default="scan")
-a=p.parse_args();assert a.runs%6==0
+p.add_argument('--workers',type=int,default=32);p.add_argument("--schedulers",nargs="+",choices=["scan","affinity","progress","prefetch_early","prefetch_late","window_early","window_late"],default=["affinity","progress","prefetch_late","prefetch_early"])
+a=p.parse_args();assert a.runs%(2*(2+len(a.schedulers)))==0
 model,config=load();original=list(model.layers)
 print('Packing shared model weights',flush=True);weights=pack_shared(model)
 prepared=[original[0]]+[PreparedBranch(l,64,8,True) for l in original[1:]]
@@ -38,21 +38,21 @@ with output.open('w') as f:
         model.model.layers=original;cache=model.make_cache();logits=model(mx.array([ids]),cache=cache).logits;mx.eval(logits)
         first=int(mx.argmax(logits[0,-1]).item());current=mx.array(first,mx.int32)
         tokens=[first];pending=None;kept=[];states=[]
-        if mode in ('phase','fine'):
+        if mode not in ('prepared','original'):
             position=len(ids);capacity=max(256,cache[0].keys.shape[2]);keys,values=pack_caches(cache,start=0,count=49,capacity=capacity)
         else:model.model.layers=prepared if mode=='prepared' else original
         start=time.perf_counter()
         for step in range(a.tokens-1):
-            if mode in ('phase','fine'):
+            if mode not in ('prepared','original'):
                 if position>=capacity:
                     extra=capacity;capacity*=2
                     keys=mx.concatenate([keys,mx.zeros((49,4,extra,128),mx.bfloat16)],axis=2)
                     values=mx.concatenate([values,mx.zeros((49,4,extra,128),mx.bfloat16)],axis=2)
                 h=model.model.embed_tokens(current.reshape(1,1))
-                if mode=='fine':got=fine(weights,h,keys,values,position,workers=a.workers,scheduler=a.scheduler)
+                if mode!='phase':got=fine(weights,h,keys,values,position,workers=a.workers,scheduler=mode)
                 else:got=run_whole_pass(weights,h,keys,values,position,workers=a.workers,schedule='queue',do_head=True,do_prefix=True)
                 _,keys,values,state,logits=got;position+=1
-                if retain and mode=='fine':states.append(state)
+                if retain and mode!='phase':states.append(state)
             else:logits=model(current.reshape(1,1),cache=cache).logits
             current=mx.argmax(logits[0,-1]);mx.async_eval(logits,current)
             if pending is not None:tokens.append(int(pending.item()))
@@ -62,21 +62,24 @@ with output.open('w') as f:
         assert len(tokens)==a.tokens and not set(tokens[:-1])&eos
         return tokens,kept,elapsed,states
     expected,refs,_,_=generate('original',True)
-    modes=['prepared','phase','fine']
+    modes=['prepared','phase']+a.schedulers
     for name in modes:
         tokens,got,_,states=generate(name,True);assert tokens==expected
         for step,(r,v) in enumerate(zip(refs,got)):
             unequal=int(mx.sum(r.view(mx.uint8)!=v.view(mx.uint8)).item())
             row=dict(kind='correctness',variant=name,step=step,unequal_bytes=unequal)
-            if name=='fine':
+            if name not in ('prepared','phase'):
                 st=states[step];row['errors']=int(st[3].item());row['bad_task_states']=int(mx.sum(st[SIZE:].reshape(48,512)[:,:440]!=2).item())
+                row['early_weights']=mx.sum(st[SIZE:].reshape(48,512)[:,496:500],axis=0).tolist()
+                row['consumed_weights']=mx.sum(st[SIZE:].reshape(48,512)[:,500:504],axis=0).tolist()
                 assert row['errors']==row['bad_task_states']==0,row
+                if name=='prefetch_early':assert min(row['early_weights'])>0 and all(e<=c for e,c in zip(row['early_weights'],row['consumed_weights'])),row
             save(row);assert unequal==0,row
         print(name,'gate passed',flush=True)
     del refs,got,states;gc.collect()
     for rep in range(-1,a.runs):
-        order=modes[max(0,rep)%3:]+modes[:max(0,rep)%3]
-        if rep>=0 and (rep//3)%2:order.reverse()
+        order=modes[max(0,rep)%len(modes):]+modes[:max(0,rep)%len(modes)]
+        if rep>=0 and (rep//len(modes))%2:order.reverse()
         for name in order:
             tokens,_,elapsed,_=generate(name);assert tokens==expected
             save(dict(kind='generation',variant=name,repetition=rep,warmup=rep<0,token_ids=tokens,decode_steps=a.tokens-1,decode_seconds=elapsed,decode_tokens_per_second=(a.tokens-1)/elapsed))

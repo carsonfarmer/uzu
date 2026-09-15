@@ -90,7 +90,7 @@ def run(weights,x,key_cache,value_cache,position,workers=32,do_head=True,do_pref
     from whole_pass.pack import WEIGHT_NAMES,HEAD_NAMES,PREFIX_NAMES
     layers=weights['norm_w'].shape[0];capacity=key_cache.shape[2]
     assert key_cache.shape==value_cache.shape and key_cache.shape[0]==layers+int(do_prefix)
-    assert scheduler in ("scan","affinity","progress","prefetch_early","prefetch_late","window_early","window_late")
+    assert scheduler in ("scan","affinity","progress","prefetch_early","prefetch_late")
     if scheduler not in _KERNELS:
         builder=build
         if scheduler=="affinity":
@@ -100,9 +100,6 @@ def run(weights,x,key_cache,value_cache,position,workers=32,do_head=True,do_pref
         if scheduler.startswith("prefetch_"):
             from prefetch_whole import build as prefetch_builder
             builder=lambda h,s,z:prefetch_builder(h,s,z,early=scheduler=="prefetch_early")
-        if scheduler.startswith("window_"):
-            from window_whole import build as window_builder
-            builder=lambda h,s,z:window_builder(h,s,z,early=scheduler=="window_early")
         h,s=builder(old.header,old.source,old.SIZE)
         _KERNELS[scheduler]=mx.fast.metal_kernel(name='north_whole_ready_dag_'+scheduler,input_names=['x_in','key_cache','value_cache','params',*WEIGHT_NAMES,*HEAD_NAMES,*PREFIX_NAMES,'sigmoid_table'],output_names=['key_out','value_out','workspace','logits'],header=h,source=s)
     outputs=_KERNELS[scheduler](inputs=[x,key_cache,value_cache,mx.array([position,capacity],mx.uint32),*[weights[n] for n in WEIGHT_NAMES],*[weights[n] for n in HEAD_NAMES],*[weights[n] for n in PREFIX_NAMES],old.sigmoid_lut()],

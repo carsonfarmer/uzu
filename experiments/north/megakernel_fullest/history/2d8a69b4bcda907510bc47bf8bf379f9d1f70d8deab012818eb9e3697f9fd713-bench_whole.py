@@ -20,7 +20,7 @@ from fine_whole import run as fine
 
 p=argparse.ArgumentParser();p.add_argument('--output',required=True)
 p.add_argument('--tokens',type=int,default=32);p.add_argument('--runs',type=int,default=6)
-p.add_argument('--workers',type=int,default=32);p.add_argument("--scheduler",choices=["scan","affinity","progress","prefetch_early","prefetch_late","window_early","window_late"],default="scan")
+p.add_argument('--workers',type=int,default=32);p.add_argument("--scheduler",choices=["scan","affinity","progress","prefetch_early","prefetch_late"],default="scan")
 a=p.parse_args();assert a.runs%6==0
 model,config=load();original=list(model.layers)
 print('Packing shared model weights',flush=True);weights=pack_shared(model)

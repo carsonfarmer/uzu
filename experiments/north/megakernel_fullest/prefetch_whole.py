@@ -36,6 +36,7 @@ threadgroup_barrier(mem_flags::mem_threadgroup);
      if(held_valid && held_layer==layer && held_node==fine_node) {
       if(!held_loaded)north_load_prefix(queue_task,64,8,128,tid,sg,lane,lqw,lkw,lvw,lrw,future_weights);
       north_next_prep_tiled(queue_task,64,8,sg,lane,norm,lqw,lkw,lvw,lrw,prep,tile,future_weights,128);
+      if(tid==0){uint kind=queue_task<64?0:(queue_task<72?1:(queue_task<80?2:3));atomic_fetch_add_explicit(fine_states+layer*512+500+kind,1u,memory_order_relaxed);}
      } else north_next_prep_tiled(queue_task,64,8,sg,lane,norm,lqw,lkw,lvw,lrw,prep,tile);
     }''')
     needle='     fine_cursor=(fine_node+1)%440;'
@@ -64,7 +65,11 @@ threadgroup_barrier(mem_flags::mem_threadgroup);
       qw+ulong(held_layer)*8388608ul,kw+ulong(held_layer)*1048576ul,
       vw+ulong(held_layer)*1048576ul,rw+ulong(held_layer)*262144ul,future_weights);
    threadgroup_barrier(mem_flags::mem_threadgroup);
-   if(tid==0)held_loaded=1;
+   if(tid==0){{
+    held_loaded=1;
+    uint job=held_node-1,kind=job<64?0:(job<72?1:(job<80?2:3));
+    if(!north_node_done(fine_states+held_layer*512,0))atomic_fetch_add_explicit(fine_states+held_layer*512+496+kind,1u,memory_order_relaxed);
+   }}
   }}
   threadgroup_barrier(mem_flags::mem_threadgroup);
  }}

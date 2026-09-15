@@ -1,0 +1,9 @@
+{"kind": "provenance", "args": {"output": "experiments/north/megakernel_fullest/results/producer-gate-v1.jsonl", "layers": [7]}, "mlx": "0.32.2", "device": {"device_name": "Apple M4 Pro", "max_recommended_working_set_size": 40200896512, "memory_size": 51539607552, "architecture": "applegpu_g16s", "max_buffer_length": 30150672384, "resource_limit": 499000}, "sources": {"experiments/north/megakernel_fullest/check_producer.py": "e55593f51a6fe4dfd066b9be9d8c6661ce686e503eeef721aeb4208cec4afc6c", "experiments/north/megakernel_fullest/producer_prep.py": "237c57785abd635199f0f24602525acd3adffc3983e94e706ec53477fded721d", "experiments/north/additional/prep.py": "ad1be6e3bfc53c2edb6a4436847fc596939cd070aa2605ba8bbd33108c1fe722"}, "scope": "Actual model matrices, synthetic activations, complete projection bytes; separate producer SIMD and exact consumers, no model speed claim"}
+{"kind": "correctness", "layer": 7, "projection": "q", "depth": 1, "unequal_bytes": 0, "norm_unequal_bytes": 0, "errors": 0}
+{"kind": "correctness", "layer": 7, "projection": "q", "depth": 2, "unequal_bytes": 0, "norm_unequal_bytes": 0, "errors": 0}
+{"kind": "correctness", "layer": 7, "projection": "k", "depth": 1, "unequal_bytes": 0, "norm_unequal_bytes": 0, "errors": 0}
+{"kind": "correctness", "layer": 7, "projection": "k", "depth": 2, "unequal_bytes": 0, "norm_unequal_bytes": 0, "errors": 0}
+{"kind": "correctness", "layer": 7, "projection": "v", "depth": 1, "unequal_bytes": 0, "norm_unequal_bytes": 0, "errors": 0}
+{"kind": "correctness", "layer": 7, "projection": "v", "depth": 2, "unequal_bytes": 0, "norm_unequal_bytes": 0, "errors": 0}
+{"kind": "correctness", "layer": 7, "projection": "router", "depth": 1, "unequal_bytes": 0, "norm_unequal_bytes": 0, "errors": 0}
+{"kind": "correctness", "layer": 7, "projection": "router", "depth": 2, "unequal_bytes": 0, "norm_unequal_bytes": 0, "errors": 0}

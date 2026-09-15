@@ -1,0 +1,73 @@
+{
+  "raw_sha256": "d5f851136e0889b3d667b86b9aaf674033651565d4583fb5cb63949795ecc2eb",
+  "full_array_checks": 186,
+  "measured_generations": 72,
+  "tokens_per_generation": 32,
+  "all_gates_pass": true,
+  "balanced": true,
+  "medians_tps": {
+    "affinity": 53.36925951262732,
+    "phase": 56.71487367610261,
+    "prefetch_early": 51.936464706678166,
+    "prefetch_late": 52.00200809196222,
+    "prepared": 62.25703330808305,
+    "progress": 53.069795752717724
+  },
+  "contrasts": {
+    "affinity_over_prepared": {
+      "ratio": 0.8182456903960753,
+      "bootstrap95": [
+        0.7685381218194155,
+        0.8545770964029472
+      ],
+      "min_pair": 0.6124772343269107,
+      "max_pair": 0.8721232100749919
+    },
+    "phase_over_prepared": {
+      "ratio": 0.7986596138932422,
+      "bootstrap95": [
+        0.7371685843414059,
+        0.8622696859832036
+      ],
+      "min_pair": 0.652910749719403,
+      "max_pair": 0.9267921504725838
+    },
+    "prefetch_early_over_prepared": {
+      "ratio": 0.7393820672137299,
+      "bootstrap95": [
+        0.6764481797784937,
+        0.802298999567958
+      ],
+      "min_pair": 0.558955607623751,
+      "max_pair": 0.8456137826204431
+    },
+    "prefetch_late_over_prepared": {
+      "ratio": 0.8188788050295235,
+      "bootstrap95": [
+        0.7997574518556876,
+        0.8354845876437252
+      ],
+      "min_pair": 0.7550944875628723,
+      "max_pair": 0.8443039755042081
+    },
+    "progress_over_prepared": {
+      "ratio": 0.8354250186435064,
+      "bootstrap95": [
+        0.816255615417144,
+        0.8521308870742875
+      ],
+      "min_pair": 0.7703865791433873,
+      "max_pair": 0.860413050243756
+    },
+    "prefetch_early_over_prefetch_late": {
+      "ratio": 0.9029200202428888,
+      "bootstrap95": [
+        0.8333205907181538,
+        0.9768282717202162
+      ],
+      "min_pair": 0.7252154247941079,
+      "max_pair": 1.0064236854241981
+    }
+  },
+  "scope": "Matched async shared-weight pilot; all stalls retained, no context extrapolation"
+}

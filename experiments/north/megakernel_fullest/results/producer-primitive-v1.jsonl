@@ -1,0 +1,229 @@
+{"kind": "provenance", "args": {"output": "experiments/north/megakernel_fullest/results/producer-primitive-v1.jsonl", "layers": [1, 7, 47], "runs": 16}, "mlx": "0.32.2", "device": {"device_name": "Apple M4 Pro", "max_recommended_working_set_size": 40200896512, "memory_size": 51539607552, "architecture": "applegpu_g16s", "max_buffer_length": 30150672384, "resource_limit": 499000}, "sources": {"experiments/north/megakernel_fullest/bench_producer.py": "fef5b9b2e9883973cd0aa174a12e9e71a0bf0bb8b045c5d53ec018b054eb9980", "experiments/north/megakernel_fullest/producer_prep.py": "237c57785abd635199f0f24602525acd3adffc3983e94e706ec53477fded721d", "experiments/north/additional/prep.py": "ad1be6e3bfc53c2edb6a4436847fc596939cd070aa2605ba8bbd33108c1fe722", "experiments/north/additional/prep.h": "a643f632566ad29dddae02bc179d76d6ee3157665fe93bef0daae4235507885e"}, "scope": "Hot constituent wall time including submission/eval; real weights and synthetic activations; not end-to-end or GPU-duration attribution"}
+{"kind": "correctness", "layer": 1, "variant": "prepared_64_8", "sample": 0, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 1, "variant": "prepared_64_8", "sample": 1, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 1, "variant": "prepared_64_8", "sample": 2, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 1, "variant": "prepared_32_4", "sample": 0, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 1, "variant": "prepared_32_4", "sample": 1, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 1, "variant": "prepared_32_4", "sample": 2, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 1, "variant": "producer_depth1", "sample": 0, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 1, "variant": "producer_depth1", "sample": 1, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 1, "variant": "producer_depth1", "sample": 2, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 1, "variant": "producer_depth2", "sample": 0, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 1, "variant": "producer_depth2", "sample": 1, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 1, "variant": "producer_depth2", "sample": 2, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "timing", "layer": 1, "variant": "prepared_64_8", "repetition": 0, "position": 0, "wall_seconds": 0.0002970829955302179}
+{"kind": "timing", "layer": 1, "variant": "prepared_32_4", "repetition": 0, "position": 1, "wall_seconds": 0.00023274999693967402}
+{"kind": "timing", "layer": 1, "variant": "producer_depth1", "repetition": 0, "position": 2, "wall_seconds": 0.0034746250021271408}
+{"kind": "timing", "layer": 1, "variant": "producer_depth2", "repetition": 0, "position": 3, "wall_seconds": 0.003989166987594217}
+{"kind": "timing", "layer": 1, "variant": "prepared_32_4", "repetition": 1, "position": 0, "wall_seconds": 0.0003691249876283109}
+{"kind": "timing", "layer": 1, "variant": "producer_depth1", "repetition": 1, "position": 1, "wall_seconds": 0.004049334005685523}
+{"kind": "timing", "layer": 1, "variant": "producer_depth2", "repetition": 1, "position": 2, "wall_seconds": 0.00491204101126641}
+{"kind": "timing", "layer": 1, "variant": "prepared_64_8", "repetition": 1, "position": 3, "wall_seconds": 0.00028437498258426785}
+{"kind": "timing", "layer": 1, "variant": "producer_depth1", "repetition": 2, "position": 0, "wall_seconds": 0.003524458996253088}
+{"kind": "timing", "layer": 1, "variant": "producer_depth2", "repetition": 2, "position": 1, "wall_seconds": 0.003792666015215218}
+{"kind": "timing", "layer": 1, "variant": "prepared_64_8", "repetition": 2, "position": 2, "wall_seconds": 0.0002484580036252737}
+{"kind": "timing", "layer": 1, "variant": "prepared_32_4", "repetition": 2, "position": 3, "wall_seconds": 0.00019687498570419848}
+{"kind": "timing", "layer": 1, "variant": "producer_depth2", "repetition": 3, "position": 0, "wall_seconds": 0.003970500023569912}
+{"kind": "timing", "layer": 1, "variant": "prepared_64_8", "repetition": 3, "position": 1, "wall_seconds": 0.000517541979206726}
+{"kind": "timing", "layer": 1, "variant": "prepared_32_4", "repetition": 3, "position": 2, "wall_seconds": 0.00048754201270639896}
+{"kind": "timing", "layer": 1, "variant": "producer_depth1", "repetition": 3, "position": 3, "wall_seconds": 0.0032380839984398335}
+{"kind": "timing", "layer": 1, "variant": "producer_depth2", "repetition": 4, "position": 0, "wall_seconds": 0.0037757079990115017}
+{"kind": "timing", "layer": 1, "variant": "producer_depth1", "repetition": 4, "position": 1, "wall_seconds": 0.0029891669983044267}
+{"kind": "timing", "layer": 1, "variant": "prepared_32_4", "repetition": 4, "position": 2, "wall_seconds": 0.000196917011635378}
+{"kind": "timing", "layer": 1, "variant": "prepared_64_8", "repetition": 4, "position": 3, "wall_seconds": 0.00018541599274612963}
+{"kind": "timing", "layer": 1, "variant": "prepared_64_8", "repetition": 5, "position": 0, "wall_seconds": 0.0002920410188380629}
+{"kind": "timing", "layer": 1, "variant": "producer_depth2", "repetition": 5, "position": 1, "wall_seconds": 0.003662292001536116}
+{"kind": "timing", "layer": 1, "variant": "producer_depth1", "repetition": 5, "position": 2, "wall_seconds": 0.0036657089949585497}
+{"kind": "timing", "layer": 1, "variant": "prepared_32_4", "repetition": 5, "position": 3, "wall_seconds": 0.0001923329837154597}
+{"kind": "timing", "layer": 1, "variant": "prepared_32_4", "repetition": 6, "position": 0, "wall_seconds": 0.0001978750224225223}
+{"kind": "timing", "layer": 1, "variant": "prepared_64_8", "repetition": 6, "position": 1, "wall_seconds": 0.0001884580124169588}
+{"kind": "timing", "layer": 1, "variant": "producer_depth2", "repetition": 6, "position": 2, "wall_seconds": 0.003489916998660192}
+{"kind": "timing", "layer": 1, "variant": "producer_depth1", "repetition": 6, "position": 3, "wall_seconds": 0.003209916001651436}
+{"kind": "timing", "layer": 1, "variant": "producer_depth1", "repetition": 7, "position": 0, "wall_seconds": 0.0028922920173499733}
+{"kind": "timing", "layer": 1, "variant": "prepared_32_4", "repetition": 7, "position": 1, "wall_seconds": 0.0002085419837385416}
+{"kind": "timing", "layer": 1, "variant": "prepared_64_8", "repetition": 7, "position": 2, "wall_seconds": 0.00018845900194719434}
+{"kind": "timing", "layer": 1, "variant": "producer_depth2", "repetition": 7, "position": 3, "wall_seconds": 0.003590749984141439}
+{"kind": "timing", "layer": 1, "variant": "prepared_64_8", "repetition": 8, "position": 0, "wall_seconds": 0.000323957996442914}
+{"kind": "timing", "layer": 1, "variant": "prepared_32_4", "repetition": 8, "position": 1, "wall_seconds": 0.0002532500075176358}
+{"kind": "timing", "layer": 1, "variant": "producer_depth1", "repetition": 8, "position": 2, "wall_seconds": 0.0038368340174201876}
+{"kind": "timing", "layer": 1, "variant": "producer_depth2", "repetition": 8, "position": 3, "wall_seconds": 0.00342399999499321}
+{"kind": "timing", "layer": 1, "variant": "prepared_32_4", "repetition": 9, "position": 0, "wall_seconds": 0.00026695799897424877}
+{"kind": "timing", "layer": 1, "variant": "producer_depth1", "repetition": 9, "position": 1, "wall_seconds": 0.0027048750198446214}
+{"kind": "timing", "layer": 1, "variant": "producer_depth2", "repetition": 9, "position": 2, "wall_seconds": 0.003451583004789427}
+{"kind": "timing", "layer": 1, "variant": "prepared_64_8", "repetition": 9, "position": 3, "wall_seconds": 0.0002080000122077763}
+{"kind": "timing", "layer": 1, "variant": "producer_depth1", "repetition": 10, "position": 0, "wall_seconds": 0.003528792003635317}
+{"kind": "timing", "layer": 1, "variant": "producer_depth2", "repetition": 10, "position": 1, "wall_seconds": 0.0035365000076126307}
+{"kind": "timing", "layer": 1, "variant": "prepared_64_8", "repetition": 10, "position": 2, "wall_seconds": 0.00021641698549501598}
+{"kind": "timing", "layer": 1, "variant": "prepared_32_4", "repetition": 10, "position": 3, "wall_seconds": 0.00020258402219042182}
+{"kind": "timing", "layer": 1, "variant": "producer_depth2", "repetition": 11, "position": 0, "wall_seconds": 0.003457749990047887}
+{"kind": "timing", "layer": 1, "variant": "prepared_64_8", "repetition": 11, "position": 1, "wall_seconds": 0.00022229098249226809}
+{"kind": "timing", "layer": 1, "variant": "prepared_32_4", "repetition": 11, "position": 2, "wall_seconds": 0.00019708400941453874}
+{"kind": "timing", "layer": 1, "variant": "producer_depth1", "repetition": 11, "position": 3, "wall_seconds": 0.002537708991440013}
+{"kind": "timing", "layer": 1, "variant": "producer_depth2", "repetition": 12, "position": 0, "wall_seconds": 0.0035507499997038394}
+{"kind": "timing", "layer": 1, "variant": "producer_depth1", "repetition": 12, "position": 1, "wall_seconds": 0.0035991249897051603}
+{"kind": "timing", "layer": 1, "variant": "prepared_32_4", "repetition": 12, "position": 2, "wall_seconds": 0.0001967499847523868}
+{"kind": "timing", "layer": 1, "variant": "prepared_64_8", "repetition": 12, "position": 3, "wall_seconds": 0.00019016599981114268}
+{"kind": "timing", "layer": 1, "variant": "prepared_64_8", "repetition": 13, "position": 0, "wall_seconds": 0.00020300000323913991}
+{"kind": "timing", "layer": 1, "variant": "producer_depth2", "repetition": 13, "position": 1, "wall_seconds": 0.003377833985723555}
+{"kind": "timing", "layer": 1, "variant": "producer_depth1", "repetition": 13, "position": 2, "wall_seconds": 0.002909832983277738}
+{"kind": "timing", "layer": 1, "variant": "prepared_32_4", "repetition": 13, "position": 3, "wall_seconds": 0.00020808397675864398}
+{"kind": "timing", "layer": 1, "variant": "prepared_32_4", "repetition": 14, "position": 0, "wall_seconds": 0.00020079201203770936}
+{"kind": "timing", "layer": 1, "variant": "prepared_64_8", "repetition": 14, "position": 1, "wall_seconds": 0.00019187500583939254}
+{"kind": "timing", "layer": 1, "variant": "producer_depth2", "repetition": 14, "position": 2, "wall_seconds": 0.003253125003539026}
+{"kind": "timing", "layer": 1, "variant": "producer_depth1", "repetition": 14, "position": 3, "wall_seconds": 0.003061041992623359}
+{"kind": "timing", "layer": 1, "variant": "producer_depth1", "repetition": 15, "position": 0, "wall_seconds": 0.003530916990712285}
+{"kind": "timing", "layer": 1, "variant": "prepared_32_4", "repetition": 15, "position": 1, "wall_seconds": 0.0002350000140722841}
+{"kind": "timing", "layer": 1, "variant": "prepared_64_8", "repetition": 15, "position": 2, "wall_seconds": 0.00019404198974370956}
+{"kind": "timing", "layer": 1, "variant": "producer_depth2", "repetition": 15, "position": 3, "wall_seconds": 0.00339987498591654}
+{"kind": "correctness", "layer": 7, "variant": "prepared_64_8", "sample": 0, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 7, "variant": "prepared_64_8", "sample": 1, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 7, "variant": "prepared_64_8", "sample": 2, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 7, "variant": "prepared_32_4", "sample": 0, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 7, "variant": "prepared_32_4", "sample": 1, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 7, "variant": "prepared_32_4", "sample": 2, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 7, "variant": "producer_depth1", "sample": 0, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 7, "variant": "producer_depth1", "sample": 1, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 7, "variant": "producer_depth1", "sample": 2, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 7, "variant": "producer_depth2", "sample": 0, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 7, "variant": "producer_depth2", "sample": 1, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 7, "variant": "producer_depth2", "sample": 2, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "timing", "layer": 7, "variant": "prepared_64_8", "repetition": 0, "position": 0, "wall_seconds": 0.0002469159953761846}
+{"kind": "timing", "layer": 7, "variant": "prepared_32_4", "repetition": 0, "position": 1, "wall_seconds": 0.0002039159880951047}
+{"kind": "timing", "layer": 7, "variant": "producer_depth1", "repetition": 0, "position": 2, "wall_seconds": 0.0025310000055469573}
+{"kind": "timing", "layer": 7, "variant": "producer_depth2", "repetition": 0, "position": 3, "wall_seconds": 0.003238292003516108}
+{"kind": "timing", "layer": 7, "variant": "prepared_32_4", "repetition": 1, "position": 0, "wall_seconds": 0.0002680000034160912}
+{"kind": "timing", "layer": 7, "variant": "producer_depth1", "repetition": 1, "position": 1, "wall_seconds": 0.0027785830025095493}
+{"kind": "timing", "layer": 7, "variant": "producer_depth2", "repetition": 1, "position": 2, "wall_seconds": 0.003299958014395088}
+{"kind": "timing", "layer": 7, "variant": "prepared_64_8", "repetition": 1, "position": 3, "wall_seconds": 0.00024049999774433672}
+{"kind": "timing", "layer": 7, "variant": "producer_depth1", "repetition": 2, "position": 0, "wall_seconds": 0.002660500002093613}
+{"kind": "timing", "layer": 7, "variant": "producer_depth2", "repetition": 2, "position": 1, "wall_seconds": 0.003119084023637697}
+{"kind": "timing", "layer": 7, "variant": "prepared_64_8", "repetition": 2, "position": 2, "wall_seconds": 0.00030524999601766467}
+{"kind": "timing", "layer": 7, "variant": "prepared_32_4", "repetition": 2, "position": 3, "wall_seconds": 0.00036291699507273734}
+{"kind": "timing", "layer": 7, "variant": "producer_depth2", "repetition": 3, "position": 0, "wall_seconds": 0.0038176249945536256}
+{"kind": "timing", "layer": 7, "variant": "prepared_64_8", "repetition": 3, "position": 1, "wall_seconds": 0.0002840419765561819}
+{"kind": "timing", "layer": 7, "variant": "prepared_32_4", "repetition": 3, "position": 2, "wall_seconds": 0.0002253339916933328}
+{"kind": "timing", "layer": 7, "variant": "producer_depth1", "repetition": 3, "position": 3, "wall_seconds": 0.002800042013404891}
+{"kind": "timing", "layer": 7, "variant": "producer_depth2", "repetition": 4, "position": 0, "wall_seconds": 0.003194749995600432}
+{"kind": "timing", "layer": 7, "variant": "producer_depth1", "repetition": 4, "position": 1, "wall_seconds": 0.002686207997612655}
+{"kind": "timing", "layer": 7, "variant": "prepared_32_4", "repetition": 4, "position": 2, "wall_seconds": 0.00020004098769277334}
+{"kind": "timing", "layer": 7, "variant": "prepared_64_8", "repetition": 4, "position": 3, "wall_seconds": 0.0001880000054370612}
+{"kind": "timing", "layer": 7, "variant": "prepared_64_8", "repetition": 5, "position": 0, "wall_seconds": 0.00020633300300687551}
+{"kind": "timing", "layer": 7, "variant": "producer_depth2", "repetition": 5, "position": 1, "wall_seconds": 0.0038856249884702265}
+{"kind": "timing", "layer": 7, "variant": "producer_depth1", "repetition": 5, "position": 2, "wall_seconds": 0.0026527919981162995}
+{"kind": "timing", "layer": 7, "variant": "prepared_32_4", "repetition": 5, "position": 3, "wall_seconds": 0.00019733401131816208}
+{"kind": "timing", "layer": 7, "variant": "prepared_32_4", "repetition": 6, "position": 0, "wall_seconds": 0.00020466599380597472}
+{"kind": "timing", "layer": 7, "variant": "prepared_64_8", "repetition": 6, "position": 1, "wall_seconds": 0.0001993750047404319}
+{"kind": "timing", "layer": 7, "variant": "producer_depth2", "repetition": 6, "position": 2, "wall_seconds": 0.0034069170069415122}
+{"kind": "timing", "layer": 7, "variant": "producer_depth1", "repetition": 6, "position": 3, "wall_seconds": 0.00272808299632743}
+{"kind": "timing", "layer": 7, "variant": "producer_depth1", "repetition": 7, "position": 0, "wall_seconds": 0.0026428340061102062}
+{"kind": "timing", "layer": 7, "variant": "prepared_32_4", "repetition": 7, "position": 1, "wall_seconds": 0.00021354100317694247}
+{"kind": "timing", "layer": 7, "variant": "prepared_64_8", "repetition": 7, "position": 2, "wall_seconds": 0.00019420799799263477}
+{"kind": "timing", "layer": 7, "variant": "producer_depth2", "repetition": 7, "position": 3, "wall_seconds": 0.00401016601244919}
+{"kind": "timing", "layer": 7, "variant": "prepared_64_8", "repetition": 8, "position": 0, "wall_seconds": 0.00024200000916607678}
+{"kind": "timing", "layer": 7, "variant": "prepared_32_4", "repetition": 8, "position": 1, "wall_seconds": 0.00020308297825977206}
+{"kind": "timing", "layer": 7, "variant": "producer_depth1", "repetition": 8, "position": 2, "wall_seconds": 0.0023484159901272506}
+{"kind": "timing", "layer": 7, "variant": "producer_depth2", "repetition": 8, "position": 3, "wall_seconds": 0.0033936249965336174}
+{"kind": "timing", "layer": 7, "variant": "prepared_32_4", "repetition": 9, "position": 0, "wall_seconds": 0.00023916599457152188}
+{"kind": "timing", "layer": 7, "variant": "producer_depth1", "repetition": 9, "position": 1, "wall_seconds": 0.002402542013442144}
+{"kind": "timing", "layer": 7, "variant": "producer_depth2", "repetition": 9, "position": 2, "wall_seconds": 0.003724582988070324}
+{"kind": "timing", "layer": 7, "variant": "prepared_64_8", "repetition": 9, "position": 3, "wall_seconds": 0.0005589590000454336}
+{"kind": "timing", "layer": 7, "variant": "producer_depth1", "repetition": 10, "position": 0, "wall_seconds": 0.0031765419989824295}
+{"kind": "timing", "layer": 7, "variant": "producer_depth2", "repetition": 10, "position": 1, "wall_seconds": 0.0031423750042449683}
+{"kind": "timing", "layer": 7, "variant": "prepared_64_8", "repetition": 10, "position": 2, "wall_seconds": 0.00019479100592434406}
+{"kind": "timing", "layer": 7, "variant": "prepared_32_4", "repetition": 10, "position": 3, "wall_seconds": 0.00019262501155026257}
+{"kind": "timing", "layer": 7, "variant": "producer_depth2", "repetition": 11, "position": 0, "wall_seconds": 0.003168083989294246}
+{"kind": "timing", "layer": 7, "variant": "prepared_64_8", "repetition": 11, "position": 1, "wall_seconds": 0.00026862500817514956}
+{"kind": "timing", "layer": 7, "variant": "prepared_32_4", "repetition": 11, "position": 2, "wall_seconds": 0.0001990000018849969}
+{"kind": "timing", "layer": 7, "variant": "producer_depth1", "repetition": 11, "position": 3, "wall_seconds": 0.0024033330264501274}
+{"kind": "timing", "layer": 7, "variant": "producer_depth2", "repetition": 12, "position": 0, "wall_seconds": 0.003124249982647598}
+{"kind": "timing", "layer": 7, "variant": "producer_depth1", "repetition": 12, "position": 1, "wall_seconds": 0.004067334026331082}
+{"kind": "timing", "layer": 7, "variant": "prepared_32_4", "repetition": 12, "position": 2, "wall_seconds": 0.00023379101185128093}
+{"kind": "timing", "layer": 7, "variant": "prepared_64_8", "repetition": 12, "position": 3, "wall_seconds": 0.00020849998691119254}
+{"kind": "timing", "layer": 7, "variant": "prepared_64_8", "repetition": 13, "position": 0, "wall_seconds": 0.00020441701053641737}
+{"kind": "timing", "layer": 7, "variant": "producer_depth2", "repetition": 13, "position": 1, "wall_seconds": 0.0033830000029411167}
+{"kind": "timing", "layer": 7, "variant": "producer_depth1", "repetition": 13, "position": 2, "wall_seconds": 0.002682374994037673}
+{"kind": "timing", "layer": 7, "variant": "prepared_32_4", "repetition": 13, "position": 3, "wall_seconds": 0.00022770900977775455}
+{"kind": "timing", "layer": 7, "variant": "prepared_32_4", "repetition": 14, "position": 0, "wall_seconds": 0.0002262920024804771}
+{"kind": "timing", "layer": 7, "variant": "prepared_64_8", "repetition": 14, "position": 1, "wall_seconds": 0.00020337500609457493}
+{"kind": "timing", "layer": 7, "variant": "producer_depth2", "repetition": 14, "position": 2, "wall_seconds": 0.003094749990850687}
+{"kind": "timing", "layer": 7, "variant": "producer_depth1", "repetition": 14, "position": 3, "wall_seconds": 0.002603125001769513}
+{"kind": "timing", "layer": 7, "variant": "producer_depth1", "repetition": 15, "position": 0, "wall_seconds": 0.003973000013502315}
+{"kind": "timing", "layer": 7, "variant": "prepared_32_4", "repetition": 15, "position": 1, "wall_seconds": 0.00020237499848008156}
+{"kind": "timing", "layer": 7, "variant": "prepared_64_8", "repetition": 15, "position": 2, "wall_seconds": 0.00019262498244643211}
+{"kind": "timing", "layer": 7, "variant": "producer_depth2", "repetition": 15, "position": 3, "wall_seconds": 0.0030800840177107602}
+{"kind": "correctness", "layer": 47, "variant": "prepared_64_8", "sample": 0, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 47, "variant": "prepared_64_8", "sample": 1, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 47, "variant": "prepared_64_8", "sample": 2, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 47, "variant": "prepared_32_4", "sample": 0, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 47, "variant": "prepared_32_4", "sample": 1, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 47, "variant": "prepared_32_4", "sample": 2, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 47, "variant": "producer_depth1", "sample": 0, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 47, "variant": "producer_depth1", "sample": 1, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 47, "variant": "producer_depth1", "sample": 2, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 47, "variant": "producer_depth2", "sample": 0, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 47, "variant": "producer_depth2", "sample": 1, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "correctness", "layer": 47, "variant": "producer_depth2", "sample": 2, "unequal_bytes": [0, 0, 0, 0, 0], "errors": 0}
+{"kind": "timing", "layer": 47, "variant": "prepared_64_8", "repetition": 0, "position": 0, "wall_seconds": 0.0002949159825220704}
+{"kind": "timing", "layer": 47, "variant": "prepared_32_4", "repetition": 0, "position": 1, "wall_seconds": 0.00021624998771585524}
+{"kind": "timing", "layer": 47, "variant": "producer_depth1", "repetition": 0, "position": 2, "wall_seconds": 0.0024850000045262277}
+{"kind": "timing", "layer": 47, "variant": "producer_depth2", "repetition": 0, "position": 3, "wall_seconds": 0.002992792025906965}
+{"kind": "timing", "layer": 47, "variant": "prepared_32_4", "repetition": 1, "position": 0, "wall_seconds": 0.00025112502044066787}
+{"kind": "timing", "layer": 47, "variant": "producer_depth1", "repetition": 1, "position": 1, "wall_seconds": 0.003443207999225706}
+{"kind": "timing", "layer": 47, "variant": "producer_depth2", "repetition": 1, "position": 2, "wall_seconds": 0.00321354201878421}
+{"kind": "timing", "layer": 47, "variant": "prepared_64_8", "repetition": 1, "position": 3, "wall_seconds": 0.0002690829860512167}
+{"kind": "timing", "layer": 47, "variant": "producer_depth1", "repetition": 2, "position": 0, "wall_seconds": 0.002710417000344023}
+{"kind": "timing", "layer": 47, "variant": "producer_depth2", "repetition": 2, "position": 1, "wall_seconds": 0.0031338749977294356}
+{"kind": "timing", "layer": 47, "variant": "prepared_64_8", "repetition": 2, "position": 2, "wall_seconds": 0.0002006659924518317}
+{"kind": "timing", "layer": 47, "variant": "prepared_32_4", "repetition": 2, "position": 3, "wall_seconds": 0.00018991599790751934}
+{"kind": "timing", "layer": 47, "variant": "producer_depth2", "repetition": 3, "position": 0, "wall_seconds": 0.002903874992625788}
+{"kind": "timing", "layer": 47, "variant": "prepared_64_8", "repetition": 3, "position": 1, "wall_seconds": 0.0004751250089611858}
+{"kind": "timing", "layer": 47, "variant": "prepared_32_4", "repetition": 3, "position": 2, "wall_seconds": 0.00040754099609330297}
+{"kind": "timing", "layer": 47, "variant": "producer_depth1", "repetition": 3, "position": 3, "wall_seconds": 0.0032097089861053973}
+{"kind": "timing", "layer": 47, "variant": "producer_depth2", "repetition": 4, "position": 0, "wall_seconds": 0.00325033298577182}
+{"kind": "timing", "layer": 47, "variant": "producer_depth1", "repetition": 4, "position": 1, "wall_seconds": 0.002690374996745959}
+{"kind": "timing", "layer": 47, "variant": "prepared_32_4", "repetition": 4, "position": 2, "wall_seconds": 0.0002017499937210232}
+{"kind": "timing", "layer": 47, "variant": "prepared_64_8", "repetition": 4, "position": 3, "wall_seconds": 0.0001941660011652857}
+{"kind": "timing", "layer": 47, "variant": "prepared_64_8", "repetition": 5, "position": 0, "wall_seconds": 0.0001966669806279242}
+{"kind": "timing", "layer": 47, "variant": "producer_depth2", "repetition": 5, "position": 1, "wall_seconds": 0.0030767919961363077}
+{"kind": "timing", "layer": 47, "variant": "producer_depth1", "repetition": 5, "position": 2, "wall_seconds": 0.0028657919901888818}
+{"kind": "timing", "layer": 47, "variant": "prepared_32_4", "repetition": 5, "position": 3, "wall_seconds": 0.0002545829920563847}
+{"kind": "timing", "layer": 47, "variant": "prepared_32_4", "repetition": 6, "position": 0, "wall_seconds": 0.00022829198860563338}
+{"kind": "timing", "layer": 47, "variant": "prepared_64_8", "repetition": 6, "position": 1, "wall_seconds": 0.0004301659937482327}
+{"kind": "timing", "layer": 47, "variant": "producer_depth2", "repetition": 6, "position": 2, "wall_seconds": 0.0036526659969240427}
+{"kind": "timing", "layer": 47, "variant": "producer_depth1", "repetition": 6, "position": 3, "wall_seconds": 0.0028950829873792827}
+{"kind": "timing", "layer": 47, "variant": "producer_depth1", "repetition": 7, "position": 0, "wall_seconds": 0.002737750008236617}
+{"kind": "timing", "layer": 47, "variant": "prepared_32_4", "repetition": 7, "position": 1, "wall_seconds": 0.00019866699585691094}
+{"kind": "timing", "layer": 47, "variant": "prepared_64_8", "repetition": 7, "position": 2, "wall_seconds": 0.00018933400860987604}
+{"kind": "timing", "layer": 47, "variant": "producer_depth2", "repetition": 7, "position": 3, "wall_seconds": 0.0031040830072015524}
+{"kind": "timing", "layer": 47, "variant": "prepared_64_8", "repetition": 8, "position": 0, "wall_seconds": 0.00019599997904151678}
+{"kind": "timing", "layer": 47, "variant": "prepared_32_4", "repetition": 8, "position": 1, "wall_seconds": 0.00018958398140966892}
+{"kind": "timing", "layer": 47, "variant": "producer_depth1", "repetition": 8, "position": 2, "wall_seconds": 0.002923833002569154}
+{"kind": "timing", "layer": 47, "variant": "producer_depth2", "repetition": 8, "position": 3, "wall_seconds": 0.0037847089988645166}
+{"kind": "timing", "layer": 47, "variant": "prepared_32_4", "repetition": 9, "position": 0, "wall_seconds": 0.00019016599981114268}
+{"kind": "timing", "layer": 47, "variant": "producer_depth1", "repetition": 9, "position": 1, "wall_seconds": 0.002574875019490719}
+{"kind": "timing", "layer": 47, "variant": "producer_depth2", "repetition": 9, "position": 2, "wall_seconds": 0.003352415980771184}
+{"kind": "timing", "layer": 47, "variant": "prepared_64_8", "repetition": 9, "position": 3, "wall_seconds": 0.00020991699420847}
+{"kind": "timing", "layer": 47, "variant": "producer_depth1", "repetition": 10, "position": 0, "wall_seconds": 0.0025692499766591936}
+{"kind": "timing", "layer": 47, "variant": "producer_depth2", "repetition": 10, "position": 1, "wall_seconds": 0.0034502919879741967}
+{"kind": "timing", "layer": 47, "variant": "prepared_64_8", "repetition": 10, "position": 2, "wall_seconds": 0.0002885419817175716}
+{"kind": "timing", "layer": 47, "variant": "prepared_32_4", "repetition": 10, "position": 3, "wall_seconds": 0.0007587919826619327}
+{"kind": "timing", "layer": 47, "variant": "producer_depth2", "repetition": 11, "position": 0, "wall_seconds": 0.003506292006932199}
+{"kind": "timing", "layer": 47, "variant": "prepared_64_8", "repetition": 11, "position": 1, "wall_seconds": 0.0002676250005606562}
+{"kind": "timing", "layer": 47, "variant": "prepared_32_4", "repetition": 11, "position": 2, "wall_seconds": 0.00023091700859367847}
+{"kind": "timing", "layer": 47, "variant": "producer_depth1", "repetition": 11, "position": 3, "wall_seconds": 0.0028319580014795065}
+{"kind": "timing", "layer": 47, "variant": "producer_depth2", "repetition": 12, "position": 0, "wall_seconds": 0.0033955409890040755}
+{"kind": "timing", "layer": 47, "variant": "producer_depth1", "repetition": 12, "position": 1, "wall_seconds": 0.0027543340111151338}
+{"kind": "timing", "layer": 47, "variant": "prepared_32_4", "repetition": 12, "position": 2, "wall_seconds": 0.0002908750029746443}
+{"kind": "timing", "layer": 47, "variant": "prepared_64_8", "repetition": 12, "position": 3, "wall_seconds": 0.00021983298938721418}
+{"kind": "timing", "layer": 47, "variant": "prepared_64_8", "repetition": 13, "position": 0, "wall_seconds": 0.00023987499298527837}
+{"kind": "timing", "layer": 47, "variant": "producer_depth2", "repetition": 13, "position": 1, "wall_seconds": 0.0035845839884132147}
+{"kind": "timing", "layer": 47, "variant": "producer_depth1", "repetition": 13, "position": 2, "wall_seconds": 0.0027439590194262564}
+{"kind": "timing", "layer": 47, "variant": "prepared_32_4", "repetition": 13, "position": 3, "wall_seconds": 0.00033491701469756663}
+{"kind": "timing", "layer": 47, "variant": "prepared_32_4", "repetition": 14, "position": 0, "wall_seconds": 0.0002676250005606562}
+{"kind": "timing", "layer": 47, "variant": "prepared_64_8", "repetition": 14, "position": 1, "wall_seconds": 0.0002858330262824893}
+{"kind": "timing", "layer": 47, "variant": "producer_depth2", "repetition": 14, "position": 2, "wall_seconds": 0.0032383750076405704}
+{"kind": "timing", "layer": 47, "variant": "producer_depth1", "repetition": 14, "position": 3, "wall_seconds": 0.0027883750153705478}
+{"kind": "timing", "layer": 47, "variant": "producer_depth1", "repetition": 15, "position": 0, "wall_seconds": 0.002706083992961794}
+{"kind": "timing", "layer": 47, "variant": "prepared_32_4", "repetition": 15, "position": 1, "wall_seconds": 0.00024862500140443444}
+{"kind": "timing", "layer": 47, "variant": "prepared_64_8", "repetition": 15, "position": 2, "wall_seconds": 0.00019808299839496613}
+{"kind": "timing", "layer": 47, "variant": "producer_depth2", "repetition": 15, "position": 3, "wall_seconds": 0.003900167008396238}

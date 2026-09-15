@@ -1,0 +1,8 @@
+{'kind': 'correctness', 'layer': 7, 'projection': 'q', 'depth': 1, 'unequal_bytes': 0, 'norm_unequal_bytes': 0, 'errors': 0}
+{'kind': 'correctness', 'layer': 7, 'projection': 'q', 'depth': 2, 'unequal_bytes': 0, 'norm_unequal_bytes': 0, 'errors': 0}
+{'kind': 'correctness', 'layer': 7, 'projection': 'k', 'depth': 1, 'unequal_bytes': 0, 'norm_unequal_bytes': 0, 'errors': 0}
+{'kind': 'correctness', 'layer': 7, 'projection': 'k', 'depth': 2, 'unequal_bytes': 0, 'norm_unequal_bytes': 0, 'errors': 0}
+{'kind': 'correctness', 'layer': 7, 'projection': 'v', 'depth': 1, 'unequal_bytes': 0, 'norm_unequal_bytes': 0, 'errors': 0}
+{'kind': 'correctness', 'layer': 7, 'projection': 'v', 'depth': 2, 'unequal_bytes': 0, 'norm_unequal_bytes': 0, 'errors': 0}
+{'kind': 'correctness', 'layer': 7, 'projection': 'router', 'depth': 1, 'unequal_bytes': 0, 'norm_unequal_bytes': 0, 'errors': 0}
+{'kind': 'correctness', 'layer': 7, 'projection': 'router', 'depth': 2, 'unequal_bytes': 0, 'norm_unequal_bytes': 0, 'errors': 0}

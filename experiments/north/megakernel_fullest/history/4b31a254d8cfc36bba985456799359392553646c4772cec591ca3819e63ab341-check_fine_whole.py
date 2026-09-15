@@ -34,7 +34,7 @@ p.add_argument("--head", action="store_true")
 p.add_argument("--lm-rows", type=int, choices=(32, 64, 128, 256, 512, 1024), default=512)
 p.add_argument("--prefix", action="store_true")
 p.add_argument("--output", default="experiments/north/whole_pass/check-whole-pass-v1.json")
-p.add_argument("--scheduler",choices=["scan","affinity","progress","prefetch_early","prefetch_late","window_early","window_late"],default="scan")
+p.add_argument("--scheduler",choices=["scan","affinity","progress","prefetch_early","prefetch_late"],default="scan")
 a = p.parse_args()
 assert 1 <= a.layers <= 48
 

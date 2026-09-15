@@ -189,7 +189,7 @@ at20/32 workers, including every used cache byte and all logits/task completions
 `shared_pack.py` lets baseline modules view packed weights rather than retaining
 two complete weight copies. `fine-whole-decode-pilot-v1` then passes93 full-logit
 arrays, all per-layer task-state checks, and18 measured32-token generations.
-The ready DAG is substantially slower (~23t/s) than both the phase queue (~56t/s)
+The ready DAG is substantially slower (~23t/s) than both the phase queue (50.1t/s median, with large shifts)
 and fresh prepared+async (~61t/s). Scanning costs are a hypothesis, not isolated
 proof. `affinity_whole.py` adds continuous RR preferred lists with ready stealing;
 that new scheduler is not yet GPU tested. Long-context SDPA algorithm compatibility
@@ -198,7 +198,7 @@ remains explicitly unimplemented, and the harness rejects that unsupported range
 ## GPU checkpoint 4: preferred task lists and real whole-pass future weights
 
 The affinity dispatcher passes two-layer1/20/32/64-worker gates and the complete
-32-token repeated decode gate. Its fresh matched pilot reaches roughly36t/s,
+32-token repeated decode gate. Its fresh matched pilot reaches 44.3t/s median (34.9–53.4t/s),
 still well below phase/prepared controls. `progress_whole.py` now avoids rescanning
 when no completion has changed the ready set; this optimization is untested.
 
@@ -209,3 +209,32 @@ interleaved across Q/K/V/router. Early implementation passes two-layer byte/cach
 and all440-task completion gates at1/20/32/64 workers. Full-model validation,
 per-operation early-load counters, and matched performance remain pending. It
 retains one prefix, not a producer/consumer double buffer; that gap remains open.
+
+## GPU checkpoint 5: measured whole-pass early loads, high worker counts, loader ring
+
+`prefetch-whole-full-v1` passes complete hidden/cache/logits and task-state gates
+at20/32 workers. At32 workers its audit records376 completed-before-norm loads
+and376 consumed prefixes for each of Q/K/V/router across47 boundaries. These
+are actual consumed weights, not cache-warming reads. Physical concurrency is
+not proven by ordering counters alone.
+
+The six-way whole matrix passes186 full arrays and72 measured32-token generations.
+Every candidate loses to fresh prepared+async. Paired geometric early/late ratio
+is0.9029 (95%0.8333–0.9768), including the large early-path stalls. No samples are
+removed. Progress-triggered rescanning is0.8354 versus prepared, with preferred
+lists0.8182. Historic absolute rates visibly shift; paired records are authoritative.
+
+The32/64/96-worker matrix passed all217 full arrays and task gates, but was
+adaptively stopped during warmups:64-worker phase/progress paths slowed to1.26/
+3.39t/s. This was observed slow progress, not a hang, and is **not a completed
+balanced timing estimate**. The abort decision and partial records are preserved.
+Closer worker counts remain to test. `window_whole.py` reserves two future tiles
+per worker and passes the two-layer gate; its timing is pending.
+
+`producer_prep.py` implements a dedicated loader SIMD group plus eight exact
+consumer groups and a one/two-slot threadgroup ring with bounded synchronization.
+All Q/K/V/router and norm bytes pass, first on layer7 and then three inputs across
+layers1/7/47. Its first balanced constituent screen is very slow (2.7–3.5ms versus
+0.21–0.24ms controls). Every-lane polling is avoidable; leader-only polling is the
+next bounded fix before assessing this route. This ring is a primitive prototype,
+not yet a whole-model producer/consumer implementation.
