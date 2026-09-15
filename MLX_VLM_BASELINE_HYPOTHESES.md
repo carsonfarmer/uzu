@@ -66,8 +66,12 @@ over its control.
    remains a hypothesis. It does not show an inherent Apple megakernel limit.
    MLX retains input buffers for GPU completion and requires unique ownership
    for native updates. Reading caches before updating them can therefore force
-   copies. A dependency-aware reuse candidate is under separate correctness
-   review; no benefit from that candidate has been established yet.
+   copies. The first dependency-aware reuse candidate passed synthetic and
+   real-engine correctness gates but removed only 0.90–3.26% of copy payload.
+   A diagnostic identified an additional native `Depends` lifetime hold: it
+   retains cache dependencies despite performing no GPU read of them. A narrow
+   follow-up accounts for those holds while preserving all buffer lifetimes;
+   no throughput benefit from that candidate has been established yet.
 
 The rotation attention-load ablation separately improved its prototype from
 30.809 to 37.095 tokens/s, while early release reached 57.872. Only the partition

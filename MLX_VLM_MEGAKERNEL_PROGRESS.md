@@ -409,7 +409,25 @@ native update, creating a lifetime/ownership cost that the ordinary model's
 update-before-attention order avoids. A separate candidate is now testing safe
 reuse when the update itself depends on that completed read. It must preserve
 external aliases, unrelated readers, stream ordering and every GPU lifetime hold.
-No reuse-candidate performance or correctness claim has been established yet.
+The first reuse candidate subsequently passed 30 synthetic cases (352 cache
+updates), 160 native lifecycle checks and 20 actual-engine generations with
+2,264 byte-exact full-vocabulary arrays. It nevertheless avoided only 120,
+139 and 413 additional copies on short, long and rotation respectively. Logical
+copy payload fell only 0.90%, 1.10% and 3.26%; no timing win is claimed.
+
+An optional rejection diagnostic found the dominant reason: the cache had a
+unique descriptor and three Data owners, but only one GPU producer hold was
+credited. A second diagnostic recorded 129 native `Depends` evaluations each
+retaining 96 cache dependencies without GPU reads. The native implementation
+only aliases returned outputs, while `gpu::eval` retains every dependency input
+until completion. This explains an additional lifetime hold that the initial
+policy conservatively refused to discount. A narrower follow-up now accounts
+for the exact native `Depends` type, excluding forwarded cache outputs and
+requiring a matching real producer. It keeps all original lifetime references.
+This follow-up is undergoing separate safety and model validation.
+
+These source/diagnostic results identify an MLX integration cost. They do not
+establish a throughput improvement or a limitation of Apple's GPU architecture.
 The raw observations are in `results/cache-copy-audit-v1` in the research branch.
 
 Reference: [Cohere's article](https://cohere.com/blog/megakernels) and source
@@ -419,7 +437,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`b19ac380571370bc04dac186741f9656d748fe0e` are backed up in
+`42c0a9c4e2a235ba52826059d0ce6bacabdd5c04` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:
