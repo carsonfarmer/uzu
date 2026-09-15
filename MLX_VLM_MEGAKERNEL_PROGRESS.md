@@ -326,12 +326,49 @@ exact. Early loading sometimes beats the matched late control, but no screened
 variant consistently beats original persistence on both short and Rust inputs.
 
 The selected 12 KiB specialized early and late paths each passed another 832
-native-array checks, eight abort checks and four consumption proofs. Their
-actual MLX-VLM generation/cache integration is now being validated before a
-balanced five-mode comparison. At most 32 tiles are retained per transition:
+native-array checks, eight abort checks and four consumption proofs. The native
+generation gate then matched 1,132 full-vocabulary arrays. The balanced five-mode
+comparison preserved all 105 generations: 75 measured and 30 warmups across
+three prompts. Early loading improved short/Rust throughput by 1.98%/1.70% over
+matched late loading, but remained 1.42%/1.47% below persistence without prefetch
+and 5.45%/5.61% below early expert release. The long case uses the shared fallback.
+Both policies use the same storage and reservation rules, but timing can change
+reserved tile counts; this does not isolate pure physical memory overlap.
+At most 32 tiles are retained per transition:
 384 KiB, about 1.83% of the next QKV/router matrices. This is a much smaller
-prefetch window than Cohere's Hopper implementation, and no new throughput gain
-has been established.
+prefetch window than Cohere's Hopper implementation. No new winning mode was
+established.
+
+Final normalization and the full vocabulary head have also been included in
+the persistent dispatch in checkpoint component tests. Dynamic and static
+head scheduling each passed 800 native-array comparisons and four intentional
+abort checks. Neither improved the balanced component timing; full generation
+has not been claimed for these head variants.
+
+An 18-generation CPU profile measured 148 ms more main-thread work for the
+persistent stack than early release, alongside an 81 ms wall penalty. Live-input
+guards and graph construction were substantial in a separate instrumented run.
+A cached MLX compiled body therefore received lifecycle tests (live weights,
+cache growth, strides and output-only completion), all five stock correctness
+cases with 566 full-vocabulary arrays, and a 72-generation comparison. It did
+not improve throughput: 67.830 versus 67.899 tokens/s for uncompiled persistence
+on short, and effectively tied on Rust. Both remain about 4.2% behind early
+release. A second 18-generation profile measured about 50 ms less instrumented
+graph-construction CPU, but variable whole-run CPU and unchanged throughput.
+Saved CPU need not reduce wall time when it overlaps GPU execution. MLX
+compilation is an integration technique, not a new contribution from Cohere.
+
+A long-attention component variant groups all native partial calculations and
+their reduction for one head under one worker, reducing scheduling from 801 to
+289 tasks. A second variant reuses partial scratch after all preceding layer
+tasks finish, reducing 48-layer workspace from 53.9 MB to 3.1 MB. Each passed
+424 native-array comparisons and five abort checks; the two screens retained
+90 exact timing samples. In the matched three-mode screen, the 48-layer
+component measured 21.051 ms for the old schedule, 17.837 ms for grouped heads
+and 17.417 ms with shared scratch. These changes improve a slow prototype;
+they are not gains over native generation. The numeric 128-partition attention
+and reduction order remain unchanged. Small-span raw times varied substantially
+and are retained without exclusions.
 
 Reference: [Cohere's article](https://cohere.com/blog/megakernels) and source
 `cohere-ai/cohere-megakernel@67d0b9ca22ea3652796b715d1d1863459e0e2c3c`.
@@ -340,7 +377,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`b56e534` are backed up in
+`08386b5808721e9445921270d5b718730d87637f` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:
