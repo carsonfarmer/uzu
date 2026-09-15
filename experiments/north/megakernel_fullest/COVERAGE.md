@@ -67,3 +67,23 @@ trials with partial residency and random completion execute each task exactly
 once (`results/schedule-cpu-v1.json`). This checks the abstract graph and claim
 policy, not Metal memory visibility, residency, or arithmetic. It deliberately
 keeps O-proj dependent on all heads to preserve its4096-element reduction.
+
+## CPU checkpoint 2
+
+`ready_tail.py` extends the real branch arithmetic to dynamically reserve future
+Q/K/V/router tiles. Each worker holds at most one consumed prefix and continues
+ready producer work; completion counts prep tasks rather than fixed worker IDs.
+This is actual cross-layer staging implementation, **not yet runtime verified**.
+The late-load control performs the same prefix copy and computation after norm.
+No speed or physical-overlap claim follows from the implementation.
+
+Six variants compile with the pinned MLX Metal headers. Failed CPU compilation
+attempts are retained: missing imported constant, missing source augmentation,
+coherent pointer qualification, and include-root setup were fixed. No GPU was
+used. `check_tail.py` prepares a bitwise/intermediate/visit/progress gate at1,
+20,32,64 workers. `bench_staged.py` prepares balanced primitive screens.
+
+`native_runner.swift` compiles on CPU. After release, it can measure exported
+primitive command-buffer GPU duration plus workspace fill, and a fill-only
+control, with pipeline threadgroup memory/resource metadata. Its measurements
+will be explicitly distinct from Python wall time and end-to-end decode.

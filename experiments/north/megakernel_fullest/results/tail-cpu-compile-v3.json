@@ -1,0 +1,53 @@
+{
+  "scope": "CPU compilation only; no numerical or runtime progress claim",
+  "variants": [
+    {
+      "rows": 32,
+      "prefix": 128,
+      "prefetch": false,
+      "returncode": 1,
+      "diagnostics": "In file included from /var/folders/wc/km_p_m0x5_s5dxd9y9w2qlh40000gn/T/north-tail-compile-1janmoei/check.metal:1:\n/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/utils.h:7:10: fatal error: 'mlx/backend/metal/kernels/bf16.h' file not found\n#include \"mlx/backend/metal/kernels/bf16.h\"\n         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "sha256": "8ac2c587cd1857deef4672d9edeb1631552efa58437183eb5b05200baa1a3fb2"
+    },
+    {
+      "rows": 32,
+      "prefix": 128,
+      "prefetch": true,
+      "returncode": 1,
+      "diagnostics": "In file included from /var/folders/wc/km_p_m0x5_s5dxd9y9w2qlh40000gn/T/north-tail-compile-1janmoei/check.metal:1:\n/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/utils.h:7:10: fatal error: 'mlx/backend/metal/kernels/bf16.h' file not found\n#include \"mlx/backend/metal/kernels/bf16.h\"\n         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "sha256": "0bd7fbec4ee72ad124464dbbc71310b75182f896846122c6b2c9af41f7f6e38f"
+    },
+    {
+      "rows": 32,
+      "prefix": 256,
+      "prefetch": false,
+      "returncode": 1,
+      "diagnostics": "In file included from /var/folders/wc/km_p_m0x5_s5dxd9y9w2qlh40000gn/T/north-tail-compile-1janmoei/check.metal:1:\n/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/utils.h:7:10: fatal error: 'mlx/backend/metal/kernels/bf16.h' file not found\n#include \"mlx/backend/metal/kernels/bf16.h\"\n         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "sha256": "fe9e2feac3f32f521a8129588c2a6220653fdee975e3c4ceb13a6fb4c21a0f2f"
+    },
+    {
+      "rows": 32,
+      "prefix": 256,
+      "prefetch": true,
+      "returncode": 1,
+      "diagnostics": "In file included from /var/folders/wc/km_p_m0x5_s5dxd9y9w2qlh40000gn/T/north-tail-compile-1janmoei/check.metal:1:\n/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/utils.h:7:10: fatal error: 'mlx/backend/metal/kernels/bf16.h' file not found\n#include \"mlx/backend/metal/kernels/bf16.h\"\n         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "sha256": "367606d0c350b9c7cb3af306ee880ee0418a73b6c8c3e201817d9f3112b08152"
+    },
+    {
+      "rows": 64,
+      "prefix": 128,
+      "prefetch": false,
+      "returncode": 1,
+      "diagnostics": "In file included from /var/folders/wc/km_p_m0x5_s5dxd9y9w2qlh40000gn/T/north-tail-compile-1janmoei/check.metal:1:\n/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/utils.h:7:10: fatal error: 'mlx/backend/metal/kernels/bf16.h' file not found\n#include \"mlx/backend/metal/kernels/bf16.h\"\n         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "sha256": "11a58bc5360097e63abd4a2ced365b38a0850fd724e0db131f7158d2c82753aa"
+    },
+    {
+      "rows": 64,
+      "prefix": 128,
+      "prefetch": true,
+      "returncode": 1,
+      "diagnostics": "In file included from /var/folders/wc/km_p_m0x5_s5dxd9y9w2qlh40000gn/T/north-tail-compile-1janmoei/check.metal:1:\n/Users/carsonfarmer/Developer/Personal/uzu-metal-lab/work/mlx-src/mlx/backend/metal/kernels/utils.h:7:10: fatal error: 'mlx/backend/metal/kernels/bf16.h' file not found\n#include \"mlx/backend/metal/kernels/bf16.h\"\n         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n1 error generated.\n",
+      "sha256": "4e6ca4701430d9f8b7aec75bbdd680984ac545a5be17404913860e64edc8ed8d"
+    }
+  ]
+}

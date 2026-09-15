@@ -1,0 +1,1 @@
+{"status":"failed before compilation","error":"KeyError: NAMES in CPU constant loader; fixed by reading literal NAMES from quantized/kernels.py"}
