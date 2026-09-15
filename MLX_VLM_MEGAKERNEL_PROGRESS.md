@@ -187,6 +187,32 @@ failure is preserved. This gate establishes arithmetic, not model cache
 lifecycle or throughput. Integration is now testing one full-attention MoE
 layer with the ordinary native cache update API before considering expansion.
 
+That opt-in combined layer now passes full-checkpoint diagnosis: 15 ordinary
+generation calls and 1,698 complete logit arrays matched stock. The candidate
+executed 308 times across short/Rust/EOS; long and rotating-cache cases correctly
+fell back. The other eligible layers retain the established early-release path.
+The first expanded unit gate nevertheless had one changed-weight comparison
+failure. Its values were not captured, and no cause or fix has been identified.
+Subsequent varied-weight, retained-intermediate and 32 fresh-process runs passed;
+the latter repeated the original 14-test invocation 448 times in total. These
+passes do not resolve the initial observation. Performance promotion remains
+withheld, and the raw failing log is preserved alongside the passing evidence.
+
+A per-KV-group attention readiness/placement ablation passed 2,040 samples,
+60 gates and 54 incomplete-work poison checks. Grouping the dependent Q/K/V
+tiles and prioritizing them removed some combined-kernel overhead, but the best
+variant was only near parity with separate early release across six real-input
+layer cases. It is not an additional engine speedup claim. All variants include
+native cache updates; captured old-buffer aliases mean their component timing
+cannot measure live generation's cache donation behavior.
+
+Native single-token RoPE also has a tested arithmetic helper: three candidates
+matched all 152 cases, including all finite BF16 patterns at two placements and
+19 offsets through 131,071. Other multiplication/contraction orders changed
+thousands of output values and are explicitly rejected. A benchmark-only Q/K
+projection epilogue using the matching arithmetic is prepared for a real
+sliding-layer gate; it has not changed the runtime or established throughput.
+
 Reference: [Cohere's article](https://cohere.com/blog/megakernels) and source
 `cohere-ai/cohere-megakernel@67d0b9ca22ea3652796b715d1d1863459e0e2c3c`.
 The experiments are explicitly testing its smaller task dependencies, attention
@@ -194,7 +220,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`3507b06` are backed up in
+`43d709e` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:
