@@ -539,6 +539,30 @@ use the existing fallback; the new kernel currently handles short, Rust and EOS.
 Safe output reuse is in progress. Initial v1 component/fixture manifests lacked a dyld check;
 the actual-engine wrapper asserts the loaded library and captures preamble inputs.
 
+The functional cache kernel now lets attention read the newly written cache
+through the native attention loops. The short implementation passes 20 public
+generations and 2,264 full stock-logit arrays. Its partitioned and rotating
+extension then passes 848 layer-output, 424 full-cache and 424 retained-input
+comparisons. The first physical long-context build had a coherent-pointer
+compile error; the failed source and successful repeat are both preserved.
+
+The unified adapter now passes all five public cases with 2,264 stock-logit
+arrays exact. Long and rotation each execute 129 genuine 48-layer spans rather
+than fallback. Forty continuation generations and four early-close streams also
+match native output/cache behavior. This removes the special newest-token
+attention loads and the 96 separate MoE cache-slot writes per step in the tested
+span. Dense layer zero and the vocabulary head remain outside the span.
+
+A separately gated ownership fix recognizes the writer's own multiple-output
+references. It passes 24 narrow cases, including actual donated writes and
+failure recovery. In public short generation, however, it reuses only 216 of
+12,384 cache initializations and still copies 4.498 GB of logical payload.
+Pending GPU lifetime references account for the remaining ownership blocker.
+A separate backend now tracks exact successful cache-output identities while
+retaining all original lifetime holds; its pending-work gates are in progress.
+No new throughput gain is claimed from these correctness runs. Detailed evidence
+and limitations are in `docs/north-functional-cache-integration.md` in the bundle.
+
 A source-inventory review also found that older copy audits captured their
 manifest before several shader builders were lazily imported. Their observer
 records, output checks and library hashes remain valid, but those manifests
@@ -556,7 +580,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`3929d8244f00658506c5a3fc2368d5b0f4e57cab` are backed up in
+`fa3571225d493ba52bf5e18f89ed632cc438c702` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:
