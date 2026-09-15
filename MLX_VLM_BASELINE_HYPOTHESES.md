@@ -74,8 +74,15 @@ over its control.
    It cut logical copy payload by 49–71% and improved its prototype by
    1.83%/4.14%/10.71% on short/long/rotation in a balanced 72-generation screen.
    It remained 2.69%/15.74%/28.98% behind early release, so the copies explain
-   only part of the regression. A simpler lazy-cache integration experiment
-   must now measure explicit final-cache completion as well as public generation.
+   only part of the regression. A simpler lazy-cache integration avoids just
+   192 additional copies per generation (1.53–1.66% of logical copy payload).
+   It passes stock logits, continuation and fully drained cache checks. The
+   balanced short screen reaches 69.285 tokens/s versus 70.823 for early release;
+   including final cache completion, its fixed-work rate is just 0.33% above
+   prepared and 2.11% below early. Removing our extra output dependency helps
+   its prototype but does not solve the underlying read-before-update cost.
+   Older copy-audit manifests have a documented late-import source gap; the
+   repeated lazy gates and audits capture those helpers before generation.
 
 The rotation attention-load ablation separately improved its prototype from
 30.809 to 37.095 tokens/s, while early release reached 57.872. Only the partition

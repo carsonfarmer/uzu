@@ -442,13 +442,40 @@ while leaving a substantial gap. It does not establish an inherent Apple GPU
 limitation. Detailed observations and timings are in `results/cache-copy-audit-v1`,
 `results/cache-reuse-model-audit-v2` and `results/cache-reuse-v2-screen`.
 
-The next bounded experiment removes the adapter's extra output dependency marker
-while keeping native cache updates. The pinned public generator permits lazy
-cache roots; the next forward or explicit cache evaluation submits them. The
-experiment therefore needs explicit final-cache correctness/drain timings,
-including EOS, early close and continuation, so deferred work cannot inflate a
-throughput claim. This is being tested on the original additive backend before
-adding more ownership-policy machinery.
+Removing the adapter's extra output dependency now passes full native-engine
+checks. Twenty-five public generations match all 2,830 preserved stock-logit
+arrays. Five native reference runs record 490 final cache arrays; the other
+20 runs independently match 1,960 drained cache arrays, their metadata and
+capacity shapes. Separate lifecycle checks cover continuation without a prior
+cache drain, EOS and early stream close. Pending graphs remain bounded in the
+recorded repeated-forward tests and clear after explicit evaluation.
+
+Nine fresh diagnostic generations include all final cache writes and record
+12,642 updates each. Fully drained cache contents and history match prepared.
+Removing the dependency avoids 192 copies per generation, reducing logical
+copy payload only 1.66% on short, 1.56% on long and 1.53% on rotation. Prepared
+reuses every observed cache buffer. This changes the integration contract
+safely in the tested cases but leaves most added copies in place.
+
+A balanced short screen preserves 24 exact generations, including 16 measured.
+Prepared/early/joined/lazy medians are 68.914/70.823/67.804/69.285 tokens/s.
+The lazy adapter improves on joined persistence, but remains 2.17% behind early.
+Its final cache drain adds a median 4.20 ms, versus 0.56 ms for joined and
+0.23–0.25 ms for the native controls. Including that work, lazy's fixed-work
+rate is only 0.33% above prepared and 2.11% below early. No additional goal win
+is established, and this small screen was not expanded into a headline claim.
+Raw results are in `results/lazy-cache-copy-audit-v1` and
+`results/indirect-lazy-short-pilot-v1`.
+
+A source-inventory review also found that older copy audits captured their
+manifest before several shader builders were lazily imported. Their observer
+records, output checks and library hashes remain valid, but those manifests
+cannot independently prove the omitted source files stayed unchanged during
+each process. The original records are preserved with that limitation in
+`docs/north-cache-audit-provenance-scope.md`; no hashes were added retroactively.
+The new lazy audits and repeated correctness gates explicitly capture those
+helpers before generation. The earlier full timing harness already captured
+them in its separate indirect-source manifest.
 
 Reference: [Cohere's article](https://cohere.com/blog/megakernels) and source
 `cohere-ai/cohere-megakernel@67d0b9ca22ea3652796b715d1d1863459e0e2c3c`.
@@ -457,7 +484,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`fa1fec98b49bea7bd8ebf52af19f7201048e7843` are backed up in
+`f265c9520a40939bc9ee972fb88390f98bdf3dad` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:
