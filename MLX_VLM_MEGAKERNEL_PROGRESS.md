@@ -563,6 +563,28 @@ retaining all original lifetime holds; its pending-work gates are in progress.
 No new throughput gain is claimed from these correctness runs. Detailed evidence
 and limitations are in `docs/north-functional-cache-integration.md` in the bundle.
 
+The separately gated output-lifetime backend and direct-completion adapter now
+eliminate every measured writer cache-output copy in the five native correctness
+cases. Twenty public generations pass 2,264 complete stock-logit comparisons;
+all 54,336 writer cache initializations reuse storage while preserving GPU
+lifetime references. The native dense-layer cache remains outside this count.
+Forty continuation generations and four early-close streams also pass. The
+adapter omits a redundant dependency only when the activation and cache writes
+are outputs of the same matched primitive; native fallback retains its joins.
+
+This recovers a substantial regression in our prototype, but is not a new win.
+The balanced short screen measures prepared/early/joined/direct at
+68.506/70.430/52.585/69.168 tokens/s. Direct remains 1.79% below early. Long and
+rotation remain 11.56% and 25.40% below early; including final cache completion
+does not reverse the losses. The additional 10% goal is still unmet.
+
+A diagnostic identifies extra host graph-building work but does not establish
+that it limits throughput, since it overlaps GPU execution. Smaller 20/24-group
+variants pass native short/long/rotation correctness and complete cache reuse,
+then lose 18.87%/10.80% to early in a balanced 30-generation short screen. All
+negative results and original logs are preserved; no observations are excluded.
+The next work examines synchronization costs and more detailed GPU traces.
+
 A source-inventory review also found that older copy audits captured their
 manifest before several shader builders were lazily imported. Their observer
 records, output checks and library hashes remain valid, but those manifests
@@ -580,7 +602,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`fa3571225d493ba52bf5e18f89ed632cc438c702` are backed up in
+`c9a8e05e3ff2a57cd82ee26ddba3bff2a30a2c81` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:
