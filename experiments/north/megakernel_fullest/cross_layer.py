@@ -17,13 +17,13 @@ class Carrier:
         self.value=(index,values)
 
 class CrossLayer(nn.Module):
-    def __init__(self,original,index,next_layer,carrier,workers,prefix,prefetch):
+    def __init__(self,original,index,next_layer,carrier,workers,prefix,prefetch,storage):
         super().__init__();self.original=original;self.index=index;self.next_layer=next_layer;self.carrier=carrier
         self.self_attn=original.self_attn;self.mlp=original.mlp
         if next_layer is None:
             def branch(h,ax,ids,scores,x):return (run_exact(inputs(self.mlp,h,ax,ids,self.self_attn.o_proj.weight),scores,x,workers=160,rows=16),)
         else:
-            def branch(h,ax,ids,scores,x):return tail(inputs(self.mlp,h,ax,ids,self.self_attn.o_proj.weight),scores,x,next_layer,workers=workers,prefix=prefix,prefetch=prefetch)
+            def branch(h,ax,ids,scores,x):return tail(inputs(self.mlp,h,ax,ids,self.self_attn.o_proj.weight),scores,x,next_layer,workers=workers,prefix=prefix,prefetch=prefetch,storage=storage)
         self.branch=mx.compile(branch)
         weights=[getattr(self.self_attn,k+'_proj').weight for k in ('q','k','v')]+[self.mlp.gate.weight]
         self.first_prep=mx.compile(lambda x:prepare(x,weights,64,8,original.input_layernorm.weight))
@@ -43,6 +43,6 @@ class CrossLayer(nn.Module):
         if self.next_layer is not None:self.carrier.put(self.index+1,result[1:])
         return result[0]
 
-def path(original,workers=32,prefix=128,prefetch=False):
+def path(original,workers=32,prefix=128,prefetch=False,storage="threadgroup"):
     carrier=Carrier()
-    return [original[0]]+[CrossLayer(layer,i,original[i+1] if i+1<len(original) else None,carrier,workers,prefix,prefetch) for i,layer in enumerate(original[1:],1)]
+    return [original[0]]+[CrossLayer(layer,i,original[i+1] if i+1<len(original) else None,carrier,workers,prefix,prefetch,storage) for i,layer in enumerate(original[1:],1)]

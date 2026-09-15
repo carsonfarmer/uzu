@@ -5,6 +5,9 @@ from pathlib import Path
 import subprocess
 import tempfile
 from ready_tail import build_source,U
+import os
+if os.environ.get("NORTH_REGISTER_SCREEN")=="1":
+    from register_tail import build_source
 h,s=build_source()
 h='#include "utils.h"\n'+h
 names=U['NAMES']+['scores','residual']+U['NEXT_NAMES']

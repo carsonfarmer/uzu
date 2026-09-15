@@ -15,6 +15,7 @@ from ready_tail import run,U
 p=argparse.ArgumentParser();p.add_argument('--output',required=True)
 p.add_argument('--layers',type=int,nargs='+',default=[1,7,47])
 p.add_argument('--workers',type=int,nargs='+',default=[1,20,32,64])
+p.add_argument('--storage',choices=['threadgroup','register'],default='threadgroup')
 p.add_argument('--samples',type=int,default=3);a=p.parse_args()
 model,_=load();out=Path(a.output);out.parent.mkdir(parents=True,exist_ok=True)
 with out.open('w') as f:
@@ -35,7 +36,7 @@ with out.open('w') as f:
             refs=[o,h,*[getattr(next_layer.self_attn,k+'_proj')(h) for k in ('q','k','v')],next_layer.mlp.gate(h)];mx.eval(refs)
             for workers in a.workers:
                 for prefetch in (False,True):
-                    got=run(data,scores,residual,next_layer,workers=workers,prefetch=prefetch,audit=True);mx.eval(got)
+                    got=run(data,scores,residual,next_layer,workers=workers,prefetch=prefetch,audit=True,storage=a.storage);mx.eval(got)
                     unequal=[int(mx.sum(r.view(mx.uint8)!=v.view(mx.uint8)).item()) for r,v in zip(refs,got)]
                     state=got[-1].tolist();total=U['FRONT_TASKS']+U['DOWN_TASKS']+U['JOIN_TASKS']+1+176
                     visits=state[U['VISITS']:U['VISITS']+total]

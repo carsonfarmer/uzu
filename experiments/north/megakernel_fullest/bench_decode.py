@@ -27,12 +27,13 @@ p.add_argument('--prompts',nargs='+',default=['short','rust','long'])
 p.add_argument('--tokens',type=int,default=128)
 p.add_argument('--runs',type=int,default=8)
 p.add_argument('--check',action=argparse.BooleanOptionalAction,default=True)
+p.add_argument('--storage',choices=['threadgroup','register'],default='threadgroup')
 a=p.parse_args()
 assert a.runs%8==0, 'Four-way order requires complete eight-round balanced cycles'
 model,config=load();paths=variants(model,modes=('exact',),workers=160,rows=16)
 paths['prepared']=[paths['original'][0]]+[PreparedBranch(l,64,8,True) for l in paths['original'][1:]]
 for name,prefix,prefetch in [('ready_direct',0,False),('ready_late',128,False),('ready_early',128,True)]:
-    paths[name]=cross_path(paths['original'],workers=32,prefix=prefix,prefetch=prefetch)
+    paths[name]=cross_path(paths['original'],workers=32,prefix=prefix,prefetch=prefetch,storage=a.storage)
 base=ROOT/'work/models/North-Mini-Code-1.0-4bit'
 tok=AutoTokenizer.from_pretrained(str(base),local_files_only=True)
 tok.chat_template=(base/'chat_template.jinja').read_text()

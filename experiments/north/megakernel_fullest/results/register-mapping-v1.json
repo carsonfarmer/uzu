@@ -1,0 +1,26 @@
+{
+  "scope": "CPU address/ownership audit only; GPU compiler allocation and numerical exactness unverified",
+  "checks": [
+    {
+      "rows": 32,
+      "prefix": 128,
+      "checked_reads": 5120,
+      "max_thread_slots": 48,
+      "pass_mapping": true
+    },
+    {
+      "rows": 32,
+      "prefix": 256,
+      "checked_reads": 10240,
+      "max_thread_slots": 64,
+      "pass_mapping": true
+    },
+    {
+      "rows": 64,
+      "prefix": 128,
+      "checked_reads": 9216,
+      "max_thread_slots": 64,
+      "pass_mapping": true
+    }
+  ]
+}

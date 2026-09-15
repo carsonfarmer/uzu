@@ -21,7 +21,11 @@ from ready_tail import build_source,U
 p=argparse.ArgumentParser();p.add_argument('--output',required=True)
 p.add_argument('--work',required=True);p.add_argument('--layer',type=int,default=7)
 p.add_argument('--workers',type=int,default=32);p.add_argument('--runs',type=int,default=32)
-a=p.parse_args();assert a.runs%8==0
+p.add_argument('--storage',choices=['threadgroup','register'],default='threadgroup')
+a=p.parse_args()
+if a.storage=='register':
+    from register_tail import build_source
+assert a.runs%8==0
 work=Path(a.work).resolve();work.mkdir(parents=True,exist_ok=True)
 output=Path(a.output);output.parent.mkdir(parents=True,exist_ok=True)
 model,_=load();layer=model.layers[a.layer];nxt=model.layers[a.layer+1]

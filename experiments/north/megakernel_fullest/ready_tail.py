@@ -102,19 +102,22 @@ inline void north_load_prefix(uint job,uint rows,uint router_rows,uint prefix,ui
 '''
     return header,s
 
-_KERNEL=None
+_KERNELS={}
 
-def run(data,scores,residual,next_layer,workers=32,rows=32,prefix=128,prefetch=False,audit=False):
-    global _KERNEL
+def run(data,scores,residual,next_layer,workers=32,rows=32,prefix=128,prefetch=False,audit=False,storage="threadgroup"):
     import mlx.core as mx
     assert rows in (32,64) and prefix in (0,128,256) and rows*prefix<=8192
     assert 1<=workers<=256
     rr=8;prep_tasks=5120//rows+128//rr
-    if _KERNEL is None:
-        h,s=build_source()
-        _KERNEL=mx.fast.metal_kernel(name='north_ready_consumed_future_prefix',input_names=U['NAMES']+['scores','residual']+U['NEXT_NAMES'],output_names=['workspace'],header=h,source=s)
+    assert storage in ("threadgroup","register")
+    if storage not in _KERNELS:
+        builder=build_source
+        if storage=="register":
+            from register_tail import build_source as builder
+        h,s=builder()
+        _KERNELS[storage]=mx.fast.metal_kernel(name='north_ready_consumed_future_prefix_'+storage,input_names=U['NAMES']+['scores','residual']+U['NEXT_NAMES'],output_names=['workspace'],header=h,source=s)
     att=next_layer.self_attn
-    ws=_KERNEL(inputs=data+[scores,residual,next_layer.input_layernorm.weight,att.q_proj.weight,att.k_proj.weight,att.v_proj.weight,next_layer.mlp.gate.weight],
+    ws=_KERNELS[storage](inputs=data+[scores,residual,next_layer.input_layernorm.weight,att.q_proj.weight,att.k_proj.weight,att.v_proj.weight,next_layer.mlp.gate.weight],
         template=[('INTERLEAVE',True),('PREFETCH',prefetch),('AUDIT',audit),('ROWS',rows),('PREFIX',prefix),('ROUTER_ROWS',rr),('PREP_TASKS',prep_tasks)],
         grid=(workers*256,1,1),threadgroup=(256,1,1),output_shapes=[(U['SIZE'],)],output_dtypes=[mx.uint32],init_value=0)[0]
     raw=ws.view(mx.bfloat16)

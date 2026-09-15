@@ -104,3 +104,30 @@ accounting. At the long workload it rises to541–567MB, ~17%. This does not jus
 assuming cache copies dominate the short-context deficit. Measure before native
 cache ownership redesign. The GPU wrapper was exercised before release and
 correctly refused to enter the target script.
+
+## Additional primary-source constraint
+
+Apple's [Metal Performance Primitives Programming Guide, section2.2](https://developer.apple.com/download/files/Metal-Performance-Primitives-Programming-Guide.pdf)
+explains that its GEMM kernels can obtain memory/compute overlap through
+occupancy and direct device-memory access, without explicit threadgroup staging.
+This is guidance, not a measured conclusion about this exact W4 GEMV workload.
+It strengthens the need for the direct/no-staging control and resource metadata;
+a CUDA-style staging design is not presumed to win. Software buffering and
+future immutable-weight reservations remain testable mechanisms.
+
+Retained older partial-Q staging screens also warn against assuming benefit:
+`full_layer/bench-prefetch-q-layer1-v2.json` has median wall451.71us prefetched
+versus451.50us unstaged cross-tail and425.38us exact+MLX preparation; layer7
+has528.33us versus520.67us and469.37us. These historical constituent timings
+are not the new matched-async control and are not newly measured GPU durations.
+
+## CPU checkpoint 4
+
+Added `register_tail.py`: the same dynamically reserved future prefix is held
+by its eventual consumer thread, avoiding the threadgroup buffer and testing a
+different resource tradeoff. Eight configurations compile. The CPU address audit
+checks every prefix read against its expected dense/router weight address and
+checks per-thread slot bounds. Native, intermediate, and decode harnesses accept
+`--storage register`. Register allocation/spilling, numerical exactness, and GPU
+performance remain unverified. This is a single retained prefix per worker;
+producer/consumer double buffering and full-model fine scheduling remain open.
