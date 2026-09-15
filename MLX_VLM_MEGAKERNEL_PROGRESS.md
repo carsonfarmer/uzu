@@ -167,9 +167,25 @@ dependency; it does not copy their QKV-then-router wave placement verbatim.
 
 A 6,084-sample router tile-size ablation found no consistent improvement over
 the original eight-row choice; all numerical and failure gates passed and the
-runtime geometry remains unchanged. Diagnostic-counter removal and a bridge
-from the current layer's final operations into the next early-release front
-are the next separately gated experiments.
+runtime geometry remains unchanged. Removing two diagnostic counters produced
+no measurable additional gain in 96 exact timing generations; another 3,396
+full-logit comparisons passed. The early-release gain over matched prepared
+remained 2.72–3.11% in that repeat.
+
+A bridge from the current layer's final operations into the next early-release
+front passed its numerical and incomplete-work gates. The expanded six-case
+screen retained 2,916 exact samples, 54 gates and 18 poison checks. Keeping 32
+workers was near parity with separate kernels, while starting 64 and retiring
+half after the tail made it slower. No reliable improvement was promoted, and
+this bridge has not been timed in the actual generation engine.
+
+An attention prerequisite now reads the ordinary old cache while substituting
+one newly computed K/V slot. All 84 cases, 252 initial gates and 1,008 sampled
+outputs matched native SDPA exactly, through length 8,191 and including strided
+views, append and physical-slot replacement. An initial empty-input compiler
+failure is preserved. This gate establishes arithmetic, not model cache
+lifecycle or throughput. Integration is now testing one full-attention MoE
+layer with the ordinary native cache update API before considering expansion.
 
 Reference: [Cohere's article](https://cohere.com/blog/megakernels) and source
 `cohere-ai/cohere-megakernel@67d0b9ca22ea3652796b715d1d1863459e0e2c3c`.
@@ -178,7 +194,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`226545307e8f51daf75dcbe63e5480bac205b608` are backed up in
+`3507b06` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:
