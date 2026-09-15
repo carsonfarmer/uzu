@@ -1,0 +1,43 @@
+{
+  "raw_sha256": "55f0a9a44ce5493dd6e845e5ebb19b7a5383e3a6ea483f5dabf7e286fb20057f",
+  "full_array_checks": 93,
+  "measured_generations": 18,
+  "tokens_per_generation": 32,
+  "all_gates_pass": true,
+  "balanced": true,
+  "medians_tps": {
+    "prepared": 60.968699082874394,
+    "phase": 50.10691509051449,
+    "fine": 22.984460870048714
+  },
+  "contrasts": {
+    "fine_over_prepared": {
+      "ratio": 0.3898146010841868,
+      "bootstrap95": [
+        0.3575367804441036,
+        0.42639910131866476
+      ],
+      "min_pair": 0.3363333706835525,
+      "max_pair": 0.4597391457214326
+    },
+    "phase_over_prepared": {
+      "ratio": 0.757898103988897,
+      "bootstrap95": [
+        0.6629997324166864,
+        0.8625727990398897
+      ],
+      "min_pair": 0.6062293803218265,
+      "max_pair": 0.9162527452411439
+    },
+    "fine_over_phase": {
+      "ratio": 0.5143364246889546,
+      "bootstrap95": [
+        0.4513599046867802,
+        0.5852432230122762
+      ],
+      "min_pair": 0.41133377875684624,
+      "max_pair": 0.6094836238302923
+    }
+  },
+  "scope": "Matched async shared-weight whole-pass pilot; no extrapolation beyond tested length"
+}

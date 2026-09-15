@@ -1,0 +1,8 @@
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+packing 2 layers
+weights packed
+{'layers': 2, 'position': 127, 'workers': 1, 'schedule': 'queue', 'prefetch_stages': 0, 'prep_rows': 64, 'oproj_rows': 64, 'router_rows': 8, 'output_unequal_bytes': 0, 'cache_unequal_bytes': [0, 0], 'logits_unequal_bytes': None, 'state': [13, 32, 32, 0], 'task_states_min': 2, 'task_states_max': 2, 'completed_per_layer': [440, 440]}
+{'layers': 2, 'position': 127, 'workers': 20, 'schedule': 'queue', 'prefetch_stages': 0, 'prep_rows': 64, 'oproj_rows': 64, 'router_rows': 8, 'output_unequal_bytes': 0, 'cache_unequal_bytes': [0, 0], 'logits_unequal_bytes': None, 'state': [13, 32, 32, 0], 'task_states_min': 2, 'task_states_max': 2, 'completed_per_layer': [440, 440]}
+{'layers': 2, 'position': 127, 'workers': 32, 'schedule': 'queue', 'prefetch_stages': 0, 'prep_rows': 64, 'oproj_rows': 64, 'router_rows': 8, 'output_unequal_bytes': 0, 'cache_unequal_bytes': [0, 0], 'logits_unequal_bytes': None, 'state': [13, 32, 32, 0], 'task_states_min': 2, 'task_states_max': 2, 'completed_per_layer': [440, 440]}
+{'layers': 2, 'position': 127, 'workers': 64, 'schedule': 'queue', 'prefetch_stages': 0, 'prep_rows': 64, 'oproj_rows': 64, 'router_rows': 8, 'output_unequal_bytes': 0, 'cache_unequal_bytes': [0, 0], 'logits_unequal_bytes': None, 'state': [13, 32, 32, 0], 'task_states_min': 2, 'task_states_max': 2, 'completed_per_layer': [440, 440]}
+PASS 4 packed whole-pass comparisons

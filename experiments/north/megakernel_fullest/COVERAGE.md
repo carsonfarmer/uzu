@@ -176,3 +176,21 @@ bijective round-robin Q/K/V/router reservation order and per-operation audit
 counters. Its CPU permutation check passes; GPU early-operation counts and
 performance are pending. This is explicitly still a partial-layer task engine,
 not the final full-model persistent scheduler.
+
+## GPU checkpoint 3: whole-model fine DAG
+
+`fine_whole.py` replaces the six MoE phase boundaries with440 ready nodes per
+layer: Q-head/KV readiness, expert-specific down dependencies, and row joins.
+Prefix/cache carry/head retain the phase queue. Per-layer states are never reset
+within a decode, avoiding stale-worker reuse. Bounded idle diagnostics are checked.
+Two-layer gates pass at1/20/32/64 workers. The complete49-layer + head gate passes
+at20/32 workers, including every used cache byte and all logits/task completions.
+
+`shared_pack.py` lets baseline modules view packed weights rather than retaining
+two complete weight copies. `fine-whole-decode-pilot-v1` then passes93 full-logit
+arrays, all per-layer task-state checks, and18 measured32-token generations.
+The ready DAG is substantially slower (~23t/s) than both the phase queue (~56t/s)
+and fresh prepared+async (~61t/s). Scanning costs are a hypothesis, not isolated
+proof. `affinity_whole.py` adds continuous RR preferred lists with ready stealing;
+that new scheduler is not yet GPU tested. Long-context SDPA algorithm compatibility
+remains explicitly unimplemented, and the harness rejects that unsupported range.

@@ -21,13 +21,16 @@ from ready_tail import build_source,U
 p=argparse.ArgumentParser();p.add_argument('--output',required=True)
 p.add_argument('--work',required=True);p.add_argument('--layer',type=int,default=7)
 p.add_argument('--workers',type=int,default=32);p.add_argument('--runs',type=int,default=32)
-p.add_argument('--storage',choices=['threadgroup','register','tuned_threadgroup','tuned_register'],default='threadgroup')
+p.add_argument('--storage',choices=['threadgroup','register','tuned_threadgroup','tuned_register','interleaved_threadgroup','interleaved_register'],default='threadgroup')
 a=p.parse_args()
 if a.storage=='register':
     from register_tail import build_source
 if a.storage.startswith('tuned_'):
     from tuned_tail import build_source as tuned_builder
     build_source=lambda:tuned_builder(register=a.storage.endswith('register'))
+if a.storage.startswith('interleaved_'):
+    from interleaved_tail import build_source as interleaved_builder
+    build_source=lambda:interleaved_builder(register=a.storage.endswith('register'))
 assert a.runs%8==0
 work=Path(a.work).resolve();work.mkdir(parents=True,exist_ok=True)
 output=Path(a.output);output.parent.mkdir(parents=True,exist_ok=True)

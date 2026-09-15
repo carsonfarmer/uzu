@@ -15,7 +15,7 @@ from ready_tail import run,U
 p=argparse.ArgumentParser();p.add_argument('--output',required=True)
 p.add_argument('--layers',type=int,nargs='+',default=[1,7,47])
 p.add_argument('--workers',type=int,nargs='+',default=[1,20,32,64])
-p.add_argument('--storage',choices=['threadgroup','register','tuned_threadgroup','tuned_register'],default='threadgroup')
+p.add_argument('--storage',choices=['threadgroup','register','tuned_threadgroup','tuned_register','interleaved_threadgroup','interleaved_register'],default='threadgroup')
 p.add_argument('--samples',type=int,default=3);a=p.parse_args()
 model,_=load();out=Path(a.output);out.parent.mkdir(parents=True,exist_ok=True)
 with out.open('w') as f:
@@ -40,7 +40,7 @@ with out.open('w') as f:
                     unequal=[int(mx.sum(r.view(mx.uint8)!=v.view(mx.uint8)).item()) for r,v in zip(refs,got)]
                     state=got[-1].tolist();total=U['FRONT_TASKS']+U['DOWN_TASKS']+U['JOIN_TASKS']+1+176
                     visits=state[U['VISITS']:U['VISITS']+total]
-                    row=dict(kind='correctness',layer=index,sample=sample,workers=workers,prefetch=prefetch,unequal_bytes=unequal,errors=state[U['ERROR']],prep_completed=state[U['PREFETCH_DONE']],early_reservations=state[U['EARLY_ROUNDS']],visits_min=min(visits),visits_max=max(visits))
+                    row=dict(kind='correctness',layer=index,sample=sample,workers=workers,prefetch=prefetch,unequal_bytes=unequal,errors=state[U['ERROR']],prep_completed=state[U['PREFETCH_DONE']],early_reservations=state[U['EARLY_ROUNDS']],visits_min=min(visits),visits_max=max(visits),early_operations=state[U['ERROR']+1:U['ERROR']+5])
                     save(row);print(row,flush=True)
                     assert not any(unequal) and not row['errors'] and min(visits)==max(visits)==1 and row['prep_completed']==176,row
                     assert bool(row['early_reservations'])==prefetch,row

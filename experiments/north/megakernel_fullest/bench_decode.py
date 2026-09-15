@@ -27,7 +27,7 @@ p.add_argument('--prompts',nargs='+',default=['short','rust','long'])
 p.add_argument('--tokens',type=int,default=128)
 p.add_argument('--runs',type=int,default=8)
 p.add_argument('--check',action=argparse.BooleanOptionalAction,default=True)
-p.add_argument('--storage',choices=['threadgroup','register','tuned_threadgroup','tuned_register'],default='threadgroup')
+p.add_argument('--storage',choices=['threadgroup','register','tuned_threadgroup','tuned_register','interleaved_threadgroup','interleaved_register'],default='threadgroup')
 a=p.parse_args()
 assert a.runs%8==0, 'Four-way order requires complete eight-round balanced cycles'
 model,config=load();paths=variants(model,modes=('exact',),workers=160,rows=16)
