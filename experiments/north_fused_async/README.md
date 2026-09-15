@@ -1,5 +1,18 @@
 # North Mini Code: targeted Metal fusion + asynchronous decode
 
+## Scope correction — standard-engine benefit unproven
+
+**This branch has not demonstrated an improvement to Uzu or the normal MLX-VLM
+generation path.** It contains a standalone MLX runner and custom kernels.
+The combined 19–24% measurements partly restore async behavior already present
+in standard MLX-VLM. Smaller gains versus stock layers with async are also
+internal to this runner; they need validation through an existing engine's
+ordinary entry points before being reported as a practical engine improvement.
+
+The code and raw measurements are preserved. Earlier shareable-result framing
+is withdrawn, and further optimization against this substitute baseline has
+been stopped. See the [baseline and scope correction](https://github.com/carsonfarmer/uzu/blob/cf/decode-fusion/BASELINE_CORRECTION.md).
+
 A small, opt-in MLX experiment for the public North Mini Code 4-bit checkpoint
 on Apple Silicon. This branch preserves the useful implementation from the
 larger megakernel investigation. It starts directly from Uzu `7096cf32` and adds

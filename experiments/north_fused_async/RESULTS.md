@@ -1,8 +1,21 @@
 # Matched fusion + async results — 2026-09-14
 
+## Scope correction — standard-engine benefit unproven
+
+**This branch has not demonstrated an improvement to Uzu or the normal MLX-VLM
+generation path.** It contains a standalone MLX runner and custom kernels.
+The combined 19–24% measurements partly restore async behavior already present
+in standard MLX-VLM. Smaller gains versus stock layers with async are also
+internal to this runner; they need validation through an existing engine's
+ordinary entry points before being reported as a practical engine improvement.
+
+The code and raw measurements are preserved. Earlier shareable-result framing
+is withdrawn, and further optimization against this substitute baseline has
+been stopped. See the [baseline and scope correction](https://github.com/carsonfarmer/uzu/blob/cf/decode-fusion/BASELINE_CORRECTION.md).
+
 **The minimal targeted fusion + async path improved decode throughput by 22.4% on Python, 22.7% on Rust and 19.4% on the longer prompt, compared with our original synchronous research runner.** Adding the optional preparation fusion gave 24.4%, 24.5% and 22.0%, respectively. These are fresh, paired measurements; no historical gains were multiplied together.
 
-Against the stock layers using the same async submission, core fusion improved throughput by 8.9%, 9.8% and 7.1%. Including preparation fusion raised those gains to 10.7%, 11.4% and 9.5%. The combined ~20% result is useful, and its baseline must be named when reporting it.
+Against the stock layers using the same async submission, core fusion improved throughput by 8.9%, 9.8% and 7.1%. Including preparation fusion raised those gains to 10.7%, 11.4% and 9.5%. These internal measurements do not establish the requested existing-engine improvement.
 
 ## Throughput
 
@@ -43,7 +56,7 @@ The intervals describe these rounds, not a guarantee across machines or workload
 
 The branch contains the useful fusion kernels, their layer wrappers, the async runner, optional preparation fusion, and a self-contained reproduction harness. It starts at Uzu `7096cf32`, with no megakernel research commits in its history. The only addition outside this directory is the local work-cache ignore rule. The optimized kernels retain their previously validated arithmetic; extraction checks are recorded in [provenance/extraction.json](provenance/extraction.json).
 
-[Cohere’s article](https://cohere.com/blog/megakernels) motivated the investigation. These gains come from targeted fusion and a standard async submission pattern; [the pinned MLX-VLM loop already uses that pattern](https://github.com/Blaizzy/mlx-vlm/blob/cdc745ad8a32d162f6d8e9d08be256910d663ac2/mlx_vlm/generate/ar.py#L546). They do not establish the benefit of a persistent task scheduler or future-layer weight prefetch. The full megakernel investigation continues separately on `cf/north-megakernel-fullest`, using the strongest exact fusion+prep+async path as its control.
+[Cohere’s article](https://cohere.com/blog/megakernels) motivated the investigation. These gains come from targeted fusion and a standard async submission pattern; [the pinned MLX-VLM loop already uses that pattern](https://github.com/Blaizzy/mlx-vlm/blob/cdc745ad8a32d162f6d8e9d08be256910d663ac2/mlx_vlm/generate/ar.py#L546). They do not establish the benefit of a persistent task scheduler or future-layer weight prefetch. The separate `cf/north-megakernel-fullest` task has been instructed to stop new GPU experiments against that custom control and inventory existing-engine integration requirements.
 
 ## Reproduction and evidence
 
@@ -55,6 +68,10 @@ The branch contains the useful fusion kernels, their layer wrappers, the async r
 - [Host conditions](results/host.json)
 - [Review and validation](VERIFICATION.md)
 
-## Short shareable finding
+## Earlier shareable finding withdrawn
 
-> North Mini Code W4 on an M4 Pro: targeted Metal fusion + async submission made our decode loop ~20–23% faster than its original synchronous version, with bit-identical logits in our tests. Core fusion still adds ~7–10% over the async baseline. Code and raw runs included.
+The previous ~20–23% shareable wording described gains over our own initial
+runner. It did not establish an improvement to the standard software the user
+wanted optimized. No replacement public performance claim is made until the
+existing-engine comparison is complete. The original wording remains in Git
+history, and all underlying code and measurements remain in this branch.
