@@ -513,6 +513,32 @@ native SliceUpdates. Cohere places these writes inside its QKV tasks. A pure
 cache-output integration is the next implementation experiment; no correctness
 or performance result is claimed for it yet.
 
+The host-adapter composition follow-up is now measured. All compiled, collected
+and lazy variants preserve history reuse and pass full logits/continuation/close.
+The balanced short screen records36 exact generations,24 measured. Plain,
+compiled,collected,lazy and early medians are69.772,69.674,69.768,69.723 and
+70.736 tokens/s. Including final cache completion, the three compositions are
+0.13%,0.05% and0.30% below plain. They do not justify a larger gain campaign.
+
+A new functional cache-output extension moves the slot stores into QKV tasks.
+It first passed848 native component output comparisons,424 full-cache checks
+and424 retained-input checks across1/4/48-layer spans on short and Rust.
+An initial capture without physical cache capacity failed safely; its cache-only
+checker could pass an empty reference update, so the repeat explicitly requires
+an existing slot and successful tasks. Both runs are preserved.
+
+The first actual-engine integration passes four short public generations with
+516 complete stock-logit arrays and exact final caches, metadata and capacities.
+Native cache methods handle growth and advance metadata exactly once; an exact
+SliceUpdate graph matcher then substitutes the equivalent functional outputs.
+The candidate executes129 spans/6,192 MoE layers. Observers confirm elimination
+of96 separate slot writes per eligible decode step. It still copies every cache
+output in this run; no speed claim is made. The full set now passes 20 public generations and 2,264 stock-logit arrays,
+plus 40 continuation generations and four early-close streams. Long and rotation
+use the existing fallback; the new kernel currently handles short, Rust and EOS.
+Safe output reuse is in progress. Initial v1 component/fixture manifests lacked a dyld check;
+the actual-engine wrapper asserts the loaded library and captures preamble inputs.
+
 A source-inventory review also found that older copy audits captured their
 manifest before several shader builders were lazily imported. Their observer
 records, output checks and library hashes remain valid, but those manifests
@@ -530,7 +556,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`b6b18ef5b09c6be09169bfae355d3b59d198734d` are backed up in
+`3929d8244f00658506c5a3fc2368d5b0f4e57cab` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:
