@@ -1,3 +1,5 @@
+> **Update:** An actual MLX-VLM 0.7.1 integration has now been validated against the untouched published package: 10.25–11.62% median decode improvement. See [the new engine report](MLX_VLM_INTEGRATION.md). The earlier custom-runner headline remains withdrawn.
+
 # Baseline and scope correction — September 14, 2026
 
 **The requested existing-engine improvement has not been demonstrated.** The
@@ -45,8 +47,8 @@ Source checks repeated on September 14 confirm the relevant gaps:
    cache, generation and sampling path. Record actual support gaps before
    choosing or changing the engine under test.
 2. For Uzu, implement and verify missing model support before reporting a
-   North-in-Uzu result. A stock MLX-VLM reference is useful for correctness,
-   but is not a substitute for Uzu integration.
+   North-in-Uzu result. The user subsequently authorized MLX-VLM as an engine
+   target; the new MLX-VLM result is reported explicitly as such.
 3. Put the proposed optimization behind a switch in that same engine path.
    Compare enabled and disabled with the same model, precision, prompts,
    cache behavior, sampling and standard async submission. Do not rewrite

@@ -1,3 +1,5 @@
+> **Update:** An actual MLX-VLM 0.7.1 integration has now been validated against the untouched published package: 10.25–11.62% median decode improvement. See [the new engine report](MLX_VLM_INTEGRATION.md). The earlier custom-runner headline remains withdrawn.
+
 # Apple North research status — September 14, 2026
 
 ## Acceptance correction — existing-engine result still missing
