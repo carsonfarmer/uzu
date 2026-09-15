@@ -1,5 +1,26 @@
 # North Mini Code megakernel results on Apple M4 Pro
 
+## Clean fusion + async result — September 14, 2026
+
+The combined improvement is now directly measured and preserved on
+[cf/north-fused-async](https://github.com/carsonfarmer/uzu/tree/cf/north-fused-async/experiments/north_fused_async): **22.4% Python, 22.7% Rust and 19.4% longer-prompt
+decode throughput** over the original synchronous research runner, using only
+targeted fusion and async submission. Optional preparation fusion gives
+24.4%, 24.5% and 22.0%, respectively. Against stock layers already using async,
+the core gain is 7.1–9.8%, or 9.5–11.4% with preparation.
+
+The clean branch starts from upstream 7096cf32 and is pushed at 2ae12a85.
+It includes all 150 measured generations, 1,905 exact full-logit comparisons,
+a verified fresh installation, raw runs, intervals and pinned dependencies.
+See the [complete matched report](https://github.com/carsonfarmer/uzu/tree/cf/north-fused-async/experiments/north_fused_async/RESULTS.md).
+This is a standalone MLX decode experiment, not a Uzu engine integration or a
+benchmark of the full MLX-VLM serving frontend.
+
+The persistent megakernel performance objective remains active in the separate
+[cf/north-megakernel-fullest investigation](https://github.com/carsonfarmer/uzu/tree/cf/north-megakernel-fullest).
+The historical measurements below are preserved; their absolute rates should
+not be compared directly with the new process's rates.
+
 ## Status correction — September 13, 2026
 
 The performance objective remains unfinished. The full queue implementation

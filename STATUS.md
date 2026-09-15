@@ -1,4 +1,33 @@
-# Apple North research status — September 13, 2026
+# Apple North research status — September 14, 2026
+
+Fresh matched tests confirm the useful combined result: targeted fusion plus
+async decode is **22.4% faster on Python, 22.7% on Rust and 19.4% on the longer
+prompt** than the original synchronous research runner. Optional preparation
+fusion raises those gains to 24.4%, 24.5% and 22.0%. These were measured together;
+no percentages from historical runs were multiplied to obtain them.
+
+Core fusion retains 7.1–9.8% over the stock layers with the same async loop;
+including preparation gives 9.5–11.4%. All 1,905 full-logit comparisons match
+byte-for-byte, and all 150 measured continuations have identical token IDs.
+The longer-prompt interval is wider after a late speed shift; all runs remain
+in the data. A fresh Python installation also passed the correctness smoke run.
+
+The minimal implementation and evidence are committed and pushed as 2ae12a85
+on the clean [cf/north-fused-async branch](https://github.com/carsonfarmer/uzu/tree/cf/north-fused-async/experiments/north_fused_async), starting directly from
+upstream 7096cf32. It adds a standalone MLX experiment and leaves Uzu's engine
+code untouched. See the [matched results](https://github.com/carsonfarmer/uzu/tree/cf/north-fused-async/experiments/north_fused_async/RESULTS.md) and
+[reproduction instructions](https://github.com/carsonfarmer/uzu/tree/cf/north-fused-async/experiments/north_fused_async/README.md). The older research branches
+remain preserved.
+
+The full megakernel investigation is active separately on
+[cf/north-megakernel-fullest](https://github.com/carsonfarmer/uzu/tree/cf/north-megakernel-fullest).
+Its new goal targets at least another 10% over the strongest exact
+fusion+preparation+async control through faithful Cohere scheduling and real
+future-weight overlap, or evidence exhausting the plausible mechanisms.
+The clean baseline has released its GPU reservation for the task's numerical
+and performance tests. No megakernel performance success is claimed yet.
+
+## September 13 checkpoint and earlier ablations
 
 The additional 10% research-runner target is verified on the original short
 Python workload (+10.70%), corroborated by Rust (+10.92%). Both use the actual
