@@ -194,7 +194,7 @@ fell back. The other eligible layers retain the established early-release path.
 The first expanded unit gate nevertheless had one changed-weight comparison
 failure. Its values were not captured, and no cause or fix has been identified.
 Subsequent varied-weight, retained-intermediate and 32 fresh-process runs passed;
-the latter repeated the original 14-test invocation 448 times in total. These
+the latter ran the original 14-test invocation in 32 processes, 448 tests total. These
 passes do not resolve the initial observation. Performance promotion remains
 withheld, and the raw failing log is preserved alongside the passing evidence.
 
@@ -209,9 +209,35 @@ cannot measure live generation's cache donation behavior.
 Native single-token RoPE also has a tested arithmetic helper: three candidates
 matched all 152 cases, including all finite BF16 patterns at two placements and
 19 offsets through 131,071. Other multiplication/contraction orders changed
-thousands of output values and are explicitly rejected. A benchmark-only Q/K
-projection epilogue using the matching arithmetic is prepared for a real
-sliding-layer gate; it has not changed the runtime or established throughput.
+thousands of output values and are explicitly rejected. Its Q/K projection
+epilogue passed 1,836 component samples, 54 gates and 48 poison checks on six
+sliding-layer input cases. Component latency improved by 0.57–3.36% against
+separate early release, but this did not predict a real-generation improvement.
+
+The expanded `virtual_grouped` model path combines preparation, routing,
+expert-up, per-KV-group attention and the output/down tail for all 48 eligible
+MoE layers below context length 1,024, including native-rounded RoPE. It passed
+2,264 complete logit comparisons in 20 ordinary generation cases and ran
+14,784 times. Long and rotating-cache cases use the established fallback.
+The diagnostic pilot retained all 72 stock-exact generations: grouped versus
+early release was 65.308/70.785 tokens/s (short), 65.029/70.514 (Rust), and
+63.701/63.662 (long fallback). The combined path is about 7.8% slower, and is
+not promoted. The earlier unexplained changed-weight unit failure remains a
+separate reason to withhold promotion.
+
+A matched host profile found less process CPU time for grouped generation
+(0.824 versus 0.857 seconds), despite higher API wall time (2.245 versus 2.097).
+The instrumented native cache wrappers added only about 3.6 milliseconds.
+That does not establish cache copying or occupancy as the cause; it directs
+the next ablations toward GPU execution and graph dependencies. Changes to
+compiler threadgroup bounds produced no clear gain across 780 exact component
+samples. Actual generation remains the performance acceptance test.
+
+The long-context combined layer also remains slower. Specializing append loads
+reduced its best median from 630.73 to 577.69 microseconds, but separate early
+release took 496.58. All 260 samples, ten gates and nine poison checks passed.
+This removes some overhead introduced by the attention port; it does not
+improve the actual engine and has not been integrated for long context.
 
 Reference: [Cohere's article](https://cohere.com/blog/megakernels) and source
 `cohere-ai/cohere-megakernel@67d0b9ca22ea3652796b715d1d1863459e0e2c3c`.
@@ -220,7 +246,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`43d709e` are backed up in
+`f57744b` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:
