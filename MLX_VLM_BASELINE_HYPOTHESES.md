@@ -84,6 +84,18 @@ over its control.
    Older copy-audit manifests have a documented late-import source gap; the
    repeated lazy gates and audits capture those helpers before generation.
 
+A subsequent descriptor-history policy removes most of the remaining copies
+while preserving native cache ownership. Nine final-drained model audits reduce
+logical copied payload by a further 92.43–96.97% relative to the previous reuse
+policy on the same binary; full cache state and stock tokens remain exact.
+The 19-test lifecycle suite and 2,264 complete stock-logit comparisons also pass.
+The matched 108-generation screen then improves the prototype by
+4.27%/9.03%/15.82% over native ownership on short/long/rotation. Even so, it
+remains 1.09%/11.46%/25.70% behind early release. Removing most added copies
+therefore does not close the gap. The remaining 96 native cache-slot writes and
+host graph construction are separate, still-testable integration costs; these
+results do not establish either as the sole explanation.
+
 The rotation attention-load ablation separately improved its prototype from
 30.809 to 37.095 tokens/s, while early release reached 57.872. Only the partition
 containing the replaced slot needs conditional loads; other partitions now use

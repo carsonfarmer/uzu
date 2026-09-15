@@ -467,6 +467,52 @@ is established, and this small screen was not expanded into a headline claim.
 Raw results are in `results/lazy-cache-copy-audit-v1` and
 `results/indirect-lazy-short-pilot-v1`.
 
+A separate descriptor-history policy now carries a proven read-before-write
+relationship across successive native cache updates. It retains weak identity
+for the exact successful output descriptor, requires the same Data and stream,
+counts each holder once, and preserves all original GPU lifetime references.
+External views, branches and unproven readers retain native copy-on-write.
+This is an MLX integration change motivated by the difference from Cohere's
+in-place K/V writes, rather than a technique claimed in their article.
+
+The initial 52-case gate and its repeat on the final build each pass 690 cache
+updates. Twenty-five additional observations pass retained-alias, double-credit,
+branch, view, growth, stream, weak-identity and injected-failure checks. Their
+2,089 audit decisions include one deliberately failed write attempt; that total
+must not be called completed writes. In both 512-update lazy chains, reuse
+increases from 256 to all 512 buffers. Allocation failure loses a reuse
+opportunity without changing results, and a pre-write exception recovers exactly.
+
+Nine fresh actual-engine copy audits then match all final cache contents,
+metadata and history, with 12,642 completed updates per generation. On the same
+binary, enabling history over the previous reuse policy reduces logical copied
+bytes from 2.298 GB to 0.070 GB on short, 12.188 GB to 0.466 GB on long and
+15.698 GB to 1.189 GB on rotation: reductions of 96.97%, 96.18% and 92.43%.
+History reuses 12,390 buffers per case; prepared reuses all 12,642. These are
+observed logical copy payloads, with every final write included, not physical
+traffic or throughput gains. The remaining 252 copies have not been attributed.
+
+The history-enabled engine also passes the existing 19-test lifecycle suite
+and 20 public generations with 2,264 complete stock-logit arrays exact across
+short, Rust, long, rotation and EOS. All captured sources and binaries remain
+unchanged. The three-policy, counterbalanced screen has now finished: 108 exact
+public generations, 54 measured, with two observations per setting/mode/prompt.
+History-enabled persistence reaches 69.858/56.300/42.930 tokens/s on
+short/long/rotation. That improves its native-ownership prototype by
+4.27%/9.03%/15.82%, but remains 1.09%/11.46%/25.70% behind early release with
+native ownership. Against prepared with native ownership it is
++1.68%/-8.82%/-23.85%. Control policy shifts range roughly -0.17% to +0.46%;
+this small sample does not establish zero overhead. Source and binary hashes
+remain stable. Raw runs are in `results/cache-history-v1-screen`.
+
+The copy fix explains another part of our integration cost, but does not meet
+the additional 10% goal. A bounded follow-up tests compiled, collected and lazy
+host adapters with the fix enabled. Separately, source assessment identifies
+96 cache-slot writes per decode step that our 48-layer span still leaves to
+native SliceUpdates. Cohere places these writes inside its QKV tasks. A pure
+cache-output integration is the next implementation experiment; no correctness
+or performance result is claimed for it yet.
+
 A source-inventory review also found that older copy audits captured their
 manifest before several shader builders were lazily imported. Their observer
 records, output checks and library hashes remain valid, but those manifests
@@ -484,7 +530,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`f265c9520a40939bc9ee972fb88390f98bdf3dad` are backed up in
+`b6b18ef5b09c6be09169bfae355d3b59d198734d` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:
