@@ -602,7 +602,26 @@ matrices, not for the whole model. The GPU reader passes 16.9 million exact-word
 checks and the packed decoder passes 294 layer gates, including long context,
 rotation and intentional aborts. The first component run also reveals repeated
 packing because native MLX creates fresh contiguous wrappers. Fixing that reuse
-is required before full generation or throughput testing; no speedup is claimed.
+was required before full generation or throughput testing.
+
+That reuse problem is now fixed with a separately gated native descriptor
+snapshot. Mutation, replacement and view checks pass, as do actual generation
+and continuation/early-close checks. The scalar packed decoder matches 2,264
+full-logit arrays across 20 calls; a four-value reader matches another 1,132
+across ten calls. Both execute all 48 eligible MoE layers and reuse all observed
+writer cache outputs. The raw BF16 weights remain in RAM alongside packed copies.
+
+Both storage versions are rejected on throughput. In the first balanced screen,
+scalar packing reaches 28.666 tokens/s against prepared/early at 68.345/70.213.
+Four-value packing reaches 34.439 against matched prepared/early at 56.809/59.266.
+The latter's controls slowed substantially, so these separate runs cannot
+establish a direct scalar-to-four gain or a new ordinary-writer gain. All samples
+are retained. Packing built only 48 layers per process, ruling out repeated
+packing in the measured loop. Reduced storage is not a decode speedup here.
+
+The next bounded investigation targets actual asynchronous weight copies on
+the installed Apple toolchain. Earlier retained-weight tests used ordinary loads;
+they did not establish hardware asynchronous-copy support or its performance.
 
 A source-inventory review also found that older copy audits captured their
 manifest before several shader builders were lazily imported. Their observer
@@ -621,7 +640,7 @@ backfilling and future-weight loading ideas. The additional 10% goal and
 whole-model megakernel validation remain open.
 
 The research branch and all committed raw results through
-`9ff77a4f268642fa5c83ed2972896d3122106d70` are backed up in
+`12807a66c216c845946a6d993d3f60a41aafaee9` are backed up in
 `experiments/north_mlx_vlm/mlx-vlm-megakernel.bundle`. The bundle was verified and
 requires the public MLX-VLM base `1ecf1ecdd28af102eded679be0daa5c76ab2a068`.
 From an MLX-VLM clone containing that base, restore it with:
